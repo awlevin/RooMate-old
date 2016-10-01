@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */; };
+		4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28E1DA0314C002F7FA7 /* ViewController.swift */; };
+		4250E2921DA0314C002F7FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2901DA0314C002F7FA7 /* Main.storyboard */; };
+		4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */; };
+		4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2961DA0314C002F7FA7 /* Assets.xcassets */; };
+		4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */; };
+		4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2A41DA0314C002F7FA7 /* roomateTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4250E2A11DA0314C002F7FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4250E2811DA0314C002F7FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4250E2881DA0314C002F7FA7;
+			remoteInfo = roomate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4250E2891DA0314C002F7FA7 /* roomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4250E28E1DA0314C002F7FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4250E2911DA0314C002F7FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4250E2941DA0314C002F7FA7 /* roomate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = roomate.xcdatamodel; sourceTree = "<group>"; };
+		4250E2961DA0314C002F7FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4250E2991DA0314C002F7FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4250E29B1DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4250E2A41DA0314C002F7FA7 /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
+		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4250E2861DA0314C002F7FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4250E29D1DA0314C002F7FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4250E2801DA0314C002F7FA7 = {
+			isa = PBXGroup;
+			children = (
+				4250E28B1DA0314C002F7FA7 /* roomate */,
+				4250E2A31DA0314C002F7FA7 /* roomateTests */,
+				4250E28A1DA0314C002F7FA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4250E28A1DA0314C002F7FA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2891DA0314C002F7FA7 /* roomate.app */,
+				4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4250E28B1DA0314C002F7FA7 /* roomate */ = {
+			isa = PBXGroup;
+			children = (
+				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
+				4250E28E1DA0314C002F7FA7 /* ViewController.swift */,
+				4250E2901DA0314C002F7FA7 /* Main.storyboard */,
+				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
+				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
+				4250E29B1DA0314C002F7FA7 /* Info.plist */,
+				4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */,
+			);
+			path = roomate;
+			sourceTree = "<group>";
+		};
+		4250E2A31DA0314C002F7FA7 /* roomateTests */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2A41DA0314C002F7FA7 /* roomateTests.swift */,
+				4250E2A61DA0314C002F7FA7 /* Info.plist */,
+			);
+			path = roomateTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4250E2881DA0314C002F7FA7 /* roomate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4250E2A91DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomate" */;
+			buildPhases = (
+				4250E2851DA0314C002F7FA7 /* Sources */,
+				4250E2861DA0314C002F7FA7 /* Frameworks */,
+				4250E2871DA0314C002F7FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = roomate;
+			productName = roomate;
+			productReference = 4250E2891DA0314C002F7FA7 /* roomate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4250E29F1DA0314C002F7FA7 /* roomateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4250E2AC1DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomateTests" */;
+			buildPhases = (
+				4250E29C1DA0314C002F7FA7 /* Sources */,
+				4250E29D1DA0314C002F7FA7 /* Frameworks */,
+				4250E29E1DA0314C002F7FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4250E2A21DA0314C002F7FA7 /* PBXTargetDependency */,
+			);
+			name = roomateTests;
+			productName = roomateTests;
+			productReference = 4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4250E2811DA0314C002F7FA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = RooMate;
+				TargetAttributes = {
+					4250E2881DA0314C002F7FA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					4250E29F1DA0314C002F7FA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4250E2881DA0314C002F7FA7;
+					};
+				};
+			};
+			buildConfigurationList = 4250E2841DA0314C002F7FA7 /* Build configuration list for PBXProject "roomate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4250E2801DA0314C002F7FA7;
+			productRefGroup = 4250E28A1DA0314C002F7FA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4250E2881DA0314C002F7FA7 /* roomate */,
+				4250E29F1DA0314C002F7FA7 /* roomateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4250E2871DA0314C002F7FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */,
+				4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */,
+				4250E2921DA0314C002F7FA7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4250E29E1DA0314C002F7FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4250E2851DA0314C002F7FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
+				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
+				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4250E29C1DA0314C002F7FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4250E2A21DA0314C002F7FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4250E2881DA0314C002F7FA7 /* roomate */;
+			targetProxy = 4250E2A11DA0314C002F7FA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4250E2901DA0314C002F7FA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4250E2911DA0314C002F7FA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4250E2991DA0314C002F7FA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4250E2A71DA0314C002F7FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4250E2A81DA0314C002F7FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4250E2AA1DA0314C002F7FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = roomate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4250E2AB1DA0314C002F7FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = roomate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4250E2AD1DA0314C002F7FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = roomateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
+			};
+			name = Debug;
+		};
+		4250E2AE1DA0314C002F7FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = roomateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4250E2841DA0314C002F7FA7 /* Build configuration list for PBXProject "roomate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4250E2A71DA0314C002F7FA7 /* Debug */,
+				4250E2A81DA0314C002F7FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4250E2A91DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4250E2AA1DA0314C002F7FA7 /* Debug */,
+				4250E2AB1DA0314C002F7FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4250E2AC1DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4250E2AD1DA0314C002F7FA7 /* Debug */,
+				4250E2AE1DA0314C002F7FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4250E2941DA0314C002F7FA7 /* roomate.xcdatamodel */,
+			);
+			currentVersion = 4250E2941DA0314C002F7FA7 /* roomate.xcdatamodel */;
+			path = roomate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4250E2811DA0314C002F7FA7 /* Project object */;
+}
