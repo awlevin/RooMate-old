@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
 		4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */; };
 		4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28E1DA0314C002F7FA7 /* ViewController.swift */; };
 		4250E2921DA0314C002F7FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2901DA0314C002F7FA7 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletinPost.swift; path = RMClasses/RMBulletinPost.swift; sourceTree = "<group>"; };
 		4250E2891DA0314C002F7FA7 /* roomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4250E28E1DA0314C002F7FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424CF5D91DB8033F00B24160 /* RMClasses */ = {
+			isa = PBXGroup;
+			children = (
+				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
+			);
+			name = RMClasses;
+			sourceTree = "<group>";
+		};
 		4250E2801DA0314C002F7FA7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		4250E28B1DA0314C002F7FA7 /* roomate */ = {
 			isa = PBXGroup;
 			children = (
+				424CF5D91DB8033F00B24160 /* RMClasses */,
 				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
 				4250E28E1DA0314C002F7FA7 /* ViewController.swift */,
 				4250E2901DA0314C002F7FA7 /* Main.storyboard */,
@@ -203,6 +214,7 @@
 				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
 				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
+				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +406,7 @@
 				4250E2AB1DA0314C002F7FA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4250E2AC1DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomateTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +415,7 @@
 				4250E2AE1DA0314C002F7FA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
