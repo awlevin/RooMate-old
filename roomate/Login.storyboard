@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nyx-Ax-0Ke">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="QiG-uS-vc0">
             <objects>
-                <viewController id="nyx-Ax-0Ke" sceneMemberID="viewController">
+                <viewController id="nyx-Ax-0Ke" customClass="RMLoginViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LkG-nK-edU"/>
                         <viewControllerLayoutGuide type="bottom" id="UM6-eO-RDS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5e7-57-qXQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-Kx-wtk"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12D-ut-4ea">
                                 <state key="normal" title="Login With Facebook"/>
                                 <connections>
+                                    <action selector="facebookButtonPressed:" destination="nyx-Ax-0Ke" eventType="touchUpInside" id="MA6-vO-eGb"/>
                                     <segue destination="DW7-IQ-se7" kind="show" identifier="segueFromLogin" id="L3X-nL-87g"/>
                                 </connections>
                             </button>
@@ -67,7 +69,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9HA-aP-mvR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oQw-Nh-oaQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iqK-Yi-0hw"/>
@@ -111,7 +113,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9oM-1P-FEn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kFa-Jo-2Ng">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiq-Pd-8fN">
@@ -141,7 +143,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FzG-Fh-WQt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hGA-vw-Thv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6G-aT-Xwh">
