@@ -15,12 +15,15 @@
 		4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */; };
 		4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2A41DA0314C002F7FA7 /* roomateTests.swift */; };
 		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
-		900C6D451DB81C2400D27507 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D441DB81C2400D27507 /* Login.storyboard */; };
 		900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D461DB81CBD00D27507 /* Finance.storyboard */; };
 		900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D481DB81CD800D27507 /* Chore.storyboard */; };
 		900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4B1DB81CF900D27507 /* Billboard.storyboard */; };
 		900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4D1DB81D1600D27507 /* Shopping.storyboard */; };
 		900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D501DB81D3800D27507 /* Settings.storyboard */; };
+		90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */; };
+		90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693351DBF0B480052A6BF /* RMAuth.swift */; };
+		95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */; };
+		A22F448AF7865D236E456801 /* Pods_roomateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.debug.xcconfig"; sourceTree = "<group>"; };
 		424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletinPost.swift; path = RMClasses/RMBulletinPost.swift; sourceTree = "<group>"; };
 		4250E2891DA0314C002F7FA7 /* roomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,13 +51,17 @@
 		4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E2A41DA0314C002F7FA7 /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
 		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		900C6D461DB81CBD00D27507 /* Finance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Finance.storyboard; sourceTree = "<group>"; };
 		900C6D491DB81CD800D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chore.storyboard; sourceTree = "<group>"; };
 		900C6D4B1DB81CF900D27507 /* Billboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Billboard.storyboard; sourceTree = "<group>"; };
 		900C6D4E1DB81D1600D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shopping.storyboard; sourceTree = "<group>"; };
 		900C6D501DB81D3800D27507 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLoginViewController.swift; sourceTree = "<group>"; };
+		90B693351DBF0B480052A6BF /* RMAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMAuth.swift; sourceTree = "<group>"; };
+		A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.release.xcconfig"; sourceTree = "<group>"; };
+		AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22F448AF7865D236E456801 /* Pods_roomateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,7 @@
 		424CF5D91DB8033F00B24160 /* RMClasses */ = {
 			isa = PBXGroup;
 			children = (
+				90B693351DBF0B480052A6BF /* RMAuth.swift */,
 				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
 			);
 			name = RMClasses;
@@ -86,6 +99,8 @@
 				4250E28B1DA0314C002F7FA7 /* roomate */,
 				4250E2A31DA0314C002F7FA7 /* roomateTests */,
 				4250E28A1DA0314C002F7FA7 /* Products */,
+				C2B9AB08BB8E9DEE2E0A3CEB /* Pods */,
+				FB8955C69BEA0A5836D29C30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +116,9 @@
 		4250E28B1DA0314C002F7FA7 /* roomate */ = {
 			isa = PBXGroup;
 			children = (
-				424CF5D91DB8033F00B24160 /* RMClasses */,
 				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
+				424CF5D91DB8033F00B24160 /* RMClasses */,
+				90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */,
 				4250E28E1DA0314C002F7FA7 /* ViewController.swift */,
 				900C6D411DB80FF500D27507 /* Main.storyboard */,
 				900C6D501DB81D3800D27507 /* Settings.storyboard */,
@@ -110,11 +126,8 @@
 				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
 				900C6D481DB81CD800D27507 /* Chore.storyboard */,
 				900C6D461DB81CBD00D27507 /* Finance.storyboard */,
-				900C6D441DB81C2400D27507 /* Login.storyboard */,
-				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
-				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
-				4250E29B1DA0314C002F7FA7 /* Info.plist */,
-				4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */,
+				90B693371DBF0D070052A6BF /* Supporting Files */,
+				90B6933A1DBF0D2B0052A6BF /* Core Data */,
 			);
 			path = roomate;
 			sourceTree = "<group>";
@@ -128,6 +141,44 @@
 			path = roomateTests;
 			sourceTree = "<group>";
 		};
+		90B693371DBF0D070052A6BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
+				4250E29B1DA0314C002F7FA7 /* Info.plist */,
+				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90B6933A1DBF0D2B0052A6BF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		C2B9AB08BB8E9DEE2E0A3CEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */,
+				6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */,
+				0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */,
+				A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB8955C69BEA0A5836D29C30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */,
+				AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4250E2A91DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomate" */;
 			buildPhases = (
+				BB69F7B8261FB5B8F3795F93 /* [CP] Check Pods Manifest.lock */,
 				4250E2851DA0314C002F7FA7 /* Sources */,
 				4250E2861DA0314C002F7FA7 /* Frameworks */,
 				4250E2871DA0314C002F7FA7 /* Resources */,
+				1EDB06282E0231F2D1C97241 /* [CP] Embed Pods Frameworks */,
+				F21355F9C4490020B4BDE4BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4250E2AC1DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomateTests" */;
 			buildPhases = (
+				4BB056D071E73922CFF149F9 /* [CP] Check Pods Manifest.lock */,
 				4250E29C1DA0314C002F7FA7 /* Sources */,
 				4250E29D1DA0314C002F7FA7 /* Frameworks */,
 				4250E29E1DA0314C002F7FA7 /* Resources */,
+				6E9D8232D227820F665A270C /* [CP] Embed Pods Frameworks */,
+				194BC5557009B86F47475856 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */,
-				900C6D451DB81C2400D27507 /* Login.storyboard in Resources */,
 				900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */,
 				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
 				900C6D431DB80FF500D27507 /* Main.storyboard in Resources */,
@@ -230,12 +286,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		194BC5557009B86F47475856 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1EDB06282E0231F2D1C97241 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomate/Pods-roomate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BB056D071E73922CFF149F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E9D8232D227820F665A270C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB69F7B8261FB5B8F3795F93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F21355F9C4490020B4BDE4BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomate/Pods-roomate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4250E2851DA0314C002F7FA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
+				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
 				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
@@ -383,6 +534,7 @@
 		};
 		4250E2AA1DA0314C002F7FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = roomate/Info.plist;
@@ -396,6 +548,7 @@
 		};
 		4250E2AB1DA0314C002F7FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = roomate/Info.plist;
@@ -409,24 +562,28 @@
 		};
 		4250E2AD1DA0314C002F7FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = roomateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
 			};
 			name = Debug;
 		};
 		4250E2AE1DA0314C002F7FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = roomateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
 			};
 			name = Release;
