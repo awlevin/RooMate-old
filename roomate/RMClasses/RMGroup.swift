@@ -16,17 +16,17 @@ public struct RMGroup {
     //var aggregateGroceryLists: [RMGroceryList]
     //var choresList: [RMChore]
 
-    public func leaveHousehold() {
+    public static func leaveHousehold() {
         //Call the backend to delete you from the household and then signout
     }
     
-    public func createHousehold() -> String? {
+    public static func createHousehold() -> String? {
         //Call the backend to make a new UUID for a group, and add this user to 
         //the household automatically
         return nil
     }
     
-    public func joinHousehold(groupId: String){
+    public static func joinHousehold(groupId: String){
         //Call the backend to add the current user to the household, and on
         //success, actually log them in.
     }

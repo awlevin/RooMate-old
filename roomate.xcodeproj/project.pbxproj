@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423053491DC1302F003AE80B /* RMBulletin.swift */; };
 		4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534B1DC1338B003AE80B /* RMGroup.swift */; };
+		4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */; };
 		424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
 		4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */; };
 		4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28E1DA0314C002F7FA7 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2961DA0314C002F7FA7 /* Assets.xcassets */; };
 		4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */; };
 		4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2A41DA0314C002F7FA7 /* roomateTests.swift */; };
+		426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */; };
 		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
 		900C6D451DB81C2400D27507 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D441DB81C2400D27507 /* Login.storyboard */; };
 		900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D461DB81CBD00D27507 /* Finance.storyboard */; };
@@ -46,6 +48,7 @@
 		3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.debug.xcconfig"; sourceTree = "<group>"; };
 		423053491DC1302F003AE80B /* RMBulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletin.swift; path = RMClasses/RMBulletin.swift; sourceTree = "<group>"; };
 		4230534B1DC1338B003AE80B /* RMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMGroup.swift; path = RMClasses/RMGroup.swift; sourceTree = "<group>"; };
+		4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupSelectionVC.swift; path = Login/GroupSelectionVC.swift; sourceTree = "<group>"; };
 		424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletinPost.swift; path = RMClasses/RMBulletinPost.swift; sourceTree = "<group>"; };
 		4250E2891DA0314C002F7FA7 /* roomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E2A41DA0314C002F7FA7 /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
 		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginStringConst.swift; path = Login/LoginStringConst.swift; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -92,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4230534D1DC134B8003AE80B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D441DB81C2400D27507 /* Login.storyboard */,
+				4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */,
+				426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		424CF5D91DB8033F00B24160 /* RMClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,17 +140,17 @@
 		4250E28B1DA0314C002F7FA7 /* roomate */ = {
 			isa = PBXGroup;
 			children = (
-				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
+				4230534D1DC134B8003AE80B /* Login */,
 				424CF5D91DB8033F00B24160 /* RMClasses */,
 				90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */,
 				4250E28E1DA0314C002F7FA7 /* ViewController.swift */,
+				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
 				900C6D411DB80FF500D27507 /* Main.storyboard */,
 				900C6D501DB81D3800D27507 /* Settings.storyboard */,
 				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
 				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
 				900C6D481DB81CD800D27507 /* Chore.storyboard */,
 				900C6D461DB81CBD00D27507 /* Finance.storyboard */,
-				900C6D441DB81C2400D27507 /* Login.storyboard */,
 				90B693371DBF0D070052A6BF /* Supporting Files */,
 				90B6933A1DBF0D2B0052A6BF /* Core Data */,
 			);
@@ -398,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
@@ -405,6 +420,7 @@
 				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
 				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
+				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
