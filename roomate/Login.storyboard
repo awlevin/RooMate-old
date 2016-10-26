@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nyx-Ax-0Ke">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nyx-Ax-0Ke">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -63,7 +63,7 @@
         <!--RooMate-->
         <scene sceneID="ZXg-4m-YqC">
             <objects>
-                <viewController title="RooMate" id="xT9-go-YtJ" sceneMemberID="viewController">
+                <viewController title="RooMate" id="xT9-go-YtJ" customClass="GroupSelectionVC" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PRV-AX-nDt"/>
                         <viewControllerLayoutGuide type="bottom" id="9HA-aP-mvR"/>
@@ -82,6 +82,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-Iy-t9T">
                                 <state key="normal" title="Join Household"/>
                                 <connections>
+                                    <action selector="joinHouseholdPressed:" destination="xT9-go-YtJ" eventType="touchUpInside" id="apd-4Q-MKc"/>
                                     <segue destination="XFm-Qe-BW7" kind="show" id="gn9-Ez-WaN"/>
                                 </connections>
                             </button>
