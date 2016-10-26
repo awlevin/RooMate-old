@@ -1,0 +1,6 @@
+framework module Pods_roomateTests {
+  umbrella header "Pods-roomateTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
