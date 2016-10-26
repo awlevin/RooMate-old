@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 import FBSDKLoginKit
-import Firebase
-import FirebaseAuth
 
 enum RMLoginTypes {
     case Facebook
@@ -46,11 +44,7 @@ private extension RMAuth {
     func loginWithFacebook(completion: (success: Bool) -> Void) {
         // If token already exists
         if let _ = FBSDKAccessToken.currentAccessToken() {
-            loginWithFirebase(.Facebook, completion: { (user) in
-                print("Facebook login: Success")
-                self.saveFacebookDetails(user!)
-                completion(success: true)
-            })
+            completion(success: true)
         }
             // If token does not exist
         else {
@@ -72,17 +66,13 @@ private extension RMAuth {
                 }
                 else if loginResult!.grantedPermissions.contains(permissionSet) {
                     print("Facebook login: Granted permissions")
-                    
-                    self.loginWithFirebase(.Facebook, completion: { (user) in
-                        self.saveFacebookDetails(user!)
-                        completion(success: true)
-                    })
+                    self.saveFacebookDetails()
                 }
             })
         }
     }
     
-    private func saveFacebookDetails(user: FIRUser){
+    private func saveFacebookDetails(){
         let requestParameters = ["fields": "id, link, email, first_name, last_name, feed"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in
@@ -99,36 +89,10 @@ private extension RMAuth {
                 let last_name = result.objectForKey("last_name") as? String
                 let profile_picture_url: String = "https://graph.facebook.com/" + id! + "/picture?type=large"
                 
-                //TODO: Create dictionary of user data to save to firebase
-                //let userProfileInfo: [String : Any] = [DSUserKey.firstName : first_name,
 
-                // TODO create firebase backend
-                //  let databaseReference = FIRDatabase.database().reference()
-                //  let backend = DSBackendBridge(databaseReference: databaseReference, forDataType: .user)
-                //  backend.append(newRecord: userProfileInfo, atRefPoint: .users, withId: user.uid)
+                // TODO save information to backend
                 
             }
         })
     }
-    
-    private func loginWithFirebase(socialType: RMLoginTypes, completion: (user: FIRUser?) -> Void) {
-        let credential: FIRAuthCredential?
-        
-        switch socialType {
-        case .Facebook:
-            credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
-            
-            FIRAuth.auth()?.signInWithCredential(credential!, completion: { (user, error) in
-                if error != nil {
-                    print("Firebase login: Error - \(error)")
-                    completion(user: nil)
-                }
-                else {
-                    print("Firebase login: Success")
-                    completion(user: user)
-                }
-            })
-        }
-    }
-
 }
