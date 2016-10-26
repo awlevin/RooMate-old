@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gh1-lr-cpU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,5 +78,171 @@
             </objects>
             <point key="canvasLocation" x="2079" y="2544"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="lrL-RX-dSO">
+            <objects>
+                <viewController storyboardIdentifier="RMLoginViewController" id="gh1-lr-cpU" customClass="RMLoginViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mEb-Xm-PuU"/>
+                        <viewControllerLayoutGuide type="bottom" id="dxL-hE-l9P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="peZ-oM-u48">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjC-Ns-LCe"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-T0-K6Y">
+                                <state key="normal" title="Login With Facebook"/>
+                                <connections>
+                                    <action selector="facebookButtonPressed:" destination="gh1-lr-cpU" eventType="touchUpInside" id="NFe-ja-svj"/>
+                                    <segue destination="KzP-kU-DPX" kind="show" identifier="segueFromLogin" id="YHl-ax-hvE">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dxL-hE-l9P" firstAttribute="top" secondItem="gjC-Ns-LCe" secondAttribute="bottom" constant="357" id="2rs-w4-HY7"/>
+                            <constraint firstItem="gjC-Ns-LCe" firstAttribute="leading" secondItem="peZ-oM-u48" secondAttribute="leadingMargin" constant="51" id="9Kk-CG-oBm"/>
+                            <constraint firstItem="rbJ-T0-K6Y" firstAttribute="top" secondItem="gjC-Ns-LCe" secondAttribute="bottom" constant="8" id="a7m-Q4-cvn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gjC-Ns-LCe" secondAttribute="trailing" constant="51" id="aKe-W5-ye1"/>
+                            <constraint firstItem="gjC-Ns-LCe" firstAttribute="top" secondItem="mEb-Xm-PuU" secondAttribute="bottom" constant="8" id="qui-uC-AVV"/>
+                            <constraint firstItem="rbJ-T0-K6Y" firstAttribute="centerX" secondItem="gjC-Ns-LCe" secondAttribute="centerX" id="vxK-qt-YN6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wEm-GW-azt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqd-3W-M1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1244" y="115"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Aw-u9-lQk">
+            <objects>
+                <navigationController id="KzP-kU-DPX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fpr-RG-sD9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xVc-xR-N0Z" kind="relationship" relationship="rootViewController" id="vgy-YN-lnX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsl-KE-S7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-481" y="115"/>
+        </scene>
+        <!--RooMate-->
+        <scene sceneID="n4D-yZ-RMB">
+            <objects>
+                <viewController title="RooMate" id="xVc-xR-N0Z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rGk-aa-LRn"/>
+                        <viewControllerLayoutGuide type="bottom" id="ioa-0U-L4c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="em0-mF-cqW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LS2-Xe-hlv"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeJ-HN-iUN">
+                                <state key="normal" title="Create Household"/>
+                                <connections>
+                                    <segue destination="tv6-aq-ZOW" kind="show" id="zS6-dc-o2g">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBG-Kj-Vhn">
+                                <state key="normal" title="Join Household"/>
+                                <connections>
+                                    <segue destination="Nnc-yW-Esu" kind="show" id="HN7-na-CYR">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IBG-Kj-Vhn" firstAttribute="top" secondItem="JeJ-HN-iUN" secondAttribute="bottom" constant="64" id="MMB-aG-D2U"/>
+                            <constraint firstItem="LS2-Xe-hlv" firstAttribute="top" secondItem="rGk-aa-LRn" secondAttribute="bottom" constant="8" id="W0P-ep-CN3"/>
+                            <constraint firstItem="IBG-Kj-Vhn" firstAttribute="centerX" secondItem="JeJ-HN-iUN" secondAttribute="centerX" id="cmA-1S-U8e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LS2-Xe-hlv" secondAttribute="trailing" constant="51" id="hPP-BV-55N"/>
+                            <constraint firstItem="LS2-Xe-hlv" firstAttribute="leading" secondItem="em0-mF-cqW" secondAttribute="leadingMargin" constant="51" id="j7d-Fn-Gky"/>
+                            <constraint firstItem="ioa-0U-L4c" firstAttribute="top" secondItem="LS2-Xe-hlv" secondAttribute="bottom" constant="357" id="mtc-m3-UUB"/>
+                            <constraint firstItem="JeJ-HN-iUN" firstAttribute="centerX" secondItem="LS2-Xe-hlv" secondAttribute="centerX" id="v8X-63-Nok"/>
+                            <constraint firstItem="JeJ-HN-iUN" firstAttribute="top" secondItem="LS2-Xe-hlv" secondAttribute="bottom" constant="8" id="xb4-eO-Nju"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RooMate" id="UvE-6L-nBv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIZ-jA-4nT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="115"/>
+        </scene>
+        <!--Create Household-->
+        <scene sceneID="tT5-Wq-K9c">
+            <objects>
+                <viewController title="Create Household" id="tv6-aq-ZOW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U3j-Q6-buB"/>
+                        <viewControllerLayoutGuide type="bottom" id="QHY-Wz-pcc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iSN-UU-Zrj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCT-z1-IQr">
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <segue destination="CAq-BJ-fe1" kind="show" id="vWN-fr-RC7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NCT-z1-IQr" firstAttribute="centerX" secondItem="iSN-UU-Zrj" secondAttribute="centerX" id="PPw-iH-gyE"/>
+                            <constraint firstItem="QHY-Wz-pcc" firstAttribute="top" secondItem="NCT-z1-IQr" secondAttribute="bottom" constant="90" id="qH5-bI-LNa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z9k-6q-bsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-108" y="874"/>
+        </scene>
+        <!--Join Household-->
+        <scene sceneID="aJ8-xh-USp">
+            <objects>
+                <viewController title="Join Household" id="Nnc-yW-Esu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XQj-Vg-Nkg"/>
+                        <viewControllerLayoutGuide type="bottom" id="vwu-pk-EEt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="htV-18-cU1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-zw-fib">
+                                <state key="normal" title="Join"/>
+                                <connections>
+                                    <segue destination="CAq-BJ-fe1" kind="show" id="c45-5p-lzm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0pg-zw-fib" firstAttribute="centerX" secondItem="htV-18-cU1" secondAttribute="centerX" id="Dwo-7m-qxh"/>
+                            <constraint firstItem="vwu-pk-EEt" firstAttribute="top" secondItem="0pg-zw-fib" secondAttribute="bottom" constant="87" id="n2Y-7J-CGm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VP9-GO-EAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="874"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="c45-5p-lzm"/>
+    </inferredMetricsTieBreakers>
 </document>
