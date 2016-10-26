@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RMBulletinPost {
+public struct RMBulletinPost {
     var objectId: String
     var dateCreatedAt: String
     var dateupdatedAt: String
@@ -19,7 +19,4 @@ struct RMBulletinPost {
     var thumbnail: String
     var daysBeforeRemoval: Int
     var comments: [String: String]
-    
-    
-    
 }
