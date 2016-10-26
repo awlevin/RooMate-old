@@ -19,22 +19,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-Kx-wtk"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-Kx-wtk"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12D-ut-4ea">
-                                <state key="normal" title="Login With Facebook"/>
+                                <state key="normal" title="Login With Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="facebookButtonPressed:" destination="nyx-Ax-0Ke" eventType="touchUpInside" id="MA6-vO-eGb"/>
                                     <segue destination="DW7-IQ-se7" kind="show" identifier="segueFromLogin" id="L3X-nL-87g"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8901960784313725" green="0.42352941176470588" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="CKG-Kx-wtk" firstAttribute="leading" secondItem="5e7-57-qXQ" secondAttribute="leadingMargin" constant="51" id="0IP-fq-vJK"/>
                             <constraint firstItem="12D-ut-4ea" firstAttribute="centerX" secondItem="CKG-Kx-wtk" secondAttribute="centerX" id="LBk-eB-LZY"/>
-                            <constraint firstItem="UM6-eO-RDS" firstAttribute="top" secondItem="CKG-Kx-wtk" secondAttribute="bottom" constant="357" id="VKk-I3-cgH"/>
+                            <constraint firstItem="12D-ut-4ea" firstAttribute="centerY" secondItem="5e7-57-qXQ" secondAttribute="centerY" id="OR4-mB-bUw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CKG-Kx-wtk" secondAttribute="trailing" constant="51" id="f6j-hN-GsF"/>
-                            <constraint firstItem="12D-ut-4ea" firstAttribute="top" secondItem="CKG-Kx-wtk" secondAttribute="bottom" constant="8" id="g7I-n4-7ye"/>
                             <constraint firstItem="CKG-Kx-wtk" firstAttribute="top" secondItem="LkG-nK-edU" secondAttribute="bottom" constant="8" id="qXN-C2-deh"/>
                         </constraints>
                     </view>
@@ -47,8 +48,9 @@
         <!--Navigation Controller-->
         <scene sceneID="amW-tU-pc9">
             <objects>
-                <navigationController id="DW7-IQ-se7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hPz-ni-ZmO">
+                <navigationController navigationBarHidden="YES" id="DW7-IQ-se7" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hPz-ni-ZmO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -72,22 +74,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iqK-Yi-0hw"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="iqK-Yi-0hw"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zst-ty-Waq">
-                                <state key="normal" title="Create Household"/>
+                                <state key="normal" title="Create Household">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="GPl-xy-f6y" kind="show" id="5cR-LR-7x5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-Iy-t9T">
-                                <state key="normal" title="Join Household"/>
+                                <state key="normal" title="Join Household">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="joinHouseholdPressed:" destination="xT9-go-YtJ" eventType="touchUpInside" id="apd-4Q-MKc"/>
                                     <segue destination="XFm-Qe-BW7" kind="show" id="gn9-Ez-WaN"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iqK-Yi-0hw" firstAttribute="leading" secondItem="oQw-Nh-oaQ" secondAttribute="leadingMargin" constant="51" id="9M1-wj-dD0"/>
                             <constraint firstItem="icQ-Iy-t9T" firstAttribute="centerX" secondItem="Zst-ty-Waq" secondAttribute="centerX" id="D7b-8V-VXY"/>
@@ -100,6 +106,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RooMate" id="Pz7-sY-VGe"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyL-7W-vAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,6 +181,9 @@
             <point key="canvasLocation" x="302" y="1714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="225" height="225"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vra-Gq-hOf"/>
     </inferredMetricsTieBreakers>
