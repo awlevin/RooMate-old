@@ -10,23 +10,22 @@ import UIKit
 
 class RMLoginViewController: UIViewController {
 
-    @IBOutlet weak var logoImageView: UIImageView!
-    
     var auth = RMAuth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
+    
     @IBAction func facebookButtonPressed(sender: AnyObject) {
         auth.viewController = self
         auth.loginWith(.Facebook) { (success) in
             if success {
-                self.performSegueWithIdentifier("segue", sender: self)
+               self.performSegueWithIdentifier("segue", sender: self)
             } else {
                 // handle error
             }
         }
     }
+
 }
