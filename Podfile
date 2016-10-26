@@ -7,15 +7,6 @@ target 'roomate' do
 
   # Pods for roomate
 
-  #Firebase
-pod 'Firebase'
-pod 'Firebase/Auth'
-pod 'Firebase/Database'
-pod 'Firebase/Storage'
-pod 'Firebase/RemoteConfig'
-pod 'Firebase/Core'
-pod 'Firebase/Messaging'
-
   #Facebook
 pod ‘Bolts’
 pod ‘FBSDKCoreKit' 
