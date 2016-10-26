@@ -15,7 +15,6 @@
 		4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */; };
 		4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2A41DA0314C002F7FA7 /* roomateTests.swift */; };
 		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
-		900C6D451DB81C2400D27507 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D441DB81C2400D27507 /* Login.storyboard */; };
 		900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D461DB81CBD00D27507 /* Finance.storyboard */; };
 		900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D481DB81CD800D27507 /* Chore.storyboard */; };
 		900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4B1DB81CF900D27507 /* Billboard.storyboard */; };
@@ -23,7 +22,6 @@
 		900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D501DB81D3800D27507 /* Settings.storyboard */; };
 		90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */; };
 		90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693351DBF0B480052A6BF /* RMAuth.swift */; };
-		90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B693381DBF0D110052A6BF /* GoogleService-Info.plist */; };
 		95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */; };
 		A22F448AF7865D236E456801 /* Pods_roomateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +53,6 @@
 		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		900C6D461DB81CBD00D27507 /* Finance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Finance.storyboard; sourceTree = "<group>"; };
 		900C6D491DB81CD800D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chore.storyboard; sourceTree = "<group>"; };
 		900C6D4B1DB81CF900D27507 /* Billboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Billboard.storyboard; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		900C6D501DB81D3800D27507 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLoginViewController.swift; sourceTree = "<group>"; };
 		90B693351DBF0B480052A6BF /* RMAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMAuth.swift; sourceTree = "<group>"; };
-		90B693381DBF0D110052A6BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.release.xcconfig"; sourceTree = "<group>"; };
 		AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,7 +126,6 @@
 				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
 				900C6D481DB81CD800D27507 /* Chore.storyboard */,
 				900C6D461DB81CBD00D27507 /* Finance.storyboard */,
-				900C6D441DB81C2400D27507 /* Login.storyboard */,
 				90B693371DBF0D070052A6BF /* Supporting Files */,
 				90B6933A1DBF0D2B0052A6BF /* Core Data */,
 			);
@@ -149,7 +144,6 @@
 		90B693371DBF0D070052A6BF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				90B693381DBF0D110052A6BF /* GoogleService-Info.plist */,
 				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
 				4250E29B1DA0314C002F7FA7 /* Info.plist */,
 				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
@@ -273,13 +267,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */,
-				900C6D451DB81C2400D27507 /* Login.storyboard in Resources */,
 				900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */,
 				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
 				900C6D431DB80FF500D27507 /* Main.storyboard in Resources */,
 				4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */,
 				900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */,
-				90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */,
 				900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */,
 				4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */,
 			);
