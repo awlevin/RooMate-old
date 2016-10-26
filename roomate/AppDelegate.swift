@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Firebase
 import FBSDKCoreKit
 
 
@@ -19,9 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        // This will configure the application to use Firebase backend services
-        FIRApp.configure()
         
         // This will configure the application to use Facebook services
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
