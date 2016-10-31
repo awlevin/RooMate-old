@@ -79,9 +79,6 @@
                                 <state key="normal" title="Create Household">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="GPl-xy-f6y" kind="show" id="5cR-LR-7x5"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-Iy-t9T">
                                 <state key="normal" title="Join Household">
@@ -89,7 +86,6 @@
                                 </state>
                                 <connections>
                                     <action selector="joinHouseholdPressed:" destination="xT9-go-YtJ" eventType="touchUpInside" id="apd-4Q-MKc"/>
-                                    <segue destination="XFm-Qe-BW7" kind="show" id="gn9-Ez-WaN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,70 +103,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="RooMate" id="Pz7-sY-VGe"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="Qkw-xf-Wfe" kind="presentation" identifier="loginSuccessSegue" id="IDv-g5-ftU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyL-7W-vAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="332" y="187.55622188905548"/>
-        </scene>
-        <!--Create Household-->
-        <scene sceneID="7f4-Yo-kVz">
-            <objects>
-                <viewController title="Create Household" id="GPl-xy-f6y" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nl9-w6-L9Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="9oM-1P-FEn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kFa-Jo-2Ng">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiq-Pd-8fN">
-                                <state key="normal" title="Create"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xiq-Pd-8fN" firstAttribute="centerX" secondItem="kFa-Jo-2Ng" secondAttribute="centerX" id="INO-1l-04C"/>
-                            <constraint firstItem="9oM-1P-FEn" firstAttribute="top" secondItem="xiq-Pd-8fN" secondAttribute="bottom" constant="90" id="iWH-EA-ulW"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="Qkw-xf-Wfe" kind="show" id="vra-Gq-hOf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LAN-nv-jGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-34" y="947"/>
-        </scene>
-        <!--Join Household-->
-        <scene sceneID="zLC-NP-qz3">
-            <objects>
-                <viewController title="Join Household" id="XFm-Qe-BW7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fIP-Mq-UhA"/>
-                        <viewControllerLayoutGuide type="bottom" id="FzG-Fh-WQt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hGA-vw-Thv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6G-aT-Xwh">
-                                <state key="normal" title="Join"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FzG-Fh-WQt" firstAttribute="top" secondItem="G6G-aT-Xwh" secondAttribute="bottom" constant="87" id="ogH-Hx-2NR"/>
-                            <constraint firstItem="G6G-aT-Xwh" firstAttribute="centerX" secondItem="hGA-vw-Thv" secondAttribute="centerX" id="ogy-pJ-2n1"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <segue destination="Qkw-xf-Wfe" kind="show" id="Ghf-sc-neW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhs-oM-vWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="679" y="947"/>
         </scene>
         <!--UITabBarController-CAq-BJ-fe1-->
         <scene sceneID="1AR-R1-hsa">
@@ -178,13 +117,10 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITabBarController-CAq-BJ-fe1" id="Qkw-xf-Wfe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qcl-qB-UJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="1714"/>
+            <point key="canvasLocation" x="331" y="663"/>
         </scene>
     </scenes>
     <resources>
         <image name="LaunchImage" width="225" height="225"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="vra-Gq-hOf"/>
-    </inferredMetricsTieBreakers>
 </document>
