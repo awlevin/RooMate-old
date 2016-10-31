@@ -19,6 +19,7 @@
 		4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2A41DA0314C002F7FA7 /* roomateTests.swift */; };
 		426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */; };
 		426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */; };
+		426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E491DC14BB300A2C749 /* RMChore.swift */; };
 		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
 		900C6D451DB81C2400D27507 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D441DB81C2400D27507 /* Login.storyboard */; };
 		900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D461DB81CBD00D27507 /* Finance.storyboard */; };
@@ -63,6 +64,7 @@
 		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginStringConst.swift; path = Login/LoginStringConst.swift; sourceTree = "<group>"; };
 		426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RMImageSet.xcassets; path = RMAssets/RMImageSet.xcassets; sourceTree = "<group>"; };
+		426C7E491DC14BB300A2C749 /* RMChore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMChore.swift; path = RMClasses/RMChore.swift; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
 				423053491DC1302F003AE80B /* RMBulletin.swift */,
 				4230534B1DC1338B003AE80B /* RMGroup.swift */,
+				426C7E491DC14BB300A2C749 /* RMChore.swift */,
 			);
 			name = RMClasses;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
+				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
