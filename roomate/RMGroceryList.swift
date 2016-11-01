@@ -19,7 +19,7 @@ public struct RMGroceryList {
     
     
     // Public Functions
-    
+    /*
     public func getCurrentUserGroceryList(userObjectId: String) -> RMGroceryList {
     
     }
@@ -74,5 +74,5 @@ public struct RMGroceryList {
     
     
     
-    
+    */
 }
