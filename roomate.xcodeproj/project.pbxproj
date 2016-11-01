@@ -82,6 +82,11 @@
 		42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBCommentCell.xib; path = "Bulletin Board/DetailBBCommentCell.xib"; sourceTree = "<group>"; };
 		42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBViewController.swift; path = "Bulletin Board/DetailBBViewController.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
+		85F003F01DC7EE39008CA377 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
+		85F003F21DC7F374008CA377 /* RMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGroceryList.swift; sourceTree = "<group>"; };
+		85F003F41DC7F71F008CA377 /* RMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGrocery.swift; sourceTree = "<group>"; };
+		85F003F61DC808CE008CA377 /* RMFinanceBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceBill.swift; sourceTree = "<group>"; };
+		85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMNotificationManager.swift; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		900C6D461DB81CBD00D27507 /* Finance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Finance.storyboard; sourceTree = "<group>"; };
@@ -148,6 +153,11 @@
 				90B693351DBF0B480052A6BF /* RMAuth.swift */,
 				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
 				423053491DC1302F003AE80B /* RMBulletin.swift */,
+				85F003F01DC7EE39008CA377 /* RMUser.swift */,
+				85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */,
+				85F003F21DC7F374008CA377 /* RMGroceryList.swift */,
+				85F003F41DC7F71F008CA377 /* RMGrocery.swift */,
+				85F003F61DC808CE008CA377 /* RMFinanceBill.swift */,
 				4230534B1DC1338B003AE80B /* RMGroup.swift */,
 				426C7E491DC14BB300A2C749 /* RMChore.swift */,
 			);
@@ -462,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */,
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
@@ -470,6 +481,7 @@
 				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
 				4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */,
+				85F003F91DC80A8F008CA377 /* RMNotificationManager.swift in Sources */,
 				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
 				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
 				42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */,
