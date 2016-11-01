@@ -263,7 +263,6 @@
 				9097F4A71DC82F7A0056FA78 /* Chore */,
 				9097F4A81DC835580056FA78 /* Shopping */,
 				9097F4A91DC835F50056FA78 /* Settings */,
-				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
 				90B693371DBF0D070052A6BF /* Supporting Files */,
 				90B6933A1DBF0D2B0052A6BF /* Core Data */,
 			);
@@ -700,7 +699,6 @@
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
 				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
-				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
 				9097F4C51DC875670056FA78 /* RMChoreInformationDetailsViewController.swift in Sources */,
 				9097F4D91DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift in Sources */,
 				9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */,
