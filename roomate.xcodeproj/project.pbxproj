@@ -36,6 +36,15 @@
 		9097F4A21DC817CC0056FA78 /* RMDebtorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4A11DC817CC0056FA78 /* RMDebtorsTableViewCell.swift */; };
 		9097F4A41DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4A31DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib */; };
 		9097F4A61DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */; };
+		9097F4AB1DC860050056FA78 /* RMChoreMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4AA1DC860050056FA78 /* RMChoreMainTableViewController.swift */; };
+		9097F4AD1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4AC1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib */; };
+		9097F4B61DC864540056FA78 /* RMChoreAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4B51DC864540056FA78 /* RMChoreAddViewController.swift */; };
+		9097F4B81DC8716F0056FA78 /* RMChoreAddTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4B71DC8716F0056FA78 /* RMChoreAddTypeViewController.swift */; };
+		9097F4BA1DC872760056FA78 /* RMChoreInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4B91DC872760056FA78 /* RMChoreInformationTableViewController.swift */; };
+		9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4BB1DC872F80056FA78 /* RMChoreMainTableViewCell.swift */; };
+		9097F4C11DC873FD0056FA78 /* RMChoreInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C01DC873FD0056FA78 /* RMChoreInformationTableViewCell.swift */; };
+		9097F4C31DC874130056FA78 /* RMChoreInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4C21DC874130056FA78 /* RMChoreInformationTableViewCell.xib */; };
+		9097F4C51DC875670056FA78 /* RMChoreInformationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C41DC875670056FA78 /* RMChoreInformationDetailsViewController.swift */; };
 		90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */; };
 		90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693351DBF0B480052A6BF /* RMAuth.swift */; };
 		90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B693381DBF0D110052A6BF /* GoogleService-Info.plist */; };
@@ -92,6 +101,15 @@
 		9097F4A11DC817CC0056FA78 /* RMDebtorsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMDebtorsTableViewCell.swift; sourceTree = "<group>"; };
 		9097F4A31DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMFinanceInvoiceTableViewCell.xib; sourceTree = "<group>"; };
 		9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4AA1DC860050056FA78 /* RMChoreMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreMainTableViewController.swift; sourceTree = "<group>"; };
+		9097F4AC1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMChoreMainTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4B51DC864540056FA78 /* RMChoreAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreAddViewController.swift; sourceTree = "<group>"; };
+		9097F4B71DC8716F0056FA78 /* RMChoreAddTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreAddTypeViewController.swift; sourceTree = "<group>"; };
+		9097F4B91DC872760056FA78 /* RMChoreInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreInformationTableViewController.swift; sourceTree = "<group>"; };
+		9097F4BB1DC872F80056FA78 /* RMChoreMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreMainTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4C01DC873FD0056FA78 /* RMChoreInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreInformationTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4C21DC874130056FA78 /* RMChoreInformationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMChoreInformationTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4C41DC875670056FA78 /* RMChoreInformationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreInformationDetailsViewController.swift; sourceTree = "<group>"; };
 		90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLoginViewController.swift; sourceTree = "<group>"; };
 		90B693351DBF0B480052A6BF /* RMAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMAuth.swift; sourceTree = "<group>"; };
 		90B693381DBF0D110052A6BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -123,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				900C6D441DB81C2400D27507 /* Login.storyboard */,
+				90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */,
 				4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */,
 				426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */,
 			);
@@ -165,17 +184,16 @@
 			isa = PBXGroup;
 			children = (
 				9097F48D1DC8062E0056FA78 /* roomate.entitlements */,
+				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
+				900C6D411DB80FF500D27507 /* Main.storyboard */,
+				424CF5D91DB8033F00B24160 /* RMClasses */,
 				426C7E461DC1404C00A2C749 /* Assets */,
 				4230534D1DC134B8003AE80B /* Login */,
 				9097F48E1DC80D810056FA78 /* Finance */,
-				424CF5D91DB8033F00B24160 /* RMClasses */,
-				90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */,
-				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
-				900C6D411DB80FF500D27507 /* Main.storyboard */,
-				900C6D501DB81D3800D27507 /* Settings.storyboard */,
-				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
+				9097F4A71DC82F7A0056FA78 /* Chore */,
+				9097F4A81DC835580056FA78 /* Shopping */,
+				9097F4A91DC835F50056FA78 /* Settings */,
 				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
-				900C6D481DB81CD800D27507 /* Chore.storyboard */,
 				90B693371DBF0D070052A6BF /* Supporting Files */,
 				90B6933A1DBF0D2B0052A6BF /* Core Data */,
 			);
@@ -247,6 +265,63 @@
 				9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */,
 			);
 			name = Invoice;
+			sourceTree = "<group>";
+		};
+		9097F4A71DC82F7A0056FA78 /* Chore */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D481DB81CD800D27507 /* Chore.storyboard */,
+				9097F4BD1DC8736A0056FA78 /* Main */,
+				9097F4BF1DC873B80056FA78 /* Add */,
+				9097F4BE1DC873750056FA78 /* Information */,
+			);
+			name = Chore;
+			sourceTree = "<group>";
+		};
+		9097F4A81DC835580056FA78 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
+			);
+			name = Shopping;
+			sourceTree = "<group>";
+		};
+		9097F4A91DC835F50056FA78 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D501DB81D3800D27507 /* Settings.storyboard */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		9097F4BD1DC8736A0056FA78 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4AA1DC860050056FA78 /* RMChoreMainTableViewController.swift */,
+				9097F4AC1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib */,
+				9097F4BB1DC872F80056FA78 /* RMChoreMainTableViewCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9097F4BE1DC873750056FA78 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4B91DC872760056FA78 /* RMChoreInformationTableViewController.swift */,
+				9097F4C21DC874130056FA78 /* RMChoreInformationTableViewCell.xib */,
+				9097F4C01DC873FD0056FA78 /* RMChoreInformationTableViewCell.swift */,
+				9097F4C41DC875670056FA78 /* RMChoreInformationDetailsViewController.swift */,
+			);
+			name = Information;
+			sourceTree = "<group>";
+		};
+		9097F4BF1DC873B80056FA78 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4B51DC864540056FA78 /* RMChoreAddViewController.swift */,
+				9097F4B71DC8716F0056FA78 /* RMChoreAddTypeViewController.swift */,
+			);
+			name = Add;
 			sourceTree = "<group>";
 		};
 		90B693371DBF0D070052A6BF /* Supporting Files */ = {
@@ -386,12 +461,14 @@
 				900C6D451DB81C2400D27507 /* Login.storyboard in Resources */,
 				900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */,
 				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
+				9097F4C31DC874130056FA78 /* RMChoreInformationTableViewCell.xib in Resources */,
 				9097F4A01DC8178A0056FA78 /* RMDebtorsTableViewCell.xib in Resources */,
 				900C6D431DB80FF500D27507 /* Main.storyboard in Resources */,
 				4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */,
 				900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */,
 				90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */,
 				9097F49C1DC814F20056FA78 /* RMDebtsTableViewCell.xib in Resources */,
+				9097F4AD1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib in Resources */,
 				9097F4A41DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib in Resources */,
 				900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */,
 				4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */,
@@ -508,18 +585,25 @@
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
+				9097F4C51DC875670056FA78 /* RMChoreInformationDetailsViewController.swift in Sources */,
+				9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
 				4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */,
 				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
 				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
+				9097F4B81DC8716F0056FA78 /* RMChoreAddTypeViewController.swift in Sources */,
 				9097F4921DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift in Sources */,
+				9097F4BA1DC872760056FA78 /* RMChoreInformationTableViewController.swift in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
 				9097F4961DC80EDB0056FA78 /* RMFinanceInvoiceContainerTableViewController.swift in Sources */,
 				9097F49E1DC8156D0056FA78 /* RMDebtsTableViewCell.swift in Sources */,
+				9097F4AB1DC860050056FA78 /* RMChoreMainTableViewController.swift in Sources */,
 				9097F4A61DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift in Sources */,
 				9097F4901DC80DEE0056FA78 /* RMFinanceMainViewController.swift in Sources */,
+				9097F4C11DC873FD0056FA78 /* RMChoreInformationTableViewCell.swift in Sources */,
 				9097F4A21DC817CC0056FA78 /* RMDebtorsTableViewCell.swift in Sources */,
 				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
+				9097F4B61DC864540056FA78 /* RMChoreAddViewController.swift in Sources */,
 				9097F4941DC80EBE0056FA78 /* RMFinanceInvoiceViewController.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
 			);

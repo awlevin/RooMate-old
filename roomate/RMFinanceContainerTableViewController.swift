@@ -68,5 +68,9 @@ class RMFinanceContainerTableViewController: UITableViewController {
         } 
         return UITableViewCell()
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // PRESENT ALERT VIEW CONTROLLER OF DETAILS
+    }
 
 }

@@ -272,7 +272,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PMd-wB-Abl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ee6-2B-obC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ee6-2B-obC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
