@@ -51,5 +51,5 @@ public struct RMFinanceBill {
     private func calculateAmountDue(percentage: Double) -> Double {
     
     }
-     */
+ */
 }

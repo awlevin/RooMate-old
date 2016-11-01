@@ -1,16 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OMv-r7-sjE">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PMd-wB-Abl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Finance-->
-        <scene sceneID="puH-bA-LjR">
+        <scene sceneID="sYL-AJ-C74">
             <objects>
-                <tableViewController id="OMv-r7-sjE" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FxF-qS-plv">
+                <viewController id="hXu-ao-VMJ" customClass="RMFinanceMainViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1dp-HU-jCc"/>
+                        <viewControllerLayoutGuide type="bottom" id="zy2-Uc-Z7D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LoZ-hd-LzP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -187,6 +195,9 @@
                             <outlet property="delegate" destination="TyV-Ca-hNk" id="rIl-jR-NcB"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Finance" id="sF7-MG-fWe"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tev-h5-xiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -249,9 +260,11 @@
                             <outlet property="delegate" destination="EFC-WZ-FWY" id="hmz-ED-qJT"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Finance" id="sF7-MG-fWe"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="allButton" destination="pRQ-u5-ulb" id="HCY-px-p42"/>
+                        <outlet property="totalCostLabel" destination="fMn-gk-ImJ" id="uVf-BU-XbX"/>
+                        <outlet property="totalLabel" destination="Sa4-tu-ya1" id="yYO-4c-SwV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gL-wL-E8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
