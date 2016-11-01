@@ -24,10 +24,10 @@ public struct RMUser: Hashable {
     
     
     // Public Functions
-    
+    /*
     public func createUser(user: RMUser) -> String? {
         
-    }
+    }*/
 }
 
 

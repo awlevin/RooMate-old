@@ -21,7 +21,7 @@ public struct RMFinanceBill {
     
     
     // Public Functions
-    
+    /*
     public func generateUserBill(userId: String) -> RMFinanceBill {
         
     }
@@ -51,4 +51,5 @@ public struct RMFinanceBill {
     private func calculateAmountDue(percentage: Double) -> Double {
     
     }
+     */
 }
