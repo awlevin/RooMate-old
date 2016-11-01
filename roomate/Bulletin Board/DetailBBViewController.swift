@@ -25,9 +25,9 @@ class DetailBBViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if((bulletinPostItem?.comments.count)! > 2) {
-            navigationController?.hidesBarsOnSwipe = true
-        }
+        //if((bulletinPostItem?.comments.count)! > 2) {
+          //  navigationController?.hidesBarsOnSwipe = true
+        //}
         
         title = bulletinPostItem?.title
         descriptionLabel.text = bulletinPostItem?.description
@@ -38,7 +38,7 @@ class DetailBBViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         
         commentsTableView.tableFooterView = UIView()
-        tableHeight.constant = CGFloat(85*(bulletinPostItem?.comments.count)!)
+        tableHeight.constant = CGFloat(60*(bulletinPostItem?.comments.count)! + 40)
         //commentsTableView.layoutIfNeeded()
         
         
@@ -101,6 +101,10 @@ class DetailBBViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (bulletinPostItem?.comments.count)!
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Comments"
     }
     
     /*
