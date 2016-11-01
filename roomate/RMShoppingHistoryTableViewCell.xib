@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="75" id="e2s-GB-R8P" customClass="RMShoppingHistoryTableViewCell" customModule="roomate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e2s-GB-R8P" id="hW5-mt-Rf0">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSl-4X-5uj">
+                        <rect key="frame" x="8" y="18" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-wF-Chx">
+                        <rect key="frame" x="8" y="36" width="36" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dSl-4X-5uj" firstAttribute="leading" secondItem="hW5-mt-Rf0" secondAttribute="leadingMargin" id="RZn-Ao-B0P"/>
+                    <constraint firstItem="yVy-wF-Chx" firstAttribute="top" secondItem="hW5-mt-Rf0" secondAttribute="topMargin" constant="28" id="gc5-2P-Qi9"/>
+                    <constraint firstItem="dSl-4X-5uj" firstAttribute="top" secondItem="hW5-mt-Rf0" secondAttribute="topMargin" constant="10" id="u43-Fb-4GK"/>
+                    <constraint firstItem="dSl-4X-5uj" firstAttribute="leading" secondItem="yVy-wF-Chx" secondAttribute="leading" id="xjV-3c-Sgm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="yVy-wF-Chx" id="COb-aC-8Cp"/>
+                <outlet property="nameLabel" destination="dSl-4X-5uj" id="izn-1c-Jh7"/>
+                <outlet property="titleLabel" destination="dSl-4X-5uj" id="XsZ-fq-kh8"/>
+            </connections>
+            <point key="canvasLocation" x="-158.5" y="-0.5"/>
+        </tableViewCell>
+    </objects>
+</document>

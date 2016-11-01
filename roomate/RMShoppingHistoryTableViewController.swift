@@ -1,5 +1,5 @@
 //
-//  RMChoreMainTableViewController.swift
+//  RMShoppingHistoryTableViewController.swift
 //  roomate
 //
 //  Created by Corey Pett on 11/1/16.
@@ -8,15 +8,13 @@
 
 import UIKit
 
-class RMChoreMainTableViewController: UITableViewController {
+class RMShoppingHistoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        tableView.registerNib(UINib(nibName: "RMChoreMainTableViewCell", bundle: nil), forCellReuseIdentifier: "ChoreCell")
+
+        tableView.registerNib(UINib(nibName: "RMShoppingHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")
     }
-    
 
     // MARK: - Table view data source
     
@@ -31,7 +29,7 @@ class RMChoreMainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:RMChoreMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ChoreCell", forIndexPath: indexPath) as! RMChoreMainTableViewCell
+        let cell:RMShoppingHistoryTableViewCell = tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath) as! RMShoppingHistoryTableViewCell
         
         cell.configureCell()
         
@@ -40,6 +38,12 @@ class RMChoreMainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CompleteCheckoutSegue" {
+            
+        }
     }
 
 }
