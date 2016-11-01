@@ -21,7 +21,7 @@ class RMLoginViewController: UIViewController {
         auth.viewController = self
         auth.loginWith(.Facebook) { (success) in
             if success {
-               self.performSegueWithIdentifier("segue", sender: self)
+               self.performSegueWithIdentifier("segueFromLogin", sender: self)
             } else {
                 // handle error
             }

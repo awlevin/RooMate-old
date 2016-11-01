@@ -49,10 +49,10 @@ private extension RMAuth {
             // If token does not exist
         else {
             let loginManager = FBSDKLoginManager()
-            let readPermission = ["public_profile", "email", "user_posts"]
+            let readPermission = ["public_profile", "email"]
             loginManager.logInWithReadPermissions(readPermission, fromViewController: self.viewController, handler: { (loginResult, error) in
                 
-                let permissionSet : Set = ["public_profile", "email", "user_posts"]
+                let permissionSet : Set = ["public_profile", "email"]
                 
                 if error != nil {
                     print("Facebook login: Error - \(error)")
@@ -73,7 +73,7 @@ private extension RMAuth {
     }
     
     private func saveFacebookDetails(){
-        let requestParameters = ["fields": "id, link, email, first_name, last_name, feed"]
+        let requestParameters = ["fields": "id, link, email, first_name, last_name"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in
             if error != nil {
