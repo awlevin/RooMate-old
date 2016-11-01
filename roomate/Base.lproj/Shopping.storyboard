@@ -30,6 +30,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Shopping" id="zww-7p-5qC"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVD-ge-ljB" userLabel="First Responder" sceneMemberID="firstResponder"/>
