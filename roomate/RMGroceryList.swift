@@ -73,6 +73,4 @@ public struct RMGroceryList {
     
     
     */
-    
-    */
 }

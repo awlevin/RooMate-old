@@ -27,7 +27,8 @@ public struct RMUser: Hashable {
     /*
     public func createUser(user: RMUser) -> String? {
         
-    }*/
+    }
+     */
 }
 
 
