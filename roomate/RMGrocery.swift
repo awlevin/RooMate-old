@@ -18,7 +18,7 @@ public struct RMGrocery {
     
     
     // Public Functions
-    
+    /*
     public func getGrocery(listId: String, objectId: String) -> RMGrocery {
         
     }
@@ -41,4 +41,5 @@ public struct RMGrocery {
     private func changeCommunalState() {
         
     }
+     */
 }
