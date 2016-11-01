@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */; };
+		422B65C91DC86092003A911D /* DetailBBPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */; };
 		4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423053491DC1302F003AE80B /* RMBulletin.swift */; };
 		4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534B1DC1338B003AE80B /* RMGroup.swift */; };
 		4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */; };
@@ -20,6 +22,12 @@
 		426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */; };
 		426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */; };
 		426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E491DC14BB300A2C749 /* RMChore.swift */; };
+		42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */; };
+		42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */; };
+		42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */; };
+		42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */; };
+		42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */; };
+		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
 		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
 		900C6D451DB81C2400D27507 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D441DB81C2400D27507 /* Login.storyboard */; };
 		900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D461DB81CBD00D27507 /* Finance.storyboard */; };
@@ -48,6 +56,8 @@
 		0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.debug.xcconfig"; sourceTree = "<group>"; };
+		422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBPhotoCell.swift; path = "Bulletin Board/DetailBBPhotoCell.swift"; sourceTree = "<group>"; };
+		422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBPhotoCell.xib; path = "Bulletin Board/DetailBBPhotoCell.xib"; sourceTree = "<group>"; };
 		423053491DC1302F003AE80B /* RMBulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletin.swift; path = RMClasses/RMBulletin.swift; sourceTree = "<group>"; };
 		4230534B1DC1338B003AE80B /* RMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMGroup.swift; path = RMClasses/RMGroup.swift; sourceTree = "<group>"; };
 		4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupSelectionVC.swift; path = Login/GroupSelectionVC.swift; sourceTree = "<group>"; };
@@ -65,6 +75,12 @@
 		426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginStringConst.swift; path = Login/LoginStringConst.swift; sourceTree = "<group>"; };
 		426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RMImageSet.xcassets; path = RMAssets/RMImageSet.xcassets; sourceTree = "<group>"; };
 		426C7E491DC14BB300A2C749 /* RMChore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMChore.swift; path = RMClasses/RMChore.swift; sourceTree = "<group>"; };
+		42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BulletinBoardVC.swift; path = "Bulletin Board/BulletinBoardVC.swift"; sourceTree = "<group>"; };
+		42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BulletinBoardCellCollectionViewCell.swift; path = "Bulletin Board/BulletinBoardCellCollectionViewCell.swift"; sourceTree = "<group>"; };
+		42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BulletinBoardCellCollectionViewCell.xib; path = "Bulletin Board/BulletinBoardCellCollectionViewCell.xib"; sourceTree = "<group>"; };
+		42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBCommentCell.swift; path = "Bulletin Board/DetailBBCommentCell.swift"; sourceTree = "<group>"; };
+		42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBCommentCell.xib; path = "Bulletin Board/DetailBBCommentCell.xib"; sourceTree = "<group>"; };
+		42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBViewController.swift; path = "Bulletin Board/DetailBBViewController.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -110,6 +126,22 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		423BEAD51DC7B8FB000C7500 /* Bulletin Board */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
+				42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */,
+				42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */,
+				42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */,
+				42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */,
+				422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */,
+				422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */,
+				42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */,
+				42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */,
+			);
+			name = "Bulletin Board";
+			sourceTree = "<group>";
+		};
 		424CF5D91DB8033F00B24160 /* RMClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +177,7 @@
 		4250E28B1DA0314C002F7FA7 /* roomate */ = {
 			isa = PBXGroup;
 			children = (
+				423BEAD51DC7B8FB000C7500 /* Bulletin Board */,
 				426C7E461DC1404C00A2C749 /* Assets */,
 				4230534D1DC134B8003AE80B /* Login */,
 				424CF5D91DB8033F00B24160 /* RMClasses */,
@@ -154,7 +187,6 @@
 				900C6D411DB80FF500D27507 /* Main.storyboard */,
 				900C6D501DB81D3800D27507 /* Settings.storyboard */,
 				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
-				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
 				900C6D481DB81CD800D27507 /* Chore.storyboard */,
 				900C6D461DB81CBD00D27507 /* Finance.storyboard */,
 				90B693371DBF0D070052A6BF /* Supporting Files */,
@@ -312,10 +344,13 @@
 				900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */,
 				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
 				900C6D431DB80FF500D27507 /* Main.storyboard in Resources */,
+				42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */,
+				42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */,
 				4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */,
 				900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */,
 				90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */,
 				900C6D471DB81CBD00D27507 /* Finance.storyboard in Resources */,
+				422B65C91DC86092003A911D /* DetailBBPhotoCell.xib in Resources */,
 				4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,13 +465,18 @@
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
+				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
+				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
 				4250E28F1DA0314C002F7FA7 /* ViewController.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
 				4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */,
 				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
 				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
+				42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
+				42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */,
 				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
+				42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
