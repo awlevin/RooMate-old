@@ -658,6 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift in Sources */,
+				85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */,
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
@@ -674,6 +675,7 @@
 				9097F4CF1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift in Sources */,
 				9097F4921DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift in Sources */,
 				9097F4BA1DC872760056FA78 /* RMChoreInformationTableViewController.swift in Sources */,
+				85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
 				9097F4961DC80EDB0056FA78 /* RMFinanceInvoiceContainerTableViewController.swift in Sources */,
 				9097F49E1DC8156D0056FA78 /* RMDebtsTableViewCell.swift in Sources */,
@@ -686,9 +688,11 @@
 				9097F4D71DC91B420056FA78 /* RMShoppingMainTableViewCell.swift in Sources */,
 				9097F4CB1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift in Sources */,
 				9097F4A21DC817CC0056FA78 /* RMDebtorsTableViewCell.swift in Sources */,
+				85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */,
 				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
 				9097F4B61DC864540056FA78 /* RMChoreAddViewController.swift in Sources */,
 				9097F4941DC80EBE0056FA78 /* RMFinanceInvoiceViewController.swift in Sources */,
+				85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
