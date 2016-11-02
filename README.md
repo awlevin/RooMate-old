@@ -27,7 +27,7 @@
 * Xcode 8
 * OSX 10.11+
 * iOS 9.2+
-* Cocoapods (see note below)
+* Cocoapods (see note below)\s\s
 **NOTE:** We use cocoapods as the third party library management tool. If you do not have cocoapods installed, please visit [here](https://guides.cocoapods.org/using/getting-started.html) before continuing.
 
 ####Installing the app
