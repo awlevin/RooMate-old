@@ -16,15 +16,17 @@
                         <viewControllerLayoutGuide type="bottom" id="zy2-Uc-Z7D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LoZ-hd-LzP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FOP-iF-Rph">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="Debts"/>
                                     <segment title="Statistics"/>
                                     <segment title="Debtors"/>
                                 </segments>
+                                <color key="tintColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentDidChange:" destination="hXu-ao-VMJ" eventType="valueChanged" id="Xct-yJ-doq"/>
                                 </connections>
@@ -70,7 +72,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PEQ-zg-7sK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fz6-ME-RjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsL-5l-jfo">
@@ -147,7 +149,7 @@
             <objects>
                 <tableViewController id="TyV-Ca-hNk" customClass="RMFinanceInvoiceContainerTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bZ7-EB-r82">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="476"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="433.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="vx6-0s-V32">
@@ -195,7 +197,7 @@
             <objects>
                 <tableViewController id="EFC-WZ-FWY" customClass="RMFinanceContainerTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="t5U-Lz-MVs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="pF6-dF-brL">
@@ -213,7 +215,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRQ-u5-ulb">
-                                    <state key="normal" title="Remind All"/>
+                                    <state key="normal" title="Remind All">
+                                        <color key="titleColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="allButtonPressed:" destination="EFC-WZ-FWY" eventType="touchUpInside" id="jvx-fL-NOb"/>
                                     </connections>
@@ -257,15 +261,25 @@
         <!--Finance-->
         <scene sceneID="TRa-Xd-YIw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PMd-wB-Abl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="PMd-wB-Abl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Finance" id="tGK-AD-P1o"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ee6-2B-obC">
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ee6-2B-obC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JZB-LN-c0u">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="hXu-ao-VMJ" kind="relationship" relationship="rootViewController" id="iPe-jg-Uoj"/>
                     </connections>

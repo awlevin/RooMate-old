@@ -38,7 +38,7 @@
                                         </view>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aBF-Qv-pES" customClass="BulletinBoardCellCollectionViewCell" customModule="roomate" customModuleProvider="target">
-                                        <rect key="frame" x="138" y="10" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="10" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -62,7 +62,7 @@
                                         </view>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pSS-eg-Efm" customClass="BulletinBoardCellCollectionViewCell" customModule="roomate" customModuleProvider="target">
-                                        <rect key="frame" x="138" y="125" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="125" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -127,7 +127,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DdT-Eg-tn4" customClass="DetailBBPhotoCell" customModule="roomate" customModuleProvider="target">
-                                                            <rect key="frame" x="40" y="11" width="264" height="220"/>
+                                                            <rect key="frame" x="40" y="10.5" width="264" height="220"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="220"/>
@@ -136,7 +136,7 @@
                                                             <size key="customSize" width="264" height="220"/>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="MkO-hl-4tS">
-                                                            <rect key="frame" x="314" y="11" width="264" height="220"/>
+                                                            <rect key="frame" x="314" y="10.5" width="264" height="220"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="220"/>
@@ -145,7 +145,7 @@
                                                             <size key="customSize" width="264" height="220"/>
                                                         </collectionViewCell>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="L5F-tM-Qxr">
-                                                            <rect key="frame" x="588" y="11" width="264" height="220"/>
+                                                            <rect key="frame" x="588" y="10.5" width="264" height="220"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="220"/>
@@ -184,7 +184,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hO-rm-IHX" id="W8x-ee-ulV">
-                                                    <frame key="frameInset" width="375" height="59"/>
+                                                    <frame key="frameInset" width="375" height="59.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
