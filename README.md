@@ -32,7 +32,8 @@
 **NOTE:** We use cocoapods as the third party library management tool. If you do not have cocoapods installed, please visit [here](https://guides.cocoapods.org/using/getting-started.html) before continuing.
 
 ####Installing the app
-In your root directory for the project, run ```sh
+In your root directory for the project, run 
+```sh
 pod install
 ```
 
