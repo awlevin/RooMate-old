@@ -165,10 +165,10 @@
                                                 <color key="textColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akY-4S-6mK">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title Here" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="akY-4S-6mK">
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,6 +232,7 @@
                     <connections>
                         <outlet property="descriptionTextView" destination="O8g-XM-Jdo" id="hRq-R4-W2P"/>
                         <outlet property="imageCollectionView" destination="fsJ-NK-Hnb" id="GNF-0L-ibK"/>
+                        <outlet property="titleTextField" destination="akY-4S-6mK" id="fJ3-zN-TbQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNb-Yb-d7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
