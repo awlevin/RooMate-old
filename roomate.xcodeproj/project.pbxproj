@@ -27,6 +27,7 @@
 		42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */; };
 		42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */; };
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
+		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
 		85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F01DC7EE39008CA377 /* RMUser.swift */; };
 		85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F21DC7F374008CA377 /* RMGroceryList.swift */; };
 		85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F41DC7F71F008CA377 /* RMGrocery.swift */; };
@@ -114,6 +115,7 @@
 		42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBCommentCell.swift; path = "Bulletin Board/DetailBBCommentCell.swift"; sourceTree = "<group>"; };
 		42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBCommentCell.xib; path = "Bulletin Board/DetailBBCommentCell.xib"; sourceTree = "<group>"; };
 		42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBViewController.swift; path = "Bulletin Board/DetailBBViewController.swift"; sourceTree = "<group>"; };
+		42EB6B961DD10DE7002780BB /* createBBPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createBBPostVC.swift; path = "Bulletin Board/createBBPostVC.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		85F003F01DC7EE39008CA377 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
 		85F003F21DC7F374008CA377 /* RMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGroceryList.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */,
 				42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */,
 				42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */,
+				42EB6B961DD10DE7002780BB /* createBBPostVC.swift */,
 			);
 			name = "Bulletin Board";
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */,
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
+				42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
 				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
