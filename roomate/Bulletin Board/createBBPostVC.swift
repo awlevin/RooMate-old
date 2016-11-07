@@ -80,27 +80,6 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
         imageCollectionView.reloadData()
     }
     
-    /*func collectionView(collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
-        return CGSizeMake(collectionView.frame.width/1.25, collectionView.frame.height - 20)
-    }
-    
-    func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DetailBBPhotoCell
-        //cell.backgroundColor = defaultOrangeColor
-        
-    }
-    
-    func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! DetailBBPhotoCell
-        //cell.backgroundColor = UIColor.whiteColor()
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-    }*/
-    
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.textColor == UIColor.lightGrayColor() {
             textView.text = nil
