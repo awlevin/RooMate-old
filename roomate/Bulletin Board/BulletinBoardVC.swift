@@ -82,6 +82,11 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         }
     }
     
+    @IBAction func createNewBulletinBoardObject(sender: AnyObject) {
+        
+    }
+    
+    
     
     
     //    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
