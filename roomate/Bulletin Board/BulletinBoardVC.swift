@@ -13,13 +13,23 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var collectionView: UICollectionView!
     let identifier = "CellIdentifier"
     var defaultOrangeColor = UIColor(red: 232.0, green: 128.0, blue: 50.0, alpha: 1.0)
-    
+    var posts = [RMBulletinPost]()
+    let refresher = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refresher.backgroundColor = defaultOrangeColor
+        //refresher.tintColor = defaultOrangeColor
+        refresher.tintColor = UIColor.redColor()
+        refresher.addTarget(self, action: #selector(fetchNewPosts), forControlEvents: .ValueChanged)
+        collectionView!.addSubview(refresher)
+        
+        fetchNewPosts()
+        
         collectionView.registerNib(UINib(nibName: "BulletinBoardCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifier)
         // Do any additional setup after loading the view.
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -36,14 +46,23 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        if posts.count > 0 {
+            return posts.count
+        }
+        return 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! BulletinBoardCellCollectionViewCell
         
-        cell.thumbnailImage.image = UIImage(named: "LaunchImage")
-        cell.title.text = "Title"
+        if indexPath.row < posts.count{
+            cell.thumbnailImage.image = UIImage(named: "LaunchImage")
+            cell.title.text = posts[indexPath.row].title
+        } else {
+            cell.thumbnailImage.image = UIImage(named: "LaunchImage")
+            cell.title.text = "Title"
+        }
+        
         defaultOrangeColor = cell.title.textColor
         return cell
     }
@@ -74,7 +93,7 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         if segue.identifier == LoginStringConst.detailBBPostSegue {
             let destinationVC = segue.destinationViewController as! DetailBBViewController
             
-            destinationVC.bulletinPostItem = RMBulletinPost(objectId: "ABC", dateCreatedAt: "", dateupdatedAt: "", title: "Test Bulletin Post", description: "Something very long about the post will go here. This will be set once by the creator and will not be editable for the beta version", pinNote: false, photos: [], thumbnail: "", daysBeforeRemoval: 2, comments: ["Ritvik": "This is awesome", "Hunter": "It really is!"])
+            destinationVC.bulletinPostItem = RMBulletinPost(objectId: -1, dateCreatedAt: "", dateupdatedAt: "", title: "Test Bulletin Post", description: "Something very long about the post will go here. This will be set once by the creator and will not be editable for the beta version", pinNote: false, photos: [], thumbnail: "", removalDate: "", comments: ["Ritvik": "This is awesome", "Hunter": "It really is!"])
             
             let backItem = UIBarButtonItem()
             backItem.title = "Posts"
@@ -86,7 +105,23 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
     }
     
-    
+    func fetchNewPosts() {
+        let lastid = Int(INT_MAX)
+        //if self.posts.count == 0 {
+            //lastid = Int(INT_MAX)
+        //}
+        RMBulletinPost.getBulletinPosts(0, lastid: lastid, groupId: 1) { (bbPosts) in
+            if bbPosts.count > 0 {
+                for items in bbPosts{
+                    self.posts.append(items)
+                }
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.collectionView.reloadData()
+                self.refresher.endRefreshing()
+            })
+        }
+    }
     
     
     //    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {

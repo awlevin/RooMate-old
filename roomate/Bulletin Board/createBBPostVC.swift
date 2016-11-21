@@ -17,7 +17,7 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
-    var imageAddedCollection : [UIImage] = []
+    var imageAddedCollection : [String] = []
     
     let collectionCellIdentifier = "CollectionCellIdentifier"
     
@@ -60,7 +60,7 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
             cell.cellPhoto.image = UIImage(named: "LaunchImage")
         }
         else {
-            cell.cellPhoto.image = imageAddedCollection[indexPath.row]
+            cell.cellPhoto.image = getImageForBase64(imageAddedCollection[indexPath.row])
         }
         return cell
     }
@@ -83,7 +83,7 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
-        imageAddedCollection.append(image)
+        imageAddedCollection.append(getBase64ForImage(image))
         imageCollectionView.reloadData()
     }
     
@@ -147,6 +147,32 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
         }
     }
     
+    @IBAction func submitPressed(sender: AnyObject) {
+        let bbtitle = self.titleTextField.text!
+        let bbdescription = self.descriptionTextView.text!
+        let bbObject = RMBulletinPost(objectId: -1,
+                                      dateCreatedAt: "",
+                                      dateupdatedAt: "",
+                                      title: bbtitle, description: bbdescription, pinNote: false, photos: self.imageAddedCollection, thumbnail: "", removalDate: "", comments: ["Something":"Something"])
+        RMBulletinPost.createNewBulletinPost(bbObject) { (completed) in
+            if completed {
+                print("COMPLETED")
+            } else {
+                print("NOT COMPLETED")
+            }
+        }
+    }
+    
+    func getBase64ForImage(image : UIImage) -> String {
+        let imageJPEG = UIImageJPEGRepresentation(image, 1.0)
+        let imageData = imageJPEG?.base64EncodedStringWithOptions([.Encoding64CharacterLineLength])
+        return imageData!
+    }
+    
+    func getImageForBase64(imageData: String) -> UIImage {
+        let imageData = NSData(base64EncodedString: imageData, options: [.IgnoreUnknownCharacters])
+        return UIImage(data: imageData!)!
+    }
     /*
     // MARK: - Navigation
 

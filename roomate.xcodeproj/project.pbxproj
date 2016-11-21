@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4214D5051DD14A4B00739747 /* SRMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */; };
 		422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */; };
 		422B65C91DC86092003A911D /* DetailBBPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */; };
 		4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423053491DC1302F003AE80B /* RMBulletin.swift */; };
@@ -91,6 +92,7 @@
 		0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.debug.xcconfig"; sourceTree = "<group>"; };
+		4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRMBulletinPost.swift; path = "RM API Classes/SRMBulletinPost.swift"; sourceTree = "<group>"; };
 		422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBPhotoCell.swift; path = "Bulletin Board/DetailBBPhotoCell.swift"; sourceTree = "<group>"; };
 		422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBPhotoCell.xib; path = "Bulletin Board/DetailBBPhotoCell.xib"; sourceTree = "<group>"; };
 		423053491DC1302F003AE80B /* RMBulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletin.swift; path = RMClasses/RMBulletin.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4214D5031DD14A1500739747 /* RM API Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */,
+			);
+			name = "RM API Classes";
+			sourceTree = "<group>";
+		};
 		4230534D1DC134B8003AE80B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +268,7 @@
 				9097F48D1DC8062E0056FA78 /* roomate.entitlements */,
 				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
 				900C6D411DB80FF500D27507 /* Main.storyboard */,
+				4214D5031DD14A1500739747 /* RM API Classes */,
 				424CF5D91DB8033F00B24160 /* RMClasses */,
 				423BEAD51DC7B8FB000C7500 /* Bulletin Board */,
 				426C7E461DC1404C00A2C749 /* Assets */,
@@ -738,6 +749,7 @@
 				9097F4941DC80EBE0056FA78 /* RMFinanceInvoiceViewController.swift in Sources */,
 				85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
+				4214D5051DD14A4B00739747 /* SRMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
