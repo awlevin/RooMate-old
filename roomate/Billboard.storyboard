@@ -119,6 +119,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="wn8-Bb-TTw" eventType="touchUpInside" id="L7e-dV-aOY"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-lZ-qFs">
                                 <subviews>
@@ -134,7 +137,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="deS-Bq-Pro" customClass="DetailBBPhotoCell" customModule="roomate" customModuleProvider="target">
-                                                        <rect key="frame" x="50" y="16" width="258" height="221"/>
+                                                        <rect key="frame" x="50" y="40.5" width="258" height="221"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="258" height="221"/>
@@ -142,7 +145,7 @@
                                                         </view>
                                                     </collectionViewCell>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kjp-ua-YKz" customClass="DetailBBPhotoCell" customModule="roomate" customModuleProvider="target">
-                                                        <rect key="frame" x="318" y="16" width="258" height="221"/>
+                                                        <rect key="frame" x="318" y="40.5" width="258" height="221"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="258" height="221"/>
