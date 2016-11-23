@@ -80,8 +80,6 @@ public struct RMBulletinPost {
         request.addValue("\(lastid)", forHTTPHeaderField: "lastid")
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.timeoutIntervalForRequest = 8.0
-        configuration.timeoutIntervalForResource = 8.0
         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
