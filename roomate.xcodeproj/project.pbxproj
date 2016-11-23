@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4214D5051DD14A4B00739747 /* SRMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */; };
 		422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */; };
 		422B65C91DC86092003A911D /* DetailBBPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */; };
 		4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423053491DC1302F003AE80B /* RMBulletin.swift */; };
@@ -27,6 +28,7 @@
 		42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */; };
 		42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */; };
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
+		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
 		85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F01DC7EE39008CA377 /* RMUser.swift */; };
 		85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F21DC7F374008CA377 /* RMGroceryList.swift */; };
 		85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F41DC7F71F008CA377 /* RMGrocery.swift */; };
@@ -90,6 +92,7 @@
 		0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.debug.xcconfig"; sourceTree = "<group>"; };
+		4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRMBulletinPost.swift; path = "RM API Classes/SRMBulletinPost.swift"; sourceTree = "<group>"; };
 		422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBPhotoCell.swift; path = "Bulletin Board/DetailBBPhotoCell.swift"; sourceTree = "<group>"; };
 		422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBPhotoCell.xib; path = "Bulletin Board/DetailBBPhotoCell.xib"; sourceTree = "<group>"; };
 		423053491DC1302F003AE80B /* RMBulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletin.swift; path = RMClasses/RMBulletin.swift; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBCommentCell.swift; path = "Bulletin Board/DetailBBCommentCell.swift"; sourceTree = "<group>"; };
 		42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBCommentCell.xib; path = "Bulletin Board/DetailBBCommentCell.xib"; sourceTree = "<group>"; };
 		42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBViewController.swift; path = "Bulletin Board/DetailBBViewController.swift"; sourceTree = "<group>"; };
+		42EB6B961DD10DE7002780BB /* createBBPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createBBPostVC.swift; path = "Bulletin Board/createBBPostVC.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		85F003F01DC7EE39008CA377 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
 		85F003F21DC7F374008CA377 /* RMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGroceryList.swift; sourceTree = "<group>"; };
@@ -185,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4214D5031DD14A1500739747 /* RM API Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */,
+			);
+			name = "RM API Classes";
+			sourceTree = "<group>";
+		};
 		4230534D1DC134B8003AE80B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +220,7 @@
 				422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */,
 				42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */,
 				42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */,
+				42EB6B961DD10DE7002780BB /* createBBPostVC.swift */,
 			);
 			name = "Bulletin Board";
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 				9097F48D1DC8062E0056FA78 /* roomate.entitlements */,
 				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
 				900C6D411DB80FF500D27507 /* Main.storyboard */,
+				4214D5031DD14A1500739747 /* RM API Classes */,
 				424CF5D91DB8033F00B24160 /* RMClasses */,
 				423BEAD51DC7B8FB000C7500 /* Bulletin Board */,
 				426C7E461DC1404C00A2C749 /* Assets */,
@@ -696,6 +710,7 @@
 				85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */,
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
+				42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
 				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
@@ -734,6 +749,7 @@
 				9097F4941DC80EBE0056FA78 /* RMFinanceInvoiceViewController.swift in Sources */,
 				85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
+				4214D5051DD14A4B00739747 /* SRMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

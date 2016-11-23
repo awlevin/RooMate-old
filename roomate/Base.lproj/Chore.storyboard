@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M3J-9u-nNJ" id="Bd8-Gx-nYR">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rai-bR-Mpp" kind="show" id="P4l-sA-rvp"/>
+                                    <segue destination="Rai-bR-Mpp" kind="show" identifier="showChoreDetail" id="P4l-sA-rvp"/>
                                     <segue destination="tZr-vO-kQ8" kind="show" trigger="accessoryAction" id="8m3-u1-Fjx"/>
                                 </connections>
                             </tableViewCell>
@@ -69,17 +69,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYe-Qm-w8R">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vyz-px-47x">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="XPK-76-51R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Qz3-b9-gdS" firstAttribute="leading" secondItem="KaD-t7-7iU" secondAttribute="leading" id="3an-CV-Wvq"/>
                             <constraint firstItem="Qz3-b9-gdS" firstAttribute="leading" secondItem="pdc-mx-BIF" secondAttribute="leadingMargin" id="8Aa-Ea-hbP"/>
+                            <constraint firstItem="GYe-Qm-w8R" firstAttribute="top" secondItem="KaD-t7-7iU" secondAttribute="bottom" constant="8" id="FbF-J7-Bsa"/>
+                            <constraint firstItem="Vyz-px-47x" firstAttribute="leading" secondItem="Qz3-b9-gdS" secondAttribute="leading" id="KG1-j8-2h9"/>
+                            <constraint firstItem="Vyz-px-47x" firstAttribute="centerX" secondItem="pdc-mx-BIF" secondAttribute="centerX" id="OO7-CX-Wl0"/>
                             <constraint firstItem="KaD-t7-7iU" firstAttribute="trailing" secondItem="pdc-mx-BIF" secondAttribute="trailingMargin" id="XRg-Ha-s71"/>
                             <constraint firstItem="KaD-t7-7iU" firstAttribute="top" secondItem="Qz3-b9-gdS" secondAttribute="bottom" constant="8" symbolic="YES" id="Xyt-Hq-7xZ"/>
+                            <constraint firstItem="GYe-Qm-w8R" firstAttribute="leading" secondItem="pdc-mx-BIF" secondAttribute="leadingMargin" id="mgQ-EC-C4Z"/>
+                            <constraint firstItem="Vyz-px-47x" firstAttribute="top" secondItem="GYe-Qm-w8R" secondAttribute="bottom" constant="8" id="nkZ-N3-7LS"/>
+                            <constraint firstItem="Vyz-px-47x" firstAttribute="trailing" secondItem="pdc-mx-BIF" secondAttribute="trailingMargin" id="rvf-hn-hVB"/>
                             <constraint firstItem="Qz3-b9-gdS" firstAttribute="top" secondItem="wSR-uu-DbB" secondAttribute="bottom" constant="32" id="u97-Y7-XxH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextView" destination="Vyz-px-47x" id="Ank-6d-mSO"/>
                         <outlet property="titleTextField" destination="KaD-t7-7iU" id="Ig1-ut-X77"/>
                     </connections>
                 </viewController>
@@ -100,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y6i-5J-9Fg" id="AFA-HR-6Xs">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -205,7 +225,7 @@
                     <tabBarItem key="tabBarItem" title="Chore" id="rj1-UE-PPM"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X4w-F8-fnt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="X4w-F8-fnt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

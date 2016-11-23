@@ -14,7 +14,7 @@ public struct RMBulletin {
     var dateupdatedAt: String
     var posts: [RMBulletinPost]
     
-    public func getPostWithId(postId: String) -> RMBulletinPost?{
+    public func getPostWithId(postId: Int) -> RMBulletinPost?{
         for post in posts {
             if post.objectId == postId {
                 return post;
@@ -23,7 +23,7 @@ public struct RMBulletin {
         return nil;
     }
     
-    public mutating func deletePostWithId(postId: String)->Void{
+    public mutating func deletePostWithId(postId: Int)->Void{
         
         var delIndex = 0
         for post in posts {
