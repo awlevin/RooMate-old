@@ -46,10 +46,9 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if posts.count > 0 {
-            return posts.count
-        }
-        return 0
+        
+        return posts.count + 1
+        
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -57,7 +56,10 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         if indexPath.row < posts.count{
             cell.thumbnailImage.image = UIImage(named: "LaunchImage")
-            cell.title.text = posts[indexPath.row].title
+            cell.title.text = posts[indexPath.row].title + " \(posts[indexPath.row].objectId)"
+        } else if indexPath.row == posts.count {
+            cell.thumbnailImage.image = UIImage(named: "LaunchImage")
+            cell.title.text = "Load More"
         } else {
             cell.thumbnailImage.image = UIImage(named: "LaunchImage")
             cell.title.text = "Title"
@@ -86,6 +88,14 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == posts.count {
+            if posts.last != nil {
+                callFetchPosts(posts.last?.objectId)
+            } else {
+                fetchNewPosts()
+            }
+            return
+        }
         performSegueWithIdentifier(LoginStringConst.detailBBPostSegue, sender: nil)
     }
     
@@ -106,23 +116,32 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func fetchNewPosts() {
-        let lastid = Int(INT_MAX)
-        //if self.posts.count == 0 {
-            //lastid = Int(INT_MAX)
-        //}
-        RMBulletinPost.getBulletinPosts(0, lastid: lastid, groupId: 1) { (bbPosts) in
-            if bbPosts.count > 0 {
-                for items in bbPosts{
-                    self.posts.append(items)
+        let lastid = Int(INT16_MAX)
+        callFetchPosts(lastid)
+    }
+    
+    func callFetchPosts(lastid: Int?) {
+        var givenLastid = 0
+        if lastid != nil {
+            givenLastid = lastid!
+        }
+        RMBulletinPost.getBulletinPosts(0, lastid: givenLastid, groupId: 1) { (bbPosts) in
+            var fetchedPosts = bbPosts
+            if fetchedPosts.count > 0 {
+                fetchedPosts = fetchedPosts.sort( { $0.objectId > $1.objectId })
+                for post in fetchedPosts{
+                    if !self.posts.contains({ $0.objectId == post.objectId }) {
+                        self.posts.append(post)
+                    }
                 }
             }
             dispatch_async(dispatch_get_main_queue(), {
+                self.posts = self.posts.sort( { $0.objectId > $1.objectId })
                 self.collectionView.reloadData()
                 self.refresher.endRefreshing()
             })
         }
     }
-    
     
     //    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
     //        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! BulletinBoardCellCollectionViewCell

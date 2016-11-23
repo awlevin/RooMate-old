@@ -18,14 +18,28 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     let imagePicker = UIImagePickerController()
     var isBeforePhoto = false
     
+    var chore: RMChore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Setup Navigation Bar
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMFinanceInvoiceViewController.cancelPressed))
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMFinanceInvoiceViewController.donePressed))
     
         imagePicker.delegate = self
+        
+        if chore == nil {
+            let alertController = UIAlertController(title: "Error", message:
+                "Sorry, something went wrong. Please refresh the list of chores!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.Default,handler: {(alert: UIAlertAction!) in self.cancelPressed()}))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            self.titleLabel.text = chore.title
+            self.textView.text = chore.description
+        }
+
     }
     
     @IBAction func beforePhotoButtonPressed(sender: AnyObject) {
