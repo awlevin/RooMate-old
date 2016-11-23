@@ -10,11 +10,12 @@ import UIKit
 
 class RMChoreInformationTableViewController: UITableViewController {
 
+    var chore: RMChore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,7 +36,7 @@ class RMChoreInformationTableViewController: UITableViewController {
         
         let cell:RMChoreMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ChoreCell", forIndexPath: indexPath) as! RMChoreMainTableViewCell
         
-        cell.configureCell()
+        //cell.configureCell()
         
         return cell
     }

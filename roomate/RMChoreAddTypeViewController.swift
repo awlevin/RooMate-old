@@ -11,6 +11,7 @@ import UIKit
 class RMChoreAddTypeViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,11 @@ class RMChoreAddTypeViewController: UIViewController {
     func donePressed() {
         
         //TODO: Add chore to parent tableViewController and save
-        
-        self.navigationController?.popViewControllerAnimated(true)
+        RMChore.createNewChore(RMChore(objectId: -1, groupId: 1, dateCompleted: "", userId: 1, description: self.descriptionTextView.text, title: self.titleTextField.text!, beforePhoto: "", afterPhoto: "", completionHistory: ["":""], commentHistory: ["":""])) { (completed) in
+            
+            self.navigationController?.popViewControllerAnimated(true)
+            
+        }
     }
     
 }
