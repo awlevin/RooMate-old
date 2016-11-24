@@ -23,19 +23,19 @@ class RMShoppingMainViewController: UIViewController {
         let tableVC = self.childViewControllers.first as! RMShoppingMainTableViewController
         tableVC.tableView.reloadData()
         
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            return
-        case 1:
-            return
-        case 2:
-            
-            // TODO: CHANGE RIGHT BAR BUTTON TO "START SHOPPING"
-            
-            return
-        default:
-            return
-        }
+//        switch segmentedControl.selectedSegmentIndex {
+//        case 0:
+//            return
+//        case 1:
+//            return
+//        case 2:
+//            
+//            // TODO: CHANGE RIGHT BAR BUTTON TO "START SHOPPING"
+//            
+//            return
+//        default:
+//            return
+//        }
     }
     
     @IBAction func rightBarButtonPressed(sender: AnyObject) {
