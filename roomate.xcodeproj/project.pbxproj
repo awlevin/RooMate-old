@@ -1104,6 +1104,7 @@
 				42A467531DE67873003CEAD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

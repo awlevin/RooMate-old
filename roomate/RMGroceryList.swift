@@ -15,7 +15,7 @@ enum RMGroceryListTypes {
 }
 
 public struct RMGroceryList {
-    var objectId: String
+    var objectId: Int
     var dateCreatedAt: String
     var dateUpdatedAt: String
     var groceryList: [RMGrocery]
@@ -27,7 +27,7 @@ public struct RMGroceryList {
     
     // Public Functions
     
-    static func getGroceryList(userObjectId: String, lastid: Int, groupId: Int, listType: RMGroceryListTypes, completionHandler: (bbPosts: [RMGrocery])->()) {
+    static func getGroceryList(userObjectId: Int, lastid: Int, groupId: Int, listType: RMGroceryListTypes, completionHandler: (bbPosts: [RMGrocery])->()) {
         
         var backendURLpostfix: String
         

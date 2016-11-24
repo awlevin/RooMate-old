@@ -9,14 +9,12 @@
 import UIKit
 
 class RMShoppingMainViewController: UIViewController {
-
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func segmentValueDidChange(sender: AnyObject) {
@@ -54,5 +52,4 @@ class RMShoppingMainViewController: UIViewController {
         }
         
     }
-    
 }
