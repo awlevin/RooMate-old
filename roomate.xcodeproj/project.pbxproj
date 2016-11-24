@@ -25,6 +25,7 @@
 		42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */; };
 		42A4674D1DE67873003CEAD1 /* roomateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A4674C1DE67873003CEAD1 /* roomateUITests.swift */; };
 		42A467541DE67879003CEAD1 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467441DE677CB003CEAD1 /* UITests.swift */; };
+		42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
 		42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */; };
 		42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */; };
 		42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */; };
@@ -825,6 +826,7 @@
 			files = (
 				4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */,
 				42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */,
+				42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

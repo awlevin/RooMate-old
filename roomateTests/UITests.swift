@@ -47,9 +47,6 @@ class UITests: XCTestCase {
         let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element
         element.swipeLeft()
         element.tap()
-        element.swipeLeft()
-        app.navigationBars["New Title"].buttons["Posts"].tap()
-        app.navigationBars["Bulletin Board"].buttons["Add"].tap()
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
     }

@@ -63,11 +63,21 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     func donePressed() {
         
         //TODO: Save information to server
-        RMChore.updateChore(self.chore.objectId, beforePhoto: getBase64ForImage(beforePhotoImageView.image!), afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
-            if completed{
-                self.navigationController?.popViewControllerAnimated(true)
+        if afterPhotoImageView.image != nil {
+            RMChore.updateChoreAfter(self.chore.objectId, afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
+                if completed{
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
             }
         }
+        
+        if beforePhotoImageView.image != nil {
+            RMChore.updateChoreBefore(self.chore.objectId, beforePhoto: getBase64ForImage(beforePhotoImageView.image!)) { (completed) in
+                if completed{
+                }
+            }
+        }
+        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
