@@ -164,8 +164,9 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
     }
     
     func getBase64ForImage(image : UIImage) -> String {
-        let imageJPEG = UIImageJPEGRepresentation(image, 1.0)
+        let imageJPEG = UIImageJPEGRepresentation(image, 0.1)
         let imageData = imageJPEG?.base64EncodedStringWithOptions([.Encoding64CharacterLineLength])
+        print("******************\(imageData?.characters.count)")
         return imageData!
     }
     

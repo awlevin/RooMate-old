@@ -125,6 +125,97 @@ public struct RMChore {
         task.resume()
     }
     
+    static func updateChoreBefore(choreid: Int, beforePhoto: String, completionHandler: (completed: Bool)->()) {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/updateRMChoreBefore"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
+        
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let choreDictionary = ["choreid" : choreid,
+                               "beforePhotoURL" : beforePhoto]
+        
+        do
+        {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(choreDictionary, options: [.PrettyPrinted])
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil || statusCode != 200){
+                switch statusCode {
+                case 400:
+                    completionHandler(completed: false)
+                    break
+                default:
+                    completionHandler(completed: false)
+                    break
+                }
+                return
+            } else {
+                let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                completionHandler(completed: true)
+            }
+        }
+        task.resume()
+    }
+
+    static func updateChoreAfter(choreid: Int, afterPhoto: String, completionHandler: (completed: Bool)->()) {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/updateRMChoreAfter"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
+        
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let choreDictionary = ["choreid" : choreid,
+                               "afterPhotoURL" : afterPhoto]
+        
+        do
+        {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(choreDictionary, options: [.PrettyPrinted])
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil || statusCode != 200){
+                switch statusCode {
+                case 400:
+                    completionHandler(completed: false)
+                    break
+                default:
+                    completionHandler(completed: false)
+                    break
+                }
+                return
+            } else {
+                let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                completionHandler(completed: true)
+            }
+        }
+        task.resume()
+    }
 
     
     static func createChoreDictionary(choreObject: RMChore) -> [String : AnyObject] {
