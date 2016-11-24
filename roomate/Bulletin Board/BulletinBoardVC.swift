@@ -15,6 +15,7 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     var defaultOrangeColor = UIColor(red: 232.0, green: 128.0, blue: 50.0, alpha: 1.0)
     var posts = [RMBulletinPost]()
     let refresher = UIRefreshControl()
+    var postSelected: RMBulletinPost!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.postSelected = nil
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,8 +57,28 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! BulletinBoardCellCollectionViewCell
         
         if indexPath.row < posts.count{
+            let currPost = posts[indexPath.row]
             cell.thumbnailImage.image = UIImage(named: "LaunchImage")
-            cell.title.text = posts[indexPath.row].title + " \(posts[indexPath.row].objectId)"
+            
+            if currPost.photos.count == 0 {
+                currPost.getImageForPost({ (imageString) in
+                    if imageString == nil {
+                        cell.thumbnailImage.image = UIImage(named: "LaunchImage")
+                    } else {
+                        if let imageData = NSData(base64EncodedString: imageString!, options: [.IgnoreUnknownCharacters]) {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.posts[indexPath.row].photos.append(imageString!)
+                                cell.thumbnailImage.image = UIImage(data: imageData)
+                            })
+                        }
+                        
+                    }
+                })
+            } else {
+                let imageData = NSData(base64EncodedString: posts[indexPath.row].photos[0], options: [.IgnoreUnknownCharacters])
+                cell.thumbnailImage.image = UIImage(data: imageData!)
+            }
+            cell.title.text = posts[indexPath.row].title
         } else if indexPath.row == posts.count {
             cell.thumbnailImage.image = UIImage(named: "LaunchImage")
             cell.title.text = "Load More"
@@ -96,6 +118,7 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
             }
             return
         }
+        postSelected = self.posts[indexPath.row]
         performSegueWithIdentifier(LoginStringConst.detailBBPostSegue, sender: nil)
     }
     
@@ -103,7 +126,7 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         if segue.identifier == LoginStringConst.detailBBPostSegue {
             let destinationVC = segue.destinationViewController as! DetailBBViewController
             
-            destinationVC.bulletinPostItem = RMBulletinPost(objectId: -1, dateCreatedAt: "", dateupdatedAt: "", title: "Test Bulletin Post", description: "Something very long about the post will go here. This will be set once by the creator and will not be editable for the beta version", pinNote: false, photos: [], thumbnail: "", removalDate: "", comments: ["Ritvik": "This is awesome", "Hunter": "It really is!"])
+            destinationVC.bulletinPostItem = postSelected
             
             let backItem = UIBarButtonItem()
             backItem.title = "Posts"
@@ -129,7 +152,8 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
             var fetchedPosts = bbPosts
             if fetchedPosts.count > 0 {
                 fetchedPosts = fetchedPosts.sort( { $0.objectId > $1.objectId })
-                for post in fetchedPosts{
+                for index in 0 ..< fetchedPosts.count{
+                    var post = fetchedPosts[index]
                     if !self.posts.contains({ $0.objectId == post.objectId }) {
                         self.posts.append(post)
                     }

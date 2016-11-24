@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "4250E29F1DA0314C002F7FA7"
                BuildableName = "roomateTests.xctest"
                BlueprintName = "roomateTests"
+               ReferencedContainer = "container:roomate.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "42A467491DE67873003CEAD1"
+               BuildableName = "roomateUITests.xctest"
+               BlueprintName = "roomateUITests"
                ReferencedContainer = "container:roomate.xcodeproj">
             </BuildableReference>
          </TestableReference>

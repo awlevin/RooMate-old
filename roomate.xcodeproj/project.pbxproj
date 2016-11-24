@@ -22,6 +22,10 @@
 		426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */; };
 		426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */; };
 		426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E491DC14BB300A2C749 /* RMChore.swift */; };
+		42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */; };
+		42A4674D1DE67873003CEAD1 /* roomateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A4674C1DE67873003CEAD1 /* roomateUITests.swift */; };
+		42A467541DE67879003CEAD1 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467441DE677CB003CEAD1 /* UITests.swift */; };
+		42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
 		42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */; };
 		42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */; };
 		42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */; };
@@ -86,6 +90,13 @@
 			remoteGlobalIDString = 4250E2881DA0314C002F7FA7;
 			remoteInfo = roomate;
 		};
+		42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4250E2811DA0314C002F7FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4250E2881DA0314C002F7FA7;
+			remoteInfo = roomate;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +122,11 @@
 		426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginStringConst.swift; path = Login/LoginStringConst.swift; sourceTree = "<group>"; };
 		426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RMImageSet.xcassets; path = RMAssets/RMImageSet.xcassets; sourceTree = "<group>"; };
 		426C7E491DC14BB300A2C749 /* RMChore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMChore.swift; path = RMClasses/RMChore.swift; sourceTree = "<group>"; };
+		42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBBPostTests.swift; path = roomateTests/RMBBPostTests.swift; sourceTree = SOURCE_ROOT; };
+		42A467441DE677CB003CEAD1 /* UITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITests.swift; path = roomateTests/UITests.swift; sourceTree = SOURCE_ROOT; };
+		42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A4674C1DE67873003CEAD1 /* roomateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateUITests.swift; sourceTree = "<group>"; };
+		42A4674E1DE67873003CEAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BulletinBoardVC.swift; path = "Bulletin Board/BulletinBoardVC.swift"; sourceTree = "<group>"; };
 		42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BulletinBoardCellCollectionViewCell.swift; path = "Bulletin Board/BulletinBoardCellCollectionViewCell.swift"; sourceTree = "<group>"; };
 		42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BulletinBoardCellCollectionViewCell.xib; path = "Bulletin Board/BulletinBoardCellCollectionViewCell.xib"; sourceTree = "<group>"; };
@@ -186,6 +202,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42A467471DE67873003CEAD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -193,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */,
+				42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */,
+				42A467441DE677CB003CEAD1 /* UITests.swift */,
 			);
 			name = "RM API Classes";
 			sourceTree = "<group>";
@@ -247,6 +272,7 @@
 			children = (
 				4250E28B1DA0314C002F7FA7 /* roomate */,
 				4250E2A31DA0314C002F7FA7 /* roomateTests */,
+				42A4674B1DE67873003CEAD1 /* roomateUITests */,
 				4250E28A1DA0314C002F7FA7 /* Products */,
 				C2B9AB08BB8E9DEE2E0A3CEB /* Pods */,
 				FB8955C69BEA0A5836D29C30 /* Frameworks */,
@@ -258,6 +284,7 @@
 			children = (
 				4250E2891DA0314C002F7FA7 /* roomate.app */,
 				4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */,
+				42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -298,6 +325,15 @@
 				426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		42A4674B1DE67873003CEAD1 /* roomateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42A4674C1DE67873003CEAD1 /* roomateUITests.swift */,
+				42A4674E1DE67873003CEAD1 /* Info.plist */,
+			);
+			path = roomateUITests;
 			sourceTree = "<group>";
 		};
 		9097F48E1DC80D810056FA78 /* Finance */ = {
@@ -525,13 +561,31 @@
 			productReference = 4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		42A467491DE67873003CEAD1 /* roomateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A467511DE67873003CEAD1 /* Build configuration list for PBXNativeTarget "roomateUITests" */;
+			buildPhases = (
+				42A467461DE67873003CEAD1 /* Sources */,
+				42A467471DE67873003CEAD1 /* Frameworks */,
+				42A467481DE67873003CEAD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A467501DE67873003CEAD1 /* PBXTargetDependency */,
+			);
+			name = roomateUITests;
+			productName = roomateUITests;
+			productReference = 42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4250E2811DA0314C002F7FA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = RooMate;
 				TargetAttributes = {
@@ -546,6 +600,11 @@
 					};
 					4250E29F1DA0314C002F7FA7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4250E2881DA0314C002F7FA7;
+					};
+					42A467491DE67873003CEAD1 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 4250E2881DA0314C002F7FA7;
 					};
 				};
@@ -565,6 +624,7 @@
 			targets = (
 				4250E2881DA0314C002F7FA7 /* roomate */,
 				4250E29F1DA0314C002F7FA7 /* roomateTests */,
+				42A467491DE67873003CEAD1 /* roomateUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -600,6 +660,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4250E29E1DA0314C002F7FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A467481DE67873003CEAD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -758,6 +825,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */,
+				42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */,
+				42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A467461DE67873003CEAD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A4674D1DE67873003CEAD1 /* roomateUITests.swift in Sources */,
+				42A467541DE67879003CEAD1 /* UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +846,11 @@
 			isa = PBXTargetDependency;
 			target = 4250E2881DA0314C002F7FA7 /* roomate */;
 			targetProxy = 4250E2A11DA0314C002F7FA7 /* PBXContainerItemProxy */;
+		};
+		42A467501DE67873003CEAD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4250E2881DA0314C002F7FA7 /* roomate */;
+			targetProxy = 42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -950,6 +1033,40 @@
 			};
 			name = Release;
 		};
+		42A467521DE67873003CEAD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = roomateUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = roomate;
+			};
+			name = Debug;
+		};
+		42A467531DE67873003CEAD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = roomateUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = roomate;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -979,6 +1096,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		42A467511DE67873003CEAD1 /* Build configuration list for PBXNativeTarget "roomateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A467521DE67873003CEAD1 /* Debug */,
+				42A467531DE67873003CEAD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
