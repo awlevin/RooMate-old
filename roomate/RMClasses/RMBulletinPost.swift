@@ -20,6 +20,73 @@ public struct RMBulletinPost {
     var removalDate: String!
     var comments: [String: String]
     
+    func getImageForPost(completion: (String?) -> ()) {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/selectRMPostPics"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(self.objectId)", forHTTPHeaderField: "postid")
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil || statusCode != 200){
+                switch statusCode {
+                case 400:
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(nil)
+                    })
+                    break
+                default:
+                    completion(nil)
+                    break
+                }
+                return
+            } else {
+                var json: NSArray
+                do {
+                    try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
+                } catch {
+                    return
+                }
+                if json.count < 1 {
+                    return
+                }
+                let jsonObject = json[0] as! [String : AnyObject]
+                if jsonObject["postid"] != nil {
+                    let objId = jsonObject["postid"] as! Int
+                    if objId != self.objectId {
+                        return
+                    }
+                    let imageData = jsonObject["photourl"] as! String
+                    if imageData.characters.count != 0 {
+                        if imageData.rangeOfString("/9j/") != nil {
+                            completion(imageData)
+                            return
+                        } else {
+                            completion(nil)
+                            return
+                        }
+                    }else {
+                        completion(nil)
+                        return
+                    }
+                } else {
+                    completion(nil)
+                    return
+                }
+            }
+        }
+        task.resume()
+    }
     
     static func createNewBulletinPost(bbPost: RMBulletinPost, completionHandler: (completed: Bool)->()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMPost"
@@ -34,8 +101,6 @@ public struct RMBulletinPost {
         do
         {
             request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(bbDictionary, options: [.PrettyPrinted])
-            print("**********************")
-            print(NSString(data: request.HTTPBody!, encoding:NSUTF8StringEncoding)!)
         } catch let error as NSError {
             print(error)
         }
@@ -127,12 +192,15 @@ public struct RMBulletinPost {
         task.resume()
     }
     
+    
     static func createBBDictionary(bbObject: RMBulletinPost) -> [String : AnyObject] {
         var returnDict = [String : AnyObject]()
+        returnDict["userid"] = 1
+        returnDict["groupid"] = 1
         returnDict["title"] = bbObject.title
         returnDict["description"] = bbObject.description
         returnDict["pinnote"] = bbObject.pinNote.boolValue
-        returnDict["photourl"] = bbObject.photos
+        returnDict["photourl"] = bbObject.photos[0]
         //returnDict["thumbnail"] = bbObject.thumbnail
         returnDict["removaldate"] = "11/14/2016"
         //returnDict["comments"] = bbObject.comments

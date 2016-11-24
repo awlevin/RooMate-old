@@ -26,7 +26,7 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
         // Setup Navigation Bar
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMFinanceInvoiceViewController.cancelPressed))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMFinanceInvoiceViewController.donePressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMChoreAddViewController.donePressed))
     
         imagePicker.delegate = self
         
@@ -63,19 +63,19 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     func donePressed() {
         
         //TODO: Save information to server
-        
-        self.navigationController?.popViewControllerAnimated(true)
+        RMChore.updateChore(self.chore.objectId, beforePhoto: getBase64ForImage(beforePhotoImageView.image!), afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
+            if completed{
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageView.contentMode = .ScaleAspectFit
-//            imageView.image = pickedImage
-            // TODO: Save information
             if isBeforePhoto {
-                
+                self.beforePhotoImageView.image = pickedImage
             } else {
-                
+                self.afterPhotoImageView.image = pickedImage
             }
         }
         
@@ -84,6 +84,18 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func getBase64ForImage(image : UIImage) -> String {
+        let imageJPEG = UIImageJPEGRepresentation(image, 0.1)
+        let imageData = imageJPEG?.base64EncodedStringWithOptions([.Encoding64CharacterLineLength])
+        print("******************\(imageData?.characters.count)")
+        return imageData!
+    }
+    
+    func getImageForBase64(imageData: String) -> UIImage {
+        let imageData = NSData(base64EncodedString: imageData, options: [.IgnoreUnknownCharacters])
+        return UIImage(data: imageData!)!
     }
     
 }
