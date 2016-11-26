@@ -107,8 +107,6 @@ class RMShoppingMainTableViewController: UITableViewController {
             givenLastid = lastid!
         }
         
-        print("got here")
-        
         var items: [RMGrocery]
         
         switch(listType) {

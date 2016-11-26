@@ -24,7 +24,7 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
 
         // Setup Navigation Bar
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMFinanceInvoiceViewController.cancelPressed))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMChoreAddViewController.cancelPressed))
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMChoreAddViewController.donePressed))
     

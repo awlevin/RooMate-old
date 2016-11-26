@@ -336,6 +336,14 @@
 			path = roomateUITests;
 			sourceTree = "<group>";
 		};
+		85986D5A1DE9232900116EEA /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4C81DC90A700056FA78 /* RMShoppingAddViewController.swift */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
 		9097F48E1DC80D810056FA78 /* Finance */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,8 +409,8 @@
 			isa = PBXGroup;
 			children = (
 				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
-				9097F4C81DC90A700056FA78 /* RMShoppingAddViewController.swift */,
 				9097F4D11DC91A820056FA78 /* Main */,
+				85986D5A1DE9232900116EEA /* Add */,
 				9097F4D01DC911810056FA78 /* History */,
 				9097F4DA1DC91EF90056FA78 /* Checkout */,
 			);
