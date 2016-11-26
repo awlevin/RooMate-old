@@ -94,8 +94,8 @@ public struct RMGroceryList {
                                                  userId: jsonItemDict["userid"] as! Int,
                                                  groupId: jsonItemDict["groupid"] as! Int,
                                                  isPersonalItem: jsonItemDict["personalitem"] as! Bool,
-                                                 dateCreatedAt: jsonItemDict["datecreatedat"] as! String,
-                                                 dateUpdatedAt: jsonItemDict["dateupdatedat"] as! String,
+                                                 dateCreatedAt: "" , // TODO: retrieve this field
+                                                 dateUpdatedAt: "", // TODO: retrieve this field too
                                                  groceryItemName: jsonItemDict["groceryitemname"] as! String,
                                                  groceryItemPrice: jsonItemDict["groceryitemprice"] as! Double,
                                                  groceryItemDescription: jsonItemDict["groceryitemdescription"] as! String)
