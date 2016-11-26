@@ -19,10 +19,6 @@ class RMShoppingAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setup Navigation Bar
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMShoppingAddViewController.cancelPressed))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMShoppingAddViewController.donePressed))
         
     }
     
@@ -30,8 +26,8 @@ class RMShoppingAddViewController: UIViewController {
         
     }
     
-    func cancelPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func cancelPressed() {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func donePressed() {
