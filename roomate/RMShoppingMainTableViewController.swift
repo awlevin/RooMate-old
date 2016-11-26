@@ -23,12 +23,10 @@ class RMShoppingMainTableViewController: UITableViewController {
         tableView.registerNib(UINib(nibName: "RMShoppingMainTableViewCell", bundle: nil), forCellReuseIdentifier: "ShoppingMainCell")
         
         refresher.tintColor = UIColor.redColor()
-        //refresher.addTarget(self, action: #selector(fetchNewItemsForListType), forControlEvents: .ValueChanged)
+        refresher.addTarget(self, action: #selector(fetchAllNewItems), forControlEvents: .ValueChanged)
         tableView!.addSubview(refresher)
         
-        fetchNewItemsForListType(RMGroceryListTypes.Personal)
-        fetchNewItemsForListType(RMGroceryListTypes.Communal)
-        fetchNewItemsForListType(RMGroceryListTypes.Aggregate)
+        fetchAllNewItems()
 
     }
     
@@ -95,11 +93,21 @@ class RMShoppingMainTableViewController: UITableViewController {
         callFetchPosts(lastid, listType: listType)
     }
     
+    func fetchAllNewItems() {
+        let lastid = Int(INT16_MAX) // TODO: make this accurate
+        callFetchPosts(lastid, listType: RMGroceryListTypes.Personal)
+        callFetchPosts(lastid, listType: RMGroceryListTypes.Communal)
+        callFetchPosts(lastid, listType: RMGroceryListTypes.Aggregate)
+
+    }
+    
     func callFetchPosts(lastid: Int?, listType: RMGroceryListTypes) {
         var givenLastid = 0
         if lastid != nil {
             givenLastid = lastid!
         }
+        
+        print("got here")
         
         var items: [RMGrocery]
         
