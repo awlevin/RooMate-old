@@ -44,12 +44,19 @@ class RMShoppingAddViewController: UIViewController, UITextFieldDelegate {
         if self.segmentControl.selectedSegmentIndex == 0 { isPersonalItem = true }
         else { isPersonalItem = false }
         
-        //TODO Save information
+        //TODO: Save information
         let newItem = RMGrocery(objectId: -1, userId: 1, groupId: 1, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text)
         
         RMGrocery.createNewGrocery(newItem) { (completed) in
-            
-            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            print(completed)
+            if(completed) {
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else {
+                let errorAlert = UIAlertController(title: "Error", message: "We encountered a problem saving your data, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
             
         }
     }
