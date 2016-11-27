@@ -49,6 +49,7 @@ public struct RMChore {
             }
             
             if(error != nil || data == nil || statusCode != 200){
+                print("status code: \(statusCode)")
                 switch statusCode {
                 case 400:
                     completionHandler(completed: false)

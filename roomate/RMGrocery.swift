@@ -36,6 +36,7 @@ public struct RMGrocery {
             print("**********************")
             print(NSString(data: request.HTTPBody!, encoding:NSUTF8StringEncoding)!)
         } catch let error as NSError {
+            print("1. got here")
             print(error)
         }
         
@@ -50,6 +51,7 @@ public struct RMGrocery {
             }
             
             if(error != nil || data == nil || statusCode != 200){
+                print("2. got here with error code: \(error?.code), data: \(data?.description), statusCode: \(statusCode)")
                 switch statusCode {
                 case 400:
                     completionHandler(completed: false)
