@@ -19,13 +19,24 @@ class RMLoginViewController: UIViewController {
     
     @IBAction func facebookButtonPressed(sender: AnyObject) {
         auth.viewController = self
-        auth.loginWith(.Facebook) { (success) in
+        auth.loginWithFacebook { (success) in
             if success {
-               self.performSegueWithIdentifier("segueFromLogin", sender: self)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("segueFromLogin", sender: self)
+                }
             } else {
                 // handle error
             }
         }
+        /*auth.loginWith(.Facebook) { (success) in
+            if success {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("segueFromLogin", sender: self)
+                }
+            } else {
+                // handle error
+            }
+        }*/
     }
 
 }

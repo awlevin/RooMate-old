@@ -39,7 +39,7 @@ struct RMAuth {
 
 
 // MARK: - Private functions
-private extension RMAuth {
+extension RMAuth {
     
     func loginWithFacebook(completion: (success: Bool) -> Void) {
         // If token already exists
@@ -56,23 +56,29 @@ private extension RMAuth {
                 
                 if error != nil {
                     print("Facebook login: Error - \(error)")
+                    completion(success: false)
                 }
                 else if loginResult!.isCancelled {
                     print("Facebook login: Is cancelled")
+                    completion(success: false)
                 }
                 else if loginResult!.declinedPermissions.contains(permissionSet) {
                     print("Facebook login: Decline permissions")
+                    completion(success: false)
                     // Handle restricted user permissions
                 }
                 else if loginResult!.grantedPermissions.contains(permissionSet) {
                     print("Facebook login: Granted permissions")
                     self.saveFacebookDetails()
+                } else if !loginResult!.isCancelled {
+                    completion(success: true)
+                    return
                 }
             })
         }
     }
     
-    private func saveFacebookDetails(){
+    func saveFacebookDetails(){
         let requestParameters = ["fields": "id, link, email, first_name, last_name"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in
@@ -88,7 +94,6 @@ private extension RMAuth {
                 let first_name = result.objectForKey("first_name") as? String
                 let last_name = result.objectForKey("last_name") as? String
                 let profile_picture_url: String = "https://graph.facebook.com/" + id! + "/picture?type=large"
-                
 
                 // TODO save information to backend
                 
