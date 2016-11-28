@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RMShoppingAddViewController: UIViewController {
+class RMShoppingAddViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var brandTextField: UITextField!
@@ -19,25 +19,53 @@ class RMShoppingAddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Setup Navigation Bar
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMShoppingAddViewController.cancelPressed))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMShoppingAddViewController.donePressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector (RMShoppingAddViewController.donePressed))
         
+        // Setup textfield delegates
+        self.itemTextField.delegate = self
+        self.brandTextField.delegate = self
+        self.categoryTextField.delegate = self
     }
     
-    @IBAction func stepperDidChange(sender: AnyObject) {
-        
+    @IBAction func stepperDidChange(sender: UIStepper) {
+        self.quantityLabel.text = Int(sender.value).description
     }
     
-    func cancelPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func cancelPressed() {
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func donePressed() {
         
-        //TODO Save information
+        // Determine if item is personal or not
+        let isPersonalItem: Bool
+        if self.segmentControl.selectedSegmentIndex == 0 { isPersonalItem = true }
+        else { isPersonalItem = false }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        // Create new grocery object
+        let newItem = RMGrocery(objectId: -1, userId: 1, groupId: 1, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text)
+        
+        // Save the grocery object to the backend
+        RMGrocery.createNewGrocery(newItem) { (completed) in
+            print("completed: \(completed)")
+            if(completed) {
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else {
+                let errorAlert = UIAlertController(title: "Error", message: "We encountered a problem saving your data, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+            
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        itemTextField.resignFirstResponder()
+        brandTextField.resignFirstResponder()
+        categoryTextField.resignFirstResponder()
+        return true
     }
 }

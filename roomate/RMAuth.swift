@@ -42,6 +42,8 @@ struct RMAuth {
 extension RMAuth {
     
     func loginWithFacebook(completion: (success: Bool) -> Void) {
+        
+        // UNCOMMENT FOR DEMO PURPOSES
         // If token already exists
         if let _ = FBSDKAccessToken.currentAccessToken() {
             completion(success: true)
@@ -89,7 +91,7 @@ extension RMAuth {
                 guard let result = result as? NSDictionary else {return}
                 
                 let email = result.objectForKey("email") as? String
-
+                
                 let id = result.objectForKey("id") as? String
                 let first_name = result.objectForKey("first_name") as? String
                 let last_name = result.objectForKey("last_name") as? String
@@ -97,6 +99,20 @@ extension RMAuth {
 
                 // TODO save information to backend
                 
+                let user = RMUser(userObjectId: nil, groupId: nil, dateCreatedAt: nil, dateUpdatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
+                RMUser.doesUserExist(email!, completion: { (success) in
+                    if success {
+                        RMUser.createUser(user, completion: { (success) in
+                            if success {
+                                print("User successfully created")
+                            } else {
+                                
+                            }
+                        })
+                    } else {
+                        
+                    }
+                })
             }
         })
     }

@@ -8,8 +8,14 @@
 
 import Foundation
 
+enum RMGroceryListTypes {
+    case Personal
+    case Communal
+    case Aggregate
+}
+
 public struct RMGroceryList {
-    var objectId: String
+    var objectId: Int
     var dateCreatedAt: String
     var dateUpdatedAt: String
     var groceryList: [RMGrocery]
@@ -18,59 +24,103 @@ public struct RMGroceryList {
     
     
     
+    
     // Public Functions
-    /*
-    public func getCurrentUserGroceryList(userObjectId: String) -> RMGroceryList {
     
-    }
-    
-    public func getPastUserGroceryList(offset: Int, count: Int) -> [RMGroceryList] {
+    static func getGroceryList(userObjectId: Int, lastid: Int, groupId: Int, listType: RMGroceryListTypes, completionHandler: (bbPosts: [RMGrocery])->()) {
         
-    }
-    
-    public func getAggregateGroceries(groupId: String) -> RMGroceryList{
+        var backendURLpostfix: String
         
-    }
-    
-    public func deleteCurrentUserGroceryList(userObjectId: String) {
-    
-    }
-    
-    public func addToUserGroceryList(groupId: String, newItem: RMGrocery) -> RMGroceryList {
-    
-    }
-    
-    public func getCommunalGroceries(groupId: String) -> RMGroceryList {
-    
-    }
-    
-    public func addToCommunalGroceryList(groupId: String, newItem: RMGrocery) -> RMGroceryList {
+        switch(listType) {
+        case RMGroceryListTypes.Personal:
+            backendURLpostfix = "selectRMUserGroceries"
+        case RMGroceryListTypes.Communal:
+            backendURLpostfix = "selectRMCommunalGroceries"
+        case RMGroceryListTypes.Aggregate:
+            backendURLpostfix = "selectRMAggregateGroceries"
+        }
         
-    }
-    
-    public func deleteCommunalGroceryList(groupId: String) {
         
-    }
-    
-    public func addToAggregateGroceryList(groupId: String, newItem: RMGrocery) -> RMGroceryList {
         
-    }
-    
-    public func finishedGroceryList(groupId: String) {
-    
-    }
-    
-    
-    // Private Functions
-    
-    private func changeLastUpdateDate() {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/\(backendURLpostfix)"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
         
-    }
-    
-    private func compileAggregateGroceryList(groupId: String) -> [RMGroceryList] {
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        // TODO: Should I turn this into an if-else or does it seriously not matter?
+        if(listType == RMGroceryListTypes.Personal) {
+            request.addValue("1", forHTTPHeaderField: "userid")
+        }
+        
+        if(listType == RMGroceryListTypes.Communal || listType == RMGroceryListTypes.Aggregate) {
+            request.addValue("1", forHTTPHeaderField: "groupid")
+        }
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil || statusCode != 200){
+                switch statusCode {
+                case 400:
+                    print("Encountered error 400")
+                    completionHandler(bbPosts: [])
+                    break
+                case 503:
+                    print("Encountered error 503")
+                    completionHandler(bbPosts: [])
+                    break
+                default:
+                    print("Encountered an error")
+                    completionHandler(bbPosts: [])
+                    break
+                }
+                return
+            } else {
+                var json: NSArray
+                do {
+                    try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
+                } catch {
+                    print("error serializing JSON object array")
+                    completionHandler(bbPosts: [])
+                    return
+                }
+                
+                if json.count == 0 {
+                    print("JSON object array was empty")
+                    completionHandler(bbPosts: [] )
+                    return
+                }
+                else {
+                    var returnedGroceryItems = [RMGrocery]()
+                    
+                    for jsonItem in json {
+                        guard let jsonItemDict = jsonItem as? [String: AnyObject]
+                            else { continue }
+                        
+                        let currItem = RMGrocery(objectId: jsonItemDict["itemid"] as! Int,
+                                                 userId: jsonItemDict["userid"] as! Int,
+                                                 groupId: jsonItemDict["groupid"] as! Int,
+                                                 isPersonalItem: jsonItemDict["personalitem"] as! Bool,
+                                                 dateCreatedAt: "" , // TODO: retrieve this field
+                                                 dateUpdatedAt: "", // TODO: retrieve this field too
+                                                 groceryItemName: jsonItemDict["groceryitemname"] as! String,
+                                                 groceryItemPrice: jsonItemDict["groceryitemprice"] as! Double,
+                                                 groceryItemDescription: jsonItemDict["groceryitemdescription"] as! String)
+                        returnedGroceryItems.append(currItem)
+                    }
+                    completionHandler(bbPosts: returnedGroceryItems)
+                    return
+                }
+            }
+        }
+        task.resume()
     }
-    
-    
-    */
 }

@@ -9,33 +9,31 @@
 import UIKit
 
 class RMShoppingMainViewController: UIViewController {
-
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func segmentValueDidChange(sender: AnyObject) {
         let tableVC = self.childViewControllers.first as! RMShoppingMainTableViewController
         tableVC.tableView.reloadData()
         
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            return
-        case 1:
-            return
-        case 2:
-            
-            // TODO: CHANGE RIGHT BAR BUTTON TO "START SHOPPING"
-            
-            return
-        default:
-            return
-        }
+//        switch segmentedControl.selectedSegmentIndex {
+//        case 0:
+//            return
+//        case 1:
+//            return
+//        case 2:
+//            
+//            // TODO: CHANGE RIGHT BAR BUTTON TO "START SHOPPING"
+//            
+//            return
+//        default:
+//            return
+//        }
     }
     
     @IBAction func rightBarButtonPressed(sender: AnyObject) {
@@ -54,5 +52,4 @@ class RMShoppingMainViewController: UIViewController {
         }
         
     }
-    
 }
