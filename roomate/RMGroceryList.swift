@@ -48,8 +48,15 @@ public struct RMGroceryList {
         
         request.HTTPMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("1", forHTTPHeaderField: "groupid")
-        request.addValue("\(lastid)", forHTTPHeaderField: "lastid")
+        
+        // TODO: Should I turn this into an if-else or does it seriously not matter?
+        if(listType == RMGroceryListTypes.Personal) {
+            request.addValue("1", forHTTPHeaderField: "userid")
+        }
+        
+        if(listType == RMGroceryListTypes.Communal || listType == RMGroceryListTypes.Aggregate) {
+            request.addValue("1", forHTTPHeaderField: "groupid")
+        }
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
@@ -81,11 +88,13 @@ public struct RMGroceryList {
                 do {
                     try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
                 } catch {
+                    print("error serializing JSON object array")
                     completionHandler(bbPosts: [])
                     return
                 }
                 
                 if json.count == 0 {
+                    print("JSON object array was empty")
                     completionHandler(bbPosts: [] )
                     return
                 }
