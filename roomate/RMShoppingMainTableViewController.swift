@@ -44,13 +44,10 @@ class RMShoppingMainTableViewController: UITableViewController {
         if let parentVC = self.parentViewController as? RMShoppingMainViewController {
             switch  parentVC.segmentedControl.selectedSegmentIndex {
             case 0:
-                print("communal item count: \(communalItems.count)")
                 return communalItems.count
             case 1:
-                print("personal item count: \(personalItems.count)")
                 return personalItems.count
             case 2:
-                print("aggregate item count: \(aggregateItems.count)")
                 return aggregateItems.count
             default:
                 return 0
