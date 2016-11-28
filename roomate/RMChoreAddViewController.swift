@@ -18,14 +18,28 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     let imagePicker = UIImagePickerController()
     var isBeforePhoto = false
     
+    var chore: RMChore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Setup Navigation Bar
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMFinanceInvoiceViewController.cancelPressed))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMFinanceInvoiceViewController.donePressed))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMChoreAddViewController.donePressed))
     
         imagePicker.delegate = self
+        
+        if chore == nil {
+            let alertController = UIAlertController(title: "Error", message:
+                "Sorry, something went wrong. Please refresh the list of chores!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.Default,handler: {(alert: UIAlertAction!) in self.cancelPressed()}))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            self.titleLabel.text = chore.title
+            self.textView.text = chore.description
+        }
+
     }
     
     @IBAction func beforePhotoButtonPressed(sender: AnyObject) {
@@ -49,19 +63,29 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     func donePressed() {
         
         //TODO: Save information to server
+        if afterPhotoImageView.image != nil {
+            RMChore.updateChoreAfter(self.chore.objectId, afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
+                if completed{
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            }
+        }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        if beforePhotoImageView.image != nil {
+            RMChore.updateChoreBefore(self.chore.objectId, beforePhoto: getBase64ForImage(beforePhotoImageView.image!)) { (completed) in
+                if completed{
+                }
+            }
+        }
+        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageView.contentMode = .ScaleAspectFit
-//            imageView.image = pickedImage
-            // TODO: Save information
             if isBeforePhoto {
-                
+                self.beforePhotoImageView.image = pickedImage
             } else {
-                
+                self.afterPhotoImageView.image = pickedImage
             }
         }
         
@@ -70,6 +94,18 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func getBase64ForImage(image : UIImage) -> String {
+        let imageJPEG = UIImageJPEGRepresentation(image, 0.1)
+        let imageData = imageJPEG?.base64EncodedStringWithOptions([.Encoding64CharacterLineLength])
+        print("******************\(imageData?.characters.count)")
+        return imageData!
+    }
+    
+    func getImageForBase64(imageData: String) -> UIImage {
+        let imageData = NSData(base64EncodedString: imageData, options: [.IgnoreUnknownCharacters])
+        return UIImage(data: imageData!)!
     }
     
 }
