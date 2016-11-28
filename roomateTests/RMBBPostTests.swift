@@ -24,7 +24,7 @@ class RMBBPostTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         RMBulletinPost.getBulletinPosts(0, lastid: 100000, groupId: 1) { (bbPosts) in
-
+            
         }
 
     }
