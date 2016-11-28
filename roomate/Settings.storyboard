@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ER7-zd-Ja5">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6PJ-pj-LKK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
@@ -49,25 +46,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aQN-fE-srZ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQN-fE-srZ" id="eH9-IW-Duj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ER7-zd-Ja5" id="qzS-D3-86x"/>
-                            <outlet property="delegate" destination="ER7-zd-Ja5" id="Iay-3Z-Xec"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" image="cog" id="PlY-Fa-vMb">
-                        <inset key="imageInsets" minX="25" minY="28" maxX="25" maxY="22"/>
-                    </tabBarItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                        <constraints>
+                            <constraint firstItem="SZ3-oP-C0l" firstAttribute="top" secondItem="E16-w9-Ie6" secondAttribute="top" constant="20" id="HSF-2G-G9R"/>
+                            <constraint firstItem="SZ3-oP-C0l" firstAttribute="centerX" secondItem="E16-w9-Ie6" secondAttribute="centerX" id="Puj-eS-7xp"/>
+                            <constraint firstAttribute="trailing" secondItem="SZ3-oP-C0l" secondAttribute="trailing" id="bmL-sB-xf0"/>
+                            <constraint firstItem="fYk-YB-OLb" firstAttribute="top" secondItem="SZ3-oP-C0l" secondAttribute="bottom" id="dG4-Vc-waY"/>
+                            <constraint firstItem="SZ3-oP-C0l" firstAttribute="leading" secondItem="E16-w9-Ie6" secondAttribute="leading" id="kjr-1p-qOh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="16C-Ag-i2c"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="SZ3-oP-C0l" id="Rkb-7I-QWx"/>
