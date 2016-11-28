@@ -51,12 +51,17 @@ public struct RMGrocery {
             }
             
             if(error != nil || data == nil || statusCode != 200){
-                print("2. got here with error code: \(error?.code), data: \(data?.description), statusCode: \(statusCode)")
                 switch statusCode {
                 case 400:
+                    print("Error Encountered: 400")
+                    completionHandler(completed: false)
+                    break
+                case 503:
+                    print("Error Encountered: 503")
                     completionHandler(completed: false)
                     break
                 default:
+                    print("Encountered error: \(statusCode)")
                     completionHandler(completed: false)
                     break
                 }
@@ -66,6 +71,7 @@ public struct RMGrocery {
             }
         }
         task.resume()
+        completionHandler(completed: true)
     }
     
     

@@ -39,16 +39,17 @@ class RMShoppingAddViewController: UIViewController, UITextFieldDelegate {
     
     func donePressed() {
         
-        // determine if item is personal or not
+        // Determine if item is personal or not
         let isPersonalItem: Bool
         if self.segmentControl.selectedSegmentIndex == 0 { isPersonalItem = true }
         else { isPersonalItem = false }
         
-        //TODO: Save information
+        // Create new grocery object
         let newItem = RMGrocery(objectId: -1, userId: 1, groupId: 1, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text)
         
+        // Save the grocery object to the backend
         RMGrocery.createNewGrocery(newItem) { (completed) in
-            print(completed)
+            print("completed: \(completed)")
             if(completed) {
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             }

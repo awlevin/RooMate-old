@@ -20,14 +20,18 @@ class RMShoppingMainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "RMShoppingMainTableViewCell", bundle: nil), forCellReuseIdentifier: "ShoppingMainCell")
-        
         refresher.tintColor = UIColor.redColor()
         refresher.addTarget(self, action: #selector(fetchAllNewItems), forControlEvents: .ValueChanged)
         tableView!.addSubview(refresher)
         
         fetchAllNewItems()
-
+        
+        tableView.registerNib(UINib(nibName: "RMShoppingMainTableViewCell", bundle: nil), forCellReuseIdentifier: "ShoppingMainCell")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        postSelected = nil
     }
     
     // MARK: - Table view data source
@@ -40,11 +44,11 @@ class RMShoppingMainTableViewController: UITableViewController {
         if let parentVC = self.parentViewController as? RMShoppingMainViewController {
             switch  parentVC.segmentedControl.selectedSegmentIndex {
             case 0:
-                return 0
+                return communalItems.count
             case 1:
-                return 0
+                return personalItems.count
             case 2:
-                return 0
+                return aggregateItems.count
             default:
                 return 0
             }
@@ -54,28 +58,39 @@ class RMShoppingMainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let parentVC = self.parentViewController as? RMShoppingMainViewController {
+            
             switch  parentVC.segmentedControl.selectedSegmentIndex {
-            // Debt Cells
+            
+            // Communal Cells
             case 0:
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
+                cell.nameLabel.text = self.communalItems[indexPath.row].groceryItemName
+                // TODO: Configure quantity for each item
                 cell.configureCell()
                 
                 return cell
-            // Statistic Cells
+                
+            // Personal Cells
             case 1:
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
+                cell.nameLabel.text = self.communalItems[indexPath.row].groceryItemName
+                // TODO: Configure quantity for each item
                 cell.configureCell()
                 
                 return cell
-            // Debtor Cells
+                
+            // Aggregate Cells
             case 2:
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
+                cell.nameLabel.text = self.aggregateItems[indexPath.row].groceryItemName
+                // TODO: Configure quantity for each item
                 cell.configureCell()
                 
                 return cell
+            
             default:
                 return UITableViewCell()
             }
@@ -85,7 +100,8 @@ class RMShoppingMainTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        // TODO: Do we need to implement this method?
+        // The UI doesn't permit clicking on the grocery items... but it should so that we can modify an item's quantity.
     }
     
     func fetchNewItemsForListType(listType: RMGroceryListTypes) {
@@ -121,7 +137,7 @@ class RMShoppingMainTableViewController: UITableViewController {
             break
         }
         
-        RMGroceryList.getGroceryList(0, lastid: 0, groupId: 1, listType: listType, completionHandler: { (bbPosts) in
+        RMGroceryList.getGroceryList(1, lastid: 0, groupId: 1, listType: listType, completionHandler: { (bbPosts) in
             var fetchedItems = bbPosts
             if fetchedItems.count > 0 {
                 fetchedItems = fetchedItems.sort( { $0.objectId > $1.objectId })
