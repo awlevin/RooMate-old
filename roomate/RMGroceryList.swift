@@ -63,9 +63,15 @@ public struct RMGroceryList {
             if(error != nil || data == nil || statusCode != 200){
                 switch statusCode {
                 case 400:
+                    print("Encountered error 400")
+                    completionHandler(bbPosts: [])
+                    break
+                case 503:
+                    print("Encountered error 503")
                     completionHandler(bbPosts: [])
                     break
                 default:
+                    print("Encountered an error")
                     completionHandler(bbPosts: [])
                     break
                 }
@@ -108,48 +114,4 @@ public struct RMGroceryList {
         }
         task.resume()
     }
-    
-    /*
-    
-    
-    public func getPastUserGroceryList(offset: Int, count: Int) -> [RMGroceryList] {
-        
-    }
-    
-    public func deleteCurrentUserGroceryList(userObjectId: String) {
-    
-    }
-    
-    public func addToUserGroceryList(groupId: String, newItem: RMGrocery) -> RMGroceryList {
-    
-    }
-    
-    public func getCommunalGroceries(groupId: String) -> RMGroceryList {
-    
-    }
-    
-    public func addToCommunalGroceryList(groupId: String, newItem: RMGrocery) -> RMGroceryList {
-        
-    }
-    
-    public func deleteCommunalGroceryList(groupId: String) {
-        
-    }
-    
-    public func addToAggregateGroceryList(groupId: String, newItem: RMGrocery) -> RMGroceryList {
-        
-    }
-    
-    public func finishedGroceryList(groupId: String) {
-    
-    }
-    
-    
-    // Private Functions
-    
-    private func changeLastUpdateDate() {
-        
-    }
-    
-    */
 }
