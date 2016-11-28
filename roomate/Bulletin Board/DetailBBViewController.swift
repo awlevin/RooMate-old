@@ -52,14 +52,17 @@ class DetailBBViewController: UIViewController, UICollectionViewDelegate, UIColl
     //MARK: - Image Collection View
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return (bulletinPostItem?.photos.count)!
-        return 4
+        return (bulletinPostItem?.photos.count)!
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifier, forIndexPath: indexPath) as! DetailBBPhotoCell
+        if indexPath.row < bulletinPostItem?.photos.count {
+            cell.cellPhoto.image = getImageForBase64((bulletinPostItem?.photos[indexPath.row])!)
+        } else {
+            cell.cellPhoto.image = UIImage(named: "LaunchImage")
+        }
         
-        cell.cellPhoto.image = UIImage(named: "LaunchImage")
         return cell
     }
     
@@ -106,6 +109,19 @@ class DetailBBViewController: UIViewController, UICollectionViewDelegate, UIColl
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Comments"
     }
+    
+    func getBase64ForImage(image : UIImage) -> String {
+        let imageJPEG = UIImageJPEGRepresentation(image, 0.5)
+        let imageData = imageJPEG?.base64EncodedStringWithOptions([.Encoding64CharacterLineLength])
+        print("******************\(imageData?.characters.count)")
+        return imageData!
+    }
+    
+    func getImageForBase64(imageData: String) -> UIImage {
+        let imageData = NSData(base64EncodedString: imageData, options: [.IgnoreUnknownCharacters])
+        return UIImage(data: imageData!)!
+    }
+
     
     /*
      // MARK: - Navigation

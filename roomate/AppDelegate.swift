@@ -21,6 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // This will configure the application to use Facebook services
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        if let _ = FBSDKAccessToken.currentAccessToken() {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("GroupSelectionVC")
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            return true
+        }
+        
         return true
     }
     

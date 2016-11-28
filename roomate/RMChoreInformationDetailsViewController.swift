@@ -17,10 +17,8 @@ class RMChoreInformationDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Setup Navigation Bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMChoreInformationDetailViewController.cancelPressed))
-        
     }
     
     func cancelPressed() {
