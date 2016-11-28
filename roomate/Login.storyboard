@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="QiG-uS-vc0">
             <objects>
-                <viewController id="nyx-Ax-0Ke" customClass="RMLoginViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="nyx-Ax-0Ke" customClass="RMLoginViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LkG-nK-edU"/>
                         <viewControllerLayoutGuide type="bottom" id="UM6-eO-RDS"/>
@@ -73,7 +73,7 @@
         <!--RooMate-->
         <scene sceneID="ZXg-4m-YqC">
             <objects>
-                <viewController title="RooMate" id="xT9-go-YtJ" customClass="GroupSelectionVC" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupSelectionVC" title="RooMate" id="xT9-go-YtJ" customClass="GroupSelectionVC" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PRV-AX-nDt"/>
                         <viewControllerLayoutGuide type="bottom" id="9HA-aP-mvR"/>

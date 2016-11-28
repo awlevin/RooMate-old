@@ -39,7 +39,7 @@ struct RMAuth {
 
 
 // MARK: - Private functions
-private extension RMAuth {
+extension RMAuth {
     
     func loginWithFacebook(completion: (success: Bool) -> Void) {
         
@@ -77,7 +77,7 @@ private extension RMAuth {
         //}
     }
     
-    private func saveFacebookDetails(){
+    func saveFacebookDetails(){
         let requestParameters = ["fields": "id, link, email, first_name, last_name"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in

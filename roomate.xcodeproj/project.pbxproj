@@ -13,6 +13,7 @@
 		4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423053491DC1302F003AE80B /* RMBulletin.swift */; };
 		4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534B1DC1338B003AE80B /* RMGroup.swift */; };
 		4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */; };
+		4231ACA81DEB68BB00080531 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4231ACA71DEB68BB00080531 /* SettingsViewController.swift */; };
 		424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
 		4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */; };
 		4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */; };
@@ -109,6 +110,7 @@
 		423053491DC1302F003AE80B /* RMBulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletin.swift; path = RMClasses/RMBulletin.swift; sourceTree = "<group>"; };
 		4230534B1DC1338B003AE80B /* RMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMGroup.swift; path = RMClasses/RMGroup.swift; sourceTree = "<group>"; };
 		4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupSelectionVC.swift; path = Login/GroupSelectionVC.swift; sourceTree = "<group>"; };
+		4231ACA71DEB68BB00080531 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletinPost.swift; path = RMClasses/RMBulletinPost.swift; sourceTree = "<group>"; };
 		4250E2891DA0314C002F7FA7 /* roomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				900C6D501DB81D3800D27507 /* Settings.storyboard */,
+				4231ACA71DEB68BB00080531 /* SettingsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
 				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
+				4231ACA81DEB68BB00080531 /* SettingsViewController.swift in Sources */,
 				9097F4C51DC875670056FA78 /* RMChoreInformationDetailsViewController.swift in Sources */,
 				9097F4D91DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift in Sources */,
 				9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */,
@@ -988,6 +992,7 @@
 			baseConfigurationReference = 3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
 				DEVELOPMENT_TEAM = 8PF73Y7CN7;
 				INFOPLIST_FILE = roomate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1003,6 +1008,7 @@
 			baseConfigurationReference = 6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
 				DEVELOPMENT_TEAM = 8PF73Y7CN7;
 				INFOPLIST_FILE = roomate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
