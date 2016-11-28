@@ -44,10 +44,13 @@ class RMShoppingMainTableViewController: UITableViewController {
         if let parentVC = self.parentViewController as? RMShoppingMainViewController {
             switch  parentVC.segmentedControl.selectedSegmentIndex {
             case 0:
+                print("communal item count: \(communalItems.count)")
                 return communalItems.count
             case 1:
+                print("personal item count: \(personalItems.count)")
                 return personalItems.count
             case 2:
+                print("aggregate item count: \(aggregateItems.count)")
                 return aggregateItems.count
             default:
                 return 0
@@ -75,7 +78,7 @@ class RMShoppingMainTableViewController: UITableViewController {
             case 1:
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
-                cell.nameLabel.text = self.communalItems[indexPath.row].groceryItemName
+                cell.nameLabel.text = self.personalItems[indexPath.row].groceryItemName
                 // TODO: Configure quantity for each item
                 cell.configureCell()
                 
@@ -123,34 +126,50 @@ class RMShoppingMainTableViewController: UITableViewController {
             givenLastid = lastid!
         }
         
-        var items: [RMGrocery]
-        
-        switch(listType) {
-        case RMGroceryListTypes.Personal:
-            items = self.personalItems
-            break
-        case RMGroceryListTypes.Communal:
-            items = self.communalItems
-            break
-        case RMGroceryListTypes.Aggregate:
-            items = self.aggregateItems
-            break
-        }
-        
         RMGroceryList.getGroceryList(1, lastid: 0, groupId: 1, listType: listType, completionHandler: { (bbPosts) in
             var fetchedItems = bbPosts
+            
+            
             if fetchedItems.count > 0 {
                 fetchedItems = fetchedItems.sort( { $0.objectId > $1.objectId })
-                for item in fetchedItems{
-                    if !items.contains({ $0.objectId == item.objectId }) {
-                        items.append(item)
+                switch listType {
+                case RMGroceryListTypes.Personal:
+                    for item in fetchedItems{
+                        if !self.personalItems.contains({ $0.objectId == item.objectId }) {
+                            self.personalItems.append(item)
+                        }
+                    }
+                case RMGroceryListTypes.Communal:
+                    for item in fetchedItems{
+                        if !self.communalItems.contains({ $0.objectId == item.objectId }) {
+                            self.communalItems.append(item)
+                        }
+                    }
+                case RMGroceryListTypes.Aggregate:
+                    for item in fetchedItems{
+                        if !self.aggregateItems.contains({ $0.objectId == item.objectId }) {
+                            self.aggregateItems.append(item)
+                        }
                     }
                 }
             }
+            
             dispatch_async(dispatch_get_main_queue(), {
-                items = items.sort( { $0.objectId > $1.objectId })
+                switch listType {
+                case RMGroceryListTypes.Personal:
+                    self.personalItems = self.personalItems.sort( { $0.objectId > $1.objectId } )
+                    break
+                case RMGroceryListTypes.Communal:
+                    self.communalItems = self.communalItems.sort( { $0.objectId > $1.objectId } )
+                    break
+                case RMGroceryListTypes.Aggregate:
+                    self.aggregateItems = self.aggregateItems.sort( { $0.objectId > $1.objectId } )
+                    break
+                }
+                
                 self.tableView.reloadData()
                 self.refresher.endRefreshing()
+
             })
         })
     }
