@@ -28,26 +28,34 @@ class UITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
+    func testApplication() {
         
         let app = XCUIApplication()
         app.buttons["Join Household"].tap()
         app.alerts["Where do you live?"].buttons["OK"].tap()
         
+        let app2 = app
+        app2.buttons["Statistics"].tap()
+        app2.buttons["Debtors"].tap()
+        app2.buttons["Debts"].tap()
+        app.navigationBars["Finance"].buttons["Add"].tap()
+        app.navigationBars["roomate.RMFinanceInvoiceView"].buttons["Cancel"].tap()
+        app.tables["Total:, $0.00"].buttons["Remind All"].tap()
+        
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Chore"].tap()
+        app.navigationBars["Chore"].buttons["Add"].tap()
+        app.navigationBars["roomate.RMChoreAddTypeView"].buttons["Cancel"].tap()
         tabBarsQuery.buttons["Shopping"].tap()
+        app.navigationBars["Shopping"].buttons["Bookmarks"].tap()
+        app.navigationBars["roomate.RMShoppingHistoryTableView"].buttons["Shopping"].tap()
         
         let bulletinBoardButton = tabBarsQuery.buttons["Bulletin Board"]
         bulletinBoardButton.tap()
+        app.navigationBars["Bulletin Board"].buttons["Add"].tap()
+        app.navigationBars["New Bulletin Post"].buttons["Bulletin Board"].tap()
         tabBarsQuery.buttons["Settings"].tap()
         bulletinBoardButton.tap()
-        
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element
-        element.swipeLeft()
-        element.tap()
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
     }
     
