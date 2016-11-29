@@ -249,9 +249,7 @@
         <scene sceneID="Ays-hz-bXe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fr-KP-B3e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chore" image="chore" id="rj1-UE-PPM">
-                        <inset key="imageInsets" minX="26" minY="28" maxX="26" maxY="25"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Chore" image="chore" id="rj1-UE-PPM"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X4w-F8-fnt">
@@ -303,13 +301,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqm-45-O2v">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kqm-45-O2v" customClass="RMRoundedImageView" customModule="roomate" customModuleProvider="target">
                                 <rect key="frame" x="16" y="318.5" width="126" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="pVa-EP-SMt"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ty-A9-6MZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ty-A9-6MZ" customClass="RMRoundedImageView" customModule="roomate" customModuleProvider="target">
                                 <rect key="frame" x="16" y="476" width="126" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="7bs-G0-OmI"/>
@@ -359,10 +357,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0cz-Zl-Bk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2300" y="2112"/>
+            <point key="canvasLocation" x="2300" y="2111.6941529235382"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chore" width="128" height="128"/>
+        <image name="chore" width="28" height="28"/>
     </resources>
 </document>

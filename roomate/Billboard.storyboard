@@ -220,7 +220,7 @@
                                         <rect key="frame" x="0.0" y="433.5" width="375" height="28"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin to the bulletin board?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-zx-Kd8">
-                                                <rect key="frame" x="0.0" y="3" width="272.5" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="3.5" width="272.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -406,14 +406,12 @@
         <scene sceneID="hDW-5h-A7Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0iT-56-2aX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bulletin Board" image="bulletin" id="lnF-GB-hmU">
-                        <inset key="imageInsets" minX="21" minY="24" maxX="21" maxY="20"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Bulletin Board" image="bulletin" id="lnF-GB-hmU"/>
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ML8-hd-spg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ML8-hd-spg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -434,6 +432,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bulletin" width="128" height="128"/>
+        <image name="bulletin" width="32" height="32"/>
     </resources>
 </document>
