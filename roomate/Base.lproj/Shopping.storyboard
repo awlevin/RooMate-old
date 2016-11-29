@@ -14,9 +14,7 @@
         <scene sceneID="AgD-fT-NwI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WcP-l7-18N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shopping" image="cart" id="iPW-aG-PVB">
-                        <inset key="imageInsets" minX="21" minY="25" maxX="26" maxY="23"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Shopping" image="cart" id="iPW-aG-PVB"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vmu-WG-p06">
@@ -278,10 +276,12 @@
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PCI-6k-V9G">
                                 <rect key="frame" x="16" y="320" width="343" height="29"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="Personal"/>
                                     <segment title="Communal"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h99-NI-jjB">
                                 <rect key="frame" x="16" y="359" width="126" height="21"/>
@@ -352,6 +352,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0c4-2p-YOa">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="WKM-JX-PDg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cancelPressed" destination="oOh-OY-d3B" id="xNh-h7-LRP"/>
                             </connections>
@@ -373,24 +374,25 @@
         <!--Navigation Controller-->
         <scene sceneID="rq7-Jq-uVq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNS-vw-5Gt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fsP-fV-Ihj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4GU-TQ-UwL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4GU-TQ-UwL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="oOh-OY-d3B" kind="relationship" relationship="rootViewController" id="peM-6P-QmQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CNS-vw-5Gt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1264.8" y="1524.2878560719641"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cart" width="128" height="128"/>
+        <image name="cart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kt7-Pw-Jcx"/>
