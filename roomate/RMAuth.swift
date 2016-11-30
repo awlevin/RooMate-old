@@ -16,71 +16,62 @@ enum RMLoginTypes {
 
 struct RMAuth {
     
-    weak var viewController: UIViewController?
-    
     /**
      Login a user through Firebase with any supported DSSocialTypes
      - Parameter socialType: type of social media login
      */
-    
-    func loginWith(loginType: RMLoginTypes, completion:  (success: Bool) -> Void) {
-        switch loginType {
-        case .Facebook:
-            loginWithFacebook({ (success) in
-                if success {
-                    completion(success: true)
-                } else {
-                    completion(success: false)
-                }
-            })
-        }
-    }
-}
-
-
-// MARK: - Private functions
-extension RMAuth {
-    
-    func loginWithFacebook(completion: (success: Bool) -> Void) {
+    static func loginWithFacebook(sender: UIViewController, completion: (token: String?, success: Bool) -> Void) {
         
         // UNCOMMENT FOR DEMO PURPOSES
         // If token already exists
         if let _ = FBSDKAccessToken.currentAccessToken() {
-            completion(success: true)
+            completion(token: nil, success: true)
         }
             // If token does not exist
         else {
             let loginManager = FBSDKLoginManager()
             let readPermission = ["public_profile", "email"]
-            loginManager.logInWithReadPermissions(readPermission, fromViewController: self.viewController, handler: { (loginResult, error) in
+            loginManager.logInWithReadPermissions(readPermission, fromViewController: sender, handler: { (loginResult, error) in
                 
-                let permissionSet : Set = ["public_profile", "email"]
+                let permissionSet : Set<String> = ["public_profile", "email"]
                 
                 if error != nil {
                     print("Facebook login: Error - \(error)")
-                    completion(success: false)
+                    completion(token: nil, success: false)
                 }
+                    
                 else if loginResult!.isCancelled {
                     print("Facebook login: Is cancelled")
-                    completion(success: false)
+                    completion(token: nil,success: false)
                 }
-                else if loginResult!.declinedPermissions.contains(permissionSet) {
-                    print("Facebook login: Decline permissions")
-                    completion(success: false)
-                    // Handle restricted user permissions
-                }
-                else if loginResult!.grantedPermissions.contains(permissionSet) {
-                    print("Facebook login: Granted permissions")
-                    self.saveFacebookDetails()
-                } else if !loginResult!.isCancelled {
-                    completion(success: true)
-                    return
+                
+                else {
+                    
+                    var allPermsGranted = true
+                    
+                    
+                    let grantedPerms = loginResult!.grantedPermissions as NSSet
+                    let grantedPermissions = grantedPerms.allObjects.map( {"\($0)"} )
+                    
+                    for permission in permissionSet {
+                        if !grantedPermissions.contains(permission) {
+                            allPermsGranted = false
+                            break
+                        }
+                    }
+                    
+                    if !allPermsGranted {
+                        completion(token: nil,success: false)
+                    } else {
+                        let fbToken = loginResult!.token.tokenString
+                        completion(token: fbToken,success: true)
+                    }
                 }
             })
         }
     }
     
-    func saveFacebookDetails(){
+    static func saveFacebookDetails(completion: (details: [String: String]?) -> Void){
         let requestParameters = ["fields": "id, link, email, first_name, last_name"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in
@@ -88,32 +79,43 @@ extension RMAuth {
                 print("Facebook login: Error - \(error)")
             }
             else {
-                guard let result = result as? NSDictionary else {return}
+                guard let result = result as? NSDictionary else {
+                    completion(details: nil)
+                    return
+                }
                 
-                let email = result.objectForKey("email") as? String
-                
-                let id = result.objectForKey("id") as? String
-                let first_name = result.objectForKey("first_name") as? String
-                let last_name = result.objectForKey("last_name") as? String
-                let profile_picture_url: String = "https://graph.facebook.com/" + id! + "/picture?type=large"
+                guard let email = result.objectForKey("email") as? String else {
+                    completion(details: nil)
+                    return
+                }
 
-                // TODO save information to backend
                 
-                let user = RMUser(userObjectId: nil, groupId: nil, dateCreatedAt: nil, dateUpdatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
-                RMUser.doesUserExist(email!, completion: { (success) in
-                    if success {
-                        RMUser.createUser(user, completion: { (success) in
-                            if success {
-                                print("User successfully created")
-                            } else {
-                                
-                            }
-                        })
-                    } else {
-                        
-                    }
-                })
+                guard let id = result.objectForKey("id") as? String else {
+                    completion(details: nil)
+                    return
+                }
+
+                guard let first_name = result.objectForKey("first_name") as? String else {
+                    completion(details: nil)
+                    return
+                }
+
+                guard let last_name = result.objectForKey("last_name") as? String else {
+                    completion(details: nil)
+                    return
+                }
+
+                guard let profile_picture_url: String = "https://graph.facebook.com/" + id + "/picture?type=large" else {
+                    completion(details: nil)
+                    return
+                }
+
+                completion(details: ["email":email,"first_name":first_name,"last_name":last_name,"profile_picture":profile_picture_url])
+                return
             }
         })
     }
+    
+    
+    
 }
