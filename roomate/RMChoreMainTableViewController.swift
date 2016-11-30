@@ -70,6 +70,27 @@ class RMChoreMainTableViewController: UITableViewController {
         performSegueWithIdentifier("showChoreCompletionHistory", sender: nil)
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            RMChore.deleteChore(self.chores[indexPath.row].choreID) { (completed) in
+                if completed {
+                    self.chores.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    tableView.reloadData()
+                } else {
+                    let errorAlert = UIAlertController(title: "Error", message: "We encountered a problem deleting your data, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                    errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+    
+    
+    
+    // MARK: Segue functions
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         // Segue to chore completion
@@ -87,6 +108,8 @@ class RMChoreMainTableViewController: UITableViewController {
         }
     }
     
+    
+    // MARK: Chore fetching functions
     func fetchNewChores() {
         let lastid = Int(INT16_MAX)
         callFetchChores(lastid)
@@ -100,15 +123,15 @@ class RMChoreMainTableViewController: UITableViewController {
         RMChore.getChores(0, lastid: givenLastid, groupId: 1) { (bbPosts) in
             var fetchedChores = bbPosts
             if fetchedChores.count > 0 {
-                fetchedChores = fetchedChores.sort( { $0.objectID > $1.objectID })
+                fetchedChores = fetchedChores.sort( { $0.choreID > $1.choreID })
                 for chore in fetchedChores{
-                    if !self.chores.contains({ $0.objectID == chore.objectID }) {
+                    if !self.chores.contains({ $0.choreID == chore.choreID }) {
                         self.chores.append(chore)
                     }
                 }
             }
             dispatch_async(dispatch_get_main_queue(), {
-                self.chores = self.chores.sort( { $0.objectID > $1.objectID })
+                self.chores = self.chores.sort( { $0.choreID > $1.choreID })
                 self.tableView.reloadData()
                 self.refresher.endRefreshing()
             })

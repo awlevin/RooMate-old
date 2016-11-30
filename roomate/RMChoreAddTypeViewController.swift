@@ -28,7 +28,7 @@ class RMChoreAddTypeViewController: UIViewController {
     func donePressed() {
         
         // TODO: Add chore to parent tableViewController and save
-        RMChore.createNewChore(RMChore(objectID: -1, groupID: 1, userID: 1, title: self.titleTextField.text!, description: self.descriptionTextView.text, dateCreated: "00/00/00")) { (completed) in
+        RMChore.createNewChore(RMChore(choreID: -1, groupID: 1, userID: 1, title: self.titleTextField.text!, description: self.descriptionTextView.text, dateCreated: "00/00/00")) { (completed) in
             if completed {
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
