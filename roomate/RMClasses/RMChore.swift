@@ -115,8 +115,8 @@ public struct RMChore {
                         guard let jsonItemDict = jsonItem as? [String: AnyObject]
                             else { continue }
                         //let currPost = RMBulletinPost(objectId: jsonItemDict["postid"] as! Int, dateCreatedAt: jsonItemDict["datecreatedat"] as! String, dateupdatedAt: jsonItemDict["dateupdatedat"] as! String, title: jsonItemDict["title"] as! String, description: jsonItemDict["description"] as! String, pinNote: jsonItemDict["pinnote"] as! Bool, photos: [], thumbnail: "", removalDate: "", comments: [:])
-                        let currPost = RMChore(objectId: jsonItemDict["choreid"] as! Int, groupId: jsonItemDict["groupid"] as! Int, dateCompleted: jsonItemDict["datecompleted"] as? String, userId:jsonItemDict["ownerid"] as! Int, description: jsonItemDict["description"] as! String, title: jsonItemDict["title"] as! String, beforePhoto: "", afterPhoto:"", completionHistory: ["":""], commentHistory: ["":""])
-                        returnedPosts.append(currPost)
+//                        let currPost = RMChore(objectId: jsonItemDict["choreid"] as! Int, groupId: jsonItemDict["groupid"] as! Int, dateCompleted: jsonItemDict["datecompleted"] as? String, userId:jsonItemDict["ownerid"] as! Int, description: jsonItemDict["description"] as! String, title: jsonItemDict["title"] as! String, beforePhoto: "", afterPhoto:"", completionHistory: ["":""], commentHistory: ["":""])
+//                        returnedPosts.append(currPost)
                     }
                     completionHandler(bbPosts: returnedPosts)
                     return

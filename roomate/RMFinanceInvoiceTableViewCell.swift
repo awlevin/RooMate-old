@@ -8,24 +8,44 @@
 
 import UIKit
 
-class RMFinanceInvoiceTableViewCell: UITableViewCell {
+protocol FinanceTableViewCellDelegate {
+    func percentageChanged(percentage: String?)
+}
+
+class RMFinanceInvoiceTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var percentageTextField: UITextField!
+    @IBOutlet weak var totalCostLabel: RMThinLabel!
+    
+    var parentVC: RMFinanceInvoiceContainerTableViewController?
+    var delegate: FinanceTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+        percentageTextField.delegate = self
+        
+        percentageTextField.addTarget(self, action: #selector(RMFinanceInvoiceTableViewCell.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
-    func configureCell() {
+    func configureCell(user: RMUser) {
+        
+        nameLabel.text = user.firstName + " " + user.lastName
         
     }
     
+    func textFieldDidChange(textField: UITextField) {
+        self.delegate?.percentageChanged(textField.text!)
+    }
+   
 }
