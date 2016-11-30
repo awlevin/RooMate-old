@@ -9,10 +9,10 @@
 import Foundation
 
 public struct RMUser : Hashable {
+    //userid, groupid, datecreatedat, firstname, lastname, email, profileimageurl
     var userObjectId: String?
     var groupId: String?
     var dateCreatedAt: String?
-    var dateUpdatedAt: String?
     var firstName: String
     var lastName: String
     var email: String
@@ -25,7 +25,7 @@ public struct RMUser : Hashable {
     
     
     // Public Functions
-    static func createUser(user: RMUser, completion: (success: Bool) -> Void)  {
+    static func createUser(token: String, user: RMUser, completion: (success: Bool) -> Void)  {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMUser"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -34,8 +34,8 @@ public struct RMUser : Hashable {
         userDictionary["firstname"] = user.firstName
         userDictionary["lastname"] = user.lastName
         userDictionary["email"] = user.email
+        userDictionary["token"] = token
         userDictionary["profileimageurl"] = user.profileImageURL
-        
         
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -43,15 +43,11 @@ public struct RMUser : Hashable {
         do
         {
             request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(userDictionary, options: [.PrettyPrinted])
-            print("**********************")
-            print(NSString(data: request.HTTPBody!, encoding:NSUTF8StringEncoding)!)
         } catch let error as NSError {
             print(error)
         }
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.timeoutIntervalForRequest = 8.0
-        configuration.timeoutIntervalForResource = 8.0
         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
@@ -72,6 +68,11 @@ public struct RMUser : Hashable {
                 return
             } else {
                 let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                dispatch_async(dispatch_get_main_queue()) {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setInteger(Int(json)!, forKey: "userid")
+                }
+                
             }
         }
         
