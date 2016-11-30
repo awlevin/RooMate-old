@@ -9,8 +9,20 @@
 import Foundation
 
 public struct RMUser : Hashable {
-    var userObjectId: String?
-    var groupId: String?
+    
+    // BEGIN: Temporary code to test everything with different RMUsers
+    static func returnTestUser() -> RMUser{
+        return RMUser(userObjectID: 1, groupID: 1, dateCreatedAt: "00/00/00", dateUpdatedAt: "00/00/00", firstName: "TestFirst", lastName: "UserLast", email: "testUser@trumpsucks.com", profileImageURL: "N/A", userGroceryLists: nil)
+    }
+    // END: Temporary code to test everything with RMUsers
+    
+    
+    
+    
+    
+    
+    var userObjectID: Int
+    var groupID: Int
     var dateCreatedAt: String?
     var dateUpdatedAt: String?
     var firstName: String
@@ -20,8 +32,8 @@ public struct RMUser : Hashable {
     var userGroceryLists: [RMGroceryList]?
     
     // TODO: Ritvik double check this. This is my attempt at making RMUser conform to Hashable.
-    // We needed an appropriate hashValue, so I figured the uniqueness of userObjectId would produce a good hash value.
-    public var hashValue: Int { return userObjectId!.hashValue }
+    // We needed an appropriate hashValue, so I figured the uniqueness of userObjectID would produce a good hash value.
+    public var hashValue: Int { return userObjectID.hashValue }
     
     
     // Public Functions
@@ -139,8 +151,8 @@ extension RMUser: Equatable {}
 
 public func ==(lhs: RMUser, rhs: RMUser) -> Bool {
     
-    // Two users are equal if their objectIds are equivalent.
-    return lhs.userObjectId == rhs.userObjectId
+    // Two users are equal if their objectIDs are equivalent.
+    return lhs.userObjectID == rhs.userObjectID
 }
 
 
