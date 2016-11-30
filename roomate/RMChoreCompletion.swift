@@ -23,7 +23,7 @@ public struct RMChoreCompletion {
     
     static func createChoreCompletionDictionary(chore: RMChore, user: RMUser) -> [String : AnyObject]{
         var returnDict = [String : AnyObject]()
-        returnDict["choreid"] = chore.objectID
+        returnDict["choreid"] = chore.choreID
         returnDict["userid"] = user.userObjectID
         returnDict["groupid"] = user.groupID
         returnDict["title"] = chore.title

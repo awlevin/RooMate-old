@@ -67,7 +67,7 @@ class RMChoreAddCompletionViewController: UIViewController, UIImagePickerControl
         
         //TODO: Save information to server
         if afterPhotoImageView.image != nil {
-            RMChore.updateChoreAfter(self.chore.objectID, afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
+            RMChore.updateChoreAfter(self.chore.choreID, afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
                 if completed{
                     // TODO: completion handler after saving photo
                 }
@@ -75,7 +75,7 @@ class RMChoreAddCompletionViewController: UIViewController, UIImagePickerControl
         }
         
         if beforePhotoImageView.image != nil {
-            RMChore.updateChoreBefore(self.chore.objectID, beforePhoto: getBase64ForImage(beforePhotoImageView.image!)) { (completed) in
+            RMChore.updateChoreBefore(self.chore.choreID, beforePhoto: getBase64ForImage(beforePhotoImageView.image!)) { (completed) in
                 if completed{
                     // TODO: completion handler after saving photo
                 }

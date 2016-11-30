@@ -9,7 +9,7 @@
 import Foundation
 
 public struct RMChore {
-    var objectID: Int // Also known as unique identifier
+    var choreID: Int // Also known as unique identifier
     var groupID: Int
     var userID: Int // Who did the chore
     var title: String
@@ -64,6 +64,47 @@ public struct RMChore {
         task.resume()
     }
     
+    static func deleteChore(choreid: Int, completionHandler: (completed: Bool) -> () ) {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/deleteRMChores"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(choreid)", forHTTPHeaderField: "choreid")
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil){
+                switch statusCode {
+                case 400:
+                    completionHandler(completed: false)
+                    break
+                case 404:
+                    completionHandler(completed: false)
+                    break
+                case 503:
+                    completionHandler(completed: false)
+                    break
+                case 200:
+                    completionHandler(completed: true) // success
+                default:
+                    completionHandler(completed: false)
+                    break
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
 
     static func getChores(offset: Int, lastid: Int, groupId: Int, completionHandler: (chores: [RMChore])->()) {
         
@@ -83,7 +124,7 @@ public struct RMChore {
             if let httpResponse = response as? NSHTTPURLResponse {
                 statusCode = httpResponse.statusCode
             }
-            
+
             if(error != nil || data == nil || statusCode != 200){
                 switch statusCode {
                 case 400:
@@ -113,7 +154,7 @@ public struct RMChore {
                         guard let jsonItemDict = jsonItem as? [String: AnyObject]
                             else { continue }
                         
-                        let currPost = RMChore(objectID: jsonItemDict["choreid"] as! Int, groupID: jsonItemDict["groupid"] as! Int, userID: jsonItemDict["userid"] as! Int, title: jsonItemDict["choretitle"] as! String, description: jsonItemDict["description"] as! String,  dateCreated: jsonItemDict["datecreatedat"] as! String)
+                        let currPost = RMChore(choreID: jsonItemDict["choreid"] as! Int, groupID: jsonItemDict["groupid"] as! Int, userID: jsonItemDict["userid"] as! Int, title: jsonItemDict["choretitle"] as! String, description: jsonItemDict["description"] as! String,  dateCreated: jsonItemDict["datecreatedat"] as! String)
                         returnedPosts.append(currPost)
                     }
                     completionHandler(chores: returnedPosts)
@@ -229,7 +270,6 @@ public struct RMChore {
         do
         {
             request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(choreDictionary, options: [.PrettyPrinted])
-            print("**********************")
             print(NSString(data: request.HTTPBody!, encoding:NSUTF8StringEncoding)!)
         } catch let error as NSError {
             print(error)
@@ -272,7 +312,7 @@ public struct RMChore {
         
         request.HTTPMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("\(self.objectID)", forHTTPHeaderField: "choreid")
+        request.addValue("\(self.choreID)", forHTTPHeaderField: "choreid")
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
@@ -323,6 +363,8 @@ public struct RMChore {
         }
         task.resume()
     }
+    
+    
 
     
     static func createChoreDictionary(choreObject: RMChore) -> [String : AnyObject] {

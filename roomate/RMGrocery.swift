@@ -9,15 +9,17 @@
 import Foundation
 
 public struct RMGrocery {
-    var objectId: Int
-    var userId: Int
-    var groupId: Int
+    var objectID: Int
+    var userID: Int
+    var groupID: Int
     var isPersonalItem: Bool
     var dateCreatedAt: String
     var dateUpdatedAt: String
     var groceryItemName: String
     var groceryItemPrice: Double
     var groceryItemDescription: String
+    var quantity: Int
+    var listID: Int?
     
     
     static func createNewGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->()) {
@@ -36,7 +38,6 @@ public struct RMGrocery {
             print("**********************")
             print(NSString(data: request.HTTPBody!, encoding:NSUTF8StringEncoding)!)
         } catch let error as NSError {
-            print("1. got here")
             print(error)
         }
         
@@ -79,43 +80,14 @@ public struct RMGrocery {
         
         var returnDict = [String : AnyObject]()
         
-        returnDict["userid"] = groceryObject.userId
-        returnDict["groupid"] = groceryObject.groupId
+        returnDict["userid"] = groceryObject.userID
+        returnDict["groupid"] = groceryObject.groupID
         returnDict["personalitem"] = (groceryObject.isPersonalItem) ? "TRUE" : "FALSE"
         returnDict["groceryitemname"] = groceryObject.groceryItemName
         returnDict["groceryitemprice"] = groceryObject.groceryItemPrice
+        returnDict["quantity"] = groceryObject.quantity
         returnDict["groceryitemdescription"] = groceryObject.groceryItemDescription
 
         return returnDict
     }
-    
-    // Public Functions
-    /*
-    public func getGrocery(listId: String, objectId: String) -> RMGrocery {
-        
-    }
-    
-    public func deleteGrocery(listId: String, objectId: String) {
-        
-    }
-    
-    public func editGrocery(groceryItem: RMGrocery) -> RMGrocery {
-        
-    }
-    
-    
-    // Private Functions
-    
-    private func changeLastUpdateDate() {
-        
-    }
-    
-    private func changeCommunalState() {
-        
-    }
-     */
-    
-    
-    
-    
 }
