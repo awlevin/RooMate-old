@@ -97,7 +97,7 @@
                                     <constraint firstAttribute="width" constant="375" id="h08-kp-GqZ"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="Qqf-cI-KUQ" kind="embed" id="vEL-Cq-WVs"/>
+                                    <segue destination="Qqf-cI-KUQ" kind="embed" identifier="topContainer" id="vEL-Cq-WVs"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -116,7 +116,13 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="45t-iQ-mzv">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="cancelButtonPressed:" destination="ioE-yp-Ayp" id="cWS-vy-NJp"/>
+                                <action selector="cancelButtonPressed:" destination="ioE-yp-Ayp" id="bFO-96-0es"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Complete" id="XAl-Op-rOg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="completeButtonPressed" destination="ioE-yp-Ayp" id="NKh-L0-1v3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -125,11 +131,11 @@
             </objects>
             <point key="canvasLocation" x="2968.8000000000002" y="2946.4767616191907"/>
         </scene>
-        <!--Finance Invoice Table View Controller-->
+        <!--Finance Invoice Top Container Table View Controller-->
         <scene sceneID="Nx2-j3-JIm">
             <objects>
-                <tableViewController id="Qqf-cI-KUQ" customClass="RMFinanceInvoiceTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V71-xQ-hVT">
+                <tableViewController id="Qqf-cI-KUQ" customClass="RMFinanceInvoiceTopContainerTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V71-xQ-hVT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,15 +160,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-22-fpd" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="12" width="33" height="21"/>
+                                                    <rect key="frame" x="16" y="10" width="33" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QI7-Vc-lqs">
-                                                    <rect key="frame" x="99" y="8" width="260" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QI7-Vc-lqs">
+                                                    <rect key="frame" x="99" y="8" width="260" height="25"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -182,11 +188,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42q-uL-F2N">
-                                                    <rect key="frame" x="98" y="7" width="261" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42q-uL-F2N">
+                                                    <rect key="frame" x="98" y="9" width="261" height="26"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdm-Jn-sD7" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="11" width="37" height="21"/>
@@ -217,10 +223,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlW-RO-Pip">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlW-RO-Pip">
                                                     <rect key="frame" x="98" y="7" width="261" height="30"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -251,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="3712.8000000000002" y="2757.1214392803599"/>
         </scene>
-        <!--Finance Invoice Container Table View Controller-->
+        <!--Finance Invoice Bottom Container Table View Controller-->
         <scene sceneID="ZPw-nn-psH">
             <objects>
-                <tableViewController id="BuV-qp-XLc" customClass="RMFinanceInvoiceContainerTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BuV-qp-XLc" customClass="RMFinanceInvoiceBottomContainerTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3eP-YY-1q3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="453"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,7 +273,7 @@
                                     <rect key="frame" x="38" y="8" width="299" height="42"/>
                                     <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="29"/>
-                                    <state key="normal" title="$">
+                                    <state key="normal" title="$ 0.00">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
@@ -290,7 +296,7 @@
                                 <rect key="frame" x="0.0" y="93" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RKd-vc-KcL" id="DDg-ZW-ivm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -362,7 +368,7 @@
                                 <rect key="frame" x="0.0" y="148" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gIL-Ym-kfe" id="PIp-Hd-V93">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

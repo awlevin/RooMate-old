@@ -11,6 +11,6 @@ import UIKit
 
 func configureGlobalNavigationBarAppearence() {
     // Remove NavigationBar's border
-    UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+    UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Thin", size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     UINavigationBar.appearance().tintColor = UIColor.whiteColor()
 }

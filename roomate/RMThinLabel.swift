@@ -26,7 +26,7 @@ class RMThinLabel: UILabel {
     }
     
     func setup() {
-        self.font = UIFont(name: "HelveticaNeue-Thin", size: 17)
+        self.font = UIFont(name: "HelveticaNeue-Thin", size: self.font!.pointSize)
     }
 
 }
