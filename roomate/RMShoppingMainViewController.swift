@@ -49,6 +49,8 @@ class RMShoppingMainViewController: UIViewController {
             
         } else if segue.identifier == "CompleteCheckoutSegue" {
             
+        } else if segue.identifier == "EditGrocerySegue" {
+            // TODO: Pass grocery to destination view controller to display
         }
         
     }
