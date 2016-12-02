@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FinanceTableViewCellDelegate {
-    func percentageChanged(percentage: String?, cost: Double, newTotal: Double)
+    func percentageUpdated(newInvoice: RMInvoice)
 }
 
 class RMFinanceInvoiceTableViewCell: UITableViewCell, UITextFieldDelegate {
@@ -18,10 +18,9 @@ class RMFinanceInvoiceTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var percentageTextField: UITextField!
     @IBOutlet weak var totalCostLabel: UILabel!
     
-    var parentVC: RMFinanceInvoiceBottomContainerTableViewController?
+    var parentVC: RMFinanceInvoiceTableViewController?
     var delegate: FinanceTableViewCellDelegate?
-    var total: Double?
-    var userCost: Double?
+    var invoice: RMInvoice?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,41 +29,47 @@ class RMFinanceInvoiceTableViewCell: UITableViewCell, UITextFieldDelegate {
         percentageTextField.delegate = self
         
         percentageTextField.addTarget(self, action: #selector(RMFinanceInvoiceTableViewCell.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
-        
-        userCost = 0
-        
-    }
-    func configureCell(user: RMUser) {
-        
-        nameLabel.text = user.firstName + " " + user.lastName
-        
-        if parentVC?.total != total {
-            self.updateUI()
-        }
-    }
-    
-    func updateUI() {
-        if percentageTextField.text != "" {
-            let percentage = Double(percentageTextField.text!)! / 100.0
-            
-            userCost = percentage * total!
-            print("User cost = \(userCost!)")
-            
-            let newTotal = total! - userCost!
-            print("\(nameLabel.text) Total: \(newTotal)")
-            
-            totalCostLabel.text = userCost!.asLocaleCurrency
-            self.delegate?.percentageChanged(percentageTextField.text!, cost: userCost!, newTotal: newTotal)
-        } else {
-            self.delegate?.percentageChanged(percentageTextField.text!, cost: userCost!, newTotal: total!)
-            print("User cost = \(userCost)")
-            userCost = 0
-            totalCostLabel.text = userCost?.asLocaleCurrency
-        }
     }
     
     func textFieldDidChange(textField: UITextField) {
         updateUI()
     }
-   
+    
+    func configureCell(user: RMUser) {
+        nameLabel.text = user.firstName + " " + user.lastName
+        updateUI()
+    }
+    
+    func updateUI() {
+        if percentageTextField.text != "" {
+            invoice = self.parentVC?.invoice
+            let percentage = Double(percentageTextField.text!)! / 100.0
+            print("\(nameLabel.text!) Percentage: \(percentage)")
+            
+            let userCost = percentage * invoice!.total!
+            print("\(nameLabel.text!) Cost: \(userCost)")
+            
+            let newTotal = invoice!.total! - userCost
+            print("\(nameLabel.text!) Total Left: \(newTotal)")
+            
+            totalCostLabel.text = userCost.asLocaleCurrency
+
+            invoice?.debtors?.updateValue(userCost, forKey: nameLabel.text!)
+            print(invoice?.debtors)
+            self.delegate?.percentageUpdated(invoice!)
+        } else {
+            totalCostLabel.text = 0.asLocaleCurrency
+            invoice?.debtors?.updateValue(0, forKey: nameLabel.text!)
+            self.delegate?.percentageUpdated(invoice!)
+        }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.characters.count + string.characters.count - range.length
+        
+        return newLength <= 3 // Bool
+    }
+    
 }

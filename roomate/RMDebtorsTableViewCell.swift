@@ -22,7 +22,8 @@ class RMDebtorsTableViewCell: UITableViewCell {
         
     }
     
-    func configureCell() {
-        
+    func configureCell(user: RMUser) {
+        nameLabel.text = user.firstName + " " + user.lastName
+
     }
 }

@@ -52,11 +52,8 @@
 		9080276B1DEE3E1000918D1D /* RMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276A1DEE3E1000918D1D /* RMExtensions.swift */; };
 		9080276D1DEE401B00918D1D /* RMRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276C1DEE401B00918D1D /* RMRoundedButton.swift */; };
 		9080276F1DEE417000918D1D /* RMRoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276E1DEE417000918D1D /* RMRoundedImageView.swift */; };
-		908027711DEE4B4E00918D1D /* RMFinanceInvoiceTopContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908027701DEE4B4E00918D1D /* RMFinanceInvoiceTopContainerTableViewController.swift */; };
-		908027731DEE5BFF00918D1D /* RMFinanceInvoiceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908027721DEE5BFF00918D1D /* RMFinanceInvoiceMainViewController.swift */; };
 		9097F4901DC80DEE0056FA78 /* RMFinanceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F48F1DC80DEE0056FA78 /* RMFinanceMainViewController.swift */; };
 		9097F4921DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4911DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift */; };
-		9097F4961DC80EDB0056FA78 /* RMFinanceInvoiceBottomContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4951DC80EDB0056FA78 /* RMFinanceInvoiceBottomContainerTableViewController.swift */; };
 		9097F49C1DC814F20056FA78 /* RMDebtsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F49B1DC814F20056FA78 /* RMDebtsTableViewCell.xib */; };
 		9097F49E1DC8156D0056FA78 /* RMDebtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F49D1DC8156D0056FA78 /* RMDebtsTableViewCell.swift */; };
 		9097F4A01DC8178A0056FA78 /* RMDebtorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F49F1DC8178A0056FA78 /* RMDebtorsTableViewCell.xib */; };
@@ -83,9 +80,12 @@
 		9097F4D91DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4D81DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift */; };
 		9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib */; };
 		9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift */; };
+		90B523AF1DF14A2C00CB7E18 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */; };
+		90B523B01DF14A2C00CB7E18 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */; };
 		90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */; };
 		90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693351DBF0B480052A6BF /* RMAuth.swift */; };
 		90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B693381DBF0D110052A6BF /* GoogleService-Info.plist */; };
+		90FF3AC51DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */; };
 		95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */; };
 		A22F448AF7865D236E456801 /* Pods_roomateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */; };
 /* End PBXBuildFile section */
@@ -162,12 +162,9 @@
 		9080276A1DEE3E1000918D1D /* RMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMExtensions.swift; sourceTree = "<group>"; };
 		9080276C1DEE401B00918D1D /* RMRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMRoundedButton.swift; sourceTree = "<group>"; };
 		9080276E1DEE417000918D1D /* RMRoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMRoundedImageView.swift; sourceTree = "<group>"; };
-		908027701DEE4B4E00918D1D /* RMFinanceInvoiceTopContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceTopContainerTableViewController.swift; sourceTree = "<group>"; };
-		908027721DEE5BFF00918D1D /* RMFinanceInvoiceMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceMainViewController.swift; sourceTree = "<group>"; };
 		9097F48D1DC8062E0056FA78 /* roomate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = roomate.entitlements; sourceTree = "<group>"; };
 		9097F48F1DC80DEE0056FA78 /* RMFinanceMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceMainViewController.swift; sourceTree = "<group>"; };
 		9097F4911DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceContainerTableViewController.swift; sourceTree = "<group>"; };
-		9097F4951DC80EDB0056FA78 /* RMFinanceInvoiceBottomContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceBottomContainerTableViewController.swift; sourceTree = "<group>"; };
 		9097F49B1DC814F20056FA78 /* RMDebtsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMDebtsTableViewCell.xib; sourceTree = "<group>"; };
 		9097F49D1DC8156D0056FA78 /* RMDebtsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMDebtsTableViewCell.swift; sourceTree = "<group>"; };
 		9097F49F1DC8178A0056FA78 /* RMDebtorsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMDebtorsTableViewCell.xib; sourceTree = "<group>"; };
@@ -194,9 +191,12 @@
 		9097F4D81DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutTableViewController.swift; sourceTree = "<group>"; };
 		9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingCheckoutTableViewCell.xib; sourceTree = "<group>"; };
 		9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutTableViewCell.swift; sourceTree = "<group>"; };
+		90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLoginViewController.swift; sourceTree = "<group>"; };
 		90B693351DBF0B480052A6BF /* RMAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMAuth.swift; sourceTree = "<group>"; };
 		90B693381DBF0D110052A6BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceTableViewController.swift; sourceTree = "<group>"; };
 		A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.release.xcconfig"; sourceTree = "<group>"; };
 		AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -368,7 +368,6 @@
 				9097F4911DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift */,
 				9097F49A1DC814A00056FA78 /* Invoice */,
 				9097F4971DC8147C0056FA78 /* Debts */,
-				9097F4981DC814810056FA78 /* Statistics */,
 				9097F4991DC814890056FA78 /* Debtors */,
 			);
 			name = Finance;
@@ -381,13 +380,6 @@
 				9097F49B1DC814F20056FA78 /* RMDebtsTableViewCell.xib */,
 			);
 			name = Debts;
-			sourceTree = "<group>";
-		};
-		9097F4981DC814810056FA78 /* Statistics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Statistics;
 			sourceTree = "<group>";
 		};
 		9097F4991DC814890056FA78 /* Debtors */ = {
@@ -403,9 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				903C21551DEFAAC0001D5689 /* RMInvoice.swift */,
-				908027721DEE5BFF00918D1D /* RMFinanceInvoiceMainViewController.swift */,
-				908027701DEE4B4E00918D1D /* RMFinanceInvoiceTopContainerTableViewController.swift */,
-				9097F4951DC80EDB0056FA78 /* RMFinanceInvoiceBottomContainerTableViewController.swift */,
+				90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */,
 				9097F4A31DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib */,
 				9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */,
 			);
@@ -517,6 +507,8 @@
 				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
 				4250E29B1DA0314C002F7FA7 /* Info.plist */,
 				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
+				90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */,
+				90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -623,7 +615,7 @@
 				TargetAttributes = {
 					4250E2881DA0314C002F7FA7 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8PF73Y7CN7;
+						DevelopmentTeam = 78D6QUSH64;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -666,6 +658,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B523B01DF14A2C00CB7E18 /* Montserrat-Regular.ttf in Resources */,
 				900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */,
 				426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */,
 				900C6D451DB81C2400D27507 /* Login.storyboard in Resources */,
@@ -673,6 +666,7 @@
 				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
 				9097F4C31DC874130056FA78 /* RMChoreInformationTableViewCell.xib in Resources */,
 				9097F4A01DC8178A0056FA78 /* RMDebtorsTableViewCell.xib in Resources */,
+				90B523AF1DF14A2C00CB7E18 /* Montserrat-Bold.ttf in Resources */,
 				900C6D431DB80FF500D27507 /* Main.storyboard in Resources */,
 				42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */,
 				42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */,
@@ -819,10 +813,8 @@
 				9097F4D91DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift in Sources */,
 				9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
-				908027731DEE5BFF00918D1D /* RMFinanceInvoiceMainViewController.swift in Sources */,
 				9080276F1DEE417000918D1D /* RMRoundedImageView.swift in Sources */,
 				4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */,
-				908027711DEE4B4E00918D1D /* RMFinanceInvoiceTopContainerTableViewController.swift in Sources */,
 				85F003F91DC80A8F008CA377 /* RMNotificationManager.swift in Sources */,
 				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
 				9097F4C71DC909040056FA78 /* RMShoppingMainViewController.swift in Sources */,
@@ -834,8 +826,8 @@
 				9097F4BA1DC872760056FA78 /* RMChoreInformationTableViewController.swift in Sources */,
 				85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */,
 				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
+				90FF3AC51DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift in Sources */,
 				42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */,
-				9097F4961DC80EDB0056FA78 /* RMFinanceInvoiceBottomContainerTableViewController.swift in Sources */,
 				9097F49E1DC8156D0056FA78 /* RMDebtsTableViewCell.swift in Sources */,
 				9097F4AB1DC860050056FA78 /* RMChoreMainTableViewController.swift in Sources */,
 				9080276B1DEE3E1000918D1D /* RMExtensions.swift in Sources */,
@@ -1029,7 +1021,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
-				DEVELOPMENT_TEAM = 8PF73Y7CN7;
+				DEVELOPMENT_TEAM = 78D6QUSH64;
 				INFOPLIST_FILE = roomate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;
@@ -1045,7 +1037,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
-				DEVELOPMENT_TEAM = 8PF73Y7CN7;
+				DEVELOPMENT_TEAM = 78D6QUSH64;
 				INFOPLIST_FILE = roomate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;

@@ -14,16 +14,11 @@ protocol InvoiceDelegate {
 
 struct RMInvoice {
    // var total: Double?
-    var total: Double? {
-        get {
-            return self.total
-        }
-        set {
-            delegate?.invoiceTotalEdited(newValue!)
-        }
-    }
+    var total: Double?
     var title: String?
     var category: String?
     var delegate:InvoiceDelegate?
-    var debtors: [String : Int]?
+    var debtors: [String : Double]?
+    
+    
 }
