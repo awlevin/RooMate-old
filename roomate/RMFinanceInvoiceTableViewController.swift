@@ -13,11 +13,11 @@ import UIKit
 // Animation with red when a textfield is not filled out
 class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, FinanceTableViewCellDelegate {
     
-    static let user1 = RMUser(userObjectId: "0", groupId: "0", dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Corey", lastName: "Pett", email: "0", profileImageURL: "0", userGroceryLists: nil)
+    static let user1 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Corey", lastName: "Pett", email: "0", profileImageURL: "0", userGroceryLists: nil)
     
-    static let user2 = RMUser(userObjectId: "0", groupId: "0", dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Jim", lastName: "Skretny", email: "0", profileImageURL: "0", userGroceryLists: nil)
+    static let user2 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Jim", lastName: "Skretny", email: "0", profileImageURL: "0", userGroceryLists: nil)
     
-    static let user3 = RMUser(userObjectId: "0", groupId: "0", dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Eric", lastName: "Bach", email: "0", profileImageURL: "0", userGroceryLists: nil)
+    static let user3 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Eric", lastName: "Bach", email: "0", profileImageURL: "0", userGroceryLists: nil)
     let userArray = [user1, user2, user3]
 
 
