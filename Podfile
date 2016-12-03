@@ -13,11 +13,16 @@ pod ‘FBSDKCoreKit'
 pod ‘FBSDKLoginKit'
 pod ‘FBSDKShareKit'
 
-  # Payment
-pod 'PayPal-iOS-SDK'
-
   # Push Notifications
 pod ‘OneSignal’
+
+  # Payment
+pod 'BraintreeDropIn’
+pod 'Braintree/Venmo'
+pod 'Braintree/Apple-Pay'
+pod 'Braintree/PayPal'
+
+
 
   target 'roomateTests' do
     inherit! :search_paths
