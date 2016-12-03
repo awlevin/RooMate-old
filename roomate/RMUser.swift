@@ -29,6 +29,7 @@ public struct RMUser : Hashable {
     var lastName: String
     var email: String
     var profileImageURL: String
+   // var oneSignalId: String?
     var userGroceryLists: [RMGroceryList]?
     
     // TODO: Ritvik double check this. This is my attempt at making RMUser conform to Hashable.

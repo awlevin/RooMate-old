@@ -8,31 +8,40 @@
 
 import Foundation
 import UIKit
+import OneSignal
 
 
 // Enum Declarations
 
 public enum RMPushTypes {
-    case Message
-    case BulletinBoard
-    case FinanceBill
-    case Chore
-    case GroceryShopping
-    case CommunalGrocery
+    case NewBulletinPostCreated
+    case NewBulletinCommentCreated
+    case NewDebtCreated
+    case DebtCancelled
+    case DebtPaid
+    case ChoreCompleted
+    case NewChoreCreated
+    case RoomateShoopping
+    case NewCommunalGrocery
 }
 
 public enum RMTabTypes {
-    case AppIcon
     case BulletinBoard
     case Finance
-    case Grocery
+    case Shopping
     case Chore
     case Settings
+    case AppIcon
 }
 
 
 
 struct RMNotificationManger {
+    /**
+    
+     Present a simple alert view controller with a title and message
+     
+    */
     func presentSimpleAlertWithMessage(title:String, message:String, viewController:UIViewController){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.Default, handler: nil))
@@ -52,7 +61,7 @@ struct RMNotificationManger {
             return
         case .Finance:
             tabBarController.tabBar.items?[1].badgeValue = nil
-        case .Grocery:
+        case .Shopping:
             tabBarController.tabBar.items?[2].badgeValue = nil
             return
         case .Chore:
@@ -73,51 +82,71 @@ struct RMNotificationManger {
      
      */
     
-    public func sentPushTo(userId: String, message: String, pushType: RMPushTypes) {
+    func sentPushTo(userId: String, message: String, pushType: RMPushTypes) {        
         switch pushType {
-        case .Message:
-//            OneSignal.postNotification(["contents": ["en": message],
-//                "headings": ["en" : "Name of user"],
-//                "include_player_ids": [userId],
-//                "ios_badgeType": "Increase",
-//                "ios_badgeCount": 1])
-            return
-        case .BulletinBoard:
-//            OneSignal.postNotification(["contents": ["en": message],
-//                "headings": ["en" : "Meet Request!"],
-//                "include_player_ids": [userId],
-//                "ios_badgeType": "Increase",
-//                "ios_badgeCount": 1])
-            
-            return
-        case .Chore:
-//            OneSignal.postNotification(["contents": ["en": message],
-//                "headings": ["en" : "User Request!"],
-//                "include_player_ids": [userId],
-//                "ios_badgeType": "Increase",
-//                "ios_badgeCount": 1])
-            return
-        case .FinanceBill:
-//            OneSignal.postNotification(["contents": ["en": message],
-//                "headings": ["en" : "Name of user"],
-//                "include_player_ids": [userId],
-//                "ios_badgeType": "Increase",
-//                "ios_badgeCount": 1])
-            return
-        case .GroceryShopping:
-//            OneSignal.postNotification(["contents": ["en": message],
-//                "headings": ["en" : "Name of user"],
-//                "include_player_ids": [userId],
-//                "ios_badgeType": "Increase",
-//                "ios_badgeCount": 1])
-            return
-        case.CommunalGrocery:
-//            OneSignal.postNotification(["contents": ["en": message],
-//                "headings": ["en" : "Name of user"],
-//                "include_player_ids": [userId],
-//                "ios_badgeType": "Increase",
-//                "ios_badgeCount": 1])
-            return
+        case .NewBulletinPostCreated:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "New Bulletin Post!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .NewBulletinCommentCreated:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "New Comment!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .NewDebtCreated:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "New Cost!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .DebtPaid:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "Debt Paid!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .DebtCancelled:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "Debt Cancelled!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .NewChoreCreated:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "New Chore Created!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .ChoreCompleted:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "Chore Completed!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .NewCommunalGrocery:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "New Grocery Added!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
+        case .RoomateShoopping:
+            OneSignal.postNotification(["contents": ["en": message],
+                                        "headings": ["en" : "RooMate Is Going Shopping!"],
+                                        "include_player_ids": [userId],
+                                        "ios_badgeType": "Increase",
+                                        "ios_badgeCount": 1])
+            break
         }
     }
     
@@ -129,37 +158,96 @@ struct RMNotificationManger {
      
      */
     
-//    func configure(launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
-//        OneSignal.initWithLaunchOptions(launchOptions, appId: "4bfe00f1-e849-4daf-a559-924b9dcc74de", handleNotificationReceived: { (notification) in
-//            
-//            print("Received Notification - \(notification?.payload.notificationID)")
-//            
-//            let payload = notification?.payload
-//            
-//            //if payload?.title ==
-//            
-//            
-//            }, handleNotificationAction: { (result) in
-//                
-//                // This block gets called when the user reacts to a notification received
-//                
-//                // **TODO**  2. Open proper viewControllers accordingly
-//                let payload = result?.notification.payload
-//                
-//                if payload?.title == "Name of user" {
-//                    self.didRecievePush(pushType: .Message)
-//                } else if payload?.title == "Meet Request!" {
-//                    self.didRecievePush(pushType: .MeetRequest)
-//                } else if payload?.title == "User Request!" {
-//                    self.didRecievePush(pushType: .UserRequest)
-//                } else { // Survey notification!
-//                    // **TODO**  1. Display survey
-//                }
-//                
-//                
-//            }, settings: [kOSSettingsKeyAutoPrompt : true, kOSSettingsKeyInAppAlerts : false])
-//        
-//    }
+    func configure(launchOptions: [NSObject : AnyObject]!) {
+        OneSignal.initWithLaunchOptions(launchOptions, appId: "6f212add-742d-4149-a76d-e9883854bf75", handleNotificationReceived: { (notification) in
+            
+            // This block gets called when the user has the app open
+            
+            print("Received Notification - \(notification?.payload.notificationID)")
+            
+            let payload = notification?.payload
+            
+            // Handle push notification
+            if let title = payload?.title {
+                switch title {
+                case "New Bulletin Post!":
+                        self.didRecievePush(.NewBulletinPostCreated)
+                    return
+                case "New Comment!":
+                        self.didRecievePush(.NewBulletinCommentCreated)
+                    return
+                case "New Cost!":
+                        self.didRecievePush(.NewDebtCreated)
+                    return
+                case "Debt Paid!":
+                        self.didRecievePush(.DebtPaid)
+                    return
+                case "Debt Cancelled!":
+                        self.didRecievePush(.DebtCancelled)
+                    return
+                case "New Chore Created!":
+                        self.didRecievePush(.NewChoreCreated)
+                    return
+                case "Chore Completed!":
+                        self.didRecievePush(.ChoreCompleted)
+                    return
+                case "New Grocery Added!":
+                        self.didRecievePush(.NewCommunalGrocery)
+                    return
+                case "RooMate Is Going Shopping!":
+                        self.didRecievePush(.RoomateShoopping)
+                    return
+                default:
+                    return
+                }
+            }
+        
+            
+            }, handleNotificationAction: { (result) in
+                
+                // This block gets called when the user reacts to a notification received
+                
+                // **TODO**  Open proper viewControllers accordingly
+                let payload = result?.notification.payload
+                
+                // Handle push notification
+                if let title = payload?.title {
+                    switch title {
+                    case "New Bulletin Post!":
+                        self.didRecievePush(.NewBulletinPostCreated)
+                        return
+                    case "New Comment!":
+                        self.didRecievePush(.NewBulletinCommentCreated)
+                        return
+                    case "New Cost!":
+                        self.didRecievePush(.NewDebtCreated)
+                        return
+                    case "Debt Paid!":
+                        self.didRecievePush(.DebtPaid)
+                        return
+                    case "Debt Cancelled!":
+                        self.didRecievePush(.DebtCancelled)
+                        return
+                    case "New Chore Created!":
+                        self.didRecievePush(.NewChoreCreated)
+                        return
+                    case "Chore Completed!":
+                        self.didRecievePush(.ChoreCompleted)
+                        return
+                    case "New Grocery Added!":
+                        self.didRecievePush(.NewCommunalGrocery)
+                        return
+                    case "RooMate Is Going Shopping!":
+                        self.didRecievePush(.RoomateShoopping)
+                        return
+                    default:
+                        return
+                    }
+                }
+  
+            }, settings: [kOSSettingsKeyAutoPrompt : true, kOSSettingsKeyInAppAlerts : false])
+        
+    }
     
     /**
      
@@ -168,85 +256,92 @@ struct RMNotificationManger {
      */
     
     func registerForPushNotifications() {
-       // OneSignal.registerForPushNotifications()
+        OneSignal.registerForPushNotifications()
     }
 }
 
 // MARK: - Private Functions
 
-//private extension DSNotificationManager {
-//    func sendNotificationAfter(value: Int, component: Calendar.Component) -> String {
-//        let today = Date()
-//        let futureDate = Calendar.current.date(byAdding: .minute, value: 1, to: today)
-//        return futureDate!.toString()
-//    }
-//    
-//    // **TODO** 4. After storyboard flow is complete, figure out where tabController is and increment notification
-//    func didRecievePush(pushType: DSPushTypes) {
-//        switch pushType {
-//        case .Message:
-//            //            if let topController = UIApplication.shared.keyWindow?.rootViewController {
-//            //                let tabController = topController.childViewControllers[1] as? UITabBarController
-//            //                incrementBadgeOn(tab: .Message, tabBarController: tabController)
-//            //            }
-//            // Handle message
-//            return
-//        case .MeetRequest:
-//            //            if let topController = UIApplication.shared.keyWindow?.rootViewController {
-//            //                let tabController = topController.childViewControllers[0] as? UITabBarController
-//            //                incrementBadgeOn(tab: .Request, tabBarController: tabController)
-//            //            }
-//            // Handle meet request
-//            return
-//        case .UserRequest:
-//            //            if let topController = UIApplication.shared.keyWindow?.rootViewController {
-//            //                let tabController = topController.childViewControllers[1] as? UITabBarController
-//            //                incrementBadgeOn(tab: .Request, tabBarController: tabController)
-//            //            }
-//            // Handle User request
-//            return
-//        }
-//    }
-//    
-//    /**
-//     
-//     Add badge to a tab in the TabBarController or add a badge to the app icon
-//     */
-//    
-//    func incrementBadgeOn(tab: DSTabTypes, tabBarController: UITabBarController?) {
-//        switch tab {
-//        case .Discover:
-//            if var badgeValue = tabBarController?.tabBar.items?[0].badgeValue {
-//                let value = Int(badgeValue)! + 1
-//                badgeValue = String(value)
-//            } else {
-//                tabBarController?.tabBar.items?[0].badgeValue = "1"
-//            }
-//            return
-//        case .Deck:
-//            if var badgeValue = tabBarController?.tabBar.items?[1].badgeValue {
-//                let value = Int(badgeValue)! + 1
-//                badgeValue = String(value)
-//            } else {
-//                tabBarController?.tabBar.items?[1].badgeValue = "1"
-//            }
-//        case .Request:
-//            if var badgeValue = tabBarController?.tabBar.items?[2].badgeValue {
-//                let value = Int(badgeValue)! + 1
-//                badgeValue = String(value)
-//            } else {
-//                tabBarController?.tabBar.items?[2].badgeValue = "1"
-//            }
-//            return
-//        case .Message:
-//            if var badgeValue = tabBarController?.tabBar.items?[3].badgeValue {
-//                let value = Int(badgeValue)! + 1
-//                badgeValue = String(value)
-//            } else {
-//                tabBarController?.tabBar.items?[3].badgeValue = "1"
-//            }
-//        case .AppIcon:
-//            UIApplication.shared.applicationIconBadgeNumber = 1
-//        }
-//    }
-//}
+private extension RMNotificationManger {
+    func didRecievePush(pushType: RMPushTypes) {
+        switch pushType {
+        case .NewBulletinPostCreated:
+
+            break
+        case .NewBulletinCommentCreated:
+
+            break
+        case .NewDebtCreated:
+
+            break
+        case .DebtPaid:
+
+            break
+        case .DebtCancelled:
+
+            break
+        case .NewChoreCreated:
+
+            break
+        case .ChoreCompleted:
+
+            break
+        case .NewCommunalGrocery:
+
+            break
+        case .RoomateShoopping:
+
+            break
+        }
+    }
+    
+    /**
+     TODO - Once the tab bar items are in place, we need to switch the array numbers around
+     
+     Add badge to a tab in the TabBarController or add a badge to the app icon
+     */
+    
+    func incrementBadgeOn(tab: RMTabTypes, tabBarController: UITabBarController?) {
+        switch tab {
+        case .BulletinBoard:
+            if var badgeValue = tabBarController?.tabBar.items?[0].badgeValue {
+                let value = Int(badgeValue)! + 1
+                badgeValue = String(value)
+            } else {
+                tabBarController?.tabBar.items?[0].badgeValue = "1"
+            }
+            return
+        case .Chore:
+            if var badgeValue = tabBarController?.tabBar.items?[1].badgeValue {
+                let value = Int(badgeValue)! + 1
+                badgeValue = String(value)
+            } else {
+                tabBarController?.tabBar.items?[1].badgeValue = "1"
+            }
+        case .Finance:
+            if var badgeValue = tabBarController?.tabBar.items?[2].badgeValue {
+                let value = Int(badgeValue)! + 1
+                badgeValue = String(value)
+            } else {
+                tabBarController?.tabBar.items?[2].badgeValue = "1"
+            }
+            return
+        case .Shopping:
+            if var badgeValue = tabBarController?.tabBar.items?[3].badgeValue {
+                let value = Int(badgeValue)! + 1
+                badgeValue = String(value)
+            } else {
+                tabBarController?.tabBar.items?[3].badgeValue = "1"
+            }
+        case .Settings:
+            if var badgeValue = tabBarController?.tabBar.items?[3].badgeValue {
+                let value = Int(badgeValue)! + 1
+                badgeValue = String(value)
+            } else {
+                tabBarController?.tabBar.items?[3].badgeValue = "1"
+            }
+        case .AppIcon:
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 1
+        }
+    }
+}

@@ -20,13 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configureGlobalNavigationBarAppearence()
         
+        // This will configure the application to use OneSignal services
+        RMNotificationManger().configure(launchOptions)
+        
         // This will configure the application to use Facebook services
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         if let _ = FBSDKAccessToken.currentAccessToken() {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("GroupSelectionVC")
             

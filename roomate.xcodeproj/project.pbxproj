@@ -42,7 +42,6 @@
 		85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F61DC808CE008CA377 /* RMFinanceBill.swift */; };
 		85F003F91DC80A8F008CA377 /* RMNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */; };
 		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
-		900C6D451DB81C2400D27507 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D441DB81C2400D27507 /* Login.storyboard */; };
 		900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D481DB81CD800D27507 /* Chore.storyboard */; };
 		900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4B1DB81CF900D27507 /* Billboard.storyboard */; };
 		900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4D1DB81D1600D27507 /* Shopping.storyboard */; };
@@ -156,7 +155,6 @@
 		85F003F61DC808CE008CA377 /* RMFinanceBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceBill.swift; sourceTree = "<group>"; };
 		85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMNotificationManager.swift; sourceTree = "<group>"; };
 		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		900C6D441DB81C2400D27507 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		900C6D491DB81CD800D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chore.storyboard; sourceTree = "<group>"; };
 		900C6D4B1DB81CF900D27507 /* Billboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Billboard.storyboard; sourceTree = "<group>"; };
 		900C6D4E1DB81D1600D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shopping.storyboard; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 		4230534D1DC134B8003AE80B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				900C6D441DB81C2400D27507 /* Login.storyboard */,
 				90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */,
 				4230534E1DC134FE003AE80B /* GroupSelectionVC.swift */,
 				426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */,
@@ -317,9 +314,8 @@
 		4250E28B1DA0314C002F7FA7 /* roomate */ = {
 			isa = PBXGroup;
 			children = (
-				9097F48D1DC8062E0056FA78 /* roomate.entitlements */,
-				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
 				900C6D411DB80FF500D27507 /* Main.storyboard */,
+				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
 				4214D5031DD14A1500739747 /* RM API Classes */,
 				424CF5D91DB8033F00B24160 /* RMClasses */,
 				423BEAD51DC7B8FB000C7500 /* Bulletin Board */,
@@ -527,6 +523,7 @@
 				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
 				4250E29B1DA0314C002F7FA7 /* Info.plist */,
 				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
+				9097F48D1DC8062E0056FA78 /* roomate.entitlements */,
 				90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */,
 				90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */,
 			);
@@ -635,9 +632,12 @@
 				TargetAttributes = {
 					4250E2881DA0314C002F7FA7 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 78D6QUSH64;
+						DevelopmentTeam = UDFXY4BG2B;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -681,7 +681,6 @@
 				90B523B01DF14A2C00CB7E18 /* Montserrat-Regular.ttf in Resources */,
 				900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */,
 				426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */,
-				900C6D451DB81C2400D27507 /* Login.storyboard in Resources */,
 				900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */,
 				9021CC451DF2781900653FA5 /* RMFinanceHistoryTableViewCell.xib in Resources */,
 				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
@@ -859,7 +858,7 @@
 				9097F4901DC80DEE0056FA78 /* RMFinanceMainViewController.swift in Sources */,
 				9097F4C91DC90A700056FA78 /* RMShoppingAddViewController.swift in Sources */,
 				9021CC431DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift in Sources */,
-				9097F4C11DC873FD0056FA78 /* RMChoreInformationTableViewCell.swift in Sources */,
+				9097F4C11DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift in Sources */,
 				9097F4D71DC91B420056FA78 /* RMShoppingMainTableViewCell.swift in Sources */,
 				9097F4CB1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift in Sources */,
 				9097F4A21DC817CC0056FA78 /* RMDebtorsTableViewCell.swift in Sources */,
@@ -867,7 +866,7 @@
 				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
 				903C21521DEF7E52001D5689 /* RMThinLabel.swift in Sources */,
 				42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */,
-				9097F4B61DC864540056FA78 /* RMChoreAddViewController.swift in Sources */,
+				9097F4B61DC864540056FA78 /* RMChoreAddCompletionViewController.swift in Sources */,
 				9080276D1DEE401B00918D1D /* RMRoundedButton.swift in Sources */,
 				85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */,
 				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
@@ -1045,7 +1044,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
-				DEVELOPMENT_TEAM = 78D6QUSH64;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
 				INFOPLIST_FILE = roomate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;
@@ -1061,7 +1060,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
-				DEVELOPMENT_TEAM = 78D6QUSH64;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
 				INFOPLIST_FILE = roomate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;

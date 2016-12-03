@@ -12,6 +12,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.16.1):
     - FBSDKCoreKit
+  - OneSignal (2.2.3)
   - PayPal-iOS-SDK (2.16.1):
     - PayPal-iOS-SDK/CardIO (= 2.16.1)
     - PayPal-iOS-SDK/Core (= 2.16.1)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - OneSignal
   - PayPal-iOS-SDK
 
 SPEC CHECKSUMS:
@@ -32,8 +34,9 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 6feac4e8921ccd7afa83fb1df6291dc6eec42c7c
   FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
   FBSDKShareKit: 53af0239b5bd2ebf191f32f75991245a208cc982
+  OneSignal: 5fb2b0bce3be5a7cbb5f2d357e26f03a96c4859a
   PayPal-iOS-SDK: 774ac7de2d7c3b0ee7e8a35f8b347fd07787321b
 
-PODFILE CHECKSUM: e3db22ee889ca90a6ff845e082f94e71d2f5d4c8
+PODFILE CHECKSUM: 1e6431223e33065b4c02706e5f3852674205240a
 
 COCOAPODS: 1.0.1
