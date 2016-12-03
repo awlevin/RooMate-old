@@ -5,25 +5,35 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CardIO (5.4.1)
   - FBSDKCoreKit (4.16.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.16.1):
     - FBSDKCoreKit
   - FBSDKShareKit (4.16.1):
     - FBSDKCoreKit
+  - PayPal-iOS-SDK (2.16.1):
+    - PayPal-iOS-SDK/CardIO (= 2.16.1)
+    - PayPal-iOS-SDK/Core (= 2.16.1)
+  - PayPal-iOS-SDK/CardIO (2.16.1):
+    - CardIO (~> 5.4.1)
+  - PayPal-iOS-SDK/Core (2.16.1)
 
 DEPENDENCIES:
   - Bolts
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - PayPal-iOS-SDK
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   FBSDKCoreKit: 6feac4e8921ccd7afa83fb1df6291dc6eec42c7c
   FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
   FBSDKShareKit: 53af0239b5bd2ebf191f32f75991245a208cc982
+  PayPal-iOS-SDK: 774ac7de2d7c3b0ee7e8a35f8b347fd07787321b
 
-PODFILE CHECKSUM: e56447489c66b257905f60de6d575887370a6511
+PODFILE CHECKSUM: e3db22ee889ca90a6ff845e082f94e71d2f5d4c8
 
 COCOAPODS: 1.0.1

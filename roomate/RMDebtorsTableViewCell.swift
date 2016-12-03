@@ -15,8 +15,9 @@ class RMDebtorsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+        let bell = UIImage(named: "bell")?.imageWithRenderingMode(.AlwaysTemplate)
+        remindButton.setImage(bell, forState: .Normal)
+        remindButton.tintColor = UIColor.whiteColor()    }
 
     @IBAction func remindButtonPressed(sender: AnyObject) {
         
