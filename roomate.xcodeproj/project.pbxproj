@@ -634,6 +634,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UDFXY4BG2B;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Braintree
+import BraintreeDropIn
 
 // TODO: Need array of roommates, need to be able to create a RMFinanceBill for each user
 // Animation when when the user completes a bill
@@ -30,7 +32,7 @@ class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDa
     var pickerOptions = ["Gas", "Electric", "Internet", "Misc"]
     
     @IBAction func completeButtonPressed(sender: AnyObject) {
-        
+            
         var isError = false
         
         // TODO: SAVE INVOICES TO USERS
