@@ -1,14 +1,14 @@
 //
-//  RMChoreAddViewController.swift
+//  RMChoreAddCompletionViewController.swift
 //  roomate
 //
-//  Created by Corey Pett on 11/1/16.
+//  Created by Aaron Levin on 11/29/16.
 //  Copyright © 2016 RooMate. All rights reserved.
 //
 
 import UIKit
 
-class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RMChoreAddCompletionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -22,24 +22,11 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Setup Navigation Bar
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(RMChoreAddViewController.cancelPressed))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(RMChoreAddViewController.donePressed))
-    
         imagePicker.delegate = self
         
-        if chore == nil {
-            let alertController = UIAlertController(title: "Error", message:
-                "Sorry, something went wrong. Please refresh the list of chores!", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Return", style: UIAlertActionStyle.Default,handler: {(alert: UIAlertAction!) in self.cancelPressed()}))
-            self.presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            self.titleLabel.text = chore.title
-            self.textView.text = chore.description
-        }
-
+        updateUI()
+        
     }
     
     @IBAction func beforePhotoButtonPressed(sender: AnyObject) {
@@ -56,28 +43,45 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    func cancelPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func donePressed() {
+    func cancelPressed() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+    @IBAction func completeChoreButton(sender: AnyObject) {
+        
+        chore.createRMChoreCompletion(RMUser.returnTestUser()) { (completed) in
+            if completed {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: "We encountered a problem saving your data, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+
+            }
+        }
         
         //TODO: Save information to server
         if afterPhotoImageView.image != nil {
-            RMChore.updateChoreAfter(self.chore.objectId, afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
+            RMChore.updateChoreAfter(self.chore.choreID, afterPhoto: getBase64ForImage(afterPhotoImageView.image!)) { (completed) in
                 if completed{
-                    self.navigationController?.popViewControllerAnimated(true)
+                    // TODO: completion handler after saving photo
                 }
             }
         }
         
         if beforePhotoImageView.image != nil {
-            RMChore.updateChoreBefore(self.chore.objectId, beforePhoto: getBase64ForImage(beforePhotoImageView.image!)) { (completed) in
+            RMChore.updateChoreBefore(self.chore.choreID, beforePhoto: getBase64ForImage(beforePhotoImageView.image!)) { (completed) in
                 if completed{
+                    // TODO: completion handler after saving photo
                 }
             }
         }
-        
+
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -108,4 +112,8 @@ class RMChoreAddViewController: UIViewController, UIImagePickerControllerDelegat
         return UIImage(data: imageData!)!
     }
     
+    func updateUI() {
+        self.titleLabel.text = chore.title
+        self.textView.text = chore.description
+    }
 }
