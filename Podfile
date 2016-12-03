@@ -7,11 +7,14 @@ target 'roomate' do
 
   # Pods for roomate
 
-  #Facebook
+  # Facebook
 pod ‘Bolts’
 pod ‘FBSDKCoreKit' 
 pod ‘FBSDKLoginKit'
 pod ‘FBSDKShareKit'
+
+  # Venmo
+pod 'PayPal-iOS-SDK'
 
   target 'roomateTests' do
     inherit! :search_paths

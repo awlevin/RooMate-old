@@ -91,5 +91,9 @@ class RMFinanceContainerTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // PRESENT ALERT VIEW CONTROLLER OF DETAILS
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75
+    }
 
 }
