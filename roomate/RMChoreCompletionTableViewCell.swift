@@ -1,5 +1,5 @@
 //
-//  RMChoreInformationTableViewCell.swift
+//  RMChoreCompletionTableViewCell.swift
 //  roomate
 //
 //  Created by Corey Pett on 11/1/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RMChoreInformationTableViewCell: UITableViewCell {
+class RMChoreCompletionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

@@ -9,7 +9,7 @@
 import UIKit
 
 class RMChoreAddTypeViewController: UIViewController {
-
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -22,15 +22,21 @@ class RMChoreAddTypeViewController: UIViewController {
     }
     
     func cancelPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func donePressed() {
         
-        //TODO: Add chore to parent tableViewController and save
-        RMChore.createNewChore(RMChore(objectId: -1, groupId: 1, dateCompleted: "", userId: 1, description: self.descriptionTextView.text, title: self.titleTextField.text!, beforePhoto: "", afterPhoto: "", completionHistory: ["":""], commentHistory: ["":""])) { (completed) in
+        // TODO: Add chore to parent tableViewController and save
+        RMChore.createNewChore(RMChore(choreID: -1, groupID: 1, userID: 1, title: self.titleTextField.text!, description: self.descriptionTextView.text, dateCreated: "00/00/00")) { (completed) in
+            if completed {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                let errorAlert = UIAlertController(title: "Error", message: "We encountered a problem saving your data, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
             
-            self.navigationController?.popViewControllerAnimated(true)
             
         }
     }

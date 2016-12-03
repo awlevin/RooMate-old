@@ -66,7 +66,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
                 cell.nameLabel.text = self.communalItems[indexPath.row].groceryItemName
-                // TODO: Configure quantity for each item
+                cell.quantityLabel.text = String(self.communalItems[indexPath.row].quantity)
                 cell.configureCell()
                 
                 return cell
@@ -76,7 +76,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
                 cell.nameLabel.text = self.personalItems[indexPath.row].groceryItemName
-                // TODO: Configure quantity for each item
+                cell.quantityLabel.text = String(self.personalItems[indexPath.row].quantity)
                 cell.configureCell()
                 
                 return cell
@@ -86,7 +86,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
                 cell.nameLabel.text = self.aggregateItems[indexPath.row].groceryItemName
-                // TODO: Configure quantity for each item
+                cell.quantityLabel.text = String(self.aggregateItems[indexPath.row].quantity)
                 cell.configureCell()
                 
                 return cell
@@ -105,46 +105,39 @@ class RMShoppingMainTableViewController: UITableViewController {
     }
     
     func fetchNewItemsForListType(listType: RMGroceryListTypes) {
-        let lastid = Int(INT16_MAX) // TODO: make this accurate
-        callFetchPosts(lastid, listType: listType)
+        callFetchPosts(listType)
     }
     
     func fetchAllNewItems() {
-        let lastid = Int(INT16_MAX) // TODO: make this accurate
-        callFetchPosts(lastid, listType: RMGroceryListTypes.Personal)
-        callFetchPosts(lastid, listType: RMGroceryListTypes.Communal)
-        callFetchPosts(lastid, listType: RMGroceryListTypes.Aggregate)
+        callFetchPosts(.Personal)
+        callFetchPosts(.Communal)
+        callFetchPosts(.Aggregate)
 
     }
     
-    func callFetchPosts(lastid: Int?, listType: RMGroceryListTypes) {
-        var givenLastid = 0
-        if lastid != nil {
-            givenLastid = lastid!
-        }
-        
-        RMGroceryList.getGroceryList(1, lastid: 0, groupId: 1, listType: listType, completionHandler: { (bbPosts) in
+    func callFetchPosts(listType: RMGroceryListTypes) {
+        RMGroceryList.getGroceryList(RMUser.returnTestUser(), listType: listType, completionHandler: { (bbPosts) in
             var fetchedItems = bbPosts
             
             
             if fetchedItems.count > 0 {
-                fetchedItems = fetchedItems.sort( { $0.objectId > $1.objectId })
+                fetchedItems = fetchedItems.sort( { $0.objectID > $1.objectID })
                 switch listType {
                 case RMGroceryListTypes.Personal:
                     for item in fetchedItems{
-                        if !self.personalItems.contains({ $0.objectId == item.objectId }) {
+                        if !self.personalItems.contains({ $0.objectID == item.objectID }) {
                             self.personalItems.append(item)
                         }
                     }
                 case RMGroceryListTypes.Communal:
                     for item in fetchedItems{
-                        if !self.communalItems.contains({ $0.objectId == item.objectId }) {
+                        if !self.communalItems.contains({ $0.objectID == item.objectID }) {
                             self.communalItems.append(item)
                         }
                     }
                 case RMGroceryListTypes.Aggregate:
                     for item in fetchedItems{
-                        if !self.aggregateItems.contains({ $0.objectId == item.objectId }) {
+                        if !self.aggregateItems.contains({ $0.objectID == item.objectID }) {
                             self.aggregateItems.append(item)
                         }
                     }
@@ -154,13 +147,13 @@ class RMShoppingMainTableViewController: UITableViewController {
             dispatch_async(dispatch_get_main_queue(), {
                 switch listType {
                 case RMGroceryListTypes.Personal:
-                    self.personalItems = self.personalItems.sort( { $0.objectId > $1.objectId } )
+                    self.personalItems = self.personalItems.sort( { $0.objectID > $1.objectID } )
                     break
                 case RMGroceryListTypes.Communal:
-                    self.communalItems = self.communalItems.sort( { $0.objectId > $1.objectId } )
+                    self.communalItems = self.communalItems.sort( { $0.objectID > $1.objectID } )
                     break
                 case RMGroceryListTypes.Aggregate:
-                    self.aggregateItems = self.aggregateItems.sort( { $0.objectId > $1.objectId } )
+                    self.aggregateItems = self.aggregateItems.sort( { $0.objectID > $1.objectID } )
                     break
                 }
                 
