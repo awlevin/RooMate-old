@@ -10,18 +10,21 @@ import UIKit
 
 class RMChoreCompletionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        profileImageView.setRounded()
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
 
-        // Configure the view for the selected state
     }
     
     func configureCell() {

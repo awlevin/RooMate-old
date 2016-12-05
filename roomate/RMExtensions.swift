@@ -17,3 +17,19 @@ extension Double {
         return formatter.stringFromNumber(self)!
     }
 }
+
+extension UIImageView {
+    func setRounded() {
+        let radius = CGRectGetWidth(self.frame) / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+}
+
+extension UIButton {
+    func setRounded() {
+        let radius = CGRectGetWidth(self.frame) / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+}
