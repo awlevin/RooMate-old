@@ -10,6 +10,8 @@ import UIKit
 
 class RMChoreHistoryTableViewController: UITableViewController {
 
+   // @IBOutlet weak var headerView: UIView!
+    
     var chore: RMChore!
     var choreCompletions = [RMChoreCompletion]()
     let refresher = UIRefreshControl()
@@ -69,7 +71,7 @@ class RMChoreHistoryTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showChoreCompletionDetail" {
-            let destinationVC = segue.destinationViewController as! RMChoreCompletionDetailViewController
+            let destinationVC = segue.destinationViewController as! RMChoreCompletionDetailTableViewController
             destinationVC.choreCompletion = choreCompletionSelected
         }
     }
@@ -81,12 +83,15 @@ class RMChoreHistoryTableViewController: UITableViewController {
         chore.getRMChoreCompletions() { (choreCompletions) in
             var fetchedChoreCompletions = choreCompletions
             if fetchedChoreCompletions.count > 0 {
+                //self.tableView.tableHeaderView = nil
                 fetchedChoreCompletions = fetchedChoreCompletions.sort( { $0.choreCompletionID > $1.choreCompletionID })
                 for choreCompletion in fetchedChoreCompletions {
                     if !self.choreCompletions.contains( { $0.choreCompletionID == choreCompletion.choreCompletionID }) {
                         self.choreCompletions.append(choreCompletion)
                     }
                 }
+            } else {
+               /// self.tableView.tableHeaderView = self.headerView
             }
             dispatch_async(dispatch_get_main_queue(), {
                 self.choreCompletions = self.choreCompletions.sort({ $0.choreCompletionID > $1.choreCompletionID })

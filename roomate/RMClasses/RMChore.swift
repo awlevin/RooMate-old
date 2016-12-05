@@ -100,6 +100,8 @@ public struct RMChore {
                     break
                 }
                 return
+            } else {
+                completionHandler(completed: true)
             }
         }
         task.resume()
