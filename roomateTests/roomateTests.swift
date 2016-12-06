@@ -33,4 +33,27 @@ class roomateTests: XCTestCase {
         }
     }
     
+    func testEditGrocery() {
+        let testUser = RMUser.returnTestUser()
+        var testGroceries = [RMGrocery]()
+        let asyncExpectation = expectationWithDescription("testEditGroceryFunction")
+        
+        RMGroceryList.getGroceryList(testUser, listType: .Personal, completionHandler: { (groceries) in
+            if groceries.count > 0 {
+                testGroceries = groceries
+                
+            } else {
+                // do nothing
+            }
+            asyncExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: { (error) in
+            XCTAssertTrue(testGroceries.count > 0, "\(testGroceries)")
+            
+        })
+    }
+    
+    
+    
 }
