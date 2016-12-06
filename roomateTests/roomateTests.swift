@@ -11,6 +11,8 @@ import XCTest
 
 class roomateTests: XCTestCase {
     
+    let testUser = RMUser.returnTestUser()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -33,10 +35,9 @@ class roomateTests: XCTestCase {
         }
     }
     
-    func testEditGrocery() {
-        let testUser = RMUser.returnTestUser()
+    func testGetPersonalGroceries() {
         var testGroceries = [RMGrocery]()
-        let asyncExpectation = expectationWithDescription("testEditGroceryFunction")
+        let asyncExpectation = expectationWithDescription("testGetPersonalGroceriesFunction")
         
         RMGroceryList.getGroceryList(testUser, listType: .Personal, completionHandler: { (groceries) in
             if groceries.count > 0 {
@@ -54,6 +55,32 @@ class roomateTests: XCTestCase {
         })
     }
     
+    func testGetCommunalGroceries() {
+        let asyncExpectation = expectationWithDescription("testGetCommunalGroceriesFunction")
+        var testGroceries = [RMGrocery]()
+        
+        RMGroceryList.getGroceryList(testUser, listType: .Communal, completionHandler: { (groceries) in
+            if groceries.count > 0 {
+                testGroceries = groceries
+                
+            } else {
+                // do nothing
+            }
+            asyncExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: { (error) in
+            XCTAssertTrue(testGroceries.count > 0, "\(testGroceries)")
+            
+        })
+    }
+    
+    func testDoesUserExist() {
+        let asyncExpectation = expectationWithDescription("testDoesUserExist")
+        var testGroceries = [RMGrocery]()
+        
+        RMGroceryList.getGroceryList(testUser, listType: ., completionHandler: <#T##(groceries: [RMGrocery]) -> ()#>)
+    }
     
     
 }
