@@ -35,6 +35,7 @@
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
 		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
 		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
+		859B38701DF7782D0050BDE7 /* testRMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B386F1DF7782D0050BDE7 /* testRMGroup.swift */; };
 		85B716931DF7341600DA00BD /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
 		85D6E2B31DF6741A00ED84FC /* testRMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */; };
 		85D6E2B51DF674C200ED84FC /* testRMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B41DF674C200ED84FC /* testRMUser.swift */; };
@@ -151,6 +152,7 @@
 		42EB6B961DD10DE7002780BB /* createBBPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createBBPostVC.swift; path = "Bulletin Board/createBBPostVC.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletion.swift; sourceTree = "<group>"; };
+		859B386F1DF7782D0050BDE7 /* testRMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroup.swift; sourceTree = "<group>"; };
 		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMQueryBackend.swift; sourceTree = "<group>"; };
 		85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroceryList.swift; sourceTree = "<group>"; };
 		85D6E2B41DF674C200ED84FC /* testRMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMUser.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				4250E2A41DA0314C002F7FA7 /* roomateTests.swift */,
 				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
 				85D6E2B41DF674C200ED84FC /* testRMUser.swift */,
+				859B386F1DF7782D0050BDE7 /* testRMGroup.swift */,
 				4250E2A61DA0314C002F7FA7 /* Info.plist */,
 			);
 			path = roomateTests;
@@ -890,6 +893,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859B38701DF7782D0050BDE7 /* testRMGroup.swift in Sources */,
 				85D6E2B51DF674C200ED84FC /* testRMUser.swift in Sources */,
 				85D6E2B31DF6741A00ED84FC /* testRMGroceryList.swift in Sources */,
 				4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */,
@@ -1090,6 +1094,7 @@
 			baseConfigurationReference = 0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = roomateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
@@ -1104,6 +1109,7 @@
 			baseConfigurationReference = A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = roomateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;

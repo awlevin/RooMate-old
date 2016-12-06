@@ -43,14 +43,13 @@ class testRMGroceryList: XCTestCase {
                 testGroceries = groceries
                 
             } else {
-                // do nothing
+                testGroceries = []
             }
             asyncExpectation.fulfill()
         })
         
         waitForExpectationsWithTimeout(5, handler: { (error) in
             XCTAssertTrue(testGroceries.count > 0, "\(testGroceries)")
-            
         })
     }
     
