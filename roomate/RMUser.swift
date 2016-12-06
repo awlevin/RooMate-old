@@ -36,7 +36,7 @@ public struct RMUser : Hashable {
     
     
     // Public Functions
-    static func createUser(user: RMUser, completion: (success: Bool) -> Void)  {
+    static func createUser(user: RMUser, completion: (success: Bool, statusCode: Int) -> Void)  {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMUser"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -46,7 +46,6 @@ public struct RMUser : Hashable {
         userDictionary["lastname"] = user.lastName
         userDictionary["email"] = user.email
         userDictionary["profileimageurl"] = user.profileImageURL
-        
         
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -74,20 +73,18 @@ public struct RMUser : Hashable {
             if(error != nil || data == nil || statusCode != 200){
                 switch statusCode {
                 case 400:
-                    completion(success: false)
-                    break
+                    completion(success: false, statusCode: statusCode)
+                    return
                 default:
-                    completion(success: false)
-                    break
+                    completion(success: false, statusCode: statusCode)
+                    return
                 }
-                return
             } else {
                 let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                completion(success: true, statusCode: statusCode)
             }
         }
-        
         task.resume()
-        completion(success: true)
     }
     
     static func doesUserExist(email: String, completion: (userExists: Bool, statusCode: Int) -> Void){
@@ -156,6 +153,81 @@ public struct RMUser : Hashable {
         }
         task.resume()
     }
+    
+    static func getUserFromEmail(email: String, completion: (success: Bool, statusCode: Int, user: RMUser?) -> ())  {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/getRMUserByEmail"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(email)", forHTTPHeaderField: "email")
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil || statusCode != 200){
+                switch statusCode {
+                case 400:
+                    completion(success: false, statusCode: statusCode, user: nil)
+                    return
+                case 503:
+                    completion(success: false, statusCode: statusCode, user: nil)
+                    return
+                default:
+                    completion(success: false, statusCode: statusCode, user: nil)
+                    return
+                }
+            } else {
+                var json: NSArray
+                do {
+                    try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
+                } catch {
+                    print("GOT HERE!!!")
+                    completion(success: false, statusCode: statusCode, user: nil)
+                    return
+                }
+                
+                if json.count == 0 {
+                    print("nah, got here")
+                    completion(success: false, statusCode: statusCode, user: nil)
+                    return
+                }
+                    
+                    
+                else {
+                    
+                    for jsonItem in json {
+                        guard let jsonItemDict = jsonItem as? [String: AnyObject]
+                            else { continue }
+                        
+                        
+                        var userObjectID = jsonItemDict["userid"] as! Int
+                        var groupID = (jsonItemDict["groupid"] as? Int)!
+//                        dateCreatedAt = "datecreatedat"
+//                        dateUpdatedAt = "dateupdatedat"
+                        var firstName = jsonItemDict["firstname"] as! String
+                        var lastName = jsonItemDict["lastname"] as! String
+                        var profileImageURL = ""/*jsonItemDict["profileimageurl"] as! String*/
+                        
+                        
+                        
+                            completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: jsonItemDict["userid"] as! Int, groupID: (jsonItemDict["groupid"] as? Int)!, dateCreatedAt: "", dateUpdatedAt: "", firstName: jsonItemDict["firstname"] as! String, lastName: jsonItemDict["lastname"] as! String, email: "\(email)", profileImageURL: ""/*jsonItemDict["profileimageurl"] as! String*/, userGroceryLists: []))
+                        return
+                        
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+
 }
 
 
