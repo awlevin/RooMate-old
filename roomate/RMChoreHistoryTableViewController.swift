@@ -10,7 +10,7 @@ import UIKit
 
 class RMChoreHistoryTableViewController: UITableViewController {
 
-   // @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerView: UIView!
     
     var chore: RMChore!
     var choreCompletions = [RMChoreCompletion]()
@@ -24,10 +24,14 @@ class RMChoreHistoryTableViewController: UITableViewController {
         refresher.addTarget(self, action: #selector(fetchNewChoreCompletions), forControlEvents: .ValueChanged)
         tableView!.addSubview(refresher)
         
-        fetchNewChoreCompletions()
-        
         tableView.registerNib(UINib(nibName: "RMChoreCompletionTableViewCell", bundle: nil), forCellReuseIdentifier: "CompletionCell")
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchNewChoreCompletions()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -79,11 +83,14 @@ class RMChoreHistoryTableViewController: UITableViewController {
     
     
     func fetchNewChoreCompletions() {
+        let tableViewHeader = self.headerView
         
         chore.getRMChoreCompletions() { (choreCompletions) in
             var fetchedChoreCompletions = choreCompletions
             if fetchedChoreCompletions.count > 0 {
-                //self.tableView.tableHeaderView = nil
+                dispatch_async(dispatch_get_main_queue(), { 
+                    self.tableView.tableHeaderView = nil
+                })
                 fetchedChoreCompletions = fetchedChoreCompletions.sort( { $0.choreCompletionID > $1.choreCompletionID })
                 for choreCompletion in fetchedChoreCompletions {
                     if !self.choreCompletions.contains( { $0.choreCompletionID == choreCompletion.choreCompletionID }) {
@@ -91,7 +98,9 @@ class RMChoreHistoryTableViewController: UITableViewController {
                     }
                 }
             } else {
-               /// self.tableView.tableHeaderView = self.headerView
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.tableHeaderView? = self.headerView
+                })
             }
             dispatch_async(dispatch_get_main_queue(), {
                 self.choreCompletions = self.choreCompletions.sort({ $0.choreCompletionID > $1.choreCompletionID })
