@@ -1,0 +1,79 @@
+//
+//  RMQueryBackend.swift
+//  roomate
+//
+//  Created by Aaron Levin on 12/5/16.
+//  Copyright © 2016 RooMate. All rights reserved.
+//
+
+import Foundation
+
+struct RequestResponse {
+    let success: Bool
+    let statusCode: Int
+    let JSONresult: NSArray
+}
+
+struct RMQueryBackend {
+
+    /**
+     @param urlPostfix: String of the form "selectRMGroceries" *** Note that the foremost '/' is omitted.
+     @param valueForHeaderFieldDict: [AnyObject: String] -- String is the HTTPHeaderField value, AnyObject is the value to send in the request.
+     @return a serialized JSON object.
+    */
+    func getJSONFromBackend(urlPostfix: String, valueForHeaderFieldDict: [String : AnyObject], completionHandler: (reqResponse: RequestResponse)->()) {
+        let apiCallString = "https://damp-plateau-63440.herokuapp.com/\(urlPostfix)"
+        let httpURL = NSURL(string: apiCallString)
+        let request = NSMutableURLRequest(URL: httpURL!)
+
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        for (httpHeader, value) in valueForHeaderFieldDict {
+            request.addValue("\(value)", forHTTPHeaderField: "\(httpHeader)")
+        }
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            var statusCode = 0
+            if let httpResponse = response as? NSHTTPURLResponse {
+                statusCode = httpResponse.statusCode
+            }
+            
+            if(error != nil || data == nil || statusCode != 200){
+                completionHandler(reqResponse: RequestResponse(success: false, statusCode: statusCode, JSONresult: []))
+                return
+            } else {
+                var json: NSArray
+                do {
+                    try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
+                } catch {
+                    completionHandler(reqResponse: RequestResponse(success: false, statusCode: statusCode, JSONresult: []))
+                    return
+                }
+                
+                completionHandler(reqResponse: RequestResponse(success: true, statusCode: statusCode, JSONresult: json))
+                
+                // TODO: Revert to "requestDict" for generically interpreting the JSON data. Google "how to handle lots of backend requests in model." Also can use a switch with "interpretType" enum to know to unwrap objects as! Int or String etc. 
+                
+            }
+        }
+        task.resume()
+    }
+    
+    func postJSONToBackend() {
+        
+    }
+}
+
+
+
+
+
+func getRMChoreCompletions(completionHandler: (choreCompletions: [RMChoreCompletion])->() ) {
+    
+    
+    
+}

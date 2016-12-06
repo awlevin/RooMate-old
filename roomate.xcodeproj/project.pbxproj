@@ -35,8 +35,11 @@
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
 		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
 		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
+		85B716931DF7341600DA00BD /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
 		85D6E2B31DF6741A00ED84FC /* testRMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */; };
 		85D6E2B51DF674C200ED84FC /* testRMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B41DF674C200ED84FC /* testRMUser.swift */; };
+		85D6E2B71DF68AD300ED84FC /* RMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */; };
+		85D6E2B91DF6977400ED84FC /* testRMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B81DF6977400ED84FC /* testRMChore.swift */; };
 		85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F01DC7EE39008CA377 /* RMUser.swift */; };
 		85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F21DC7F374008CA377 /* RMGroceryList.swift */; };
 		85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F41DC7F71F008CA377 /* RMGrocery.swift */; };
@@ -148,8 +151,11 @@
 		42EB6B961DD10DE7002780BB /* createBBPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createBBPostVC.swift; path = "Bulletin Board/createBBPostVC.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletion.swift; sourceTree = "<group>"; };
+		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMQueryBackend.swift; sourceTree = "<group>"; };
 		85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroceryList.swift; sourceTree = "<group>"; };
 		85D6E2B41DF674C200ED84FC /* testRMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMUser.swift; sourceTree = "<group>"; };
+		85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQueryBackend.swift; sourceTree = "<group>"; };
+		85D6E2B81DF6977400ED84FC /* testRMChore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testRMChore.swift; path = ../roomate/testRMChore.swift; sourceTree = "<group>"; };
 		85F003F01DC7EE39008CA377 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
 		85F003F21DC7F374008CA377 /* RMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGroceryList.swift; sourceTree = "<group>"; };
 		85F003F41DC7F71F008CA377 /* RMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGrocery.swift; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 		424CF5D91DB8033F00B24160 /* RMClasses */ = {
 			isa = PBXGroup;
 			children = (
+				85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */,
+				85B716921DF7341600DA00BD /* testRMQueryBackend.swift */,
 				90B693351DBF0B480052A6BF /* RMAuth.swift */,
 				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
 				423053491DC1302F003AE80B /* RMBulletin.swift */,
@@ -334,6 +342,7 @@
 		4250E2A31DA0314C002F7FA7 /* roomateTests */ = {
 			isa = PBXGroup;
 			children = (
+				85D6E2B81DF6977400ED84FC /* testRMChore.swift */,
 				4250E2A41DA0314C002F7FA7 /* roomateTests.swift */,
 				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
 				85D6E2B41DF674C200ED84FC /* testRMUser.swift */,
@@ -866,6 +875,7 @@
 				85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */,
 				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
 				903C21521DEF7E52001D5689 /* RMThinLabel.swift in Sources */,
+				85D6E2B71DF68AD300ED84FC /* RMQueryBackend.swift in Sources */,
 				42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */,
 				9080276D1DEE401B00918D1D /* RMRoundedButton.swift in Sources */,
 				85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */,
@@ -884,7 +894,9 @@
 				85D6E2B31DF6741A00ED84FC /* testRMGroceryList.swift in Sources */,
 				4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */,
 				42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */,
+				85D6E2B91DF6977400ED84FC /* testRMChore.swift in Sources */,
 				42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */,
+				85B716931DF7341600DA00BD /* testRMQueryBackend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,6 @@ import XCTest
 
 class testRMGroceryList: XCTestCase {
     
-    let testUser = RMUser.returnTestUser()
-    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -36,8 +34,9 @@ class testRMGroceryList: XCTestCase {
     }
     
     func testGetPersonalGroceries() {
-        var testGroceries = [RMGrocery]()
         let asyncExpectation = expectationWithDescription("testGetPersonalGroceriesFunction")
+        let testUser = RMUser.returnTestUser()
+        var testGroceries = [RMGrocery]()
         
         RMGroceryList.getGroceryList(testUser, listType: .Personal, completionHandler: { (groceries) in
             if groceries.count > 0 {
@@ -57,6 +56,7 @@ class testRMGroceryList: XCTestCase {
     
     func testGetCommunalGroceries() {
         let asyncExpectation = expectationWithDescription("testGetCommunalGroceriesFunction")
+        let testUser = RMUser.returnTestUser()
         var testGroceries = [RMGrocery]()
         
         RMGroceryList.getGroceryList(testUser, listType: .Communal, completionHandler: { (groceries) in
