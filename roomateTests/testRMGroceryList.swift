@@ -1,15 +1,15 @@
 //
-//  roomateTests.swift
-//  roomateTests
+//  testRMGroceryList.swift
+//  roomate
 //
-//  Created by Ritvik Upadhyaya on 01/10/16.
+//  Created by Aaron Levin on 12/5/16.
 //  Copyright © 2016 RooMate. All rights reserved.
 //
 
 import XCTest
 @testable import roomate
 
-class roomateTests: XCTestCase {
+class testRMGroceryList: XCTestCase {
     
     let testUser = RMUser.returnTestUser()
     
@@ -74,13 +74,4 @@ class roomateTests: XCTestCase {
             
         })
     }
-    
-    func testDoesUserExist() {
-        let asyncExpectation = expectationWithDescription("testDoesUserExist")
-        var testGroceries = [RMGrocery]()
-        
-        RMGroceryList.getGroceryList(testUser, listType: ., completionHandler: <#T##(groceries: [RMGrocery]) -> ()#>)
-    }
-    
-    
 }
