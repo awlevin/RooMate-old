@@ -128,7 +128,7 @@ public struct RMGrocery {
         
         returnDict["userid"] = groceryObject.userID
         returnDict["groupid"] = groceryObject.groupID
-        returnDict["objectid"] = groceryObject.objectID
+        returnDict["itemid"] = groceryObject.objectID
         
         return returnDict
     }

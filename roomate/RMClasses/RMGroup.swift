@@ -15,7 +15,7 @@ public struct RMGroup {
     //var communalGroceryLists: [RMGroceryList]
     //var aggregateGroceryLists: [RMGroceryList]
     //var choresList: [RMChore]
-
+    
     public static func leaveHousehold() {
         //Call the backend to delete you from the household and then signout
     }
@@ -31,7 +31,7 @@ public struct RMGroup {
         //success, actually log them in.
     }
     
-    public static func doesGroupExist(groupID: Int, completion: (groupExists: Bool, statusCode: Int)->() ) {
+    public static func doesGroupExist(groupID: Int, completion: (groupExists: Bool)->() ) {
         
     }
 }
