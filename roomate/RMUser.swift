@@ -80,7 +80,8 @@ public struct RMUser : Hashable {
                     return
                 }
             } else {
-                let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+//                let json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err)
+                
                 completion(success: true, statusCode: statusCode)
             }
         }
@@ -208,17 +209,21 @@ public struct RMUser : Hashable {
                             else { continue }
                         
                         
-                        var userObjectID = jsonItemDict["userid"] as! Int
-                        var groupID = (jsonItemDict["groupid"] as? Int)!
-//                        dateCreatedAt = "datecreatedat"
-//                        dateUpdatedAt = "dateupdatedat"
-                        var firstName = jsonItemDict["firstname"] as! String
-                        var lastName = jsonItemDict["lastname"] as! String
-                        var profileImageURL = ""/*jsonItemDict["profileimageurl"] as! String*/
+                        // TODO: EXTREMELY IMPORTANT!!! HANDLE GROUPID SENT BACK AS OPTIONAL!
+                        
+                        let userObjectID = jsonItemDict["userid"] as! Int
+                        let groupID = (jsonItemDict["groupid"] as? Int)!
+                        let dateCreatedAt = "datecreatedat"
+                        let dateUpdatedAt = "dateupdatedat"
+                        let firstName = jsonItemDict["firstname"] as! String
+                        let lastName = jsonItemDict["lastname"] as! String
+                        let profileImageURL = ""/*jsonItemDict["profileimageurl"] as! String*/
+                        
+                        completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: userObjectID, groupID: groupID, dateCreatedAt: dateCreatedAt, dateUpdatedAt: dateUpdatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
                         
                         
                         
-                            completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: jsonItemDict["userid"] as! Int, groupID: (jsonItemDict["groupid"] as? Int)!, dateCreatedAt: "", dateUpdatedAt: "", firstName: jsonItemDict["firstname"] as! String, lastName: jsonItemDict["lastname"] as! String, email: "\(email)", profileImageURL: ""/*jsonItemDict["profileimageurl"] as! String*/, userGroceryLists: []))
+//                            completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: (jsonItemDict["userid"] as? Int)!, groupID: (jsonItemDict["groupid"] as? Int)!, dateCreatedAt: "", dateUpdatedAt: "", firstName: jsonItemDict["firstname"] as! String, lastName: jsonItemDict["lastname"] as! String, email: "\(email)", profileImageURL: ""/*jsonItemDict["profileimageurl"] as! String*/, userGroceryLists: []))
                         return
                         
                     }

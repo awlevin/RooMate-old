@@ -38,7 +38,7 @@ class GroupSelectionVC: UIViewController {
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
-            RMGroup.joinHousehold(textField.text!)
+            //RMGroup.joinHousehold(Int(textField.text!)) //TODO: careful here, make sure this is a number!!!!
             self.performSegueWithIdentifier(LoginStringConst.loginSuccessSegue, sender: self)
         }))
         
