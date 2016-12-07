@@ -34,6 +34,47 @@ class testRMGroceryList: XCTestCase {
     }
     
     func testGetPersonalGroceries() {
+        let asyncExpectation = expectationWithDescription("testGetPersonalGroceries")
+        let testUser = RMUser.returnTestUser()
+        
+        var testSuccess = false
+        var fetchedGroceries = [RMGrocery]()
+        
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/selectRMUserGroceries", parameters: ["userid": "\(testUser.userObjectID)"]) { (success, jsonResponse) in
+            
+            if success {
+                testSuccess = success
+                
+                for jsonItem in jsonResponse! {
+                    guard let jsonItemDict = jsonItem as? [String: AnyObject]
+                        else { continue }
+                    
+                    let currItem = RMGrocery(objectID: jsonItemDict["itemid"] as! Int,
+                                             userID: jsonItemDict["userid"] as! Int,
+                                             groupID: jsonItemDict["groupid"] as! Int,
+                                             isPersonalItem: jsonItemDict["personalitem"] as! Bool,
+                                             dateCreatedAt: "" , // TODO: retrieve this field
+                        dateUpdatedAt: "", // TODO: retrieve this field too
+                        groceryItemName: jsonItemDict["groceryitemname"] as! String,
+                        groceryItemPrice: jsonItemDict["groceryitemprice"] as! Double,
+                        groceryItemDescription: jsonItemDict["groceryitemdescription"] as! String, quantity: jsonItemDict["quantity"] as! Int, listID: (jsonItemDict["listid"] as? Int))
+                    fetchedGroceries.append(currItem)
+                }
+            } else {
+                testSuccess = success
+            }
+            asyncExpectation.fulfill()
+            
+        }
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
+            XCTAssertTrue(fetchedGroceries.count > 0)
+        }
+    }
+    
+    /*
+    func testGetPersonalGroceries() {
         let asyncExpectation = expectationWithDescription("testGetPersonalGroceriesFunction")
         let testUser = RMUser.returnTestUser()
         var testGroceries = [RMGrocery]()
@@ -71,26 +112,6 @@ class testRMGroceryList: XCTestCase {
         waitForExpectationsWithTimeout(5, handler: { (error) in
             XCTAssertTrue(testGroceries.count > 0, "\(testGroceries)")
         })
-    }
-    
-    /*
-    func testEditGrocery() {
-        let asyncExpectation = expectationWithDescription("testEditGrocery")
-        var testCompleted = false
-        
-        let grocery = RMGrocery(objectID: 1, userID: 1, groupID: 1, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "Sugar (White)", groceryItemPrice: 5, groceryItemDescription: "new bag", quantity: 1, listID: 1)
-        
-        RMGrocery.editGrocery(grocery) { (completed) in
-            if (completed) { testCompleted = true }
-            
-            asyncExpectation.fulfill()
-        }
-        
-        waitForExpectationsWithTimeout(5, handler: { (error) in
-            XCTAssertTrue(testCompleted)
-        })
-        
-        
     }*/
     
     func testEditGrocery() {
@@ -115,7 +136,7 @@ class testRMGroceryList: XCTestCase {
         let asyncExpectation = expectationWithDescription("testEditGrocery")
         var testCompleted = false
         
-        let grocery = RMGrocery(objectID: 1, userID: 1, groupID: 1, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "Sugar (White)", groceryItemPrice: 5, groceryItemDescription: "new bag", quantity: 1, listID: 1)
+        let grocery = RMGrocery(objectID: 10, userID: 1, groupID: 1, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "Sugar (White)", groceryItemPrice: 5, groceryItemDescription: "new bag", quantity: 1, listID: 1)
         
         RMGrocery.deleteGrocery(grocery) { (completed) in
             testCompleted = true

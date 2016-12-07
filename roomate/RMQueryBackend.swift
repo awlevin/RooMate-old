@@ -8,23 +8,106 @@
 
 import Foundation
 
-struct RequestResponse {
-    let success: Bool
-    let statusCode: Int
-    let JSONresult: NSArray
-}
 
 struct RMQueryBackend {
 
+    
+    /**
+        @param url: String ––– the full URL of the request
+        @param parameters: [String : String] ––– [headerField : value]
+        @return jsonResponse: NSArray? ––– returns a JSON array of 1 or more JSON objects. Otherwise returns nil (If success == false, jsonResponse will be nil).
+        The completion handler for this method returns success if and only if the status code of the request was 200 and a JSON array with 1 or more items is returned.
+     */
+    static func get(url: String, parameters: [String : String], completion: (success: Bool, jsonResponse: NSArray?) -> Void) {
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        // Add parameters to the request
+        for (key, value) in parameters {
+            request.addValue(value, forHTTPHeaderField: key)
+        }
+        
+        // Set configuration and create session
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            
+            
+            var httpResponse: NSHTTPURLResponse?
+            
+            // Check for non-nil response
+            if (response as? NSHTTPURLResponse != nil) {
+                
+                httpResponse = response as! NSHTTPURLResponse
+                
+                print("Response: \(response)")
+                let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Body: \(strData)")
+            } else {
+                print("Response was nil.")
+                completion(success: false, jsonResponse: nil)
+            }
+            
+            // Check if there's error
+            if(error != nil) {
+                print("Encountered an error...\n\(error)")
+                completion(success: false, jsonResponse: nil)
+            }
+            
+            // Retrieve JSON
+            var json: NSArray?
+            do {
+                if (data != nil) {
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("JSON String: \(jsonStr)")
+                    json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSArray
+                } else {
+                    print("JSON Data was nil.")
+                    json = nil
+                    completion(success: false, jsonResponse: nil)
+                }
+            } catch let error as NSError {
+                print("Encountered an error...\n\(error)")
+                completion(success: false, jsonResponse: nil)
+            }
+            
+            
+            
+            // Successful if there's at least 1 object in the JSON array AND statusCode == 200
+            if json?.count > 0 {
+                let statusCode = httpResponse!.statusCode
+                
+                if statusCode == 200 {
+                    completion(success: true, jsonResponse: json!)
+                } else {
+                    completion(success: false, jsonResponse: nil)
+                    print("Error: Status Code: \(statusCode)")
+                }
+            }
+            else {
+                // JSON object was nil.
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: \(jsonStr)")
+                completion(success: false, jsonResponse: nil)
+            }
+        }
+        task.resume()
+        
+    }
+
+
+    /*
     /**
      @param urlPostfix: String of the form "selectRMGroceries" *** Note that the foremost '/' is omitted.
      @param valueForHeaderFieldDict: [AnyObject: String] -- String is the HTTPHeaderField value, AnyObject is the value to send in the request.
      @return a serialized JSON object.
     */
-    func getJSONFromBackend(urlPostfix: String, valueForHeaderFieldDict: [String : AnyObject], completionHandler: (reqResponse: RequestResponse)->()) {
-        let apiCallString = "https://damp-plateau-63440.herokuapp.com/\(urlPostfix)"
-        let httpURL = NSURL(string: apiCallString)
-        let request = NSMutableURLRequest(URL: httpURL!)
+    func getJSONFromBackend(url: String, valueForHeaderFieldDict: [String : AnyObject], completionHandler: (reqResponse: RequestResponse)->()) {
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let session = NSURLSession.sharedSession()
 
         request.HTTPMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -34,7 +117,6 @@ struct RMQueryBackend {
         }
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             var statusCode = 0
@@ -61,7 +143,7 @@ struct RMQueryBackend {
             }
         }
         task.resume()
-    }
+    } */
     
     static func post(params : [String : AnyObject], url : String, postCompleted : (succeeded: Bool, jsonResponse: [String : AnyObject]?) -> ()) {
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
