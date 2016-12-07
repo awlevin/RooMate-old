@@ -36,6 +36,24 @@ public struct RMUser : Hashable {
     
     
     // Public Functions
+    
+    static func createUser(user: RMUser, completion: (success: Bool, userID: Int)) {
+        
+        var userParamDictionary = [String : AnyObject]()
+        userParamDictionary["firstname"] = user.firstName
+        userParamDictionary["lastname"] = user.lastName
+        userParamDictionary["email"] = user.email
+        userParamDictionary["profileimageurl"] = user.profileImageURL
+        
+        
+        RMQueryBackend.post(userParamDictionary, url: "https://damp-plateau-63440.herokuapp.com/createRMUser") { (succeeded, message) in {
+            
+            }
+            
+        }
+    }
+    
+    /*
     static func createUser(user: RMUser, completion: (success: Bool, statusCode: Int) -> Void)  {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMUser"
         let httpURL = NSURL(string: apiCallString)
@@ -87,6 +105,7 @@ public struct RMUser : Hashable {
         }
         task.resume()
     }
+     */
     
     static func doesUserExist(email: String, completion: (userExists: Bool, statusCode: Int) -> Void){
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/doesUserExist"
