@@ -80,17 +80,23 @@ struct RMQueryBackend {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             
             print("Response: \(response)")
-            let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("Body: \(strData)")
+            if (data != nil) {
+                let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Body: \(strData)")
+            }
             // var err: NSError?
             
             
             var json: NSDictionary?
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                if (data != nil) {
+                    json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                } else {
+                    json = nil
+                }
             } catch let error as NSError {
                 err = error
                 print(error)
@@ -114,21 +120,23 @@ struct RMQueryBackend {
                         let statusCode = httpResponse.statusCode
                         
                         if statusCode == 200 {
-                            
                             postCompleted(succeeded: true, jsonResponse: parseJSON)
                             return
                             
                         } else {
                             postCompleted(succeeded: false, jsonResponse: nil)
+                            print(statusCode)
                         }
                     }
                     
                     
                 }
                 else {
-                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                    // Woa, okay the json object was nil, something went wrong. Maybe the server isn't running?
+                    
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
                     print("Error could not parse JSON: \(jsonStr)")
+                    
                     postCompleted(succeeded: false, jsonResponse: nil)
                 }
             }

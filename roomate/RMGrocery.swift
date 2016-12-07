@@ -75,6 +75,22 @@ public struct RMGrocery {
         completionHandler(completed: true)
     }
     
+    static func editGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
+        let editedGroceryDict = RMGrocery.editGroceryDictionary(grocery)
+        
+        RMQueryBackend.post(editedGroceryDict, url: "https://damp-plateau-63440.herokuapp.com/editRMGrocery") { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    static func deleteGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
+        RMQueryBackend.post(RMGrocery.deleteGroceryDictionary(grocery), url: "https://damp-plateau-63440.herokuapp.com/deleteRMGrocery") { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    
+    // MARK: Dictionaries
     
     static func createGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
         
@@ -88,6 +104,32 @@ public struct RMGrocery {
         returnDict["quantity"] = groceryObject.quantity
         returnDict["groceryitemdescription"] = groceryObject.groceryItemDescription
 
+        return returnDict
+    }
+    
+    static func editGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
+        var dict = [String : AnyObject]()
+        
+        dict["userid"] = groceryObject.userID
+        dict["groupid"] = groceryObject.groupID
+        dict["personalitem"] = (groceryObject.isPersonalItem) ? "TRUE" : "FALSE"
+        dict["groceryitemname"] = groceryObject.groceryItemName
+        dict["groceryitemprice"] = groceryObject.groceryItemPrice
+        dict["quantity"] = groceryObject.quantity
+        dict["groceryitemdescription"] = groceryObject.groceryItemDescription
+        dict["listid"] = groceryObject.listID
+        dict["itemid"] = groceryObject.objectID
+        
+        return dict
+    }
+    
+    static func deleteGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
+        var returnDict = [String : AnyObject]()
+        
+        returnDict["userid"] = groceryObject.userID
+        returnDict["groupid"] = groceryObject.groupID
+        returnDict["objectid"] = groceryObject.objectID
+        
         return returnDict
     }
 }

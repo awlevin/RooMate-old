@@ -68,20 +68,40 @@ class testRMUser: XCTestCase {
         }
     }
     
+    func testDoesUserExist() {
+        let asyncExpectation = expectationWithDescription("doesUserExistTest")
+        var testUserSuccess = false
+        var testUserStatusCode = 0
+        
+        let user = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", dateUpdatedAt: "00/00/00", firstName: "Ducky", lastName: "Dagger", email: "duckydagger@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
+        
+        RMUser.doesUserExist("\(user.email)", completion: { (userExists, statusCode) in
+            testUserSuccess = userExists
+            testUserStatusCode = statusCode
+            asyncExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testUserSuccess, "statusCode: \(testUserStatusCode)")
+        }
+    }
+    
     func testCreateUser() {
         let asyncExpectation = expectationWithDescription("createUserTest")
         var testCreatedUserSuccess = false
+        var testUserID = 0
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Jordan", lastName: "Deren", email: "jderen1@butthole.com", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
 
         
-        RMUser.createUser(nonExistingUser) { (success, statusCode) in
+        RMUser.createUser(nonExistingUser) { (success, userID) in
             testCreatedUserSuccess = success
+            testUserID = userID
             asyncExpectation.fulfill()
         }
         
         waitForExpectationsWithTimeout(5) { (error) in
-            XCTAssertTrue(testCreatedUserSuccess)
+            XCTAssertTrue(testCreatedUserSuccess, "\(testUserID)")
         }
     }
     
@@ -91,7 +111,7 @@ class testRMUser: XCTestCase {
         var testUser: RMUser? = nil
         var testStatusCode = 0
         
-        RMUser.getUserFromEmail("jderen1@butthole.com") { (success, statusCode, user) in
+        RMUser.getUserFromEmail("duckydagger@wisc.edu") { (success, statusCode, user) in
             testSuccess = success
             testStatusCode = statusCode
             if user != nil { testUser = user! }

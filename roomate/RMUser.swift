@@ -37,7 +37,7 @@ public struct RMUser : Hashable {
     
     // Public Functions
     
-    static func createUser(user: RMUser, completion: (success: Bool, userID: Int)) {
+    static func createUser(user: RMUser, completion: (success: Bool, userID: Int) -> ()) {
         
         var userParamDictionary = [String : AnyObject]()
         userParamDictionary["firstname"] = user.firstName
@@ -46,11 +46,17 @@ public struct RMUser : Hashable {
         userParamDictionary["profileimageurl"] = user.profileImageURL
         
         
-        RMQueryBackend.post(userParamDictionary, url: "https://damp-plateau-63440.herokuapp.com/createRMUser") { (succeeded, message) in {
-            
+        RMQueryBackend.post(userParamDictionary, url: "https://damp-plateau-63440.herokuapp.com/createRMUser") { (succeeded, jsonResponse) in
+            if succeeded {
+                completion(success: true, userID: jsonResponse!["userid"] as! Int)
+                return
+            } else {
+                completion(success: false, userID: 0)
+                return
             }
-            
         }
+        
+        
     }
     
     /*
@@ -174,6 +180,7 @@ public struct RMUser : Hashable {
         task.resume()
     }
     
+    
     static func getUserFromEmail(email: String, completion: (success: Bool, statusCode: Int, user: RMUser?) -> ())  {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/getRMUserByEmail"
         let httpURL = NSURL(string: apiCallString)
@@ -231,14 +238,24 @@ public struct RMUser : Hashable {
                         // TODO: EXTREMELY IMPORTANT!!! HANDLE GROUPID SENT BACK AS OPTIONAL!
                         
                         let userObjectID = jsonItemDict["userid"] as! Int
-                        let groupID = (jsonItemDict["groupid"] as? Int)!
+//                        let groupID = (jsonItemDict["groupid"] as? Int)!
+                        
+                        let groupObjID: Int
+                        
+                        if let tempVal = jsonItemDict["groupid"] as? Int {
+                            groupObjID = tempVal
+                        } else {
+                            groupObjID = 0
+                        }
+                        
+                        
                         let dateCreatedAt = "datecreatedat"
                         let dateUpdatedAt = "dateupdatedat"
                         let firstName = jsonItemDict["firstname"] as! String
                         let lastName = jsonItemDict["lastname"] as! String
                         let profileImageURL = ""/*jsonItemDict["profileimageurl"] as! String*/
                         
-                        completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: userObjectID, groupID: groupID, dateCreatedAt: dateCreatedAt, dateUpdatedAt: dateUpdatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
+                        completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: userObjectID, groupID: groupObjID, dateCreatedAt: dateCreatedAt, dateUpdatedAt: dateUpdatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
                         
                         
                         
