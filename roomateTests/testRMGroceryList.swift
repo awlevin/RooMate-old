@@ -73,5 +73,59 @@ class testRMGroceryList: XCTestCase {
         })
     }
     
+    /*
+    func testEditGrocery() {
+        let asyncExpectation = expectationWithDescription("testEditGrocery")
+        var testCompleted = false
+        
+        let grocery = RMGrocery(objectID: 1, userID: 1, groupID: 1, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "Sugar (White)", groceryItemPrice: 5, groceryItemDescription: "new bag", quantity: 1, listID: 1)
+        
+        RMGrocery.editGrocery(grocery) { (completed) in
+            if (completed) { testCompleted = true }
+            
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5, handler: { (error) in
+            XCTAssertTrue(testCompleted)
+        })
+        
+        
+    }*/
+    
+    func testEditGrocery() {
+        let asyncExpectation = expectationWithDescription("testEditGrocery")
+        var testCompleted = false
+        
+        let grocery = RMGrocery(objectID: 1, userID: 1, groupID: 1, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "Sugar (White)", groceryItemPrice: 5, groceryItemDescription: "poopie", quantity: 1, listID: 1)
+        
+        RMGrocery.editGrocery(grocery) { (completed) in
+            testCompleted = completed
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5, handler: { (error) in
+            XCTAssertTrue(testCompleted)
+        })
+    }
+    
+        
+    
+    func testDeleteGrocery() {
+        let asyncExpectation = expectationWithDescription("testEditGrocery")
+        var testCompleted = false
+        
+        let grocery = RMGrocery(objectID: 1, userID: 1, groupID: 1, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "Sugar (White)", groceryItemPrice: 5, groceryItemDescription: "new bag", quantity: 1, listID: 1)
+        
+        RMGrocery.deleteGrocery(grocery) { (completed) in
+            testCompleted = true
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5, handler: { (error) in
+            XCTAssertTrue(testCompleted)
+        })
+    }
+    
     
 }
