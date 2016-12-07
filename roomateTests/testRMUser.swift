@@ -75,7 +75,7 @@ class testRMUser: XCTestCase {
         let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Jordan", lastName: "Deren", email: "jderen1@butthole.com", profileImageURL: "N/A", userGroceryLists: [])
 
         
-        RMUser.createUser(nonExistingUser) { (success) in
+        RMUser.createUser(nonExistingUser) { (success, statusCode) in
             testCreatedUserSuccess = success
             asyncExpectation.fulfill()
         }
@@ -91,7 +91,7 @@ class testRMUser: XCTestCase {
         var testUser: RMUser? = nil
         var testStatusCode = 0
         
-        RMUser.getUserFromEmail("bbadger@wisc.edu") { (success, statusCode, user) in
+        RMUser.getUserFromEmail("jderen1@butthole.com") { (success, statusCode, user) in
             testSuccess = success
             testStatusCode = statusCode
             if user != nil { testUser = user! }
@@ -110,11 +110,11 @@ class testRMUser: XCTestCase {
         let asyncExpectation = expectationWithDescription("ifUserDoesntExistThenCreateUserTest")
         var testSuccess = false
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Jordan", lastName: "Deren", email: "jderen1@butthole.com", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Hunter", lastName: "Kooldude", email: "huntington@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
         
         RMUser.doesUserExist("\(nonExistingUser.email)") { (userExists, statusCode) in
             if(!userExists) {
-                RMUser.createUser(nonExistingUser) { (success) in
+                RMUser.createUser(nonExistingUser) { (success, statusCode) in
                     testSuccess = success
                     asyncExpectation.fulfill()
                 }

@@ -52,13 +52,13 @@ public struct RMGroup {
             if(error != nil || data == nil || statusCode != 200){
                 switch statusCode {
                 case 400:
-                    completion(userExists: false, statusCode: statusCode)
+                    completion(groupExists: false, statusCode: statusCode)
                     return
                 case 503:
-                    completion(userExists: false, statusCode: statusCode)
+                    completion(groupExists: false, statusCode: statusCode)
                     return
                 default:
-                    completion(userExists: false, statusCode: statusCode)
+                    completion(groupExists: false, statusCode: statusCode)
                     return
                 }
             } else {
@@ -67,13 +67,13 @@ public struct RMGroup {
                     try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
                 } catch {
                     print("this is where we got")
-                    completion(userExists: false, statusCode: statusCode)
+                    completion(groupExists: false, statusCode: statusCode)
                     return
                 }
                 
                 if json.count == 0 {
                     print("json array was empty")
-                    completion(userExists: false, statusCode: statusCode)
+                    completion(groupExists: false, statusCode: statusCode)
                     return
                 }
                 else {
@@ -82,7 +82,7 @@ public struct RMGroup {
                     for jsonItem in json {
                         guard let jsonItemDict = jsonItem as? [String : AnyObject]
                             else {
-                                completion(userExists: false, statusCode: statusCode)
+                                completion(groupExists: false, statusCode: statusCode)
                                 return
                         }
                         print("mycount:  \(Int(jsonItemDict["mycount"] as! String))" )
@@ -90,7 +90,7 @@ public struct RMGroup {
                         ( Int(jsonItemDict["mycount"] as! String) == 1) ? (userExists = true) : (userExists = false)
                     }
                     
-                    completion(userExists: userExists, statusCode: statusCode)
+                    completion(groupExists: userExists, statusCode: statusCode)
                     return
                 }
             }
