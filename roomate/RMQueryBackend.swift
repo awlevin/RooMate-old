@@ -63,17 +63,66 @@ struct RMQueryBackend {
         task.resume()
     }
     
-    func postJSONToBackend() {
+    static func post(params : Dictionary<String, String>, url : String, postCompleted : (succeeded: Bool, msg: String) -> ()) {
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
         
+        var err: NSError?
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: [.PrettyPrinted])
+            
+        } catch let error as NSError {
+            err = error
+            print(error)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            print("Response: \(response)")
+            let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("Body: \(strData)")
+            // var err: NSError?
+            
+            
+            var json: NSDictionary?
+            do {
+                json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+            } catch let error as NSError {
+                print(error)
+            }
+            
+            
+            // var msg = "No message"
+            
+            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+            if(err != nil) {
+                print(err!.localizedDescription)
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: '\(jsonStr)'")
+                postCompleted(succeeded: false, msg: "Error")
+            }
+            else {
+                // The JSONObjectWithData constructor didn't return an error. But, we should still
+                // check and make sure that json has a value using optional binding.
+                if let parseJSON = json {
+                    // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                    if let success = parseJSON["success"] as? Bool {
+                        print("Succes: \(success)")
+                        postCompleted(succeeded: success, msg: "Logged in.")
+                    }
+                    return
+                }
+                else {
+                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: \(jsonStr)")
+                    postCompleted(succeeded: false, msg: "Error")
+                }
+            }
+        })
+        task.resume()
     }
-}
-
-
-
-
-
-func getRMChoreCompletions(completionHandler: (choreCompletions: [RMChoreCompletion])->() ) {
-    
-    
-    
 }
