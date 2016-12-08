@@ -9,15 +9,17 @@
 import Foundation
 
 public struct RMGrocery {
-    var objectId: Int
-    var userId: Int
-    var groupId: Int
+    var objectID: Int
+    var userID: Int
+    var groupID: Int
     var isPersonalItem: Bool
     var dateCreatedAt: String
     var dateUpdatedAt: String
     var groceryItemName: String
     var groceryItemPrice: Double
     var groceryItemDescription: String
+    var quantity: Int
+    var listID: Int?
     
     
     static func createNewGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->()) {
@@ -36,7 +38,6 @@ public struct RMGrocery {
             print("**********************")
             print(NSString(data: request.HTTPBody!, encoding:NSUTF8StringEncoding)!)
         } catch let error as NSError {
-            print("1. got here")
             print(error)
         }
         
@@ -67,55 +68,68 @@ public struct RMGrocery {
                 }
                 return
             } else {
-                let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                // let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
             }
         }
         task.resume()
         completionHandler(completed: true)
     }
     
+    static func editGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
+        let editedGroceryDict = RMGrocery.editGroceryDictionary(grocery)
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/editRMGrocery", params: editedGroceryDict) { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    static func deleteGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/deleteRMGrocery", params: RMGrocery.deleteGroceryDictionary(grocery)) { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    
+    // MARK: Dictionaries
     
     static func createGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
         
         var returnDict = [String : AnyObject]()
         
-        returnDict["userid"] = groceryObject.userId
-        returnDict["groupid"] = groceryObject.groupId
+        returnDict["userid"] = groceryObject.userID
+        returnDict["groupid"] = groceryObject.groupID
         returnDict["personalitem"] = (groceryObject.isPersonalItem) ? "TRUE" : "FALSE"
         returnDict["groceryitemname"] = groceryObject.groceryItemName
         returnDict["groceryitemprice"] = groceryObject.groceryItemPrice
+        returnDict["quantity"] = groceryObject.quantity
         returnDict["groceryitemdescription"] = groceryObject.groceryItemDescription
 
         return returnDict
     }
     
-    // Public Functions
-    /*
-    public func getGrocery(listId: String, objectId: String) -> RMGrocery {
+    static func editGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
+        var dict = [String : AnyObject]()
         
+        dict["userid"] = groceryObject.userID
+        dict["groupid"] = groceryObject.groupID
+        dict["personalitem"] = (groceryObject.isPersonalItem) ? "TRUE" : "FALSE"
+        dict["groceryitemname"] = groceryObject.groceryItemName
+        dict["groceryitemprice"] = groceryObject.groceryItemPrice
+        dict["quantity"] = groceryObject.quantity
+        dict["groceryitemdescription"] = groceryObject.groceryItemDescription
+        dict["listid"] = groceryObject.listID
+        dict["itemid"] = groceryObject.objectID
+        
+        return dict
     }
     
-    public func deleteGrocery(listId: String, objectId: String) {
+    static func deleteGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
+        var returnDict = [String : AnyObject]()
         
-    }
-    
-    public func editGrocery(groceryItem: RMGrocery) -> RMGrocery {
+        returnDict["userid"] = groceryObject.userID
+        returnDict["groupid"] = groceryObject.groupID
+        returnDict["itemid"] = groceryObject.objectID
         
+        return returnDict
     }
-    
-    
-    // Private Functions
-    
-    private func changeLastUpdateDate() {
-        
-    }
-    
-    private func changeCommunalState() {
-        
-    }
-     */
-    
-    
-    
-    
 }

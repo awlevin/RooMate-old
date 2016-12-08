@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ShoppingCheckoutList" rowHeight="75" id="iIS-Xg-Jhx" customClass="RMShoppingCheckoutListTableViewCell" customModule="roomate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIS-Xg-Jhx" id="xad-Y3-cNs">
+                <rect key="frame" x="0.0" y="0.0" width="336" height="74"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oh-1K-Qq4" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                        <rect key="frame" x="307" y="26" width="11" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNR-Rn-5nR" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                        <rect key="frame" x="242" y="30.5" width="45" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icl-GS-M21" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                        <rect key="frame" x="18" y="26.5" width="175" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="OoC-kR-D7G"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3Oh-1K-Qq4" firstAttribute="centerY" secondItem="xad-Y3-cNs" secondAttribute="centerY" id="1mk-sk-KKT"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="icl-GS-M21" secondAttribute="leading" constant="-10" id="704-OJ-ew9"/>
+                    <constraint firstItem="RNR-Rn-5nR" firstAttribute="centerY" secondItem="3Oh-1K-Qq4" secondAttribute="centerY" id="D69-0X-CTe"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="RNR-Rn-5nR" secondAttribute="trailing" constant="41" id="ijB-HP-BSU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3Oh-1K-Qq4" secondAttribute="trailing" constant="10" id="unJ-cO-csx"/>
+                    <constraint firstItem="icl-GS-M21" firstAttribute="centerY" secondItem="xad-Y3-cNs" secondAttribute="centerY" id="vX8-za-sdp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="tintColor" red="0.91920298339999995" green="0.38583672740000002" blue="0.23184615280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="nameLabel" destination="icl-GS-M21" id="kvu-Hi-Dwi"/>
+                <outlet property="quantityLabel" destination="3Oh-1K-Qq4" id="YcF-03-uIS"/>
+            </connections>
+            <point key="canvasLocation" x="-24.5" y="53.5"/>
+        </tableViewCell>
+    </objects>
+</document>

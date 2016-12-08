@@ -14,7 +14,7 @@ class RMShoppingMainTableViewController: UITableViewController {
     var communalItems = [RMGrocery]()
     var aggregateItems = [RMGrocery]()
     let refresher = UIRefreshControl()
-    var postSelected: RMGrocery!
+    var selectedGroceryItem: RMGrocery!
 
     
     override func viewDidLoad() {
@@ -31,7 +31,6 @@ class RMShoppingMainTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        postSelected = nil
     }
     
     // MARK: - Table view data source
@@ -66,7 +65,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
                 cell.nameLabel.text = self.communalItems[indexPath.row].groceryItemName
-                // TODO: Configure quantity for each item
+                cell.quantityLabel.text = String(self.communalItems[indexPath.row].quantity)
                 cell.configureCell()
                 
                 return cell
@@ -76,7 +75,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
                 cell.nameLabel.text = self.personalItems[indexPath.row].groceryItemName
-                // TODO: Configure quantity for each item
+                cell.quantityLabel.text = String(self.personalItems[indexPath.row].quantity)
                 cell.configureCell()
                 
                 return cell
@@ -86,7 +85,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                 let cell:RMShoppingMainTableViewCell = tableView.dequeueReusableCellWithIdentifier("ShoppingMainCell", forIndexPath: indexPath) as! RMShoppingMainTableViewCell
                 
                 cell.nameLabel.text = self.aggregateItems[indexPath.row].groceryItemName
-                // TODO: Configure quantity for each item
+                cell.quantityLabel.text = String(self.aggregateItems[indexPath.row].quantity)
                 cell.configureCell()
                 
                 return cell
@@ -100,51 +99,105 @@ class RMShoppingMainTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO: Do we need to implement this method?
-        // The UI doesn't permit clicking on the grocery items... but it should so that we can modify an item's quantity.
+
+        if let parentVC = self.parentViewController as? RMShoppingMainViewController {
+            switch  parentVC.segmentedControl.selectedSegmentIndex {
+            case 0:
+                selectedGroceryItem = communalItems[indexPath.row]
+                performSegueWithIdentifier("EditGrocerySegue", sender: self)
+                return
+            case 1:
+                selectedGroceryItem = personalItems[indexPath.row]
+                performSegueWithIdentifier("EditGrocerySegue", sender: self)
+                return
+            case 2:
+                // Don't segue on aggregate list
+                return
+            default:
+                return
+            }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let exGrocery: RMGrocery?
+            
+            if let parentVC = self.parentViewController as? RMShoppingMainViewController {
+                switch  parentVC.segmentedControl.selectedSegmentIndex {
+                case 0:
+                    exGrocery = communalItems[indexPath.row]
+                    communalItems.removeAtIndex(indexPath.row)
+                case 1:
+                    exGrocery = personalItems[indexPath.row]
+                    personalItems.removeAtIndex(indexPath.row)
+                case 2:
+                    return
+                default:
+                    return
+                }
+            }
+            
+            // Delete row
+            self.tableView.beginUpdates()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            self.tableView.endUpdates()
+            
+//            RMChore.deleteChore(exGrocery!.objectID) { (completed) in
+//                if completed {
+//                    print("Chore successfully deleted")
+//                } else {
+//                    // Add chore back if it wasn't successfully deleted
+//                    self.chores.insert(exGrocery, atIndex: indexPath.row)
+//                    self.tableView.beginUpdates()
+//                    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//                    self.tableView.endUpdates()
+//                    
+//                    RMNotificationManger().presentSimpleAlertWithMessage("Error!", message: "We encountered a problem deleting your chore, please try again", viewController: self)
+//                }
+//            }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75
     }
     
     func fetchNewItemsForListType(listType: RMGroceryListTypes) {
-        let lastid = Int(INT16_MAX) // TODO: make this accurate
-        callFetchPosts(lastid, listType: listType)
+        callFetchPosts(listType)
     }
     
     func fetchAllNewItems() {
-        let lastid = Int(INT16_MAX) // TODO: make this accurate
-        callFetchPosts(lastid, listType: RMGroceryListTypes.Personal)
-        callFetchPosts(lastid, listType: RMGroceryListTypes.Communal)
-        callFetchPosts(lastid, listType: RMGroceryListTypes.Aggregate)
+        callFetchPosts(.Personal)
+        callFetchPosts(.Communal)
+        callFetchPosts(.Aggregate)
 
     }
     
-    func callFetchPosts(lastid: Int?, listType: RMGroceryListTypes) {
-        var givenLastid = 0
-        if lastid != nil {
-            givenLastid = lastid!
-        }
-        
-        RMGroceryList.getGroceryList(1, lastid: 0, groupId: 1, listType: listType, completionHandler: { (bbPosts) in
+    func callFetchPosts(listType: RMGroceryListTypes) {
+        RMGroceryList.getGroceryList(RMUser.returnTestUser(), listType: listType, completionHandler: { (bbPosts) in
             var fetchedItems = bbPosts
             
             
             if fetchedItems.count > 0 {
-                fetchedItems = fetchedItems.sort( { $0.objectId > $1.objectId })
+                fetchedItems = fetchedItems.sort( { $0.objectID > $1.objectID })
                 switch listType {
                 case RMGroceryListTypes.Personal:
                     for item in fetchedItems{
-                        if !self.personalItems.contains({ $0.objectId == item.objectId }) {
+                        if !self.personalItems.contains({ $0.objectID == item.objectID }) {
                             self.personalItems.append(item)
                         }
                     }
                 case RMGroceryListTypes.Communal:
                     for item in fetchedItems{
-                        if !self.communalItems.contains({ $0.objectId == item.objectId }) {
+                        if !self.communalItems.contains({ $0.objectID == item.objectID }) {
                             self.communalItems.append(item)
                         }
                     }
                 case RMGroceryListTypes.Aggregate:
                     for item in fetchedItems{
-                        if !self.aggregateItems.contains({ $0.objectId == item.objectId }) {
+                        if !self.aggregateItems.contains({ $0.objectID == item.objectID }) {
                             self.aggregateItems.append(item)
                         }
                     }
@@ -154,13 +207,13 @@ class RMShoppingMainTableViewController: UITableViewController {
             dispatch_async(dispatch_get_main_queue(), {
                 switch listType {
                 case RMGroceryListTypes.Personal:
-                    self.personalItems = self.personalItems.sort( { $0.objectId > $1.objectId } )
+                    self.personalItems = self.personalItems.sort( { $0.objectID > $1.objectID } )
                     break
                 case RMGroceryListTypes.Communal:
-                    self.communalItems = self.communalItems.sort( { $0.objectId > $1.objectId } )
+                    self.communalItems = self.communalItems.sort( { $0.objectID > $1.objectID } )
                     break
                 case RMGroceryListTypes.Aggregate:
-                    self.aggregateItems = self.aggregateItems.sort( { $0.objectId > $1.objectId } )
+                    self.aggregateItems = self.aggregateItems.sort( { $0.objectID > $1.objectID } )
                     break
                 }
                 
@@ -170,5 +223,12 @@ class RMShoppingMainTableViewController: UITableViewController {
             })
         })
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EditGrocerySegue" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let destinationVC = nav.topViewController as! RMShoppingAddItemTableViewController
+            destinationVC.groceryItem = selectedGroceryItem
+        }
+    }
 }
