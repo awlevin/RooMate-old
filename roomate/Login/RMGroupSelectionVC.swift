@@ -37,7 +37,7 @@ class RMGroupSelectionVC: UIViewController {
             let groupID = textField.text
             
             // Textfield is NOT empty
-            if groupID != nil {
+            if groupID != "" {
                 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
                 let userId = userDefaults.valueForKey("userID") as! Int
