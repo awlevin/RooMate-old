@@ -100,7 +100,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Finance" id="Yo2-LG-MlK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="Npf-tM-RGg">
+                        <barButtonItem key="leftBarButtonItem" image="clock" id="Npf-tM-RGg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="plY-xS-JoF" kind="show" id="VAT-n4-ZAF"/>
@@ -130,11 +130,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="YeF-AM-Udf">
-                            <rect key="frame" x="0.0" y="64" width="375" height="228"/>
+                            <rect key="frame" x="0.0" y="64" width="375" height="206"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjp-MM-q8P">
-                                    <rect key="frame" x="0.0" y="23" width="375" height="124"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42q-uL-F2N">
                                             <rect key="frame" x="90" y="47" width="277" height="30"/>
@@ -198,7 +198,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMm-Cn-7On" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
-                                    <rect key="frame" x="38" y="166" width="299" height="44"/>
+                                    <rect key="frame" x="38" y="143" width="299" height="45"/>
                                     <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                                     <state key="normal" title="$ 0.00">
@@ -210,21 +210,51 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Cjp-MM-q8P" secondAttribute="trailing" id="E5w-8N-S21"/>
                                 <constraint firstItem="Cjp-MM-q8P" firstAttribute="centerX" secondItem="cMm-Cn-7On" secondAttribute="centerX" id="KKb-Qe-raQ"/>
-                                <constraint firstItem="Cjp-MM-q8P" firstAttribute="top" secondItem="YeF-AM-Udf" secondAttribute="top" constant="23" id="fxF-Eo-C7S"/>
+                                <constraint firstItem="Cjp-MM-q8P" firstAttribute="top" secondItem="YeF-AM-Udf" secondAttribute="top" id="fxF-Eo-C7S"/>
                                 <constraint firstItem="cMm-Cn-7On" firstAttribute="top" secondItem="Cjp-MM-q8P" secondAttribute="bottom" constant="19" id="h7Q-qr-msl"/>
                                 <constraint firstItem="cMm-Cn-7On" firstAttribute="leading" secondItem="YeF-AM-Udf" secondAttribute="leading" constant="38" id="jc2-8o-buR"/>
                                 <constraint firstItem="Cjp-MM-q8P" firstAttribute="leading" secondItem="YeF-AM-Udf" secondAttribute="leading" id="rJW-6X-wsQ"/>
                                 <constraint firstAttribute="bottom" secondItem="cMm-Cn-7On" secondAttribute="bottom" constant="18" id="w7U-KI-lNe"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="nie-FY-eke">
-                            <rect key="frame" x="0.0" y="370" width="375" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="bse-cr-LgZ">
+                            <rect key="frame" x="0.0" y="348" width="375" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7e-x3-ufd" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
+                                    <rect key="frame" x="38" y="18" width="299" height="44"/>
+                                    <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="Kvw-HV-jU3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
+                                    <state key="normal" title="+ Add Reciept">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addReceiptButtonPressed:" destination="SlO-2R-Wou" eventType="touchUpInside" id="NQm-pj-WNj"/>
+                                    </connections>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddh-ki-rtg">
+                                    <rect key="frame" x="112" y="70" width="150" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="7Qm-Tq-Ojn"/>
+                                        <constraint firstAttribute="height" constant="150" id="h5e-16-ZtD"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="Ddh-ki-rtg" firstAttribute="top" secondItem="i7e-x3-ufd" secondAttribute="bottom" constant="8" id="1LM-52-jWb"/>
+                                <constraint firstItem="i7e-x3-ufd" firstAttribute="top" secondItem="bse-cr-LgZ" secondAttribute="top" constant="19" id="DZN-5S-QxQ"/>
+                                <constraint firstItem="Ddh-ki-rtg" firstAttribute="centerX" secondItem="bse-cr-LgZ" secondAttribute="centerX" id="STz-dn-H5d"/>
+                                <constraint firstItem="i7e-x3-ufd" firstAttribute="leading" secondItem="bse-cr-LgZ" secondAttribute="leading" constant="38" id="lOL-Ep-vK1"/>
+                                <constraint firstAttribute="trailing" secondItem="i7e-x3-ufd" secondAttribute="trailing" constant="38" id="rbq-XS-BED"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="dyN-CP-6fD">
-                                <rect key="frame" x="0.0" y="256" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="234" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dyN-CP-6fD" id="fcN-6m-qjq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -253,6 +283,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryTextField" destination="LlW-RO-Pip" id="WM4-EZ-fo0"/>
+                        <outlet property="recieptImageView" destination="Ddh-ki-rtg" id="dpF-nT-1L6"/>
                         <outlet property="titleTextField" destination="dgT-td-Euk" id="3RU-c7-yYs"/>
                         <outlet property="totalButton" destination="cMm-Cn-7On" id="e8y-sz-QGr"/>
                         <outlet property="totalTextField" destination="42q-uL-F2N" id="tuc-MV-nUI"/>
@@ -418,6 +449,7 @@
     </scenes>
     <resources>
         <image name="check" width="28" height="28"/>
+        <image name="clock" width="32" height="32"/>
         <image name="close" width="28" height="30"/>
         <image name="finance" width="32" height="32"/>
     </resources>

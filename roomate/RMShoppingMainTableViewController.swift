@@ -14,7 +14,7 @@ class RMShoppingMainTableViewController: UITableViewController {
     var communalItems = [RMGrocery]()
     var aggregateItems = [RMGrocery]()
     let refresher = UIRefreshControl()
-    var postSelected: RMGrocery!
+    var selectedGroceryItem: RMGrocery!
 
     
     override func viewDidLoad() {
@@ -31,7 +31,6 @@ class RMShoppingMainTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        postSelected = nil
     }
     
     // MARK: - Table view data source
@@ -100,8 +99,69 @@ class RMShoppingMainTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO: Do we need to implement this method?
-        // The UI doesn't permit clicking on the grocery items... but it should so that we can modify an item's quantity.
+
+        if let parentVC = self.parentViewController as? RMShoppingMainViewController {
+            switch  parentVC.segmentedControl.selectedSegmentIndex {
+            case 0:
+                selectedGroceryItem = communalItems[indexPath.row]
+                performSegueWithIdentifier("EditGrocerySegue", sender: self)
+                return
+            case 1:
+                selectedGroceryItem = personalItems[indexPath.row]
+                performSegueWithIdentifier("EditGrocerySegue", sender: self)
+                return
+            case 2:
+                // Don't segue on aggregate list
+                return
+            default:
+                return
+            }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let exGrocery: RMGrocery?
+            
+            if let parentVC = self.parentViewController as? RMShoppingMainViewController {
+                switch  parentVC.segmentedControl.selectedSegmentIndex {
+                case 0:
+                    exGrocery = communalItems[indexPath.row]
+                    communalItems.removeAtIndex(indexPath.row)
+                case 1:
+                    exGrocery = personalItems[indexPath.row]
+                    personalItems.removeAtIndex(indexPath.row)
+                case 2:
+                    return
+                default:
+                    return
+                }
+            }
+            
+            // Delete row
+            self.tableView.beginUpdates()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            self.tableView.endUpdates()
+            
+//            RMChore.deleteChore(exGrocery!.objectID) { (completed) in
+//                if completed {
+//                    print("Chore successfully deleted")
+//                } else {
+//                    // Add chore back if it wasn't successfully deleted
+//                    self.chores.insert(exGrocery, atIndex: indexPath.row)
+//                    self.tableView.beginUpdates()
+//                    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//                    self.tableView.endUpdates()
+//                    
+//                    RMNotificationManger().presentSimpleAlertWithMessage("Error!", message: "We encountered a problem deleting your chore, please try again", viewController: self)
+//                }
+//            }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 75
     }
     
     func fetchNewItemsForListType(listType: RMGroceryListTypes) {
@@ -163,5 +223,12 @@ class RMShoppingMainTableViewController: UITableViewController {
             })
         })
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EditGrocerySegue" {
+            let nav = segue.destinationViewController as! UINavigationController
+            let destinationVC = nav.topViewController as! RMShoppingAddItemTableViewController
+            destinationVC.groceryItem = selectedGroceryItem
+        }
+    }
 }

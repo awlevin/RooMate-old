@@ -13,7 +13,7 @@ import BraintreeDropIn
 // TODO: Need array of roommates, need to be able to create a RMFinanceBill for each user
 // Animation when when the user completes a bill
 // Animation with red when a textfield is not filled out
-class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, FinanceTableViewCellDelegate {
+class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,FinanceTableViewCellDelegate {
     
     static let user1 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", dateUpdatedAt: "0", firstName: "Corey", lastName: "Pett", email: "0", profileImageURL: "0", userGroceryLists: nil)
     
@@ -27,9 +27,12 @@ class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDa
     @IBOutlet weak var totalTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var totalButton: RMRoundedButton!
+    @IBOutlet weak var recieptImageView: UIImageView!
     
+    var selectedGroceries: [RMGrocery]? // Used when user is checking out from shopping
     var invoice: RMInvoice?
-    var pickerOptions = ["Gas", "Electric", "Internet", "Misc"]
+    let imagePicker = UIImagePickerController()
+    var pickerOptions = ["Gas & Electric", "Shopping", "Internet", "Cable", "Misc"]
     
     @IBAction func completeButtonPressed(sender: AnyObject) {
             
@@ -75,6 +78,12 @@ class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDa
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func addReceiptButtonPressed(sender: AnyObject) {
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .PhotoLibrary // TODO******** change to camera
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,6 +119,8 @@ class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDa
             UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(RMFinanceInvoiceTableViewController.endEditing))]
         toolBar.sizeToFit()
         categoryTextField.inputAccessoryView = toolBar
+        
+        imagePicker.delegate = self
     }
     
     func endEditing() {
@@ -226,4 +237,19 @@ class RMFinanceInvoiceTableViewController: UITableViewController, UIPickerViewDa
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryTextField.text = pickerOptions[row]
     }
+    
+    // MARK: - ImagePicker Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            recieptImageView.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

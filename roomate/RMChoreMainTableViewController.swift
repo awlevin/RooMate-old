@@ -198,11 +198,6 @@ class RMChoreMainTableViewController: UITableViewController, ChoreMainTableViewC
             var fetchedChores = bbPosts
             if fetchedChores.count > 0 {
                 fetchedChores = fetchedChores.sort( { $0.choreID > $1.choreID })
-//                for chore in fetchedChores{
-//                    if !self.chores.contains({ $0.choreID == chore.choreID }) {
-//                        self.chores.append(chore)
-//                    }
-//                }
                 self.chores = fetchedChores
             }
             dispatch_async(dispatch_get_main_queue(), {
