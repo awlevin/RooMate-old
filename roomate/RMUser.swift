@@ -12,7 +12,7 @@ public struct RMUser : Hashable {
     
     // BEGIN: Temporary code to test everything with different RMUsers
     static func returnTestUser() -> RMUser{
-        return RMUser(userObjectID: 1, groupID: 1, dateCreatedAt: "00/00/00", dateUpdatedAt: "00/00/00", firstName: "TestFirst", lastName: "UserLast", email: "testUser@trumpsucks.com", profileImageURL: "N/A", userGroceryLists: nil)
+        return RMUser(userObjectID: 1, groupID: 1, dateCreatedAt: "00/00/00", firstName: "TestFirst", lastName: "UserLast", email: "testUser@trumpsucks.com", profileImageURL: "N/A", userGroceryLists: nil)
     }
     
     // END: Temporary code to test everything with RMUsers
@@ -21,12 +21,10 @@ public struct RMUser : Hashable {
     var userObjectID: Int
     var groupID: Int
     var dateCreatedAt: String?
-    var dateUpdatedAt: String?
     var firstName: String
     var lastName: String
     var email: String
     var profileImageURL: String
-    // var oneSignalId: String?
     var userGroceryLists: [RMGroceryList]?
     
     
@@ -46,14 +44,8 @@ public struct RMUser : Hashable {
         userParamDictionary["profileimageurl"] = user.profileImageURL
         
         
-        RMQueryBackend.post(userParamDictionary, url: "https://damp-plateau-63440.herokuapp.com/createRMUser") { (succeeded, jsonResponse) in
-            if succeeded {
-                completion(success: true, userID: jsonResponse!["userid"] as! Int)
-                return
-            } else {
-                completion(success: false, userID: 0)
-                return
-            }
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/createRMUser", params: userParamDictionary) { (succeeded, jsonResponse) in
+            (succeeded) ? completion(success: true, userID: jsonResponse?["userid"] as! Int) : completion(success: false, userID: 0)
         }
     }
     
@@ -79,13 +71,10 @@ public struct RMUser : Hashable {
                 switch statusCode {
                 case 400:
                     completion(userExists: false, statusCode: statusCode)
-                    return
                 case 503:
                     completion(userExists: false, statusCode: statusCode)
-                    return
                 default:
                     completion(userExists: false, statusCode: statusCode)
-                    return
                 }
             } else {
                 var json: NSArray
@@ -147,108 +136,21 @@ public struct RMUser : Hashable {
                 let lastName = jsonItem["lastname"] as! String
                 let profileImageURL = "" /*jsonItem["profileimageurl"] as! String*/ // TODO: implement profileimageurl on backend
                 
-                completion(success: true, statusCode: 200, user: RMUser(userObjectID: userObjectID, groupID: groupObjID!, dateCreatedAt: dateCreatedAt, dateUpdatedAt: "", firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
+                completion(success: true, statusCode: 200, user: RMUser(userObjectID: userObjectID, groupID: groupObjID!, dateCreatedAt: dateCreatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
             } else {
                 completion(success: false, statusCode: 0, user: nil)
             }
         }
-        
-        /*
-         static func getUserFromEmail(email: String, completion: (success: Bool, statusCode: Int, user: RMUser?) -> ())  {
-         let apiCallString = "https://damp-plateau-63440.herokuapp.com/getRMUserByEmail"
-         let httpURL = NSURL(string: apiCallString)
-         let request = NSMutableURLRequest(URL: httpURL!)
-         
-         request.HTTPMethod = "GET"
-         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-         request.addValue("\(email)", forHTTPHeaderField: "email")
-         
-         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
-         
-         let task = session.dataTaskWithRequest(request) { (data, response, error) in
-         var statusCode = 0
-         if let httpResponse = response as? NSHTTPURLResponse {
-         statusCode = httpResponse.statusCode
-         }
-         
-         if(error != nil || data == nil || statusCode != 200){
-         switch statusCode {
-         case 400:
-         completion(success: false, statusCode: statusCode, user: nil)
-         return
-         case 503:
-         completion(success: false, statusCode: statusCode, user: nil)
-         return
-         default:
-         completion(success: false, statusCode: statusCode, user: nil)
-         return
-         }
-         } else {
-         var json: NSArray
-         do {
-         try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
-         } catch {
-         print("GOT HERE!!!")
-         completion(success: false, statusCode: statusCode, user: nil)
-         return
-         }
-         
-         if json.count == 0 {
-         print("nah, got here")
-         completion(success: false, statusCode: statusCode, user: nil)
-         return
-         }
-         
-         
-         else {
-         
-         for jsonItem in json {
-         guard let jsonItemDict = jsonItem as? [String: AnyObject]
-         else { continue }
-         
-         
-         // TODO: EXTREMELY IMPORTANT!!! HANDLE GROUPID SENT BACK AS OPTIONAL!
-         
-         let userObjectID = jsonItemDict["userid"] as! Int
-         //                        let groupID = (jsonItemDict["groupid"] as? Int)!
-         
-         let groupObjID: Int
-         
-         if let tempVal = jsonItemDict["groupid"] as? Int {
-         groupObjID = tempVal
-         } else {
-         groupObjID = 0
-         }
-         
-         
-         let dateCreatedAt = "datecreatedat"
-         let dateUpdatedAt = "dateupdatedat"
-         let firstName = jsonItemDict["firstname"] as! String
-         let lastName = jsonItemDict["lastname"] as! String
-         let profileImageURL = ""/*jsonItemDict["profileimageurl"] as! String*/
-         
-         completion(success: true, statusCode: statusCode, user: RMUser(userObjectID: userObjectID, groupID: groupObjID, dateCreatedAt: dateCreatedAt, dateUpdatedAt: dateUpdatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
-         
-         
-         return
-         
-         }
-         }
-         }
-         }
-         task.resume()
-         }*/
     }
 }
 
-    
-    
-    // Conform RMUser to the Equatable protocol, so then RMUser can conform to Hashable.
-    // Ultimately, RMUser must conform to Hashable to be used as a key in dictionaries.
-    extension RMUser: Equatable {}
-    
-    public func ==(lhs: RMUser, rhs: RMUser) -> Bool {
+
+
+// Conform RMUser to the Equatable protocol, so then RMUser can conform to Hashable.
+// Ultimately, RMUser must conform to Hashable to be used as a key in dictionaries.
+extension RMUser: Equatable {}
+
+public func ==(lhs: RMUser, rhs: RMUser) -> Bool {
     
     // Two users are equal if their objectIDs are equivalent.
     return lhs.userObjectID == rhs.userObjectID

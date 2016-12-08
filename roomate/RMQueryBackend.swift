@@ -145,7 +145,7 @@ struct RMQueryBackend {
         task.resume()
     } */
     
-    static func post(params : [String : AnyObject], url : String, postCompleted : (succeeded: Bool, jsonResponse: [String : AnyObject]?) -> ()) {
+    static func post(url: String, params: [String : AnyObject], postCompleted : (succeeded: Bool, jsonResponse: [String : AnyObject]?) -> ()) {
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"

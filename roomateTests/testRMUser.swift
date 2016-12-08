@@ -32,7 +32,7 @@ class testRMUser: XCTestCase {
     
     func testDoesFakeUserExist() {
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "00/00/00", dateUpdatedAt: "00/00/00", firstName: "Billy", lastName: "Bob", email: "billy@bob.com", profileImageURL: "N/A", userGroceryLists: nil)
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "00/00/00", firstName: "Billy", lastName: "Bob", email: "billy@bob.com", profileImageURL: "N/A", userGroceryLists: nil)
 
         var testFakeUserSuccess = false
         var testFakeUserStatusCode = 0
@@ -55,7 +55,7 @@ class testRMUser: XCTestCase {
         var testRealUserSuccess = false
         var testRealUserStatusCode = 0
         
-        let existingUser = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", dateUpdatedAt: "00/00/00", firstName: "Bucky", lastName: "Badger", email: "bbadger@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
+        let existingUser = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", firstName: "Bucky", lastName: "Badger", email: "bbadger@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
         
         RMUser.doesUserExist("\(existingUser.email)", completion: { (userExists, statusCode) in
             testRealUserSuccess = userExists
@@ -73,7 +73,7 @@ class testRMUser: XCTestCase {
         var testUserSuccess = false
         var testUserStatusCode = 0
         
-        let user = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", dateUpdatedAt: "00/00/00", firstName: "Ducky", lastName: "Dagger", email: "duckydagger@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
+        let user = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", firstName: "Ducky", lastName: "Dagger", email: "duckydagger@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
         
         RMUser.doesUserExist("\(user.email)", completion: { (userExists, statusCode) in
             testUserSuccess = userExists
@@ -91,7 +91,7 @@ class testRMUser: XCTestCase {
         var testCreatedUserSuccess = false
         var testUserID = 0
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
 
         
         RMUser.createUser(nonExistingUser) { (success, userID) in
@@ -122,7 +122,7 @@ class testRMUser: XCTestCase {
             XCTAssertTrue(testSuccess, "\(testStatusCode)")
             XCTAssertNotNil(testUser)
             
-            print("User associated with email: \(testUser?.email)... \nUserID: \(testUser?.userObjectID), \nGroupID: \(testUser?.groupID), \nFirstName: \(testUser?.firstName), \nLastName: \(testUser?.lastName), \nDateCreatedAt: \(testUser?.dateCreatedAt), \nDateUpdatedAt: \(testUser?.dateUpdatedAt)")
+            print("User associated with email: \(testUser?.email)... \nUserID: \(testUser?.userObjectID), \nGroupID: \(testUser?.groupID), \nFirstName: \(testUser?.firstName), \nLastName: \(testUser?.lastName), \nDateCreatedAt: \(testUser?.dateCreatedAt)")
         }
     }
     
@@ -130,7 +130,7 @@ class testRMUser: XCTestCase {
         let asyncExpectation = expectationWithDescription("ifUserDoesntExistThenCreateUserTest")
         var testSuccess = false
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", dateUpdatedAt: "", firstName: "Hunter", lastName: "Kooldude", email: "huntington@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Hunter", lastName: "Kooldude", email: "huntington@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
         
         RMUser.doesUserExist("\(nonExistingUser.email)") { (userExists, statusCode) in
             if(!userExists) {

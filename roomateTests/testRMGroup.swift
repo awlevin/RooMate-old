@@ -27,6 +27,67 @@ class testRMGroup: XCTestCase {
     }
     
     func testDoesGroupExist() {
+        let asyncExpectation = expectationWithDescription("doesGroupExistTest")
+        var groupExistsValue = false
+        var testSuccess = false
+        
+        RMGroup.doesGroupExist(1) { (success, groupExists) in
+            if success {
+                testSuccess = success
+                groupExistsValue = groupExists
+            }
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
+            XCTAssertTrue(groupExistsValue)
+        }
+    }
+    
+    // this method calls createGroup() twice to make sure that the second groupID is 1 greater than its predecessor
+    func testCreateGroup() {
+        let firstAsyncExpectation = expectationWithDescription("createGroupTest1")
+        var firstTestSuccess = false
+        var firstTestGroupID = 0
+        
+        let secondAsyncExpectation = expectationWithDescription("createGroupTest2")
+        var secondTestSuccess = false
+        var secondTestGroupID = 0
+        
+        
+        RMGroup.createGroup() { (success, groupID) in
+            if success {
+                firstTestSuccess = success
+                firstTestGroupID = groupID!
+            }
+            firstAsyncExpectation.fulfill()
+        }
+        
+        
+        RMGroup.createGroup() { (success, groupID) in
+            if success {
+                secondTestSuccess = success
+                secondTestGroupID = groupID!
+            }
+            secondAsyncExpectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(firstTestSuccess && secondTestSuccess, "\(firstTestGroupID)")
+            XCTAssertTrue(secondTestGroupID == (firstTestGroupID + 1), "firstGroupID: \(firstTestGroupID), secondGroupID: \(secondTestGroupID)")
+        }
+    }
+    
+    func testGetUsersInGroup() {
+        let asyncExpectation = expectationWithDescription("getUsersInGroupTest")
+        var testSuccess = false
+        let groupID = 1
+        
+        RMGroup.getUsersInGroup(groupID) { (success, users) in
+            
+            
+        }
         
     }
 }

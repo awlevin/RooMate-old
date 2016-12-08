@@ -68,7 +68,7 @@ public struct RMGrocery {
                 }
                 return
             } else {
-                let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                // let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
             }
         }
         task.resume()
@@ -78,13 +78,13 @@ public struct RMGrocery {
     static func editGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
         let editedGroceryDict = RMGrocery.editGroceryDictionary(grocery)
         
-        RMQueryBackend.post(editedGroceryDict, url: "https://damp-plateau-63440.herokuapp.com/editRMGrocery") { (succeeded, jsonResponse) in
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/editRMGrocery", params: editedGroceryDict) { (succeeded, jsonResponse) in
             (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
         }
     }
     
     static func deleteGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
-        RMQueryBackend.post(RMGrocery.deleteGroceryDictionary(grocery), url: "https://damp-plateau-63440.herokuapp.com/deleteRMGrocery") { (succeeded, jsonResponse) in
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/deleteRMGrocery", params: RMGrocery.deleteGroceryDictionary(grocery)) { (succeeded, jsonResponse) in
             (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
         }
     }

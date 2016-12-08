@@ -12,26 +12,29 @@ public struct RMGroup {
     var groupID: String // Also known as unique identifier
     var dateCreatedAt: String
     var dateUpdatedAt: String
-    //var communalGroceryLists: [RMGroceryList]
-    //var aggregateGroceryLists: [RMGroceryList]
-    //var choresList: [RMChore]
-    
-    public static func leaveHousehold() {
-        //Call the backend to delete you from the household and then signout
+
+    static func doesGroupExist(groupID: Int, completion: (success: Bool, groupExists: Bool)->() ) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/doesGroupExist", parameters: ["groupid" : "\(groupID)"]) { (successful, jsonResponse) in
+            let jsonItem = jsonResponse![0]
+            
+            let groupExistsValue = (jsonItem["mycount"] as? String == "1") ? true : false
+            (successful) ? completion(success: true, groupExists: groupExistsValue) : completion(success: false, groupExists: false)
+        }
     }
     
-    public static func createHousehold() -> String? {
-        //Call the backend to make a new UUID for a group, and add this user to
-        //the household automatically
-        return nil
-    }
-    
-    public static func joinHousehold(groupId: Int) {
-        //Call the backend to add the current user to the household, and on
-        //success, actually log them in.
-    }
-    
-    public static func doesGroupExist(groupID: Int, completion: (groupExists: Bool)->() ) {
+    static func createGroup(completion: (success: Bool, groupID: Int?)-> ()) {
         
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/createRMGroup", params: ["N/A":"N/A"]) { (successful, jsonResponse) in
+            if successful{
+                let groupIDValue = jsonResponse?["groupid"] as! Int
+                completion(success: true, groupID: groupIDValue)
+            } else {
+                completion(success: false, groupID: nil)
+            }
+        }
+    }
+    
+    static func getUsersInGroup(groupID: Int, completion: (success: Bool, users: [RMUser])->() ) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/get", parameters: <#T##[String : String]#>, completion: <#T##(success: Bool, jsonResponse: NSArray?) -> Void#>)
     }
 }
