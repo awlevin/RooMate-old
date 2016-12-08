@@ -22,7 +22,12 @@ class RMLoginViewController: UIViewController {
         auth.loginWithFacebook { (success) in
             if success {
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.performSegueWithIdentifier("segueFromLogin", sender: self)
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
+                    if let _ = userDefaults.valueForKey("groupID") as? String {
+                        self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
+                    } else {
+                        self.performSegueWithIdentifier("segueFromLogin", sender: self)
+                    }
                 }
             } else {
                 // handle error

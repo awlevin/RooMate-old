@@ -46,6 +46,7 @@ extension RMAuth {
         // UNCOMMENT FOR DEMO PURPOSES
         // If token already exists
         if let _ = FBSDKAccessToken.currentAccessToken() {
+            saveFacebookDetails()
             completion(success: true)
         }
             // If token does not exist
@@ -69,12 +70,10 @@ extension RMAuth {
                     completion(success: false)
                     // Handle restricted user permissions
                 }
-                else if loginResult!.grantedPermissions.contains(permissionSet) {
+                else {
                     print("Facebook login: Granted permissions")
                     self.saveFacebookDetails()
-                } else if !loginResult!.isCancelled {
                     completion(success: true)
-                    return
                 }
             })
         }
@@ -97,22 +96,33 @@ extension RMAuth {
                 let last_name = result.objectForKey("last_name") as? String
                 let profile_picture_url: String = "https://graph.facebook.com/" + id! + "/picture?type=large"
                 
-                // TODO save information to backend
                 
                 let user = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
                 
+                
+                // Update or save user information to backend
                 RMUser.doesUserExist(email!, completion: { (userExists, statusCode) in
                     if !userExists {
+                        // If user does not exist, create a new one
                         RMUser.createUser(user) { (success, userID) in
                             if success {
-                                // TODO: Store returned userID value
-                                
+                                let userDefaults = NSUserDefaults.standardUserDefaults()
+                                userDefaults.setValue(userID, forKey: "userID")
+                                userDefaults.setValue(email, forKey: "email")
+                                userDefaults.setValue(first_name, forKey: "firstName")
+                                userDefaults.setValue(last_name, forKey: "lastName")
+                                userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
+                        
                                 print("User successfully created")
                             } else {
-                                // createUser failed
+                                print("Creating a new user failed")
                             }
                         }
                         
+                    } else {                        
+                        // Update profilePicture
+                        let userDefaults = NSUserDefaults.standardUserDefaults()
+                        userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
                     }
                 })
             }

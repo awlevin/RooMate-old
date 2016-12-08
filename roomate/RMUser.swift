@@ -178,11 +178,7 @@ public struct RMUser : Hashable {
         
         return RMUser(userObjectID: userID, groupID: groupID, dateCreatedAt: dateCreatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: [])
     }
-    
-    
 }
-
-
 
 
 // Conform RMUser to the Equatable protocol, so then RMUser can conform to Hashable.
