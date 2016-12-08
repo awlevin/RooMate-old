@@ -20,7 +20,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5s5-dJ-MLd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="cog" id="16C-Ag-i2c"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="V81-y4-0ui">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V81-y4-0ui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,10 +34,9 @@
             </objects>
             <point key="canvasLocation" x="2184.8000000000002" y="2466.1169415292356"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="Fm6-e0-Gn6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dgo-m5-Kpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="sNp-pT-WMe" customClass="RMSettingsTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pef-pR-AZS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -108,12 +107,13 @@
                             <outlet property="delegate" destination="sNp-pT-WMe" id="Ke6-or-9K5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="13I-sI-BzA"/>
+                    <navigationItem key="navigationItem" title="Settings" id="13I-sI-BzA"/>
                     <connections>
                         <outlet property="groupIdLabel" destination="keF-01-LNM" id="mdq-nx-Bh1"/>
                         <outlet property="profileImageView" destination="ORR-Oh-tI1" id="ae8-Pp-MtS"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgo-m5-Kpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3010.4000000000001" y="2470.6146926536735"/>
         </scene>
