@@ -50,8 +50,10 @@
 		9021CC471DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CC461DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift */; };
 		9021CCB61DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CCB51DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift */; };
 		9021CCB81DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CCB71DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift */; };
+		9021CCBE1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CCBD1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift */; };
 		903C21521DEF7E52001D5689 /* RMThinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903C21511DEF7E52001D5689 /* RMThinLabel.swift */; };
 		903C21561DEFAAC0001D5689 /* RMInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903C21551DEFAAC0001D5689 /* RMInvoice.swift */; };
+		905EB7BA1DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */; };
 		908027661DEE333500918D1D /* RMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908027651DEE333400918D1D /* RMUtility.swift */; };
 		908027691DEE397900918D1D /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908027671DEE397900918D1D /* Finance.storyboard */; };
 		9080276B1DEE3E1000918D1D /* RMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276A1DEE3E1000918D1D /* RMExtensions.swift */; };
@@ -71,16 +73,14 @@
 		9097F4C11DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C01DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift */; };
 		9097F4C31DC874130056FA78 /* RMChoreCompletionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4C21DC874130056FA78 /* RMChoreCompletionTableViewCell.xib */; };
 		9097F4C71DC909040056FA78 /* RMShoppingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C61DC909040056FA78 /* RMShoppingMainViewController.swift */; };
-		9097F4C91DC90A700056FA78 /* RMShoppingAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C81DC90A700056FA78 /* RMShoppingAddViewController.swift */; };
 		9097F4CB1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4CA1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift */; };
 		9097F4CD1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4CC1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib */; };
 		9097F4CF1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4CE1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift */; };
 		9097F4D31DC91AA90056FA78 /* RMShoppingMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4D21DC91AA90056FA78 /* RMShoppingMainTableViewController.swift */; };
 		9097F4D51DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4D41DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib */; };
 		9097F4D71DC91B420056FA78 /* RMShoppingMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4D61DC91B420056FA78 /* RMShoppingMainTableViewCell.swift */; };
-		9097F4D91DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4D81DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift */; };
-		9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib */; };
-		9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift */; };
+		9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib */; };
+		9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift */; };
 		90B523AF1DF14A2C00CB7E18 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */; };
 		90B523B01DF14A2C00CB7E18 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */; };
 		90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */; };
@@ -161,8 +161,10 @@
 		9021CC461DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9021CCB51DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletionDetailTableViewController.swift; sourceTree = "<group>"; };
 		9021CCB71DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreAddCompletionTableViewController.swift; sourceTree = "<group>"; };
+		9021CCBD1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingAddItemTableViewController.swift; sourceTree = "<group>"; };
 		903C21511DEF7E52001D5689 /* RMThinLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMThinLabel.swift; sourceTree = "<group>"; };
 		903C21551DEFAAC0001D5689 /* RMInvoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMInvoice.swift; sourceTree = "<group>"; };
+		905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutListTableViewController.swift; sourceTree = "<group>"; };
 		908027651DEE333400918D1D /* RMUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUtility.swift; sourceTree = "<group>"; };
 		908027681DEE397900918D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Finance.storyboard; sourceTree = "<group>"; };
 		9080276A1DEE3E1000918D1D /* RMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMExtensions.swift; sourceTree = "<group>"; };
@@ -183,16 +185,14 @@
 		9097F4C01DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletionTableViewCell.swift; sourceTree = "<group>"; };
 		9097F4C21DC874130056FA78 /* RMChoreCompletionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMChoreCompletionTableViewCell.xib; sourceTree = "<group>"; };
 		9097F4C61DC909040056FA78 /* RMShoppingMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingMainViewController.swift; sourceTree = "<group>"; };
-		9097F4C81DC90A700056FA78 /* RMShoppingAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingAddViewController.swift; sourceTree = "<group>"; };
 		9097F4CA1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingHistoryTableViewController.swift; sourceTree = "<group>"; };
 		9097F4CC1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		9097F4CE1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		9097F4D21DC91AA90056FA78 /* RMShoppingMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingMainTableViewController.swift; sourceTree = "<group>"; };
 		9097F4D41DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingMainTableViewCell.xib; sourceTree = "<group>"; };
 		9097F4D61DC91B420056FA78 /* RMShoppingMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingMainTableViewCell.swift; sourceTree = "<group>"; };
-		9097F4D81DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutTableViewController.swift; sourceTree = "<group>"; };
-		9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingCheckoutTableViewCell.xib; sourceTree = "<group>"; };
-		9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingCheckoutListTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutListTableViewCell.swift; sourceTree = "<group>"; };
 		90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLoginViewController.swift; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 		85986D5A1DE9232900116EEA /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				9097F4C81DC90A700056FA78 /* RMShoppingAddViewController.swift */,
+				9021CCBD1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift */,
 			);
 			name = Add;
 			sourceTree = "<group>";
@@ -431,8 +431,8 @@
 				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
 				9097F4D11DC91A820056FA78 /* Main */,
 				85986D5A1DE9232900116EEA /* Add */,
-				9097F4D01DC911810056FA78 /* History */,
 				9097F4DA1DC91EF90056FA78 /* Checkout */,
+				9097F4D01DC911810056FA78 /* History */,
 			);
 			name = Shopping;
 			sourceTree = "<group>";
@@ -499,9 +499,9 @@
 		9097F4DA1DC91EF90056FA78 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
-				9097F4D81DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift */,
-				9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib */,
-				9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift */,
+				905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */,
+				9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib */,
+				9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift */,
 			);
 			name = Checkout;
 			sourceTree = "<group>";
@@ -698,7 +698,7 @@
 				9097F4D51DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib in Resources */,
 				9097F4CD1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib in Resources */,
 				4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */,
-				9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutTableViewCell.xib in Resources */,
+				9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,21 +816,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutTableViewCell.swift in Sources */,
+				9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift in Sources */,
 				85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */,
 				903C21561DEFAAC0001D5689 /* RMInvoice.swift in Sources */,
 				4230534F1DC134FE003AE80B /* GroupSelectionVC.swift in Sources */,
 				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
 				42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */,
+				905EB7BA1DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift in Sources */,
 				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
 				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
 				85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */,
 				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
 				4231ACA81DEB68BB00080531 /* SettingsViewController.swift in Sources */,
-				9097F4D91DC91EF60056FA78 /* RMShoppingCheckoutTableViewController.swift in Sources */,
 				9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */,
 				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
 				4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */,
+				9021CCBE1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift in Sources */,
 				85F003F91DC80A8F008CA377 /* RMNotificationManager.swift in Sources */,
 				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
 				9097F4C71DC909040056FA78 /* RMShoppingMainViewController.swift in Sources */,
@@ -851,7 +852,6 @@
 				9097F4D31DC91AA90056FA78 /* RMShoppingMainTableViewController.swift in Sources */,
 				908027661DEE333500918D1D /* RMUtility.swift in Sources */,
 				9097F4901DC80DEE0056FA78 /* RMFinanceMainViewController.swift in Sources */,
-				9097F4C91DC90A700056FA78 /* RMShoppingAddViewController.swift in Sources */,
 				9021CC431DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift in Sources */,
 				9097F4C11DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift in Sources */,
 				9097F4D71DC91B420056FA78 /* RMShoppingMainTableViewCell.swift in Sources */,

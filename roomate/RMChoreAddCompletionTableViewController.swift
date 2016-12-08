@@ -73,7 +73,7 @@ class RMChoreAddCompletionTableViewController: UITableViewController,UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-
+        imagePicker.delegate = self
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -90,18 +90,6 @@ class RMChoreAddCompletionTableViewController: UITableViewController,UIImagePick
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func getBase64ForImage(image : UIImage) -> String {
-        let imageJPEG = UIImageJPEGRepresentation(image, 0.1)
-        let imageData = imageJPEG?.base64EncodedStringWithOptions([.Encoding64CharacterLineLength])
-        print("******************\(imageData?.characters.count)")
-        return imageData!
-    }
-    
-    func getImageForBase64(imageData: String) -> UIImage {
-        let imageData = NSData(base64EncodedString: imageData, options: [.IgnoreUnknownCharacters])
-        return UIImage(data: imageData!)!
     }
     
     func updateUI() {
