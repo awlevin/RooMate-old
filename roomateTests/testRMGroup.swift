@@ -82,21 +82,40 @@ class testRMGroup: XCTestCase {
     func testGetUsersInGroup() {
         let asyncExpectation = expectationWithDescription("getUsersInGroupTest")
         var testSuccess = false
-        var testUsers = nil
-        let groupID = 1
+        var testUsers: [RMUser]? = nil
+        let groupID = 3
         
         RMGroup.getUsersInGroup(groupID) { (success, users) in
             if success {
                 testSuccess = success
-                testUsers = users
+                testUsers = users!
             }
+            asyncExpectation.fulfill()
         }
         
         waitForExpectationsWithTimeout(5) { (error) in
             XCTAssertTrue(testSuccess)
             XCTAssertNotNil(testUsers)
+            print(testUsers)
+        }
+    }
+    
+    func testJoinHousehold() {
+        let asyncExpectation = expectationWithDescription("joinHouseholdTest")
+        var testSuccess = false
+        let userID = 3
+        let newGroupID = 3
             
+        RMGroup.joinHousehold(userID, groupID: newGroupID) { (success) in
+            if success {
+                testSuccess = success
+            }
+            asyncExpectation.fulfill()
         }
         
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
+        }
     }
+    
 }

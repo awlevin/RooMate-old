@@ -2,14 +2,14 @@
 //  RMGroup.swift
 //  roomate
 //
-//  Created by Ritvik Upadhyaya on 26/10/16.
+//  Created by Aaron Levin on 26/10/16.
 //  Copyright © 2016 RooMate. All rights reserved.
 //
 
 import Foundation
 
 public struct RMGroup {
-    var groupID: String // Also known as unique identifier
+    var groupID: String
     var dateCreatedAt: String
     var dateUpdatedAt: String
 
@@ -47,6 +47,23 @@ public struct RMGroup {
             } else {
                 completion(success: false, users: nil)
             }
+        }
+    }
+    
+    static func joinHousehold(userID: Int, groupID: Int, completion: (success: Bool) -> ()) {
+        
+        RMGroup.doesGroupExist(groupID) { (successful, groupExists) in
+            
+            // TODO: Return in completion handler whether or not the group exists?
+            // So the user can be prompted whether or not the group exists
+            if successful && groupExists {
+                RMUser.editRMUserGroupID(userID, newGroupID: groupID) { (success) in
+                    (success) ? completion(success: true) : completion(success: false)
+                }
+            } else {
+                completion(success: false)
+            }
+            
         }
     }
 }

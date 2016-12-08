@@ -91,7 +91,7 @@ class testRMUser: XCTestCase {
         var testCreatedUserSuccess = false
         var testUserID = 0
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom2@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
 
         
         RMUser.createUser(nonExistingUser) { (success, userID) in
@@ -126,6 +126,26 @@ class testRMUser: XCTestCase {
         }
     }
     
+    func testEditRMUserGroupID() {
+        let asyncException = expectationWithDescription("editRMUserGroupIDTest")
+        var testSuccess = false
+        
+        let userID:Int = 3
+        let newGroupID: Int = 5
+        
+        RMUser.editRMUserGroupID(userID, newGroupID: newGroupID) { (success) in
+            if (success) {
+                testSuccess = success
+            }
+            asyncException.fulfill()
+        }
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
+        }
+    }
+    
+    
+    // This method is deprecated now that the backend assesses if a user exists or not upon creation.
     func testIfUserDoesntExistThenCreateUser() {
         let asyncExpectation = expectationWithDescription("ifUserDoesntExistThenCreateUserTest")
         var testSuccess = false
@@ -145,9 +165,5 @@ class testRMUser: XCTestCase {
             XCTAssertTrue(testSuccess)
         }
     }
-    
-    
-    
-    
-    
+
 }

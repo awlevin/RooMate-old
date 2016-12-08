@@ -62,7 +62,6 @@ struct RMQueryBackend {
             do {
                 if (data != nil) {
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print("JSON String: \(jsonStr)")
                     json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSArray
                 } else {
                     print("JSON Data was nil.")
@@ -184,9 +183,6 @@ struct RMQueryBackend {
                 print(error)
             }
             
-            
-            // var msg = "No message"
-            
             // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
             if(err != nil) {
                 print(err!.localizedDescription)
@@ -203,7 +199,7 @@ struct RMQueryBackend {
                         
                         if statusCode == 200 {
                             postCompleted(succeeded: true, jsonResponse: parseJSON)
-                            return
+                            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
                             
                         } else {
                             postCompleted(succeeded: false, jsonResponse: nil)
@@ -214,7 +210,7 @@ struct RMQueryBackend {
                     
                 }
                 else {
-                    // Woa, okay the json object was nil, something went wrong. Maybe the server isn't running?
+                    // JSON object was nil.
                     
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
                     print("Error could not parse JSON: \(jsonStr)")
