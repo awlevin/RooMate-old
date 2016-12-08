@@ -99,7 +99,7 @@ extension RMAuth {
 
                 // TODO save information to backend
                 
-                let user = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: nil, dateUpdatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
+                let user = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
                 RMUser.doesUserExist(email!, completion: { (userExists, statusCode) in
                     if userExists {
                         RMUser.createUser(user, completion: { (success, statusCode) in
