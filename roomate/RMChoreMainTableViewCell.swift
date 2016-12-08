@@ -24,7 +24,7 @@ class RMChoreMainTableViewCell: UITableViewCell {
         let user = RMUser.returnTestUser()
         
         if titleTextField.text != "" {
-            let chore = RMChore(choreID: 0, groupID: user.groupID, userID: user.userObjectID, title: titleTextField.text!, description: "", dateCreated: "00/00/00")
+            let chore = RMChore(choreID: 0, groupID: user.groupID!, userID: user.userObjectID, title: titleTextField.text!, description: "", dateCreated: "00/00/00")
             saveButton.hidden = true
             titleTextField.userInteractionEnabled = false
             delegate!.saveNewChore(chore)

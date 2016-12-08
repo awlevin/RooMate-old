@@ -46,7 +46,7 @@ class RMShoppingAddViewController: UIViewController, UITextFieldDelegate {
         
         // Create new grocery object
         let testUser = RMUser.returnTestUser()
-        let newItem = RMGrocery(objectID: -1, userID: testUser.userObjectID, groupID: testUser.groupID, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text, quantity: Int(self.quantityLabel.text!)!, listID: -1)
+        let newItem = RMGrocery(objectID: -1, userID: testUser.userObjectID, groupID: testUser.groupID!, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text, quantity: Int(self.quantityLabel.text!)!, listID: -1)
         
         // Save the grocery object to the backend
         RMGrocery.createNewGrocery(newItem) { (completed) in

@@ -19,7 +19,7 @@ public struct RMUser : Hashable {
     
     
     var userObjectID: Int
-    var groupID: Int
+    var groupID: Int?
     var dateCreatedAt: String?
     var firstName: String
     var lastName: String
@@ -142,7 +142,36 @@ public struct RMUser : Hashable {
             }
         }
     }
+
+    static func createUserDictionary(user: RMUser) -> ([String : AnyObject]) {
+        var userParamDictionary = [String : AnyObject]()
+        
+        userParamDictionary["userid"] = user.userObjectID
+        userParamDictionary["groupid"] = user.groupID
+        userParamDictionary["datecreatedat"] = user.dateCreatedAt
+        userParamDictionary["firstname"] = user.firstName
+        userParamDictionary["lastname"] = user.lastName
+        userParamDictionary["email"] = user.email
+        userParamDictionary["profileimageurl"] = user.profileImageURL
+        
+        return userParamDictionary
+    }
+    
+    static func parseUserJSONObject(jsonDict: [String: AnyObject]) -> RMUser {
+        let userID = jsonDict["userid"] as! Int
+        let groupID = jsonDict["groupid"] as? Int
+        let dateCreatedAt = jsonDict["datecreatedat"] as! String
+        let firstName = jsonDict["firstname"] as! String
+        let lastName = jsonDict["lastname"] as! String
+        let email = jsonDict["email"] as! String
+        let profileImageURL = jsonDict["profileimageurl"] as! String
+        
+        return RMUser(userObjectID: userID, groupID: groupID, dateCreatedAt: dateCreatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: [])
+    }
+    
+    
 }
+
 
 
 
