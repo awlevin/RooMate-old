@@ -1,14 +1,15 @@
 //
-//  roomateTests.swift
-//  roomateTests
+//  testRMQueryBackend.swift
+//  roomate
 //
-//  Created by Aaron Levin on 12/8/16.
+//  Created by Aaron Levin on 12/6/16.
 //  Copyright © 2016 RooMate. All rights reserved.
 //
 
 import XCTest
+@testable import roomate
 
-class roomateTests: XCTestCase {
+class testRMQueryBackend: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -20,13 +21,8 @@ class roomateTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-    }
+//    func testGet() {
+//        let backendQuery = RMQueryBackend()
+//    }
     
 }

@@ -2,32 +2,68 @@
 //  RMGroup.swift
 //  roomate
 //
-//  Created by Ritvik Upadhyaya on 26/10/16.
+//  Created by Aaron Levin on 26/10/16.
 //  Copyright © 2016 RooMate. All rights reserved.
 //
 
 import Foundation
 
 public struct RMGroup {
-    var objectId: String // Also known as unique identifier
+    var groupID: String
     var dateCreatedAt: String
     var dateUpdatedAt: String
-    //var communalGroceryLists: [RMGroceryList]
-    //var aggregateGroceryLists: [RMGroceryList]
-    //var choresList: [RMChore]
 
-    public static func leaveHousehold() {
-        //Call the backend to delete you from the household and then signout
+    static func doesGroupExist(groupID: Int, completion: (success: Bool, groupExists: Bool)->() ) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/doesGroupExist", parameters: ["groupid" : "\(groupID)"]) { (successful, jsonResponse) in
+            let jsonItem = jsonResponse![0]
+            
+            let groupExistsValue = (jsonItem["mycount"] as? String == "1") ? true : false
+            (successful) ? completion(success: true, groupExists: groupExistsValue) : completion(success: false, groupExists: false)
+        }
     }
     
-    public static func createHousehold() -> String? {
-        //Call the backend to make a new UUID for a group, and add this user to 
-        //the household automatically
-        return nil
+    static func createGroup(completion: (success: Bool, groupID: Int?)-> ()) {
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/createRMGroup", params: ["N/A":"N/A"]) { (successful, jsonResponse) in
+            if successful{
+                let groupIDValue = jsonResponse?["groupid"] as! Int
+                completion(success: true, groupID: groupIDValue)
+            } else {
+                completion(success: false, groupID: nil)
+            }
+        }
     }
     
-    public static func joinHousehold(groupId: String){
-        //Call the backend to add the current user to the household, and on
-        //success, actually log them in.
+    static func getUsersInGroup(groupID: Int, completion: (success: Bool, users: [RMUser]?)->() ) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/getUsersInGroup", parameters: ["groupid":"\(groupID)"]) { (successful, jsonResponse) in
+            if successful {
+                
+                var usersInGroup = [RMUser]()
+                for jsonItem: [String : AnyObject] in jsonResponse! as! [Dictionary<String, AnyObject>] {
+                    let groupMember = RMUser.parseUserJSONObject(jsonItem)
+                    usersInGroup.append(groupMember)
+                }
+                completion(success: true, users: usersInGroup)
+            } else {
+                completion(success: false, users: nil)
+            }
+        }
+    }
+    
+    static func joinHousehold(userID: Int, groupID: Int, completion: (success: Bool) -> ()) {
+        
+        RMGroup.doesGroupExist(groupID) { (successful, groupExists) in
+            
+            // TODO: Return in completion handler whether or not the group exists?
+            // So the user can be prompted whether or not the group exists
+            if successful && groupExists {
+                RMUser.editRMUserGroupID(userID, newGroupID: groupID) { (success) in
+                    (success) ? completion(success: true) : completion(success: false)
+                }
+            } else {
+                completion(success: false)
+            }
+            
+        }
     }
 }

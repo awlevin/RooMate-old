@@ -68,13 +68,29 @@ public struct RMGrocery {
                 }
                 return
             } else {
-                let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                // let json = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
             }
         }
         task.resume()
         completionHandler(completed: true)
     }
     
+    static func editGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
+        let editedGroceryDict = RMGrocery.editGroceryDictionary(grocery)
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/editRMGrocery", params: editedGroceryDict) { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    static func deleteGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/deleteRMGrocery", params: RMGrocery.deleteGroceryDictionary(grocery)) { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    
+    // MARK: Dictionaries
     
     static func createGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
         
@@ -88,6 +104,32 @@ public struct RMGrocery {
         returnDict["quantity"] = groceryObject.quantity
         returnDict["groceryitemdescription"] = groceryObject.groceryItemDescription
 
+        return returnDict
+    }
+    
+    static func editGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
+        var dict = [String : AnyObject]()
+        
+        dict["userid"] = groceryObject.userID
+        dict["groupid"] = groceryObject.groupID
+        dict["personalitem"] = (groceryObject.isPersonalItem) ? "TRUE" : "FALSE"
+        dict["groceryitemname"] = groceryObject.groceryItemName
+        dict["groceryitemprice"] = groceryObject.groceryItemPrice
+        dict["quantity"] = groceryObject.quantity
+        dict["groceryitemdescription"] = groceryObject.groceryItemDescription
+        dict["listid"] = groceryObject.listID
+        dict["itemid"] = groceryObject.objectID
+        
+        return dict
+    }
+    
+    static func deleteGroceryDictionary(groceryObject: RMGrocery) -> [String : AnyObject] {
+        var returnDict = [String : AnyObject]()
+        
+        returnDict["userid"] = groceryObject.userID
+        returnDict["groupid"] = groceryObject.groupID
+        returnDict["itemid"] = groceryObject.objectID
+        
         return returnDict
     }
 }
