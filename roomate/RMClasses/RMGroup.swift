@@ -34,7 +34,19 @@ public struct RMGroup {
         }
     }
     
-    static func getUsersInGroup(groupID: Int, completion: (success: Bool, users: [RMUser])->() ) {
-        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/get", parameters: <#T##[String : String]#>, completion: <#T##(success: Bool, jsonResponse: NSArray?) -> Void#>)
+    static func getUsersInGroup(groupID: Int, completion: (success: Bool, users: [RMUser]?)->() ) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/getUsersInGroup", parameters: ["groupid":"\(groupID)"]) { (successful, jsonResponse) in
+            if successful {
+                
+                var usersInGroup = [RMUser]()
+                for jsonItem: [String : AnyObject] in jsonResponse! as! [Dictionary<String, AnyObject>] {
+                    let groupMember = RMUser.parseUserJSONObject(jsonItem)
+                    usersInGroup.append(groupMember)
+                }
+                completion(success: true, users: usersInGroup)
+            } else {
+                completion(success: false, users: nil)
+            }
+        }
     }
 }

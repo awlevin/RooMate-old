@@ -82,10 +82,19 @@ class testRMGroup: XCTestCase {
     func testGetUsersInGroup() {
         let asyncExpectation = expectationWithDescription("getUsersInGroupTest")
         var testSuccess = false
+        var testUsers = nil
         let groupID = 1
         
         RMGroup.getUsersInGroup(groupID) { (success, users) in
-            
+            if success {
+                testSuccess = success
+                testUsers = users
+            }
+        }
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
+            XCTAssertNotNil(testUsers)
             
         }
         
