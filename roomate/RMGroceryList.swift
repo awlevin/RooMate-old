@@ -27,7 +27,7 @@ public struct RMGroceryList {
     
     // Public Functions
     
-    static func getGroceryList(userObjectId: Int, lastid: Int, groupId: Int, listType: RMGroceryListTypes, completionHandler: (bbPosts: [RMGrocery])->()) {
+    static func getGroceryList(user: RMUser, listType: RMGroceryListTypes, completionHandler: (groceries: [RMGrocery])->()) {
         
         var backendURLpostfix: String
         
@@ -40,8 +40,6 @@ public struct RMGroceryList {
             backendURLpostfix = "selectRMAggregateGroceries"
         }
         
-        
-        
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/\(backendURLpostfix)"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -49,13 +47,16 @@ public struct RMGroceryList {
         request.HTTPMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // TODO: Should I turn this into an if-else or does it seriously not matter?
-        if(listType == RMGroceryListTypes.Personal) {
-            request.addValue("1", forHTTPHeaderField: "userid")
-        }
-        
-        if(listType == RMGroceryListTypes.Communal || listType == RMGroceryListTypes.Aggregate) {
-            request.addValue("1", forHTTPHeaderField: "groupid")
+        switch listType {
+        case .Personal:
+            request.addValue("\(user.userObjectID)", forHTTPHeaderField: "userid")
+            break
+        case .Communal:
+            request.addValue("\(user.groupID)", forHTTPHeaderField: "groupid")
+            break
+        case .Aggregate:
+            request.addValue("\(user.groupID)", forHTTPHeaderField: "groupid")
+            break
         }
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -71,15 +72,15 @@ public struct RMGroceryList {
                 switch statusCode {
                 case 400:
                     print("Encountered error 400")
-                    completionHandler(bbPosts: [])
+                    completionHandler(groceries: [])
                     break
                 case 503:
                     print("Encountered error 503")
-                    completionHandler(bbPosts: [])
+                    completionHandler(groceries: [])
                     break
                 default:
                     print("Encountered an error")
-                    completionHandler(bbPosts: [])
+                    completionHandler(groceries: [])
                     break
                 }
                 return
@@ -89,13 +90,13 @@ public struct RMGroceryList {
                     try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
                 } catch {
                     print("error serializing JSON object array")
-                    completionHandler(bbPosts: [])
+                    completionHandler(groceries: [])
                     return
                 }
                 
                 if json.count == 0 {
                     print("JSON object array was empty")
-                    completionHandler(bbPosts: [] )
+                    completionHandler(groceries: [] )
                     return
                 }
                 else {
@@ -105,18 +106,18 @@ public struct RMGroceryList {
                         guard let jsonItemDict = jsonItem as? [String: AnyObject]
                             else { continue }
                         
-                        let currItem = RMGrocery(objectId: jsonItemDict["itemid"] as! Int,
-                                                 userId: jsonItemDict["userid"] as! Int,
-                                                 groupId: jsonItemDict["groupid"] as! Int,
+                        let currItem = RMGrocery(objectID: jsonItemDict["itemid"] as! Int,
+                                                 userID: jsonItemDict["userid"] as! Int,
+                                                 groupID: jsonItemDict["groupid"] as! Int,
                                                  isPersonalItem: jsonItemDict["personalitem"] as! Bool,
                                                  dateCreatedAt: "" , // TODO: retrieve this field
                                                  dateUpdatedAt: "", // TODO: retrieve this field too
                                                  groceryItemName: jsonItemDict["groceryitemname"] as! String,
                                                  groceryItemPrice: jsonItemDict["groceryitemprice"] as! Double,
-                                                 groceryItemDescription: jsonItemDict["groceryitemdescription"] as! String)
+                                                 groceryItemDescription: jsonItemDict["groceryitemdescription"] as! String, quantity: jsonItemDict["quantity"] as! Int, listID: (jsonItemDict["listid"] as? Int))
                         returnedGroceryItems.append(currItem)
                     }
-                    completionHandler(bbPosts: returnedGroceryItems)
+                    completionHandler(groceries: returnedGroceryItems)
                     return
                 }
             }

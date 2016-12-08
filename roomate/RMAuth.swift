@@ -16,62 +16,70 @@ enum RMLoginTypes {
 
 struct RMAuth {
     
+    weak var viewController: UIViewController?
+    
     /**
      Login a user through Firebase with any supported DSSocialTypes
      - Parameter socialType: type of social media login
      */
-    static func loginWithFacebook(sender: UIViewController, completion: (token: String?, success: Bool) -> Void) {
+    
+    func loginWith(loginType: RMLoginTypes, completion:  (success: Bool) -> Void) {
+        switch loginType {
+        case .Facebook:
+            loginWithFacebook({ (success) in
+                if success {
+                    completion(success: true)
+                } else {
+                    completion(success: false)
+                }
+            })
+        }
+    }
+}
+
+
+// MARK: - Private functions
+extension RMAuth {
+    
+    func loginWithFacebook(completion: (success: Bool) -> Void) {
         
         // UNCOMMENT FOR DEMO PURPOSES
         // If token already exists
         if let _ = FBSDKAccessToken.currentAccessToken() {
-            completion(token: nil, success: true)
+            saveFacebookDetails()
+            completion(success: true)
         }
             // If token does not exist
         else {
             let loginManager = FBSDKLoginManager()
             let readPermission = ["public_profile", "email"]
-            loginManager.logInWithReadPermissions(readPermission, fromViewController: sender, handler: { (loginResult, error) in
+            loginManager.logInWithReadPermissions(readPermission, fromViewController: self.viewController, handler: { (loginResult, error) in
                 
-                let permissionSet : Set<String> = ["public_profile", "email"]
+                let permissionSet : Set = ["public_profile", "email"]
                 
                 if error != nil {
                     print("Facebook login: Error - \(error)")
-                    completion(token: nil, success: false)
+                    completion(success: false)
                 }
-                    
                 else if loginResult!.isCancelled {
                     print("Facebook login: Is cancelled")
-                    completion(token: nil,success: false)
+                    completion(success: false)
                 }
-                
+                else if loginResult!.declinedPermissions.contains(permissionSet) {
+                    print("Facebook login: Decline permissions")
+                    completion(success: false)
+                    // Handle restricted user permissions
+                }
                 else {
-                    
-                    var allPermsGranted = true
-                    
-                    
-                    let grantedPerms = loginResult!.grantedPermissions as NSSet
-                    let grantedPermissions = grantedPerms.allObjects.map( {"\($0)"} )
-                    
-                    for permission in permissionSet {
-                        if !grantedPermissions.contains(permission) {
-                            allPermsGranted = false
-                            break
-                        }
-                    }
-                    
-                    if !allPermsGranted {
-                        completion(token: nil,success: false)
-                    } else {
-                        let fbToken = loginResult!.token.tokenString
-                        completion(token: fbToken,success: true)
-                    }
+                    print("Facebook login: Granted permissions")
+                    self.saveFacebookDetails()
+                    completion(success: true)
                 }
             })
         }
     }
     
-    static func saveFacebookDetails(completion: (details: [String: String]?) -> Void){
+    func saveFacebookDetails(){
         let requestParameters = ["fields": "id, link, email, first_name, last_name"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in
@@ -79,43 +87,45 @@ struct RMAuth {
                 print("Facebook login: Error - \(error)")
             }
             else {
-                guard let result = result as? NSDictionary else {
-                    completion(details: nil)
-                    return
-                }
+                guard let result = result as? NSDictionary else {return}
                 
-                guard let email = result.objectForKey("email") as? String else {
-                    completion(details: nil)
-                    return
-                }
-
+                let email = result.objectForKey("email") as? String
                 
-                guard let id = result.objectForKey("id") as? String else {
-                    completion(details: nil)
-                    return
-                }
-
-                guard let first_name = result.objectForKey("first_name") as? String else {
-                    completion(details: nil)
-                    return
-                }
-
-                guard let last_name = result.objectForKey("last_name") as? String else {
-                    completion(details: nil)
-                    return
-                }
-
-                guard let profile_picture_url: String = "https://graph.facebook.com/" + id + "/picture?type=large" else {
-                    completion(details: nil)
-                    return
-                }
-
-                completion(details: ["email":email,"first_name":first_name,"last_name":last_name,"profile_picture":profile_picture_url])
-                return
+                let id = result.objectForKey("id") as? String
+                let first_name = result.objectForKey("first_name") as? String
+                let last_name = result.objectForKey("last_name") as? String
+                let profile_picture_url: String = "https://graph.facebook.com/" + id! + "/picture?type=large"
+                
+                
+                let user = RMUser(userObjectID: 0, groupID: nil, dateCreatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
+                
+                
+                // Update or save user information to backend
+                RMUser.doesUserExist(email!, completion: { (userExists, statusCode) in
+                    if !userExists {
+                        // If user does not exist, create a new one
+                        RMUser.createUser(user) { (success, userID) in
+                            if success {
+                                let userDefaults = NSUserDefaults.standardUserDefaults()
+                                userDefaults.setValue(userID, forKey: "userID")
+                                userDefaults.setValue(email, forKey: "email")
+                                userDefaults.setValue(first_name, forKey: "firstName")
+                                userDefaults.setValue(last_name, forKey: "lastName")
+                                userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
+                        
+                                print("User successfully created")
+                            } else {
+                                print("Creating a new user failed")
+                            }
+                        }
+                        
+                    } else {                        
+                        // Update profilePicture
+                        let userDefaults = NSUserDefaults.standardUserDefaults()
+                        userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
+                    }
+                })
             }
         })
     }
-    
-    
-    
 }

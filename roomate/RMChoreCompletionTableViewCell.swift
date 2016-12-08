@@ -1,5 +1,5 @@
 //
-//  RMChoreInformationTableViewCell.swift
+//  RMChoreCompletionTableViewCell.swift
 //  roomate
 //
 //  Created by Corey Pett on 11/1/16.
@@ -8,20 +8,23 @@
 
 import UIKit
 
-class RMChoreInformationTableViewCell: UITableViewCell {
+class RMChoreCompletionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        profileImageView.setRounded()
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
 
-        // Configure the view for the selected state
     }
     
     func configureCell() {

@@ -17,6 +17,9 @@ class RMFinanceMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentedControl.layer.cornerRadius = 0.0
+        let attributedSegmentFont = NSDictionary(object: UIFont(name: "Montserrat-Regular", size: 14.0)!, forKey: NSFontAttributeName)
+        segmentedControl.setTitleTextAttributes(attributedSegmentFont as [NSObject : AnyObject], forState: .Normal)
+
     }
     
     @IBAction func segmentDidChange(sender: AnyObject) {
