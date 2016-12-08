@@ -19,14 +19,11 @@
 		4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */; };
 		4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2961DA0314C002F7FA7 /* Assets.xcassets */; };
 		4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */; };
-		4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2A41DA0314C002F7FA7 /* roomateTests.swift */; };
 		426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */; };
 		426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */; };
 		426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E491DC14BB300A2C749 /* RMChore.swift */; };
-		42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */; };
 		42A4674D1DE67873003CEAD1 /* roomateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A4674C1DE67873003CEAD1 /* roomateUITests.swift */; };
 		42A467541DE67879003CEAD1 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467441DE677CB003CEAD1 /* UITests.swift */; };
-		42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
 		42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */; };
 		42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */; };
 		42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */; };
@@ -35,12 +32,14 @@
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
 		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
 		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
-		859B38701DF7782D0050BDE7 /* testRMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B386F1DF7782D0050BDE7 /* testRMGroup.swift */; };
-		85B716931DF7341600DA00BD /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
-		85D6E2B31DF6741A00ED84FC /* testRMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */; };
-		85D6E2B51DF674C200ED84FC /* testRMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B41DF674C200ED84FC /* testRMUser.swift */; };
+		85B8EE911DF9BF3C001F7B3B /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B8EE901DF9BF3C001F7B3B /* roomateTests.swift */; };
+		85B8EE981DF9BF75001F7B3B /* testRMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B386F1DF7782D0050BDE7 /* testRMGroup.swift */; };
+		85B8EE991DF9BF7B001F7B3B /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
+		85B8EE9A1DF9BF7B001F7B3B /* testRMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B81DF6977400ED84FC /* testRMChore.swift */; };
+		85B8EE9B1DF9BF7B001F7B3B /* testRMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */; };
+		85B8EE9C1DF9BF7B001F7B3B /* testRMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B41DF674C200ED84FC /* testRMUser.swift */; };
+		85B8EE9D1DF9BF7B001F7B3B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2A61DA0314C002F7FA7 /* Info.plist */; };
 		85D6E2B71DF68AD300ED84FC /* RMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */; };
-		85D6E2B91DF6977400ED84FC /* testRMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B81DF6977400ED84FC /* testRMChore.swift */; };
 		85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F01DC7EE39008CA377 /* RMUser.swift */; };
 		85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F21DC7F374008CA377 /* RMGroceryList.swift */; };
 		85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F41DC7F71F008CA377 /* RMGrocery.swift */; };
@@ -94,18 +93,17 @@
 		90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B693381DBF0D110052A6BF /* GoogleService-Info.plist */; };
 		90FF3AC51DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */; };
 		95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */; };
-		A22F448AF7865D236E456801 /* Pods_roomateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4250E2A11DA0314C002F7FA7 /* PBXContainerItemProxy */ = {
+		42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4250E2811DA0314C002F7FA7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4250E2881DA0314C002F7FA7;
 			remoteInfo = roomate;
 		};
-		42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */ = {
+		85B8EE931DF9BF3C001F7B3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4250E2811DA0314C002F7FA7 /* Project object */;
 			proxyType = 1;
@@ -132,7 +130,6 @@
 		4250E2961DA0314C002F7FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4250E2991DA0314C002F7FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4250E29B1DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4250E2A41DA0314C002F7FA7 /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
 		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginStringConst.swift; path = Login/LoginStringConst.swift; sourceTree = "<group>"; };
@@ -153,7 +150,10 @@
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
 		85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletion.swift; sourceTree = "<group>"; };
 		859B386F1DF7782D0050BDE7 /* testRMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroup.swift; sourceTree = "<group>"; };
-		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMQueryBackend.swift; sourceTree = "<group>"; };
+		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testRMQueryBackend.swift; path = ../roomate/testRMQueryBackend.swift; sourceTree = "<group>"; };
+		85B8EE8E1DF9BF3C001F7B3B /* roomateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B8EE901DF9BF3C001F7B3B /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
+		85B8EE921DF9BF3C001F7B3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroceryList.swift; sourceTree = "<group>"; };
 		85D6E2B41DF674C200ED84FC /* testRMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMUser.swift; sourceTree = "<group>"; };
 		85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQueryBackend.swift; sourceTree = "<group>"; };
@@ -224,15 +224,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4250E29D1DA0314C002F7FA7 /* Frameworks */ = {
+		42A467471DE67873003CEAD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A22F448AF7865D236E456801 /* Pods_roomateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42A467471DE67873003CEAD1 /* Frameworks */ = {
+		85B8EE8B1DF9BF3C001F7B3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */,
-				85B716921DF7341600DA00BD /* testRMQueryBackend.swift */,
 				90B693351DBF0B480052A6BF /* RMAuth.swift */,
 				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
 				423053491DC1302F003AE80B /* RMBulletin.swift */,
@@ -305,6 +303,7 @@
 				4250E28B1DA0314C002F7FA7 /* roomate */,
 				4250E2A31DA0314C002F7FA7 /* roomateTests */,
 				42A4674B1DE67873003CEAD1 /* roomateUITests */,
+				85B8EE8F1DF9BF3C001F7B3B /* roomateTests */,
 				4250E28A1DA0314C002F7FA7 /* Products */,
 				C2B9AB08BB8E9DEE2E0A3CEB /* Pods */,
 				FB8955C69BEA0A5836D29C30 /* Frameworks */,
@@ -315,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				4250E2891DA0314C002F7FA7 /* roomate.app */,
-				4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */,
 				42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */,
+				85B8EE8E1DF9BF3C001F7B3B /* roomateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +343,7 @@
 		4250E2A31DA0314C002F7FA7 /* roomateTests */ = {
 			isa = PBXGroup;
 			children = (
+				85B716921DF7341600DA00BD /* testRMQueryBackend.swift */,
 				85D6E2B81DF6977400ED84FC /* testRMChore.swift */,
 				4250E2A41DA0314C002F7FA7 /* roomateTests.swift */,
 				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
@@ -377,6 +377,15 @@
 				9097F4C81DC90A700056FA78 /* RMShoppingAddViewController.swift */,
 			);
 			name = Add;
+			sourceTree = "<group>";
+		};
+		85B8EE8F1DF9BF3C001F7B3B /* roomateTests */ = {
+			isa = PBXGroup;
+			children = (
+				85B8EE901DF9BF3C001F7B3B /* roomateTests.swift */,
+				85B8EE921DF9BF3C001F7B3B /* Info.plist */,
+			);
+			path = roomateTests;
 			sourceTree = "<group>";
 		};
 		9021CC411DF2779A00653FA5 /* Payment History */ = {
@@ -593,27 +602,6 @@
 			productReference = 4250E2891DA0314C002F7FA7 /* roomate.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4250E29F1DA0314C002F7FA7 /* roomateTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4250E2AC1DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomateTests" */;
-			buildPhases = (
-				4BB056D071E73922CFF149F9 /* [CP] Check Pods Manifest.lock */,
-				4250E29C1DA0314C002F7FA7 /* Sources */,
-				4250E29D1DA0314C002F7FA7 /* Frameworks */,
-				4250E29E1DA0314C002F7FA7 /* Resources */,
-				6E9D8232D227820F665A270C /* [CP] Embed Pods Frameworks */,
-				194BC5557009B86F47475856 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4250E2A21DA0314C002F7FA7 /* PBXTargetDependency */,
-			);
-			name = roomateTests;
-			productName = roomateTests;
-			productReference = 4250E2A01DA0314C002F7FA7 /* roomateTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		42A467491DE67873003CEAD1 /* roomateUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42A467511DE67873003CEAD1 /* Build configuration list for PBXNativeTarget "roomateUITests" */;
@@ -632,13 +620,31 @@
 			productReference = 42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		85B8EE8D1DF9BF3C001F7B3B /* roomateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85B8EE951DF9BF3C001F7B3B /* Build configuration list for PBXNativeTarget "roomateTests" */;
+			buildPhases = (
+				85B8EE8A1DF9BF3C001F7B3B /* Sources */,
+				85B8EE8B1DF9BF3C001F7B3B /* Frameworks */,
+				85B8EE8C1DF9BF3C001F7B3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85B8EE941DF9BF3C001F7B3B /* PBXTargetDependency */,
+			);
+			name = roomateTests;
+			productName = roomateTests;
+			productReference = 85B8EE8E1DF9BF3C001F7B3B /* roomateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4250E2811DA0314C002F7FA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = RooMate;
 				TargetAttributes = {
@@ -657,12 +663,14 @@
 							};
 						};
 					};
-					4250E29F1DA0314C002F7FA7 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 4250E2881DA0314C002F7FA7;
-					};
 					42A467491DE67873003CEAD1 = {
 						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4250E2881DA0314C002F7FA7;
+					};
+					85B8EE8D1DF9BF3C001F7B3B = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = UDFXY4BG2B;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4250E2881DA0314C002F7FA7;
 					};
@@ -682,8 +690,8 @@
 			projectRoot = "";
 			targets = (
 				4250E2881DA0314C002F7FA7 /* roomate */,
-				4250E29F1DA0314C002F7FA7 /* roomateTests */,
 				42A467491DE67873003CEAD1 /* roomateUITests */,
+				85B8EE8D1DF9BF3C001F7B3B /* roomateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -720,13 +728,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4250E29E1DA0314C002F7FA7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42A467481DE67873003CEAD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,24 +735,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85B8EE8C1DF9BF3C001F7B3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B8EE9D1DF9BF7B001F7B3B /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		194BC5557009B86F47475856 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1EDB06282E0231F2D1C97241 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -765,36 +759,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomate/Pods-roomate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4BB056D071E73922CFF149F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6E9D8232D227820F665A270C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB69F7B8261FB5B8F3795F93 /* [CP] Check Pods Manifest.lock */ = {
@@ -889,21 +853,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4250E29C1DA0314C002F7FA7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				859B38701DF7782D0050BDE7 /* testRMGroup.swift in Sources */,
-				85D6E2B51DF674C200ED84FC /* testRMUser.swift in Sources */,
-				85D6E2B31DF6741A00ED84FC /* testRMGroceryList.swift in Sources */,
-				4250E2A51DA0314C002F7FA7 /* roomateTests.swift in Sources */,
-				42A467431DE676E1003CEAD1 /* RMBBPostTests.swift in Sources */,
-				85D6E2B91DF6977400ED84FC /* testRMChore.swift in Sources */,
-				42A467551DE67A77003CEAD1 /* RMBulletinPost.swift in Sources */,
-				85B716931DF7341600DA00BD /* testRMQueryBackend.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42A467461DE67873003CEAD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -913,18 +862,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85B8EE8A1DF9BF3C001F7B3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85B8EE9A1DF9BF7B001F7B3B /* testRMChore.swift in Sources */,
+				85B8EE9B1DF9BF7B001F7B3B /* testRMGroceryList.swift in Sources */,
+				85B8EE981DF9BF75001F7B3B /* testRMGroup.swift in Sources */,
+				85B8EE9C1DF9BF7B001F7B3B /* testRMUser.swift in Sources */,
+				85B8EE911DF9BF3C001F7B3B /* roomateTests.swift in Sources */,
+				85B8EE991DF9BF7B001F7B3B /* testRMQueryBackend.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4250E2A21DA0314C002F7FA7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4250E2881DA0314C002F7FA7 /* roomate */;
-			targetProxy = 4250E2A11DA0314C002F7FA7 /* PBXContainerItemProxy */;
-		};
 		42A467501DE67873003CEAD1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4250E2881DA0314C002F7FA7 /* roomate */;
 			targetProxy = 42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */;
+		};
+		85B8EE941DF9BF3C001F7B3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4250E2881DA0314C002F7FA7 /* roomate */;
+			targetProxy = 85B8EE931DF9BF3C001F7B3B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1014,6 +976,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1052,6 +1015,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1089,36 +1053,6 @@
 			};
 			name = Release;
 		};
-		4250E2AD1DA0314C002F7FA7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = roomateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
-			};
-			name = Debug;
-		};
-		4250E2AE1DA0314C002F7FA7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				ENABLE_TESTABILITY = NO;
-				INFOPLIST_FILE = roomateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 2.3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
-			};
-			name = Release;
-		};
 		42A467521DE67873003CEAD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1153,6 +1087,44 @@
 			};
 			name = Release;
 		};
+		85B8EE961DF9BF3C001F7B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
+				INFOPLIST_FILE = roomateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate.roomateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
+			};
+			name = Debug;
+		};
+		85B8EE971DF9BF3C001F7B3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
+				INFOPLIST_FILE = roomateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate.roomateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1174,15 +1146,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4250E2AC1DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomateTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4250E2AD1DA0314C002F7FA7 /* Debug */,
-				4250E2AE1DA0314C002F7FA7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		42A467511DE67873003CEAD1 /* Build configuration list for PBXNativeTarget "roomateUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1191,6 +1154,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		85B8EE951DF9BF3C001F7B3B /* Build configuration list for PBXNativeTarget "roomateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85B8EE961DF9BF3C001F7B3B /* Debug */,
+				85B8EE971DF9BF3C001F7B3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

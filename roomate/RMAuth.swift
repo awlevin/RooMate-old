@@ -96,20 +96,22 @@ extension RMAuth {
                 let first_name = result.objectForKey("first_name") as? String
                 let last_name = result.objectForKey("last_name") as? String
                 let profile_picture_url: String = "https://graph.facebook.com/" + id! + "/picture?type=large"
-
+                
                 // TODO save information to backend
                 
                 let user = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: nil, firstName: first_name!, lastName: last_name!, email: email!, profileImageURL: profile_picture_url, userGroceryLists: nil)
+                
                 RMUser.doesUserExist(email!, completion: { (userExists, statusCode) in
-                    if userExists {
-                        RMUser.createUser(user, completion: { (success, statusCode) in
+                    if !userExists {
+                        RMUser.createUser(user) { (success, userID) in
                             if success {
+                                // TODO: Store returned userID value
+                                
                                 print("User successfully created")
                             } else {
-                                
+                                // createUser failed
                             }
-                        })
-                    } else {
+                        }
                         
                     }
                 })

@@ -49,6 +49,16 @@ public struct RMUser : Hashable {
         }
     }
     
+    static func editRMUserGroupID(userID: Int, newGroupID: Int?, completion: (success: Bool) -> ()) {
+        var userParamDictionary = [String : AnyObject]()
+        userParamDictionary["userid"] = userID
+        userParamDictionary["groupid"] = newGroupID
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/editRMUserGroupid", params: userParamDictionary) { (succeeded, jsonResponse) in
+            (succeeded) ? completion(success: true) : completion(success: false)
+        }
+    }
+    
     static func doesUserExist(email: String, completion: (userExists: Bool, statusCode: Int) -> Void){
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/doesUserExist"
         let httpURL = NSURL(string: apiCallString)

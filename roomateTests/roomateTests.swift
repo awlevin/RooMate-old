@@ -2,15 +2,14 @@
 //  roomateTests.swift
 //  roomateTests
 //
-//  Created by Ritvik Upadhyaya on 01/10/16.
+//  Created by Aaron Levin on 12/8/16.
 //  Copyright © 2016 RooMate. All rights reserved.
 //
 
 import XCTest
-@testable import roomate
 
 class roomateTests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,8 +27,6 @@ class roomateTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
     }
+    
 }
