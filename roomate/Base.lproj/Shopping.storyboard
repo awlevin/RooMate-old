@@ -686,7 +686,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-BF-unc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="4014"/>
+            <point key="canvasLocation" x="28" y="4732"/>
         </scene>
         <!--New Invoice-->
         <scene sceneID="ASh-Jx-Dzg">
@@ -883,7 +883,7 @@
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WwR-5f-VMF">
-                                            <rect key="frame" x="90" y="8" width="277" height="29"/>
+                                            <rect key="frame" x="90" y="8" width="277" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -901,7 +901,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3je-gg-59A" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="12" width="33" height="21"/>
+                                            <rect key="frame" x="8" y="13" width="33" height="20"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
