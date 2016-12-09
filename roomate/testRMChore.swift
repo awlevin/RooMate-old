@@ -38,7 +38,7 @@ class testRMChore: XCTestCase {
         let asyncExpectation = expectationWithDescription("testDeleteChore")
         var testSuccess = false
         
-        RMChore.deleteChore(37) { (completed) in
+        RMChore.deleteChore(48) { (completed) in
             if (completed) {
                 testSuccess = completed
             }
@@ -112,6 +112,7 @@ class testRMChore: XCTestCase {
         }
         waitForExpectationsWithTimeout(5) { (error) in
             XCTAssertTrue(testSuccess)
+            XCTAssertNotNil(testChoreCompletions)
             print("chore completions: \(testChoreCompletions)")
         }
     }

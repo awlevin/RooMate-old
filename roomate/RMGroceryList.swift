@@ -24,101 +24,48 @@ public struct RMGroceryList {
     
     // Public Functions
     
-    static func getGroceryList(user: RMUser, listType: RMGroceryListTypes, completionHandler: (groceries: [RMGrocery])->()) {
-        
-        var backendURLpostfix: String
-        
-        switch(listType) {
-        case RMGroceryListTypes.Personal:
-            backendURLpostfix = "selectRMUserGroceries"
-        case RMGroceryListTypes.Communal:
-            backendURLpostfix = "selectRMCommunalGroceries"
-        case RMGroceryListTypes.Aggregate:
-            backendURLpostfix = "selectRMAggregateGroceries"
-        }
-        
-        let apiCallString = "https://damp-plateau-63440.herokuapp.com/\(backendURLpostfix)"
-        let httpURL = NSURL(string: apiCallString)
-        let request = NSMutableURLRequest(URL: httpURL!)
-        
-        request.HTTPMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    static func getListByType(user: RMUser, listType: RMGroceryListTypes, completionHandler: (success: Bool, groceries: [RMGrocery]?)->()) {
+        var postFix: String
+        var requestParam: [String:String]
         
         switch listType {
         case .Personal:
-            request.addValue("\(user.userObjectID)", forHTTPHeaderField: "userid")
-            break
+            postFix = "selectRMUserGroceries"
+            requestParam = ["userid" :"\(user.userObjectID)"]
         case .Communal:
-            request.addValue("\(user.groupID)", forHTTPHeaderField: "groupid")
-            break
+            postFix = "selectRMCommunalGroceries"
+            requestParam = ["groupid":"\(user.groupID)"]
         case .Aggregate:
-            request.addValue("\(user.groupID)", forHTTPHeaderField: "groupid")
-            break
+            postFix = "selectRMCommunalGroceries"
+            requestParam = ["groupid":"\(user.groupID)"]
         }
         
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
-        
-        let task = session.dataTaskWithRequest(request) { (data, response, error) in
-            var statusCode = 0
-            if let httpResponse = response as? NSHTTPURLResponse {
-                statusCode = httpResponse.statusCode
-            }
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/\(postFix)", parameters: requestParam) { (success, jsonResponse) in
             
-            if(error != nil || data == nil || statusCode != 200){
-                switch statusCode {
-                case 400:
-                    print("Encountered error 400")
-                    completionHandler(groceries: [])
-                    break
-                case 503:
-                    print("Encountered error 503")
-                    completionHandler(groceries: [])
-                    break
-                default:
-                    print("Encountered an error")
-                    completionHandler(groceries: [])
-                    break
-                }
-                return
+            if success {
+                completionHandler(success: true, groceries: RMGroceryList.createRMGroceryListFromJSON(jsonResponse))
             } else {
-                var json: NSArray
-                do {
-                    try json = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! NSArray
-                } catch {
-                    print("error serializing JSON object array")
-                    completionHandler(groceries: [])
-                    return
-                }
-                
-                if json.count == 0 {
-                    print("JSON object array was empty")
-                    completionHandler(groceries: [] )
-                    return
-                }
-                else {
-                    var returnedGroceryItems = [RMGrocery]()
-                    
-                    for jsonItem in json {
-                        guard let jsonItemDict = jsonItem as? [String: AnyObject]
-                            else { continue }
-                        
-                        let currItem = RMGrocery(objectID: jsonItemDict["itemid"] as! Int,
-                                                 userID: jsonItemDict["userid"] as! Int,
-                                                 groupID: jsonItemDict["groupid"] as! Int,
-                                                 isPersonalItem: jsonItemDict["personalitem"] as! Bool,
-                                                 dateCreatedAt: "" , // TODO: retrieve this field
-                                                 dateUpdatedAt: "", // TODO: retrieve this field too
-                                                 groceryItemName: jsonItemDict["groceryitemname"] as! String,
-                                                 groceryItemPrice: jsonItemDict["groceryitemprice"] as! Double,
-                                                 groceryItemDescription: jsonItemDict["groceryitemdescription"] as! String, quantity: jsonItemDict["quantity"] as! Int, listID: (jsonItemDict["listid"] as? Int))
-                        returnedGroceryItems.append(currItem)
-                    }
-                    completionHandler(groceries: returnedGroceryItems)
-                    return
-                }
-            }
+                completionHandler(success: false, groceries: nil) }
         }
-        task.resume()
+    }
+    
+    static func createRMGroceryListFromJSON(jsonObject: NSArray?) -> [RMGrocery]{
+        var groceryList = [RMGrocery]()
+        
+        for jsonItem in jsonObject! {
+            let itemID = jsonItem["itemid"] as! Int
+            let userID = jsonItem["userid"] as! Int
+            let groupID = jsonItem["groupid"] as! Int
+            let personalItem = jsonItem["personalitem"] as! Bool
+            let groceryItemName = jsonItem["groceryitemname"] as! String
+            let groceryItemPrice = jsonItem["groceryitemprice"] as! Double
+            let groceryItemDescription = jsonItem["groceryitemdescription"] as! String
+            let quantity = jsonItem["quantity"] as! Int
+            let listID = jsonItem["listid"] as! Int
+            
+            groceryList.append(RMGrocery(objectID: itemID, userID: userID, groupID: groupID, isPersonalItem: personalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: groceryItemName, groceryItemPrice: groceryItemPrice, groceryItemDescription: groceryItemDescription, quantity: quantity, listID: listID))
+        }
+        
+        return groceryList
     }
 }

@@ -20,7 +20,7 @@ public struct RMChore {
     static func returnTestChore() -> RMChore {
         let testUser = RMUser.returnTestUser()
         
-        return RMChore(choreID: 0, groupID: testUser.groupID!, userID: testUser.userObjectID, title: "XCTest Chore Completion Title!!", description: "XCTest Chore Completion2 Description", dateCreated: "00/00/00")
+        return RMChore(choreID: 0, groupID: testUser.groupID!, userID: testUser.userObjectID, title: "Poop in the pants.", description: "XCTest Chore Completion9 Description", dateCreated: "00/00/00")
     }
     // END TEST METHODS
     
@@ -350,7 +350,7 @@ public struct RMChore {
     func getRMChoreCompletions(completionHandler: (completed: Bool, choreCompletions: [RMChoreCompletion]?)->()) {
         RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/selectRMChoreCompletions", parameters: ["choreid":"\(self.choreID)"]) { (success, jsonResponse) in
             
-            var choreCompletions: [RMChoreCompletion]? = nil
+            var choreCompletions = [RMChoreCompletion]()
             
             if ( success && (jsonResponse?.count > 0) ) {
                 
@@ -358,7 +358,7 @@ public struct RMChore {
                     
                     let currChoreCompletion = RMChoreCompletion(choreCompletionID: choreCompletion["chorecompletionid"] as! Int, choreID: choreCompletion["choreid"] as! Int, personCompletedUserID: choreCompletion["userid"] as! Int, groupID: choreCompletion["groupid"] as! Int, title: choreCompletion["title"] as! String, additionalComments: choreCompletion["description"] as! String, beforePhotoURL: "", afterPhotoURL: "", dateCompleted: choreCompletion["datecompleted"] as! String)
                     
-                    choreCompletions!.append(currChoreCompletion)
+                    choreCompletions.append(currChoreCompletion)
                 }
                 completionHandler(completed: true, choreCompletions: choreCompletions)
             

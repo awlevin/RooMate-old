@@ -20,6 +20,10 @@ public struct RMBulletinPost {
     var removalDate: String!
     var comments: [String: String]
     
+    
+    
+    
+    
     func getImageForPost(completion: (String?) -> ()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/selectRMPostPics"
         let httpURL = NSURL(string: apiCallString)
@@ -87,6 +91,7 @@ public struct RMBulletinPost {
         }
         task.resume()
     }
+ 
     
     static func createNewBulletinPost(bbPost: RMBulletinPost, completionHandler: (completed: Bool)->()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMPost"
@@ -202,7 +207,7 @@ public struct RMBulletinPost {
         returnDict["pinnote"] = bbObject.pinNote.boolValue
         returnDict["photourl"] = bbObject.photos[0]
         //returnDict["thumbnail"] = bbObject.thumbnail
-        returnDict["removaldate"] = "11/14/2016"
+        returnDict["removaldate"] = "11/14/2016" // TODO: Fix this
         //returnDict["comments"] = bbObject.comments
         print("##################")
         print(returnDict["title"])

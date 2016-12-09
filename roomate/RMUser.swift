@@ -187,12 +187,10 @@ public struct RMUser : Hashable {
         
         return RMUser(userObjectID: userID, groupID: groupID, dateCreatedAt: dateCreatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: [])
     }
-
-
-    // TODO: Ritvik double check this. This is my attempt at making RMUser conform to Hashable.
-    // We needed an appropriate hashValue, so I figured the uniqueness of userObjectID would produce a good hash value.
+    
+    
     public var hashValue: Int { return userObjectID.hashValue }
-
+    
 }
 // Conform RMUser to the Equatable protocol, so then RMUser can conform to Hashable.
 // Ultimately, RMUser must conform to Hashable to be used as a key in dictionaries.

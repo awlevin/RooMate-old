@@ -175,54 +175,58 @@ class RMShoppingMainTableViewController: UITableViewController {
 
     }
     
+    
     func callFetchPosts(listType: RMGroceryListTypes) {
-        RMGroceryList.getGroceryList(RMUser.returnTestUser(), listType: listType, completionHandler: { (bbPosts) in
-            var fetchedItems = bbPosts
-            
-            
-            if fetchedItems.count > 0 {
-                fetchedItems = fetchedItems.sort( { $0.objectID > $1.objectID })
+        
+        let user = RMUser.returnCurrentUserFromDefaults()
+        
+        RMGroceryList.getListByType(user, listType: .Communal) { (success, groceries) in
+            if success {
                 switch listType {
                 case RMGroceryListTypes.Personal:
-                    for item in fetchedItems{
+                    for item in groceries! {
                         if !self.personalItems.contains({ $0.objectID == item.objectID }) {
                             self.personalItems.append(item)
                         }
                     }
                 case RMGroceryListTypes.Communal:
-                    for item in fetchedItems{
+                    for item in groceries!{
                         if !self.communalItems.contains({ $0.objectID == item.objectID }) {
                             self.communalItems.append(item)
                         }
                     }
                 case RMGroceryListTypes.Aggregate:
-                    for item in fetchedItems{
+                    for item in groceries!{
                         if !self.aggregateItems.contains({ $0.objectID == item.objectID }) {
                             self.aggregateItems.append(item)
                         }
                     }
                 }
+            } else {
+                print("failed to get list!")
+            }
+        }
+        
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            switch listType {
+            case RMGroceryListTypes.Personal:
+                self.personalItems = self.personalItems.sort( { $0.objectID > $1.objectID } )
+                break
+            case RMGroceryListTypes.Communal:
+                self.communalItems = self.communalItems.sort( { $0.objectID > $1.objectID } )
+                break
+            case RMGroceryListTypes.Aggregate:
+                self.aggregateItems = self.aggregateItems.sort( { $0.objectID > $1.objectID } )
+                break
             }
             
-            dispatch_async(dispatch_get_main_queue(), {
-                switch listType {
-                case RMGroceryListTypes.Personal:
-                    self.personalItems = self.personalItems.sort( { $0.objectID > $1.objectID } )
-                    break
-                case RMGroceryListTypes.Communal:
-                    self.communalItems = self.communalItems.sort( { $0.objectID > $1.objectID } )
-                    break
-                case RMGroceryListTypes.Aggregate:
-                    self.aggregateItems = self.aggregateItems.sort( { $0.objectID > $1.objectID } )
-                    break
-                }
-                
-                self.tableView.reloadData()
-                self.refresher.endRefreshing()
-
-            })
+            self.tableView.reloadData()
+            self.refresher.endRefreshing()
+            
         })
     }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "EditGrocerySegue" {

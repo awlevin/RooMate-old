@@ -11,23 +11,22 @@ import XCTest
 
 class testRMUser: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testDoesUserExist() {
+        let asyncExpectation = expectationWithDescription("doesUserExistTest")
+        var testUserSuccess = false
+        var testUserStatusCode = 0
         
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
+        let user = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", firstName: "Ducky", lastName: "Dagger", email: "malcom4@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
+        
+        RMUser.doesUserExist("\(user.email)", completion: { (userExists, statusCode) in
+            testUserSuccess = userExists
+            testUserStatusCode = statusCode
+            asyncExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testUserSuccess, "statusCode: \(testUserStatusCode)")
+        }
     }
     
     func testDoesFakeUserExist() {
@@ -68,30 +67,12 @@ class testRMUser: XCTestCase {
         }
     }
     
-    func testDoesUserExist() {
-        let asyncExpectation = expectationWithDescription("doesUserExistTest")
-        var testUserSuccess = false
-        var testUserStatusCode = 0
-        
-        let user = RMUser(userObjectID: 2, groupID: 2, dateCreatedAt: "00/00/00", firstName: "Ducky", lastName: "Dagger", email: "duckydagger@wisc.edu", profileImageURL: "N/A", userGroceryLists: nil)
-        
-        RMUser.doesUserExist("\(user.email)", completion: { (userExists, statusCode) in
-            testUserSuccess = userExists
-            testUserStatusCode = statusCode
-            asyncExpectation.fulfill()
-        })
-        
-        waitForExpectationsWithTimeout(5) { (error) in
-            XCTAssertTrue(testUserSuccess, "statusCode: \(testUserStatusCode)")
-        }
-    }
-    
     func testCreateUser() {
         let asyncExpectation = expectationWithDescription("createUserTest")
         var testCreatedUserSuccess = false
         var testUserID = 0
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom3@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom4@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
 
         
         RMUser.createUser(nonExistingUser) { (success, userID) in
@@ -111,7 +92,7 @@ class testRMUser: XCTestCase {
         var testUser: RMUser? = nil
         var testStatusCode = 0
         
-        RMUser.getUserFromEmail("duckydagger@wisc.edu") { (success, statusCode, user) in
+        RMUser.getUserFromEmail("malcom4@wisc.edu") { (success, statusCode, user) in
             testSuccess = success
             testStatusCode = statusCode
             if user != nil { testUser = user! }
@@ -130,7 +111,7 @@ class testRMUser: XCTestCase {
         let asyncException = expectationWithDescription("editRMUserGroupIDTest")
         var testSuccess = false
         
-        let userID:Int = 3
+        let userID:Int = 43
         let newGroupID: Int = 5
         
         RMUser.editRMUserGroupID(userID, newGroupID: newGroupID) { (success) in
