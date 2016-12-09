@@ -58,12 +58,6 @@ struct RMQueryBackend {
                 completion(success: false, jsonResponse: nil)
             }
             
-//            // Check if one
-//            let split = strData?.componentsSeparatedByString(":")
-//            if ((split?.count)! - 1) == 1 {
-//                completion(success: true, jsonResponse: nil)
-//            }
-            
             // Retrieve JSON
             var json: NSArray?
             do {

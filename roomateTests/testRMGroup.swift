@@ -11,27 +11,12 @@ import XCTest
 
 class testRMGroup: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
     func testDoesGroupExist() {
         let asyncExpectation = expectationWithDescription("doesGroupExistTest")
         var groupExistsValue = false
         var testSuccess = false
         
-        RMGroup.doesGroupExist(1) { (success, groupExists) in
+        RMGroup.doesGroupExist(5) { (success, groupExists) in
             if success {
                 testSuccess = success
                 groupExistsValue = groupExists
@@ -67,7 +52,7 @@ class testRMGroup: XCTestCase {
         let asyncExpectation = expectationWithDescription("getUsersInGroupTest")
         var testSuccess = false
         var testUsers: [RMUser]? = nil
-        let groupID = 1
+        let groupID = 5
         
         RMGroup.getUsersInGroup(groupID) { (success, users) in
             if success {
@@ -87,8 +72,8 @@ class testRMGroup: XCTestCase {
     func testJoinHousehold() {
         let asyncExpectation = expectationWithDescription("joinHouseholdTest")
         var testSuccess = false
-        let userID = 3
-        let newGroupID = 3
+        let userID = 43
+        let newGroupID = 5
             
         RMGroup.joinHousehold(userID, groupID: newGroupID) { (success) in
             if success {

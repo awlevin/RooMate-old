@@ -30,6 +30,7 @@
 		42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */; };
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
 		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
+		858F81CF1DFB50C700F4D551 /* testRMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */; };
 		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
 		85BBF47E1DFA16F900506988 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BBF47D1DFA16F900506988 /* roomateTests.swift */; };
 		85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
@@ -147,6 +148,7 @@
 		42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBViewController.swift; path = "Bulletin Board/DetailBBViewController.swift"; sourceTree = "<group>"; };
 		42EB6B961DD10DE7002780BB /* createBBPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createBBPostVC.swift; path = "Bulletin Board/createBBPostVC.swift"; sourceTree = "<group>"; };
 		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
+		858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGrocery.swift; sourceTree = "<group>"; };
 		85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletion.swift; sourceTree = "<group>"; };
 		859B386F1DF7782D0050BDE7 /* testRMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroup.swift; sourceTree = "<group>"; };
 		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testRMQueryBackend.swift; path = ../roomate/testRMQueryBackend.swift; sourceTree = "<group>"; };
@@ -284,15 +286,15 @@
 			isa = PBXGroup;
 			children = (
 				85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */,
+				85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */,
 				90B693351DBF0B480052A6BF /* RMAuth.swift */,
 				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
 				423053491DC1302F003AE80B /* RMBulletin.swift */,
 				85F003F01DC7EE39008CA377 /* RMUser.swift */,
-				85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */,
-				85F003F21DC7F374008CA377 /* RMGroceryList.swift */,
-				85F003F41DC7F71F008CA377 /* RMGrocery.swift */,
-				85F003F61DC808CE008CA377 /* RMFinanceBill.swift */,
 				4230534B1DC1338B003AE80B /* RMGroup.swift */,
+				85F003F61DC808CE008CA377 /* RMFinanceBill.swift */,
+				85F003F41DC7F71F008CA377 /* RMGrocery.swift */,
+				85F003F21DC7F374008CA377 /* RMGroceryList.swift */,
 				426C7E491DC14BB300A2C749 /* RMChore.swift */,
 				85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */,
 			);
@@ -346,12 +348,13 @@
 		4250E2A31DA0314C002F7FA7 /* roomateTests */ = {
 			isa = PBXGroup;
 			children = (
-				85B716921DF7341600DA00BD /* testRMQueryBackend.swift */,
-				85D6E2B81DF6977400ED84FC /* testRMChore.swift */,
 				4250E2A41DA0314C002F7FA7 /* roomateTests.swift */,
-				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
+				85B716921DF7341600DA00BD /* testRMQueryBackend.swift */,
 				85D6E2B41DF674C200ED84FC /* testRMUser.swift */,
 				859B386F1DF7782D0050BDE7 /* testRMGroup.swift */,
+				85D6E2B81DF6977400ED84FC /* testRMChore.swift */,
+				858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */,
+				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
 				4250E2A61DA0314C002F7FA7 /* Info.plist */,
 			);
 			path = roomateTests;
@@ -879,6 +882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85BBF4871DFA170700506988 /* testRMGroceryList.swift in Sources */,
+				858F81CF1DFB50C700F4D551 /* testRMGrocery.swift in Sources */,
 				85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */,
 				85BBF4861DFA170700506988 /* testRMChore.swift in Sources */,
 				85BBF48C1DFA174D00506988 /* testRMUser.swift in Sources */,
@@ -1174,6 +1178,7 @@
 				85BBF4841DFA16F900506988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
