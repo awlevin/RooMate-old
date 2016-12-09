@@ -18,38 +18,35 @@ class testRMChore: XCTestCase {
     
     func testCreateNewChore() {
         let asyncExpectation = expectationWithDescription("createNewChoreTest")
-        let testUser = RMUser.returnTestUser()
-        
-        let chore = RMChore(choreID: 0, groupID: testUser.groupID!, userID: testUser.userObjectID, title: "XCTest Chore Title", description: "XCTest Chore Description", dateCreated: "00/00/00")
+        let chore = RMChore.returnTestChore()
+        var testChoreID = 0
         
         var testCompleted = false
         
-        RMChore.createNewChore(chore) { (completed) in
+        RMChore.createNewChore(chore) { (completed, newChoreID) in
             testCompleted = completed
+            testChoreID = newChoreID!
             asyncExpectation.fulfill()
         }
         
         waitForExpectationsWithTimeout(5) { (error) in
-            XCTAssertTrue(testCompleted)
+            XCTAssertTrue(testCompleted, "newChoreID: \(testChoreID)")
         }
-
     }
     
-    func testCreateRMChoreCompletion() {
-        let asyncExpectation = expectationWithDescription("testCreateRMChoreCompletion")
-        let testUser = RMUser.returnTestUser()
-        let testChore = RMChore(choreID: 0, groupID: testUser.groupID!, userID: testUser.userObjectID, title: "XCTest Chore Completion Title", description: "XCTest Chore Completion Description", dateCreated: "00/00/00")
-        var testCompleted = false
+    func testDeleteChore() {
+        let asyncExpectation = expectationWithDescription("testDeleteChore")
+        var testSuccess = false
         
-        testChore.createRMChoreCompletion(testUser) { (completed) in
-            if completed {
-                testCompleted = completed
-                asyncExpectation.fulfill()
+        RMChore.deleteChore(37) { (completed) in
+            if (completed) {
+                testSuccess = completed
             }
+            asyncExpectation.fulfill()
         }
         
         waitForExpectationsWithTimeout(5) { (error) in
-            XCTAssertTrue(testCompleted)
+            XCTAssertTrue(testSuccess)
         }
     }
     
@@ -70,9 +67,52 @@ class testRMChore: XCTestCase {
         waitForExpectationsWithTimeout(5) { (error) in
             XCTAssertTrue(testSuccess)
             XCTAssertNotNil(testChores)
+            print(testSuccess)
+            print(testChores)
+            
+            for chore in testChores! {
+                print("choreID: \(chore.choreID), choreName: \(chore.title)\n")
+            }
+        }
+    }
+    
+    // TODO: make updateBefore
+    // TODO: make updateAfter
+    
+    func testCreateRMChoreCompletion() {
+        let asyncExpectation = expectationWithDescription("testCreateRMChoreCompletion")
+        let testUser = RMUser.returnTestUser()
+        let testChore = RMChore.returnTestChore()
+        var testCompleted = false
+        
+        testChore.createRMChoreCompletion(testUser) { (completed) in
+            if completed {
+                testCompleted = completed
+                asyncExpectation.fulfill()
+            }
         }
         
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testCompleted)
+        }
+    }
+    
+    func testGetChoreCompletions() {
+        let asyncExpectation = expectationWithDescription("testGetChoreCompletions")
+        var testSuccess = false
+        var testChoreCompletions: [RMChoreCompletion]? = nil
+        let testChore = RMChore.returnTestChore()
         
-        
+        testChore.getRMChoreCompletions { (completed, choreCompletions) in
+            if completed {
+                testSuccess = true
+                testChoreCompletions = choreCompletions
+            }
+            asyncExpectation.fulfill()
+        }
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
+            print("chore completions: \(testChoreCompletions)")
+        }
     }
 }

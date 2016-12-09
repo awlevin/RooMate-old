@@ -61,10 +61,14 @@ class RMChoreMainTableViewController: UITableViewController, ChoreMainTableViewC
     
     func saveNewChore(chore: RMChore) {
         // TODO: Add chore to parent tableViewController and save
-        RMChore.createNewChore(chore) { (completed) in
+        RMChore.createNewChore(chore) { (completed, newChoreID) in
             if completed {
                 self.chores.removeAtIndex(0)
-                self.chores.insert(chore, atIndex: 0)
+                
+                var choreWithNewID = chore
+                choreWithNewID.choreID = newChoreID!
+                
+                self.chores.insert(choreWithNewID, atIndex: 0)
                 self.isAddingChore = false
                 print("New chore successfully added")
             } else {

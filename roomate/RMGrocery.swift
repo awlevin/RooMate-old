@@ -22,7 +22,16 @@ public struct RMGrocery {
     var listID: Int?
     
     
-    static func createNewGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->()) {
+    static func createNewGrocery(grocery: RMGrocery, completionHandler: (completed: Bool) -> ()) {
+        
+        let newGroceryDict = RMGrocery.createGroceryDictionary(grocery)
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/createRMGrocery", params: newGroceryDict) { (succeeded, jsonResponse) in
+            (succeeded) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    /*static func createNewGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMGrocery"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -73,7 +82,7 @@ public struct RMGrocery {
         }
         task.resume()
         completionHandler(completed: true)
-    }
+    }*/
     
     static func editGrocery(grocery: RMGrocery, completionHandler: (completed: Bool)->() ) {
         let editedGroceryDict = RMGrocery.editGroceryDictionary(grocery)

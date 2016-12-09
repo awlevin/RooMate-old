@@ -10,26 +10,21 @@ import XCTest
 @testable import roomate
 
 class testRMGroceryList: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+        
+    func testCreateNewGrocery() {
+        let asyncExpectation = expectationWithDescription("testCreateNewGrocery")
+        var testSuccess = false
+        let user = RMUser.returnTestUser()
+        
+        let grocery = RMGrocery(objectID: 0, userID: user.userObjectID, groupID: user.groupID!, isPersonalItem: true, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: "test grocery name", groceryItemPrice: 0.00, groceryItemDescription: "test description", quantity: 1, listID: 0)
+        
+        RMGrocery.createNewGrocery(grocery) { (completed) in
+            testSuccess = (completed) ? true : false
+        }
+        asyncExpectation.fulfill()
+        
+        waitForExpectationsWithTimeout(5) { (error) in
+            XCTAssertTrue(testSuccess)
         }
     }
     

@@ -15,7 +15,30 @@ public struct RMChore {
     var title: String
     var description: String // AKA additional notes
     var dateCreated: String
-
+    
+    // START TEST METHODS:
+    static func returnTestChore() -> RMChore {
+        let testUser = RMUser.returnTestUser()
+        
+        return RMChore(choreID: 0, groupID: testUser.groupID!, userID: testUser.userObjectID, title: "XCTest Chore Completion Title!!", description: "XCTest Chore Completion2 Description", dateCreated: "00/00/00")
+    }
+    // END TEST METHODS
+    
+    static func createNewChore(chore: RMChore, completionHandler: (completed: Bool, newChoreID: Int?)->()) {
+        let choreDictionary = RMChore.createChoreDictionary(chore)
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/createRMChore", params: choreDictionary) { (success, jsonResponse) in
+            
+            if success {
+                let choreID = jsonResponse?["choreid"] as! Int
+                completionHandler(completed: true, newChoreID: choreID)
+            } else {
+                completionHandler(completed: false, newChoreID: nil)
+            }
+        }
+    }
+    
+    /*
     static func createNewChore(chore: RMChore, completionHandler: (completed: Bool)->()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMChore"
         let httpURL = NSURL(string: apiCallString)
@@ -62,9 +85,15 @@ public struct RMChore {
             }
         }
         task.resume()
+    }*/
+    
+    static func deleteChore(choreID: Int, completionHandler: (completed: Bool)->()) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/deleteRMChores", parameters: ["choreid":"\(choreID)"]) { (success, jsonResponse) in
+            (success) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
     }
     
-    static func deleteChore(choreid: Int, completionHandler: (completed: Bool) -> () ) {
+    /*static func deleteChore(choreid: Int, completionHandler: (completed: Bool) -> () ) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/deleteRMChores"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -105,9 +134,8 @@ public struct RMChore {
             }
         }
         task.resume()
-    }
+    }*/
     
-
     static func getChores(offset: Int, lastid: Int, groupId: Int, completionHandler: (chores: [RMChore])->()) {
         
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/selectRMChores"
@@ -116,7 +144,7 @@ public struct RMChore {
         
         request.HTTPMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("1", forHTTPHeaderField: "groupid")
+        request.addValue("\(groupId)", forHTTPHeaderField: "groupid")
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
@@ -128,6 +156,7 @@ public struct RMChore {
             }
 
             if(error != nil || data == nil || statusCode != 200){
+                print("status code: \(statusCode)")
                 switch statusCode {
                 case 400:
                     completionHandler(chores: [])
@@ -259,7 +288,15 @@ public struct RMChore {
         task.resume()
     }
     
-    func createRMChoreCompletion(user: RMUser, completionHandler: (completed: Bool) -> ()) {
+    func createRMChoreCompletion(user: RMUser, completionHandler: (completed: Bool) ->()) {
+        let choreCompletionDictionary = RMChoreCompletion.createChoreCompletionDictionary(self, user: user)
+        
+        RMQueryBackend.post("https://damp-plateau-63440.herokuapp.com/createRMChoreCompletion", params: choreCompletionDictionary) { (success, jsonResponse) in
+            (success) ? completionHandler(completed: true) : completionHandler(completed: false)
+        }
+    }
+    
+    /*func createRMChoreCompletion(user: RMUser, completionHandler: (completed: Bool) -> ()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMChoreCompletion"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -305,9 +342,35 @@ public struct RMChore {
             }
         }
         task.resume()
+    }*/
+    
+    // completed == true upon successful query
+    // choreCompletions will be nil if the returned list was empty, completed will still be true if the query was successful
+    // completed == false if the query was unsuccessful
+    func getRMChoreCompletions(completionHandler: (completed: Bool, choreCompletions: [RMChoreCompletion]?)->()) {
+        RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/selectRMChoreCompletions", parameters: ["choreid":"\(self.choreID)"]) { (success, jsonResponse) in
+            
+            var choreCompletions: [RMChoreCompletion]? = nil
+            
+            if ( success && (jsonResponse?.count > 0) ) {
+                
+                for choreCompletion in jsonResponse! {
+                    
+                    let currChoreCompletion = RMChoreCompletion(choreCompletionID: choreCompletion["chorecompletionid"] as! Int, choreID: choreCompletion["choreid"] as! Int, personCompletedUserID: choreCompletion["userid"] as! Int, groupID: choreCompletion["groupid"] as! Int, title: choreCompletion["title"] as! String, additionalComments: choreCompletion["description"] as! String, beforePhotoURL: "", afterPhotoURL: "", dateCompleted: choreCompletion["datecompleted"] as! String)
+                    
+                    choreCompletions!.append(currChoreCompletion)
+                }
+                completionHandler(completed: true, choreCompletions: choreCompletions)
+            
+            } else if success {
+                completionHandler(completed: true, choreCompletions: nil)
+            } else{
+                completionHandler(completed: false, choreCompletions: nil)
+            }
+        }
     }
     
-    func getRMChoreCompletions(completionHandler: (choreCompletions: [RMChoreCompletion])->() ) {
+    /*func getRMChoreCompletions(completionHandler: (choreCompletions: [RMChoreCompletion])->() ) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/selectRMChoreCompletions"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
@@ -364,7 +427,7 @@ public struct RMChore {
             }
         }
         task.resume()
-    }
+    }*/
     
     
 

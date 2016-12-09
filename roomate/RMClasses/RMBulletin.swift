@@ -28,7 +28,7 @@ public struct RMBulletin {
         var delIndex = 0
         for post in posts {
             if post.objectId == postId {
-                //Call the backend to dete the post
+                // TODO: Call the backend to dete the post
                 let success = true
                 if success {
                     posts.removeAtIndex(delIndex)

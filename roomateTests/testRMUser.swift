@@ -91,7 +91,7 @@ class testRMUser: XCTestCase {
         var testCreatedUserSuccess = false
         var testUserID = 0
         
-        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom2@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
+        let nonExistingUser = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "", firstName: "Malcom", lastName: "X", email: "malcom3@wisc.edu", profileImageURL: "N/A", userGroceryLists: [])
 
         
         RMUser.createUser(nonExistingUser) { (success, userID) in

@@ -83,11 +83,11 @@ class RMChoreHistoryTableViewController: UITableViewController {
     
     
     func fetchNewChoreCompletions() {
-        let tableViewHeader = self.headerView
         
-        chore.getRMChoreCompletions() { (choreCompletions) in
-            var fetchedChoreCompletions = choreCompletions
-            if fetchedChoreCompletions.count > 0 {
+        chore.getRMChoreCompletions() { (success, choreCompletions) in
+            
+            if success {
+                var fetchedChoreCompletions = choreCompletions!
                 dispatch_async(dispatch_get_main_queue(), { 
                     self.tableView.tableHeaderView = nil
                 })
