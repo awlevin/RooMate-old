@@ -37,6 +37,7 @@ struct RMQueryBackend {
             
             
             var httpResponse: NSHTTPURLResponse?
+            var strData: NSString?
             
             // Check for non-nil response
             if (response as? NSHTTPURLResponse != nil) {
@@ -44,7 +45,7 @@ struct RMQueryBackend {
                 httpResponse = response as! NSHTTPURLResponse
                 
                 print("Response: \(response)")
-                let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
                 print("Body: \(strData)")
             } else {
                 print("Response was nil.")
@@ -57,11 +58,19 @@ struct RMQueryBackend {
                 completion(success: false, jsonResponse: nil)
             }
             
+//            // Check if one
+//            let split = strData?.componentsSeparatedByString(":")
+//            if ((split?.count)! - 1) == 1 {
+//                completion(success: true, jsonResponse: nil)
+//            }
+            
             // Retrieve JSON
             var json: NSArray?
             do {
                 if (data != nil) {
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("jsonString: \(jsonStr)")
+                    
                     json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSArray
                 } else {
                     print("JSON Data was nil.")
@@ -76,7 +85,7 @@ struct RMQueryBackend {
             
             
             // Successful if there's at least 1 object in the JSON array AND statusCode == 200
-            if json?.count > 0 {
+            if json != nil {
                 let statusCode = httpResponse!.statusCode
                 
                 if statusCode == 200 {
@@ -94,7 +103,6 @@ struct RMQueryBackend {
             }
         }
         task.resume()
-        
     }
 
 
@@ -144,6 +152,8 @@ struct RMQueryBackend {
         task.resume()
     } */
     
+    
+    // returns a SINGLE JSON dictionary!
     static func post(url: String, params: [String : AnyObject], postCompleted : (succeeded: Bool, jsonResponse: [String : AnyObject]?) -> ()) {
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         let session = NSURLSession.sharedSession()
@@ -163,13 +173,18 @@ struct RMQueryBackend {
         
         let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             
+            var strData: NSString?
             print("Response: \(response)")
             if (data != nil) {
-                let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
                 print("Body: \(strData)")
             }
             // var err: NSError?
             
+            
+            if (strData! == "Post was successful") {
+                postCompleted(succeeded: true, jsonResponse: nil)
+            }
             
             var json: NSDictionary?
             do {

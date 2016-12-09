@@ -22,9 +22,6 @@ public struct RMGroceryList {
     var isCommunal: Bool
     var isAggregate: Bool
     
-    
-    
-    
     // Public Functions
     
     static func getGroceryList(user: RMUser, listType: RMGroceryListTypes, completionHandler: (groceries: [RMGrocery])->()) {
