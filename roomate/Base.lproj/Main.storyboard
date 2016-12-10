@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tWM-gw-jk9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C63a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tWM-gw-jk9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -118,7 +118,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZbH-s5-Lw3"/>
                     <connections>
-                        <segue destination="nMx-Hg-nfE" kind="show" identifier="segueFromLogin" id="g6j-sm-u9g">
+                        <segue destination="nMx-Hg-nfE" kind="show" identifier="segueToConfigGroup" id="g6j-sm-u9g">
                             <nil key="action"/>
                         </segue>
                         <segue destination="CAq-BJ-fe1" kind="presentation" identifier="loginSuccessSegue" id="anX-7J-Ry6"/>
@@ -206,6 +206,6 @@
         <image name="LaunchImage" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="anX-7J-Ry6"/>
+        <segue reference="d9y-Ud-GLA"/>
     </inferredMetricsTieBreakers>
 </document>

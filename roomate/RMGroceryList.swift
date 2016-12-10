@@ -61,7 +61,7 @@ public struct RMGroceryList {
             let groceryItemPrice = jsonItem["groceryitemprice"] as! Double
             let groceryItemDescription = jsonItem["groceryitemdescription"] as! String
             let quantity = jsonItem["quantity"] as! Int
-            let listID = jsonItem["listid"] as! Int
+            let listID = jsonItem["listid"] as? Int
             
             groceryList.append(RMGrocery(objectID: itemID, userID: userID, groupID: groupID, isPersonalItem: personalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: groceryItemName, groceryItemPrice: groceryItemPrice, groceryItemDescription: groceryItemDescription, quantity: quantity, listID: listID))
         }

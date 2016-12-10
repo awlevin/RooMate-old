@@ -52,8 +52,8 @@ class testRMUser: XCTestCase {
         let asyncException = expectationWithDescription("editRMUserGroupIDTest")
         var testSuccess = false
         
-        let userID:Int = 43
-        let newGroupID: Int = 5
+        let userID:Int = 27
+        let newGroupID: Int = 6
         
         RMUser.editRMUserGroupID(userID, newGroupID: newGroupID) { (success) in
             if (success) {
@@ -72,7 +72,7 @@ class testRMUser: XCTestCase {
         var testUser: RMUser? = nil
         var testStatusCode = 0
         
-        RMUser.getUserFromEmail("malcom5@wisc.edu") { (success, statusCode, user) in
+        RMUser.getUserFromEmail("aaron.levin@wisc.edu") { (success, statusCode, user) in
             testSuccess = success
             testStatusCode = statusCode
             if user != nil { testUser = user! }

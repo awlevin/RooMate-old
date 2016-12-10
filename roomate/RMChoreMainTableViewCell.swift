@@ -21,7 +21,7 @@ class RMChoreMainTableViewCell: UITableViewCell {
     var delegate: ChoreMainTableViewCellDelegate?
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
-        let user = RMUser.returnCurrentUserFromDefaults()
+        let user = RMUser.getCurrentUserFromDefaults()
         
         if titleTextField.text != "" {
             let chore = RMChore(choreID: 0, groupID: user.groupID!, userID: user.userObjectID, title: titleTextField.text!, description: "", dateCreated: "00/00/00")

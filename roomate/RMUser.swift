@@ -24,7 +24,7 @@ public struct RMUser : Hashable {
         return RMUser(userObjectID: 1, groupID: 1, dateCreatedAt: "00/00/00", firstName: "TestFirst", lastName: "UserLast", email: "testUser@trumpsucks.com", profileImageURL: "N/A", userGroceryLists: nil)
     }
     
-    static func returnCurrentUserFromDefaults() -> RMUser {
+    static func getCurrentUserFromDefaults() -> RMUser {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let email = userDefaults.valueForKey("email") as! String
         let groupID = userDefaults.valueForKey("groupID") as! Int
@@ -35,6 +35,43 @@ public struct RMUser : Hashable {
         
         return RMUser(userObjectID: userID, groupID: groupID, dateCreatedAt: "00/00/00", firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImage, userGroceryLists: nil)
     }
+    
+    
+    // we could also make a function that returns a specific user from 
+    static func getRoomatesFromDefaults(completionHandler: (success: Bool, [RMUser]?)->()) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let otherUsersData = userDefaults.objectForKey("roomates") as? NSData
+        
+        if let otherUsersData = otherUsersData {
+            let usersArray = NSKeyedUnarchiver.unarchiveObjectWithData(otherUsersData) as! [RMUser]?
+            
+            if let usersArray = usersArray {
+                completionHandler(success: true, usersArray)
+            } else {
+                completionHandler(success: false, nil)
+            }
+        } else {
+            completionHandler(success: false, nil)
+        }
+    }
+ 
+    /*
+    static func saveRoomatesToDefaults(groupID: Int, completionHandler: (success: Bool) -> ()) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        RMGroup.getUsersInGroup(groupID) { (success, users) in
+            if success && users != nil {
+                let usersData = NSKeyedArchiver.archivedDataWithRootObject(users! as! AnyObject)
+                defaults.setObject(usersData, forKey: "otherUsers")
+            } else if success {
+                defaults.setObject([RMUser]() as? AnyObject, forKey: "otherUsers")
+                completionHandler(success: true)
+            } else {
+                completionHandler(success: false)
+            }
+        }
+    }
+    */
     
     // END: Temporary code to test everything with RMUsers
     

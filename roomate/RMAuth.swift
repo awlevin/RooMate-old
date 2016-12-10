@@ -120,9 +120,18 @@ extension RMAuth {
                         }
                         
                     } else {                        
-                        // Update profilePicture
-                        let userDefaults = NSUserDefaults.standardUserDefaults()
-                        userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
+                        // Update info from backend
+                        RMUser.getUserFromEmail(email!, completion: { (success, statusCode, user) in
+                            if success {
+                                let userDefaults = NSUserDefaults.standardUserDefaults()
+                                userDefaults.setValue(user!.userObjectID, forKey: "userID")
+                                userDefaults.setObject(user!.groupID, forKey: "groupID")
+                                userDefaults.setValue(email, forKey: "email")
+                                userDefaults.setValue(first_name, forKey: "firstName")
+                                userDefaults.setValue(last_name, forKey: "lastName")
+                                userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
+                            }
+                        })
                     }
                 })
             }
