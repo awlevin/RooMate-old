@@ -178,7 +178,7 @@ class RMShoppingMainTableViewController: UITableViewController {
     
     func callFetchPosts(listType: RMGroceryListTypes) {
         
-        let user = RMUser.returnCurrentUserFromDefaults()
+        let user = RMUser.getCurrentUserFromDefaults()
         
         RMGroceryList.getListByType(user, listType: .Communal) { (success, groceries) in
             if success {

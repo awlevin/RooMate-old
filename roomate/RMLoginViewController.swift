@@ -26,7 +26,7 @@ class RMLoginViewController: UIViewController {
                     if let _ = userDefaults.valueForKey("groupID") {
                         self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
                     } else {
-                        self.performSegueWithIdentifier("segueFromLogin", sender: self)
+                        self.performSegueWithIdentifier("segueToConfigGroup", sender: self)
                     }
                 }
             } else {
