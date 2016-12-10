@@ -139,15 +139,18 @@ public struct RMUser : Hashable {
                 
                 let userObjectID = jsonItem["userid"] as! Int
                 
-                // set groupID to 0 if it's passed from JSON as nil
-                var groupObjID = (jsonItem["groupid"] as? Int)
-                if (groupObjID == nil) { groupObjID = 0 }
                 
-                if let tempVal = jsonItem["groupid"] as? Int {
-                    groupObjID = tempVal
-                } else {
-                    groupObjID = 0
-                }
+                let groupObjID = (jsonItem["groupid"] as? Int)
+                
+//                // set groupID to 0 if it's passed from JSON as nil
+//                var groupObjID = (jsonItem["groupid"] as? Int)
+//                if (groupObjID == nil) { groupObjID = 0 }
+//                
+//                if let tempVal = jsonItem["groupid"] as? Int {
+//                    groupObjID = tempVal
+//                } else {
+//                    groupObjID = 0
+//                }
                 
                 
                 let dateCreatedAt = jsonItem["datecreatedat"] as! String
@@ -155,7 +158,7 @@ public struct RMUser : Hashable {
                 let lastName = jsonItem["lastname"] as! String
                 let profileImageURL = "" /*jsonItem["profileimageurl"] as! String*/ // TODO: implement profileimageurl on backend
                 
-                completion(success: true, statusCode: 200, user: RMUser(userObjectID: userObjectID, groupID: groupObjID!, dateCreatedAt: dateCreatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
+                completion(success: true, statusCode: 200, user: RMUser(userObjectID: userObjectID, groupID: groupObjID, dateCreatedAt: dateCreatedAt, firstName: firstName, lastName: lastName, email: email, profileImageURL: profileImageURL, userGroceryLists: []))
             } else {
                 completion(success: false, statusCode: 0, user: nil)
             }
