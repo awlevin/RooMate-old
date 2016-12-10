@@ -87,14 +87,16 @@ class RMChoreHistoryTableViewController: UITableViewController {
         chore.getRMChoreCompletions() { (success, choreCompletions) in
             
             if success {
-                var fetchedChoreCompletions = choreCompletions!
-                dispatch_async(dispatch_get_main_queue(), { 
-                    self.tableView.tableHeaderView = nil
-                })
-                fetchedChoreCompletions = fetchedChoreCompletions.sort( { $0.choreCompletionID > $1.choreCompletionID })
-                for choreCompletion in fetchedChoreCompletions {
-                    if !self.choreCompletions.contains( { $0.choreCompletionID == choreCompletion.choreCompletionID }) {
-                        self.choreCompletions.append(choreCompletion)
+                if choreCompletions?.count > 0 {
+                    var fetchedChoreCompletions = choreCompletions!
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.tableHeaderView = nil
+                    })
+                    fetchedChoreCompletions = fetchedChoreCompletions.sort( { $0.choreCompletionID > $1.choreCompletionID })
+                    for choreCompletion in fetchedChoreCompletions {
+                        if !self.choreCompletions.contains( { $0.choreCompletionID == choreCompletion.choreCompletionID }) {
+                            self.choreCompletions.append(choreCompletion)
+                        }
                     }
                 }
             } else {
