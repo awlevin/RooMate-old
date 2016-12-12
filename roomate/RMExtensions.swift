@@ -9,6 +9,28 @@
 import Foundation
 import UIKit
 
+extension NSDate {
+    func getCurrentTimeAndDate() -> String {
+        
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateStyle = NSDateFormatterStyle.LongStyle
+        dateFormat.timeStyle = NSDateFormatterStyle.MediumStyle
+        
+        return dateFormat.stringFromDate(self)
+        
+        /*
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        
+        let hour = calendar.component(.Hour, fromDate: date)
+        let minutes = calendar.component(.Minute, fromDate: date)
+        let seconds = calendar.component(.Second, fromDate: date)
+        
+        return "\(date.description) - \(hour):\(minutes):\(seconds)"
+        */
+    }
+}
+
 extension Double {
     var asLocaleCurrency:String {
         let formatter = NSNumberFormatter()

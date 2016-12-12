@@ -32,6 +32,7 @@
 		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
 		858F81CF1DFB50C700F4D551 /* testRMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */; };
 		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
+		85A98BD41DFE63B700E68A3C /* testGetCurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */; };
 		85BBF47E1DFA16F900506988 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BBF47D1DFA16F900506988 /* roomateTests.swift */; };
 		85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
 		85BBF4861DFA170700506988 /* testRMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B81DF6977400ED84FC /* testRMChore.swift */; };
@@ -151,6 +152,7 @@
 		858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGrocery.swift; sourceTree = "<group>"; };
 		85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletion.swift; sourceTree = "<group>"; };
 		859B386F1DF7782D0050BDE7 /* testRMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroup.swift; sourceTree = "<group>"; };
+		85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGetCurrentTime.swift; sourceTree = "<group>"; };
 		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testRMQueryBackend.swift; path = ../roomate/testRMQueryBackend.swift; sourceTree = "<group>"; };
 		85B8EE901DF9BF3C001F7B3B /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
 		85B8EE921DF9BF3C001F7B3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */,
 				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
 				4250E2A61DA0314C002F7FA7 /* Info.plist */,
+				85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */,
 			);
 			path = roomateTests;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */,
 				85BBF4861DFA170700506988 /* testRMChore.swift in Sources */,
 				85BBF48C1DFA174D00506988 /* testRMUser.swift in Sources */,
+				85A98BD41DFE63B700E68A3C /* testGetCurrentTime.swift in Sources */,
 				85BBF4891DFA170700506988 /* testRMGroup.swift in Sources */,
 				85BBF47E1DFA16F900506988 /* roomateTests.swift in Sources */,
 			);
