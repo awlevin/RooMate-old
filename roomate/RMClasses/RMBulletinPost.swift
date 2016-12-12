@@ -146,7 +146,7 @@ public struct RMBulletinPost {
         
         request.HTTPMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("1", forHTTPHeaderField: "groupid")
+        request.addValue("\(groupId)", forHTTPHeaderField: "groupid")
         request.addValue("\(lastid)", forHTTPHeaderField: "lastid")
         
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
