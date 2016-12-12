@@ -1,16 +1,16 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9816799c-2f6c-5ae3-8745-ce57b7db7bff++8852",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "48A4FA551BD62246CA2174DEAE55D5BA61291E39",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "9816799c-2f6c-5ae3-8745-ce57b7db7bff++8852" : {
+    "48A4FA551BD62246CA2174DEAE55D5BA61291E39" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "9816799c-2f6c-5ae3-8745-ce57b7db7bff++8852" : 9223372036854775807
+    "48A4FA551BD62246CA2174DEAE55D5BA61291E39" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0468E514-872E-4706-9058-45713F92B81A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "9816799c-2f6c-5ae3-8745-ce57b7db7bff++8852" : "roomate\/"
+    "48A4FA551BD62246CA2174DEAE55D5BA61291E39" : "roomate\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "roomate",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,7 +19,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ritvikupadhyaya\/roomate.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9816799c-2f6c-5ae3-8745-ce57b7db7bff++8852"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "48A4FA551BD62246CA2174DEAE55D5BA61291E39"
     }
   ]
 }
