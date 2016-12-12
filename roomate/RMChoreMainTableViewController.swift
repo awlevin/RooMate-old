@@ -96,8 +96,13 @@ class RMChoreMainTableViewController: UITableViewController, ChoreMainTableViewC
         cell.delegate = self
         
         cell.titleTextField.text = self.chores[indexPath.row].title
-
-        cell.lastDoneLabel.text = "Last done by - " + "Corey Pett"//self.chores[indexPath.row].userID
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userName = userDefaults.stringForKey(String(self.chores[indexPath.row].userID))
+        
+        if let name = userName {
+            cell.lastDoneLabel.text = "Last done by - " + name
+        }
     
         return cell
     }

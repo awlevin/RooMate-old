@@ -21,7 +21,7 @@ class RMSettingsTableViewController: UITableViewController {
         let userId = userDefaults.integerForKey("userID")
         let groupId = userDefaults.integerForKey("groupID")
         
-        RMUser.editRMUserGroupID(userId, newGroupID: groupId) { (success) in
+        RMUser.editRMUserGroupID(userId, newGroupID: nil) { (success) in
             if success {
                 userDefaults.setValue(nil, forKey: "groupID")
                 

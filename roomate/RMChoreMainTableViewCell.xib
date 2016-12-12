@@ -24,8 +24,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="308" height="74"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last done by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-jG-JOZ" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
-                        <rect key="frame" x="18" y="42" width="66" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcO-jG-JOZ" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                        <rect key="frame" x="18" y="42" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

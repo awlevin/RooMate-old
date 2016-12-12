@@ -40,7 +40,14 @@ public struct RMGroup {
                 
                 var usersInGroup = [RMUser]()
                 for jsonItem: [String : AnyObject] in jsonResponse! as! [Dictionary<String, AnyObject>] {
+                    print(usersInGroup)
                     let groupMember = RMUser.parseUserJSONObject(jsonItem)
+                    
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
+                    let fullName = groupMember.firstName + " " + groupMember.lastName
+                    
+                    userDefaults.setValue(fullName, forKey: String(groupMember.userObjectID))
+                    
                     usersInGroup.append(groupMember)
                 }
                 completion(success: true, users: usersInGroup)

@@ -47,7 +47,17 @@ class RMGroupSelectionVC: UIViewController {
                         print("Successfully joined household")
                         let intGroupID = Int(groupID!)
                         userDefaults.setValue(intGroupID, forKey: "groupID")
-                        self.performSegueWithIdentifier(LoginStringConst.loginSuccessSegue, sender: self)
+                        
+                        
+                        RMGroup.getUsersInGroup(intGroupID!, completion: { (success, users) in
+                            if success {
+                                print(users)
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.performSegueWithIdentifier(LoginStringConst.loginSuccessSegue, sender: self)
+                                })
+                            }
+                        })
+                        
                     } else {
                         print("Failed joining household")
                     }

@@ -23,8 +23,17 @@ class RMLoginViewController: UIViewController {
             if success {
                 dispatch_async(dispatch_get_main_queue()) {
                     let userDefaults = NSUserDefaults.standardUserDefaults()
-                    if let _ = userDefaults.valueForKey("groupID") {
-                        self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
+                    let groupID = userDefaults.integerForKey("groupID")
+                    if groupID != 0 {
+                        RMGroup.getUsersInGroup(Int(groupID), completion: { (success, users) in
+                            if success {
+                                print(users)
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
+
+                                })
+                            }
+                        })
                     } else {
                         self.performSegueWithIdentifier("segueToConfigGroup", sender: self)
                     }
