@@ -58,7 +58,7 @@ class RMShoppingMainTableViewController: UITableViewController {
         
         if let parentVC = self.parentViewController as? RMShoppingMainViewController {
             
-            switch  parentVC.segmentedControl.selectedSegmentIndex {
+            switch parentVC.segmentedControl.selectedSegmentIndex {
             
             // Communal Cells
             case 0:
@@ -180,7 +180,7 @@ class RMShoppingMainTableViewController: UITableViewController {
         
         let user = RMUser.getCurrentUserFromDefaults()
         
-        RMGroceryList.getListByType(user, listType: .Communal) { (success, groceries) in
+        RMGroceryList.getListByType(user, listType: listType) { (success, groceries) in
             if success {
                 switch listType {
                 case RMGroceryListTypes.Personal:
@@ -201,6 +201,7 @@ class RMShoppingMainTableViewController: UITableViewController {
                             self.aggregateItems.append(item)
                         }
                     }
+                default: break
                 }
             } else {
                 print("failed to get list!")

@@ -93,12 +93,12 @@ public struct RMBulletinPost {
     }
  
     
-    static func createNewBulletinPost(bbPost: RMBulletinPost, completionHandler: (completed: Bool)->()) {
+    static func createNewBulletinPost(bbPost: RMBulletinPost, user: RMUser, completionHandler: (completed: Bool)->()) {
         let apiCallString = "https://damp-plateau-63440.herokuapp.com/createRMPost"
         let httpURL = NSURL(string: apiCallString)
         let request = NSMutableURLRequest(URL: httpURL!)
         
-        let bbDictionary = RMBulletinPost.createBBDictionary(bbPost)
+        let bbDictionary = RMBulletinPost.createBBDictionary(bbPost, user: user)
         
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -198,10 +198,10 @@ public struct RMBulletinPost {
     }
     
     
-    static func createBBDictionary(bbObject: RMBulletinPost) -> [String : AnyObject] {
+    static func createBBDictionary(bbObject: RMBulletinPost, user: RMUser) -> [String : AnyObject] {
         var returnDict = [String : AnyObject]()
-        returnDict["userid"] = 1
-        returnDict["groupid"] = 1
+        returnDict["userid"] = user.userObjectID
+        returnDict["groupid"] = user.groupID
         returnDict["title"] = bbObject.title
         returnDict["description"] = bbObject.description
         returnDict["pinnote"] = bbObject.pinNote.boolValue

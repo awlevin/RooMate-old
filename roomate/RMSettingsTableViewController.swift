@@ -11,13 +11,8 @@ import FBSDKCoreKit
 
 class RMSettingsTableViewController: UITableViewController {
     
-    static let user1 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", firstName: "Corey", lastName: "Pett", email: "0", profileImageURL: "0", userGroceryLists: nil)
+    var userArray = [RMUser]()
     
-    static let user2 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", firstName: "Jim", lastName: "Skretny", email: "0", profileImageURL: "0", userGroceryLists: nil)
-    
-    static let user3 = RMUser(userObjectID: 0, groupID: 0, dateCreatedAt: "0", firstName: "Eric", lastName: "Bach", email: "0", profileImageURL: "0", userGroceryLists: nil)
-    let userArray = [user1, user2, user3]
-
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var groupIdLabel: RMThinLabel!
     
@@ -33,7 +28,11 @@ class RMSettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         profileImageView.setRounded()
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         // Display user information
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -43,6 +42,22 @@ class RMSettingsTableViewController: UITableViewController {
         
         if let profileImageString = userDefaults.valueForKey("profilePictureURL") as? String {
             profileImageView.imageFromUrl(profileImageString)
+        }
+        
+        RMGroup.getUsersInGroup(groupID!) { (success, users) in
+            print("Get other users success: \(success)")
+            if success {
+                print("\(users!)")
+                dispatch_async(dispatch_get_main_queue()) {
+                    for user in users! {
+                        if !self.userArray.contains(user) {
+                            self.userArray.append(user)
+                        }
+                        
+                    }
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
 
