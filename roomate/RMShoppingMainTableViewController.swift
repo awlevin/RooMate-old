@@ -172,7 +172,6 @@ class RMShoppingMainTableViewController: UITableViewController {
         callFetchPosts(.Personal)
         callFetchPosts(.Communal)
         callFetchPosts(.Aggregate)
-
     }
     
     

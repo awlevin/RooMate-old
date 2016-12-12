@@ -28,6 +28,7 @@ public struct RMChoreCompletion {
         returnDict["groupid"] = user.groupID
         returnDict["title"] = chore.title
         returnDict["description"] = chore.description
+        returnDict["datecompleted"] = NSDate().getCurrentTimeAndDate()
         return returnDict
     }
     
