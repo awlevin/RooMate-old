@@ -10,8 +10,6 @@ import UIKit
 
 class RMShoppingMainTableViewController: UITableViewController {
 
-    @IBOutlet weak var headerView: UIView!
-    
     var personalItems = [RMGrocery]()
     var communalItems = [RMGrocery]()
     var aggregateItems = [RMGrocery]()
@@ -45,41 +43,11 @@ class RMShoppingMainTableViewController: UITableViewController {
         if let parentVC = self.parentViewController as? RMShoppingMainViewController {
             switch  parentVC.segmentedControl.selectedSegmentIndex {
             case 0:
-                if communalItems.count == 0 {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.tableHeaderView? = self.headerView
-                    })
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.tableHeaderView = nil
-                    })
-                    return communalItems.count
-                }
-                return 0
+                return communalItems.count
             case 1:
-                if personalItems.count == 0 {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.tableHeaderView? = self.headerView
-                    })
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.tableHeaderView = nil
-                    })
-                    return personalItems.count
-                }
-                return 0
+                return personalItems.count
             case 2:
-                if aggregateItems.count == 0 {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.tableHeaderView? = self.headerView
-                    })
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.tableHeaderView = nil
-                    })
-                    return aggregateItems.count
-                }
-                return 0
+                return aggregateItems.count
             default:
                 return 0
             }
