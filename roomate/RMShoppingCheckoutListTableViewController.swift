@@ -37,7 +37,7 @@ class RMShoppingCheckoutListTableViewController: UITableViewController {
 //                selectedItems?.append(cell.item!)
 //            }
 //        }
-//        
+        
         self.performSegueWithIdentifier("InvoiceSegue", sender: self)
     }
 
