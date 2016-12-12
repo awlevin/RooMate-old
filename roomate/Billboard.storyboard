@@ -14,7 +14,7 @@
         <!--Bulletin Board-->
         <scene sceneID="08X-Go-Ym8">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="b4h-PZ-Uq1" customClass="BulletinBoardVC" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bulletinBoardVC" automaticallyAdjustsScrollViewInsets="NO" id="b4h-PZ-Uq1" customClass="BulletinBoardVC" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lfh-XA-pnz"/>
                         <viewControllerLayoutGuide type="bottom" id="wFq-FO-4o3"/>
