@@ -20,6 +20,31 @@ class RMShoppingAddItemTableViewController: UITableViewController, UITextFieldDe
     var groceryItem: RMGrocery?
     var pickerOptions = ["Dairy", "Meat & Fish", "Bread", "Snacks", "Canned Food", "Drinks", "Misc"]
     
+    @IBAction func editButtonPressed(sender: AnyObject) {
+        let isPersonalItem: Bool
+        if self.segmentControl.selectedSegmentIndex == 0 { isPersonalItem = true }
+        else { isPersonalItem = false }
+        
+        // Create new grocery object
+        let testUser = RMUser.getCurrentUserFromDefaults()
+        
+        let newItem = RMGrocery(objectID: groceryItem!.objectID, userID: testUser.userObjectID, groupID: testUser.groupID!, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text, quantity: Int(self.quantityLabel.text!)!, listID: -1)
+        
+            // Save the grocery object to the backend
+            RMGrocery.editGrocery(newItem) { (completed) in
+                print("completed: \(completed)")
+                if(completed) {
+                    self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                }
+                else {
+                    let errorAlert = UIAlertController(title: "Error", message: "We encountered a problem saving your data, please try again", preferredStyle: UIAlertControllerStyle.Alert)
+                    errorAlert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
     @IBAction func stepperDidChange(sender: UIStepper) {
         self.quantityLabel.text = Int(sender.value).description
     }
@@ -35,8 +60,8 @@ class RMShoppingAddItemTableViewController: UITableViewController, UITextFieldDe
         else { isPersonalItem = false }
         
         // Create new grocery object
-        let testUser = RMUser.returnTestUser()
-        let newItem = RMGrocery(objectID: -1, userID: testUser.userObjectID, groupID: testUser.groupID!, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text, quantity: Int(self.quantityLabel.text!)!, listID: -1)
+        let currUser = RMUser.getCurrentUserFromDefaults()
+        let newItem = RMGrocery(objectID: -1, userID: currUser.userObjectID, groupID: currUser.groupID!, isPersonalItem: isPersonalItem, dateCreatedAt: "", dateUpdatedAt: "", groceryItemName: self.itemTextField.text!, groceryItemPrice: 0.00, groceryItemDescription: self.textView.text, quantity: Int(self.quantityLabel.text!)!, listID: -1)
         
         // Save the grocery object to the backend
         RMGrocery.createNewGrocery(newItem) { (completed) in

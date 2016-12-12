@@ -148,7 +148,9 @@ class BulletinBoardVC: UIViewController, UICollectionViewDelegate, UICollectionV
         if lastid != nil {
             givenLastid = lastid!
         }
-        RMBulletinPost.getBulletinPosts(0, lastid: givenLastid, groupId: 1) { (bbPosts) in
+        
+        let currUser = RMUser.getCurrentUserFromDefaults()
+        RMBulletinPost.getBulletinPosts(0, lastid: givenLastid, groupId: currUser.groupID!) { (bbPosts) in
             var fetchedPosts = bbPosts
             if fetchedPosts.count > 0 {
                 fetchedPosts = fetchedPosts.sort( { $0.objectId > $1.objectId })

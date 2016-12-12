@@ -671,7 +671,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="check" id="TxY-Jb-fCu">
                             <connections>
-                                <action selector="completeButtonPressed:" destination="ptj-t3-gNy" id="FRx-F6-brX"/>
+                                <action selector="editButtonPressed:" destination="ptj-t3-gNy" id="Ayq-dS-vAT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
