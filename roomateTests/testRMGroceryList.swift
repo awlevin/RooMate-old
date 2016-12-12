@@ -46,9 +46,9 @@ class testRMGroceryList: XCTestCase {
             asyncExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5, handler: { (error) in
+        waitForExpectationsWithTimeout(8, handler: { (error) in
             XCTAssertTrue(testSuccess)
-            // print(testGroceries)
+            print(testGroceries)
         })
     }
     
