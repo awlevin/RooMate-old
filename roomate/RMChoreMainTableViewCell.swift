@@ -27,6 +27,10 @@ class RMChoreMainTableViewCell: UITableViewCell {
             let chore = RMChore(choreID: 0, groupID: user.groupID!, userID: user.userObjectID, title: titleTextField.text!, description: "", dateCreated: "00/00/00")
             saveButton.hidden = true
             titleTextField.userInteractionEnabled = false
+            
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            let userEmail = userDefaults.stringForKey("email")
+            
             delegate!.saveNewChore(chore)
         }
     }

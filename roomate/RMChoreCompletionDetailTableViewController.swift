@@ -35,8 +35,13 @@ class RMChoreCompletionDetailTableViewController: UITableViewController {
         titleLabel.text = choreCompletion.title
         dateLabel.text = "Date: \(choreCompletion.dateCompleted)"
         notesTextView.text = choreCompletion.additionalComments
-        nameLabel.text = "\(choreCompletion.personCompletedUserID)" // TODO: Change this to the name of the person
-    
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userName = userDefaults.stringForKey("\(choreCompletion.personCompletedUserID)")
+        
+        if let name = userName {
+            nameLabel.text = name
+        }
     }
 
     // MARK: - Table view data source

@@ -21,7 +21,9 @@ class RMChoreAddCompletionTableViewController: UITableViewController,UIImagePick
     
     @IBAction func completeButtonPressed(sender: AnyObject) {
         
-        chore.createRMChoreCompletion(RMUser.returnTestUser()) { (completed) in
+        let currentUser = RMUser.getCurrentUserFromDefaults()
+        
+        chore.createRMChoreCompletion(currentUser) { (completed) in
             if completed {
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

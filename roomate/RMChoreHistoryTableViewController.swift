@@ -26,12 +26,12 @@ class RMChoreHistoryTableViewController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "RMChoreCompletionTableViewCell", bundle: nil), forCellReuseIdentifier: "CompletionCell")
         
+        fetchNewChoreCompletions()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchNewChoreCompletions()
     }
     
     override func viewDidAppear(animated: Bool) {

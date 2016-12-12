@@ -172,14 +172,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="KaV-Ja-hFt">
+                            <rect key="frame" x="0.0" y="0.0" width="385" height="75"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nobody has done anything!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wze-dd-Udm" userLabel="...add some items first" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                    <rect key="frame" x="144" y="21" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="-1" height="0.5"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="wze-dd-Udm" firstAttribute="centerX" secondItem="KaV-Ja-hFt" secondAttribute="centerX" id="FvX-1K-1nK"/>
+                                <constraint firstItem="wze-dd-Udm" firstAttribute="centerY" secondItem="KaV-Ja-hFt" secondAttribute="centerY" id="Iuz-Mf-0yc"/>
+                            </constraints>
+                        </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="CjB-ex-nU8">
-                            <rect key="frame" x="0.0" y="103" width="385" height="44"/>
+                            <rect key="frame" x="0.0" y="178" width="385" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="HNX-7j-rx1">
-                                <rect key="frame" x="0.0" y="28" width="385" height="75"/>
+                                <rect key="frame" x="0.0" y="103" width="385" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HNX-7j-rx1" id="Q9S-Pf-8Oi">
                                     <rect key="frame" x="0.0" y="0.0" width="385" height="74"/>
@@ -195,6 +213,9 @@
                             <outlet property="delegate" destination="gQs-st-wvI" id="poj-Ij-6iX"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="headerView" destination="KaV-Ja-hFt" id="uEs-UJ-6Ow"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aue-VT-F0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -62,6 +62,7 @@
 		903C21561DEFAAC0001D5689 /* RMInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903C21551DEFAAC0001D5689 /* RMInvoice.swift */; };
 		905EB7BA1DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */; };
 		905EB7BC1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EB7BB1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift */; };
+		906916A11DFF36EB00A439A4 /* testRMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906916A01DFF36EB00A439A4 /* testRMGrocery.swift */; };
 		908027661DEE333500918D1D /* RMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908027651DEE333400918D1D /* RMUtility.swift */; };
 		908027691DEE397900918D1D /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908027671DEE397900918D1D /* Finance.storyboard */; };
 		9080276B1DEE3E1000918D1D /* RMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276A1DEE3E1000918D1D /* RMExtensions.swift */; };
@@ -184,6 +185,7 @@
 		903C21551DEFAAC0001D5689 /* RMInvoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMInvoice.swift; sourceTree = "<group>"; };
 		905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutListTableViewController.swift; sourceTree = "<group>"; };
 		905EB7BB1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSettingsTableViewController.swift; sourceTree = "<group>"; };
+		906916A01DFF36EB00A439A4 /* testRMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGrocery.swift; sourceTree = "<group>"; };
 		908027651DEE333400918D1D /* RMUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUtility.swift; sourceTree = "<group>"; };
 		908027681DEE397900918D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Finance.storyboard; sourceTree = "<group>"; };
 		9080276A1DEE3E1000918D1D /* RMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMExtensions.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				85D6E2B41DF674C200ED84FC /* testRMUser.swift */,
 				859B386F1DF7782D0050BDE7 /* testRMGroup.swift */,
 				85D6E2B81DF6977400ED84FC /* testRMChore.swift */,
+				906916A01DFF36EB00A439A4 /* testRMGrocery.swift */,
 				858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */,
 				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
 				4250E2A61DA0314C002F7FA7 /* Info.plist */,
@@ -939,6 +942,7 @@
 				85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */,
 				85BBF4861DFA170700506988 /* testRMChore.swift in Sources */,
 				85BBF48C1DFA174D00506988 /* testRMUser.swift in Sources */,
+				906916A11DFF36EB00A439A4 /* testRMGrocery.swift in Sources */,
 				85A98BD41DFE63B700E68A3C /* testGetCurrentTime.swift in Sources */,
 				85BBF4891DFA170700506988 /* testRMGroup.swift in Sources */,
 				85BBF47E1DFA16F900506988 /* roomateTests.swift in Sources */,
