@@ -37,7 +37,7 @@ class RMGroupSelectionVC: UIViewController {
             let groupID = textField.text
             
             // Textfield is NOT empty
-            if groupID != nil {
+            if groupID != "" {
                 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
                 let userId = userDefaults.valueForKey("userID") as! Int
@@ -45,7 +45,8 @@ class RMGroupSelectionVC: UIViewController {
                 RMGroup.joinHousehold(userId, groupID: Int(groupID!)!, completion: { (success) in
                     if success {
                         print("Successfully joined household")
-                        userDefaults.setValue(groupID, forKey: "groupID")
+                        let intGroupID = Int(groupID!)
+                        userDefaults.setValue(intGroupID, forKey: "groupID")
                         self.performSegueWithIdentifier(LoginStringConst.loginSuccessSegue, sender: self)
                     } else {
                         print("Failed joining household")

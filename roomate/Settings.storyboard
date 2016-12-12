@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C63a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5s5-dJ-MLd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5s5-dJ-MLd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sNp-pT-WMe" kind="relationship" relationship="rootViewController" id="duK-nc-HY8"/>
+                        <segue destination="sNp-pT-WMe" kind="relationship" relationship="rootViewController" id="W3U-zd-Wvu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1S-xN-EwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,16 +87,36 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="JWB-Fl-bpo">
-                            <rect key="frame" x="0.0" y="368" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="368" width="375" height="101"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xak-iu-h4D" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
+                                    <rect key="frame" x="38" y="30" width="299" height="40"/>
+                                    <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                    <state key="normal" title="LEAVE GROUP">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="leaveGroupButton:" destination="sNp-pT-WMe" eventType="touchUpInside" id="a3i-i0-eI4"/>
+                                        <action selector="logoutButtonPressed:" destination="sNp-pT-WMe" eventType="touchUpInside" id="KS6-1Y-196"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="xak-iu-h4D" firstAttribute="centerX" secondItem="JWB-Fl-bpo" secondAttribute="centerX" id="2vc-Sa-K9s"/>
+                                <constraint firstItem="xak-iu-h4D" firstAttribute="top" secondItem="JWB-Fl-bpo" secondAttribute="top" constant="30" id="599-te-8FD"/>
+                                <constraint firstItem="xak-iu-h4D" firstAttribute="leading" secondItem="JWB-Fl-bpo" secondAttribute="leading" constant="38" id="G3J-tx-X00"/>
+                                <constraint firstItem="xak-iu-h4D" firstAttribute="centerY" secondItem="JWB-Fl-bpo" secondAttribute="centerY" id="Xn5-VJ-8r3"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="75" id="EqP-aC-xYE">
                                 <rect key="frame" x="0.0" y="229" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EqP-aC-xYE" id="5tr-wr-OP3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

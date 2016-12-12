@@ -30,6 +30,7 @@
 		42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */; };
 		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
 		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
+		800EF1098A22C497F58FD6F6 /* Pods_roomateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */; };
 		858F81CF1DFB50C700F4D551 /* testRMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */; };
 		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
 		85A98BD41DFE63B700E68A3C /* testGetCurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */; };
@@ -241,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800EF1098A22C497F58FD6F6 /* Pods_roomateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,9 +644,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85BBF4821DFA16F900506988 /* Build configuration list for PBXNativeTarget "roomateTests" */;
 			buildPhases = (
+				D703392180AC6D5C197EEC1F /* [CP] Check Pods Manifest.lock */,
 				85BBF4771DFA16F900506988 /* Sources */,
 				85BBF4781DFA16F900506988 /* Frameworks */,
 				85BBF4791DFA16F900506988 /* Resources */,
+				5085469AD0C2FE6E20508D47 /* [CP] Embed Pods Frameworks */,
+				6F15F4A2337B65F3C53A2FFF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -779,6 +784,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomate/Pods-roomate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5085469AD0C2FE6E20508D47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F15F4A2337B65F3C53A2FFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BB69F7B8261FB5B8F3795F93 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,7 +826,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D703392180AC6D5C197EEC1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F21355F9C4490020B4BDE4BF /* [CP] Copy Pods Resources */ = {
@@ -1109,6 +1159,7 @@
 		};
 		85BBF4831DFA16F900506988 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -1128,6 +1179,7 @@
 		};
 		85BBF4841DFA16F900506988 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
