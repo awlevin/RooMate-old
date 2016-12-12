@@ -16,6 +16,25 @@ class RMSettingsTableViewController: UITableViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var groupIdLabel: RMThinLabel!
     
+    @IBAction func leaveGroupButton(sender: AnyObject) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userId = userDefaults.integerForKey("userID")
+        let groupId = userDefaults.integerForKey("groupID")
+        
+        RMUser.editRMUserGroupID(userId, newGroupID: groupId) { (success) in
+            if success {
+                userDefaults.setValue(nil, forKey: "groupID")
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginViewController = storyboard.instantiateViewControllerWithIdentifier("GroupSelectionVC")
+                    UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
+                })
+            } else {
+                RMNotificationManger().presentSimpleAlertWithMessage("Error!", message: "Please try again", viewController: self)
+            }
+        }
+    }
     @IBAction func logoutButtonPressed(sender: AnyObject) {
         FBSDKAccessToken.setCurrentAccessToken(nil)
         
