@@ -154,7 +154,10 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
                                       dateCreatedAt: "",
                                       dateupdatedAt: "",
                                       title: bbtitle, description: bbdescription, pinNote: false, photos: self.imageAddedCollection, thumbnail: "", removalDate: "", comments: ["Something":"Something"])
-        RMBulletinPost.createNewBulletinPost(bbObject) { (completed) in
+        
+        
+        
+        RMBulletinPost.createNewBulletinPost(bbObject, user: RMUser.getCurrentUserFromDefaults()) { (completed) in
             if completed {
                 print("COMPLETED")
             } else {

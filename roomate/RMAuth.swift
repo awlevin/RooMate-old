@@ -43,10 +43,11 @@ extension RMAuth {
     
     func loginWithFacebook(completion: (success: Bool) -> Void) {
         
-        // UNCOMMENT FOR DEMO PURPOSES
         // If token already exists
         if let _ = FBSDKAccessToken.currentAccessToken() {
-            saveFacebookDetails()
+            saveFacebookDetails() { (success) in
+                (success) ? completion(success: true) : completion(success: false)
+            }
             completion(success: true)
         }
             // If token does not exist
@@ -72,14 +73,15 @@ extension RMAuth {
                 }
                 else {
                     print("Facebook login: Granted permissions")
-                    self.saveFacebookDetails()
-                    completion(success: true)
+                    self.saveFacebookDetails({ (success) in
+                        (success) ? completion(success: true) : completion(success: false)
+                    })
                 }
             })
         }
     }
     
-    func saveFacebookDetails(){
+    func saveFacebookDetails(completionHandler: (success: Bool)->() ){
         let requestParameters = ["fields": "id, link, email, first_name, last_name"]
         let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: requestParameters)
         graphRequest?.startWithCompletionHandler({ (connection, result, error) in
@@ -102,19 +104,22 @@ extension RMAuth {
                 
                 // Update or save user information to backend
                 RMUser.doesUserExist(email!, completion: { (userExists, statusCode) in
+                    print("RMAuth: Status code before going deciding to create user: \(statusCode)")
                     if !userExists {
                         // If user does not exist, create a new one
                         RMUser.createUser(user) { (success, userID) in
                             if success {
                                 let userDefaults = NSUserDefaults.standardUserDefaults()
                                 userDefaults.setValue(userID, forKey: "userID")
+                                userDefaults.setValue(nil, forKey: "groupID")
                                 userDefaults.setValue(email, forKey: "email")
                                 userDefaults.setValue(first_name, forKey: "firstName")
                                 userDefaults.setValue(last_name, forKey: "lastName")
                                 userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
-                        
                                 print("User successfully created")
+                                completionHandler(success: true)
                             } else {
+                                completionHandler(success: false)
                                 print("Creating a new user failed")
                             }
                         }
@@ -130,6 +135,7 @@ extension RMAuth {
                                 userDefaults.setValue(first_name, forKey: "firstName")
                                 userDefaults.setValue(last_name, forKey: "lastName")
                                 userDefaults.setValue(profile_picture_url, forKey: "profilePictureURL")
+                                completionHandler(success: true)
                             }
                         })
                     }

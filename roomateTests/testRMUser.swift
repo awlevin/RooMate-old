@@ -53,7 +53,7 @@ class testRMUser: XCTestCase {
         var testSuccess = false
         
         let userID:Int = 27
-        let newGroupID: Int = 6
+        let newGroupID: Int = 1
         
         RMUser.editRMUserGroupID(userID, newGroupID: newGroupID) { (success) in
             if (success) {
