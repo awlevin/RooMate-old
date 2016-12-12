@@ -21,7 +21,7 @@ public struct RMUser : Hashable {
 
     // BEGIN: Temporary code to test everything with different RMUsers
     static func returnTestUser() -> RMUser {
-        return RMUser(userObjectID: 1, groupID: 1, dateCreatedAt: "00/00/00", firstName: "TestFirst", lastName: "UserLast", email: "testUser@trumpsucks.com", profileImageURL: "N/A", userGroceryLists: nil)
+        return RMUser(userObjectID: 1, groupID: 2, dateCreatedAt: "00/00/00", firstName: "TestFirst", lastName: "UserLast", email: "testUser@trumpsucks.com", profileImageURL: "N/A", userGroceryLists: nil)
     }
     
     static func getCurrentUserFromDefaults() -> RMUser {

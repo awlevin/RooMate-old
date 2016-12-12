@@ -33,6 +33,10 @@ struct RMQueryBackend {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         
+        print("****************REQUEST**************")
+        print("body: \(request.HTTPBody)")
+        print("headerFieldGroupIDValue: \(request.valueForHTTPHeaderField("groupid"))")
+        print("all headerFields: \(request.allHTTPHeaderFields)")
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             

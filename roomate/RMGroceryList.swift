@@ -32,12 +32,15 @@ public struct RMGroceryList {
         case .Personal:
             postFix = "selectRMUserGroceries"
             requestParam = ["userid" :"\(user.userObjectID)"]
+            break
         case .Communal:
             postFix = "selectRMCommunalGroceries"
-            requestParam = ["groupid":"\(user.groupID)"]
+            requestParam = ["groupid":"\(user.groupID!)"]
+            break
         case .Aggregate:
-            postFix = "selectRMCommunalGroceries"
-            requestParam = ["groupid":"\(user.groupID)"]
+            postFix = "selectRMAggregateGroceries"
+            requestParam = ["groupid":"\(user.groupID!)"]
+            break
         }
         
         RMQueryBackend.get("https://damp-plateau-63440.herokuapp.com/\(postFix)", parameters: requestParam) { (success, jsonResponse) in
