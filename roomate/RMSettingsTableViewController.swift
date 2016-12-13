@@ -55,9 +55,9 @@ class RMSettingsTableViewController: UITableViewController {
         // Display user information
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        let groupID = userDefaults.valueForKey("groupID") as? Int
+        let groupID = userDefaults.integerForKey("groupID")
         
-        groupIdLabel.text = "Group ID: \(groupID!)"
+        groupIdLabel.text = "Group ID: \(groupID)"
         
         if let profileImageString = userDefaults.valueForKey("profilePictureURL") as? String {
             profileImageView.imageFromUrl(profileImageString)

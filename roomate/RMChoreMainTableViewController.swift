@@ -207,7 +207,7 @@ class RMChoreMainTableViewController: UITableViewController, ChoreMainTableViewC
         }
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        let groupID = userDefaults.valueForKey("groupID") as! Int
+        let groupID = userDefaults.integerForKey("groupID")
         
         RMChore.getChores(0, lastid: givenLastid, groupId: groupID) { (bbPosts) in
             var fetchedChores = bbPosts

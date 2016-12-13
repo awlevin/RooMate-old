@@ -40,7 +40,7 @@ class RMGroupSelectionVC: UIViewController {
             if groupID != "" {
                 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
-                let userId = userDefaults.valueForKey("userID") as! Int
+                let userId = userDefaults.integerForKey("userID")
                
                 RMGroup.joinHousehold(userId, groupID: Int(groupID!)!, completion: { (success) in
                     if success {
