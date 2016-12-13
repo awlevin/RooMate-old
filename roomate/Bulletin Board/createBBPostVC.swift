@@ -160,6 +160,13 @@ class createBBPostVC: UIViewController, UITextViewDelegate,UICollectionViewDeleg
         RMBulletinPost.createNewBulletinPost(bbObject, user: RMUser.getCurrentUserFromDefaults()) { (completed) in
             if completed {
                 print("COMPLETED")
+                
+                let storyboard = UIStoryboard(name: "Billboard", bundle: nil)
+                let loginViewController = storyboard.instantiateViewControllerWithIdentifier("bulletinBoardVC")
+                UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
+                
+                
+                
             } else {
                 print("NOT COMPLETED")
             }
