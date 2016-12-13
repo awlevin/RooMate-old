@@ -30,13 +30,13 @@ class RMShoppingCheckoutListTableViewController: UITableViewController {
     func checkoutPressed() {
         
         // Grab all the groceries that were checked off
-        for row in 0 ..< aggregateItems!.count {
-            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! RMShoppingCheckoutListTableViewCell
-            
-            if cell.isCheckedOff == true {
-                selectedItems?.append(cell.item!)
-            }
-        }
+//        for row in 0 ..< aggregateItems!.count {
+//            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! RMShoppingCheckoutListTableViewCell
+//            
+//            if cell.isCheckedOff == true {
+//                selectedItems?.append(cell.item!)
+//            }
+//        }
         
         self.performSegueWithIdentifier("InvoiceSegue", sender: self)
     }
