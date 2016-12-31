@@ -41,7 +41,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.18.0):
     - FBSDKCoreKit
-  - OneSignal (2.3.0)
+  - OneSignal (2.3.4)
 
 DEPENDENCIES:
   - Bolts
@@ -61,7 +61,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
   FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
   FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
-  OneSignal: 4c015191ce3ead559394e98eae351f90714e9429
+  OneSignal: c8f0d08ffa30fcf751c97a29639725877027e788
 
 PODFILE CHECKSUM: 1808b711d84f582bc7f5f977a4a2b2ef673976ab
 

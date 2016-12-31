@@ -19,7 +19,6 @@ class RMSettingsTableViewController: UITableViewController {
     @IBAction func leaveGroupButton(sender: AnyObject) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let userId = userDefaults.integerForKey("userID")
-        let groupId = userDefaults.integerForKey("groupID")
         
         RMUser.editRMUserGroupID(userId, newGroupID: nil) { (success) in
             if success {
@@ -63,7 +62,7 @@ class RMSettingsTableViewController: UITableViewController {
             profileImageView.imageFromUrl(profileImageString)
         }
         
-        RMGroup.getUsersInGroup(groupID!) { (success, users) in
+        RMGroup.getUsersInGroup(groupID) { (success, users) in
             print("Get other users success: \(success)")
             if success {
                 print("\(users!)")
