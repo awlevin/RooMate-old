@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C63a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tWM-gw-jk9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TGa-GW-vDI">
+            <objects>
+                <tabBarController storyboardIdentifier="UITabBarController-CAq-BJ-fe1" id="CAq-BJ-fe1" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="sNH-V6-Mgf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Yb3-SZ-nMj" kind="relationship" relationship="viewControllers" id="pEb-vW-yIh"/>
+                        <segue destination="FwR-vg-9o5" kind="relationship" relationship="viewControllers" id="T8y-SI-2nn"/>
+                        <segue destination="UVv-w5-KLU" kind="relationship" relationship="viewControllers" id="ts2-n5-LhD"/>
+                        <segue destination="JzO-rW-Qc2" kind="relationship" relationship="viewControllers" id="rVq-LF-rvW"/>
+                        <segue destination="MuM-wC-NJ7" kind="relationship" relationship="viewControllers" id="IEZ-hs-z13"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPH-hL-UrF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="1714"/>
+        </scene>
+        <!--Chore-->
+        <scene sceneID="Tea-QG-NLG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chore" id="Yb3-SZ-nMj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="tqT-UL-qL6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJs-pX-Xmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="2541"/>
+        </scene>
+        <!--Billboard-->
+        <scene sceneID="xVQ-Og-9Pz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Billboard" id="UVv-w5-KLU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="item" id="48J-XZ-X21"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zed-Fw-NJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1314" y="2540"/>
+        </scene>
+        <!--Shopping-->
+        <scene sceneID="a4h-TY-lgK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shopping" id="FwR-vg-9o5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="cZ8-KU-UpN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yG4-z6-PwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250" y="2544"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="xdc-H7-DWT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="MuM-wC-NJ7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="c3x-is-K7m"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69n-0R-tQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079" y="2544"/>
+        </scene>
+        <!--Finance-->
+        <scene sceneID="AFs-t7-6av">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Finance" id="JzO-rW-Qc2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Fte-hN-VFw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptG-fV-QMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-802" y="2539"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="G4M-0q-jgn">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="tWM-gw-jk9" customClass="RMLoginViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="70h-dN-Pce"/>
+                        <viewControllerLayoutGuide type="bottom" id="IKk-9D-QIg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yWx-qZ-FKU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="ieL-w9-zrA">
+                                <rect key="frame" x="67" y="28" width="241" height="225"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWQ-36-FrU">
+                                <rect key="frame" x="116" y="319" width="144" height="30"/>
+                                <state key="normal" title="Login With Facebook">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonPressed:" destination="tWM-gw-jk9" eventType="touchUpInside" id="25k-Ub-kKb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ieL-w9-zrA" secondAttribute="trailing" constant="51" id="Gcx-dV-dCq"/>
+                            <constraint firstItem="BWQ-36-FrU" firstAttribute="centerX" secondItem="ieL-w9-zrA" secondAttribute="centerX" id="Kr2-RL-WLr"/>
+                            <constraint firstItem="BWQ-36-FrU" firstAttribute="centerY" secondItem="yWx-qZ-FKU" secondAttribute="centerY" id="Wwi-Ma-57d"/>
+                            <constraint firstItem="ieL-w9-zrA" firstAttribute="leading" secondItem="yWx-qZ-FKU" secondAttribute="leadingMargin" constant="51" id="usg-Ch-MMo"/>
+                            <constraint firstItem="ieL-w9-zrA" firstAttribute="top" secondItem="70h-dN-Pce" secondAttribute="bottom" constant="8" id="uut-Wk-eVo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZbH-s5-Lw3"/>
+                    <connections>
+                        <segue destination="nMx-Hg-nfE" kind="show" identifier="segueToConfigGroup" id="g6j-sm-u9g">
+                            <nil key="action"/>
+                        </segue>
+                        <segue destination="CAq-BJ-fe1" kind="presentation" identifier="loginSuccessSegue" id="anX-7J-Ry6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nS-lS-ZbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1201" y="962"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l9G-c2-moi">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="nMx-Hg-nfE" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Uvr-4k-vKf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZLd-1U-MxV" kind="relationship" relationship="rootViewController" id="LPV-9v-Rsd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICt-lm-JCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-438" y="962"/>
+        </scene>
+        <!--RooMate-->
+        <scene sceneID="NAJ-jU-gKr">
+            <objects>
+                <viewController storyboardIdentifier="GroupSelectionVC" title="RooMate" id="ZLd-1U-MxV" customClass="RMGroupSelectionVC" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s8X-P8-Yd3"/>
+                        <viewControllerLayoutGuide type="bottom" id="O7c-wZ-eLJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0nR-nJ-rrT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="rWY-pe-jTI">
+                                <rect key="frame" x="67" y="28" width="241" height="282"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJ3-Ee-Y3O">
+                                <rect key="frame" x="126" y="318" width="124" height="30"/>
+                                <state key="normal" title="Create Household">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createHouseholdPressed:" destination="ZLd-1U-MxV" eventType="touchUpInside" id="hXL-Rm-uYO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6c-Kp-uoU">
+                                <rect key="frame" x="134" y="412" width="107" height="30"/>
+                                <state key="normal" title="Join Household">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinHouseholdPressed:" destination="ZLd-1U-MxV" eventType="touchUpInside" id="eH5-7Z-0dV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rWY-pe-jTI" secondAttribute="trailing" constant="51" id="5Ol-B7-PSe"/>
+                            <constraint firstItem="rWY-pe-jTI" firstAttribute="top" secondItem="s8X-P8-Yd3" secondAttribute="bottom" constant="8" id="Ard-WL-fOg"/>
+                            <constraint firstItem="O7c-wZ-eLJ" firstAttribute="top" secondItem="rWY-pe-jTI" secondAttribute="bottom" constant="357" id="GA5-bV-DWz"/>
+                            <constraint firstItem="RJ3-Ee-Y3O" firstAttribute="centerX" secondItem="rWY-pe-jTI" secondAttribute="centerX" id="J15-Je-Oly"/>
+                            <constraint firstItem="j6c-Kp-uoU" firstAttribute="top" secondItem="RJ3-Ee-Y3O" secondAttribute="bottom" constant="64" id="PfK-TV-ZaI"/>
+                            <constraint firstItem="j6c-Kp-uoU" firstAttribute="centerX" secondItem="RJ3-Ee-Y3O" secondAttribute="centerX" id="bsg-AL-IjJ"/>
+                            <constraint firstItem="rWY-pe-jTI" firstAttribute="leading" secondItem="0nR-nJ-rrT" secondAttribute="leadingMargin" constant="51" id="sw8-gv-OBl"/>
+                            <constraint firstItem="RJ3-Ee-Y3O" firstAttribute="top" secondItem="rWY-pe-jTI" secondAttribute="bottom" constant="8" id="vON-dQ-wvu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RooMate" id="XxJ-RT-QFY"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="CAq-BJ-fe1" kind="presentation" identifier="loginSuccessSegue" id="d9y-Ud-GLA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8t-C7-ePV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="962"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchImage" width="225" height="225"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="d9y-Ud-GLA"/>
+    </inferredMetricsTieBreakers>
+</document>

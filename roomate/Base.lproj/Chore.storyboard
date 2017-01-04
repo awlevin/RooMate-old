@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Fr-KP-B3e">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Chore-->
+        <scene sceneID="Spo-zP-MMO">
+            <objects>
+                <tableViewController id="QSj-36-u49" customClass="RMChoreMainTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="MHY-zJ-PG6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="BtV-Cg-aFz">
+                            <rect key="frame" x="0.0" y="167" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="75" id="M3J-9u-nNJ">
+                                <rect key="frame" x="0.0" y="28" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M3J-9u-nNJ" id="Bd8-Gx-nYR">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="tZr-vO-kQ8" kind="show" identifier="showChoreCompletionHistory" id="hJq-Kj-1gu"/>
+                                    <segue destination="d7X-Gh-Iv5" kind="presentation" identifier="modalAddChoreCompletion" trigger="accessoryAction" id="ubG-mr-2ZH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QSj-36-u49" id="WTG-1W-Toh"/>
+                            <outlet property="delegate" destination="QSj-36-u49" id="JNJ-Oo-0GL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Chore" id="IgR-ik-rDJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PW4-cO-Ol8">
+                            <connections>
+                                <action selector="addBarButtonPressed:" destination="QSj-36-u49" id="fmc-QN-Z4W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAZ-Ll-1Bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312.80000000000001" y="2565.9670164917543"/>
+        </scene>
+        <!--Chore History Table View Controller-->
+        <scene sceneID="gPI-DR-UhU">
+            <objects>
+                <tableViewController id="tZr-vO-kQ8" customClass="RMChoreHistoryTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="CLN-0b-XRW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hz0-55-AEW">
+                            <rect key="frame" x="0.0" y="64" width="320" height="75"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nobody has done anything!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rz-CT-wTH" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                    <rect key="frame" x="144" y="21" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="-1" height="0.5"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="8Rz-CT-wTH" firstAttribute="centerX" secondItem="hz0-55-AEW" secondAttribute="centerX" id="6w7-JE-oyT"/>
+                                <constraint firstItem="8Rz-CT-wTH" firstAttribute="centerY" secondItem="hz0-55-AEW" secondAttribute="centerY" id="tHn-CC-caq"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="JZX-sC-qUp">
+                            <rect key="frame" x="0.0" y="242" width="320" height="75"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="Y6i-5J-9Fg">
+                                <rect key="frame" x="0.0" y="103" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y6i-5J-9Fg" id="AFA-HR-6Xs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="M81-b0-9E8" kind="show" identifier="showChoreCompletionDetail" id="ibT-Wg-FjR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tZr-vO-kQ8" id="hPD-YK-ps1"/>
+                            <outlet property="delegate" destination="tZr-vO-kQ8" id="PFA-vd-VqL"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="headerView" destination="hz0-55-AEW" id="5QE-i0-xmU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cg3-iZ-hd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1451.25" y="2111.6197183098593"/>
+        </scene>
+        <!--Chore-->
+        <scene sceneID="Ays-hz-bXe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fr-KP-B3e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chore" image="chore" id="rj1-UE-PPM"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="X4w-F8-fnt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QSj-36-u49" kind="relationship" relationship="rootViewController" id="SgI-IQ-wPQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZX-2j-UGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-534" y="2566"/>
+        </scene>
+        <!--Chore Completion Detail Table View Controller-->
+        <scene sceneID="6Ae-sx-jdI">
+            <objects>
+                <tableViewController id="M81-b0-9E8" customClass="RMChoreCompletionDetailTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6QA-2b-11V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection id="iTr-Kl-xm2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="75" id="Rr9-Wt-BiI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rr9-Wt-BiI" id="gNQ-tH-g9C">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgl-Pb-mDc" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="22" width="48" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mgl-Pb-mDc" firstAttribute="leading" secondItem="gNQ-tH-g9C" secondAttribute="leadingMargin" id="0Rk-OF-qaE"/>
+                                                <constraint firstItem="Mgl-Pb-mDc" firstAttribute="centerY" secondItem="gNQ-tH-g9C" secondAttribute="centerY" id="A1N-tf-NCj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="ChI-sk-xRm">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ChI-sk-xRm" id="40U-SU-qoe">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ex-Wn-EnF" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="3Ex-Wn-EnF" firstAttribute="leading" secondItem="40U-SU-qoe" secondAttribute="leadingMargin" id="Zxj-AQ-CYB"/>
+                                                <constraint firstItem="3Ex-Wn-EnF" firstAttribute="top" secondItem="40U-SU-qoe" secondAttribute="topMargin" id="itB-w3-c1q"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="65" id="WVg-Ce-ULm">
+                                        <rect key="frame" x="0.0" y="100" width="320" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WVg-Ce-ULm" id="vku-pN-ZoI">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-dc-zO9" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="13" y="34" width="36" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiF-7h-NGB" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="13" y="11" width="50" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="TiF-7h-NGB" secondAttribute="leading" constant="-5" id="EN0-Xt-dpk"/>
+                                                <constraint firstAttribute="topMargin" secondItem="TiF-7h-NGB" secondAttribute="top" constant="-3" id="fog-P9-3Xw"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Ou5-dc-zO9" secondAttribute="leading" constant="-5" id="gLm-aG-dZW"/>
+                                                <constraint firstItem="Ou5-dc-zO9" firstAttribute="top" secondItem="TiF-7h-NGB" secondAttribute="bottom" constant="2" id="otq-Vc-sOd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="hKk-hx-qmr">
+                                        <rect key="frame" x="0.0" y="165" width="320" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hKk-hx-qmr" id="Kv4-Oa-3gD">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niU-4V-SQI" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="niU-4V-SQI" firstAttribute="top" secondItem="Kv4-Oa-3gD" secondAttribute="topMargin" id="0eW-JV-mBe"/>
+                                                <constraint firstItem="niU-4V-SQI" firstAttribute="leading" secondItem="Kv4-Oa-3gD" secondAttribute="leadingMargin" id="8iu-tV-npN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="220" id="MR6-ov-qES">
+                                        <rect key="frame" x="0.0" y="190" width="320" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MR6-ov-qES" id="Gd3-Cb-4xM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFB-al-vTz" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbR-SR-m8k" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="207" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zD-9Z-l9x" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="48" y="19" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDw-VN-dJo" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="224" y="19" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T56-0E-UpH" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="48" width="140" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="Fac-Vy-uTR"/>
+                                                        <constraint firstAttribute="width" constant="140" id="Obk-Gh-81z"/>
+                                                    </constraints>
+                                                    <state key="normal" image="placeholder"/>
+                                                    <connections>
+                                                        <action selector="beforePhotoButtonPressed:" destination="M81-b0-9E8" eventType="touchUpInside" id="XD4-QI-c7I"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-Sk-G7o" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="173" y="48" width="140" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="55T-IT-3v1"/>
+                                                        <constraint firstAttribute="width" constant="140" id="TdM-Ef-bL4"/>
+                                                    </constraints>
+                                                    <state key="normal" image="placeholder"/>
+                                                    <connections>
+                                                        <action selector="afterPhotoButtonPressed:" destination="M81-b0-9E8" eventType="touchUpInside" id="hhM-fT-z74"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3zD-9Z-l9x" firstAttribute="leading" secondItem="Gd3-Cb-4xM" secondAttribute="leadingMargin" constant="40" id="FG8-KM-UiR"/>
+                                                <constraint firstItem="NgR-Sk-G7o" firstAttribute="top" secondItem="sDw-VN-dJo" secondAttribute="bottom" constant="8" id="TT2-Ad-Yfw"/>
+                                                <constraint firstItem="T56-0E-UpH" firstAttribute="centerX" secondItem="3zD-9Z-l9x" secondAttribute="centerX" id="drB-ik-GVp"/>
+                                                <constraint firstItem="T56-0E-UpH" firstAttribute="top" secondItem="3zD-9Z-l9x" secondAttribute="bottom" constant="8" id="h3H-ac-1Tc"/>
+                                                <constraint firstItem="NgR-Sk-G7o" firstAttribute="centerX" secondItem="sDw-VN-dJo" secondAttribute="centerX" id="iUd-JA-ibU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sDw-VN-dJo" secondAttribute="trailing" constant="50" id="knt-j3-ocq"/>
+                                                <constraint firstItem="3zD-9Z-l9x" firstAttribute="top" secondItem="Gd3-Cb-4xM" secondAttribute="topMargin" constant="11" id="o9q-tP-d5d"/>
+                                                <constraint firstItem="sDw-VN-dJo" firstAttribute="top" secondItem="Gd3-Cb-4xM" secondAttribute="topMargin" constant="11" id="y74-pQ-0FB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="irw-mX-I7y">
+                                        <rect key="frame" x="0.0" y="410" width="320" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="irw-mX-I7y" id="TPt-uY-6ND">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub1-de-uN2" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="ub1-de-uN2" firstAttribute="leading" secondItem="TPt-uY-6ND" secondAttribute="leadingMargin" id="Ney-Iu-aRR"/>
+                                                <constraint firstItem="ub1-de-uN2" firstAttribute="top" secondItem="TPt-uY-6ND" secondAttribute="topMargin" id="leV-KK-HuS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="I6H-lH-Mk5">
+                                        <rect key="frame" x="0.0" y="435" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I6H-lH-Mk5" id="Ujq-cp-j8E">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gzb-aW-nTM">
+                                                    <rect key="frame" x="8" y="37" width="304" height="55"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIe-Cw-9D7" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="topMargin" secondItem="lIe-Cw-9D7" secondAttribute="top" id="E3D-ld-BJY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gzb-aW-nTM" secondAttribute="bottom" id="IZq-ya-0Ad"/>
+                                                <constraint firstItem="gzb-aW-nTM" firstAttribute="centerX" secondItem="Ujq-cp-j8E" secondAttribute="centerX" id="M4O-Fv-MEm"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="gzb-aW-nTM" secondAttribute="leading" id="isO-iv-Jrp"/>
+                                                <constraint firstItem="gzb-aW-nTM" firstAttribute="top" secondItem="lIe-Cw-9D7" secondAttribute="bottom" constant="8" id="phZ-By-sth"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gzb-aW-nTM" secondAttribute="trailing" id="rHm-XI-2o5"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="lIe-Cw-9D7" secondAttribute="leading" id="vo7-FR-ekX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="M81-b0-9E8" id="KTk-et-Ug6"/>
+                            <outlet property="delegate" destination="M81-b0-9E8" id="m5J-gt-cds"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="afterPhotoButton" destination="NgR-Sk-G7o" id="V8D-zu-9Gg"/>
+                        <outlet property="beforePhotoButton" destination="T56-0E-UpH" id="L8u-8B-StQ"/>
+                        <outlet property="dateLabel" destination="Ou5-dc-zO9" id="Mmi-YR-dg3"/>
+                        <outlet property="nameLabel" destination="TiF-7h-NGB" id="Zzr-DX-E66"/>
+                        <outlet property="notesTextView" destination="gzb-aW-nTM" id="ht0-mi-rVx"/>
+                        <outlet property="titleLabel" destination="Mgl-Pb-mDc" id="k5n-rO-gc8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PKU-0k-AYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349.5999999999999" y="2111.6941529235382"/>
+        </scene>
+        <!--Complete Chore-->
+        <scene sceneID="fmd-G7-Byy">
+            <objects>
+                <tableViewController id="nSP-Au-OhZ" customClass="RMChoreAddCompletionTableViewController" customModule="roomate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5SC-ZJ-R2m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection id="Dyg-WF-gqb">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="75" id="re8-0e-osq">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="re8-0e-osq" id="CLd-OE-1rW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-fI-DV0" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="22" width="48" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aDe-fI-DV0" firstAttribute="centerY" secondItem="CLd-OE-1rW" secondAttribute="centerY" id="NqH-tn-zMj"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="aDe-fI-DV0" secondAttribute="leading" id="Svf-eA-zFg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="F6L-LV-Be1">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6L-LV-Be1" id="OAo-XW-gEM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9o-Kv-WJl" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="l9o-Kv-WJl" firstAttribute="leading" secondItem="OAo-XW-gEM" secondAttribute="leadingMargin" id="CfY-PG-auN"/>
+                                                <constraint firstItem="l9o-Kv-WJl" firstAttribute="top" secondItem="OAo-XW-gEM" secondAttribute="topMargin" id="PFE-ga-nTF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="220" id="ZcV-7Q-db5">
+                                        <rect key="frame" x="0.0" y="100" width="320" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZcV-7Q-db5" id="0P5-2f-kCV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMq-uU-XiE" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xph-6L-sbQ" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="207" width="0.0" height="0.0"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v8-H3-wQA" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="48" y="19" width="55" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="950-jq-347" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="224" y="19" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmq-DK-JOP" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="6" y="48" width="140" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="2Mc-i4-MRW"/>
+                                                        <constraint firstAttribute="height" constant="140" id="CGu-bW-A8y"/>
+                                                    </constraints>
+                                                    <state key="normal" image="placeholder"/>
+                                                    <connections>
+                                                        <action selector="beforePhotoButtonPressed:" destination="nSP-Au-OhZ" eventType="touchUpInside" id="oIn-eD-kf9"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jau-Gl-vhg" customClass="RMRoundedButton" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="173" y="48" width="140" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="2w7-Am-1FT"/>
+                                                        <constraint firstAttribute="width" constant="140" id="jOs-PH-NvU"/>
+                                                    </constraints>
+                                                    <state key="normal" image="placeholder"/>
+                                                    <connections>
+                                                        <action selector="afterPhotoButtonPressed:" destination="nSP-Au-OhZ" eventType="touchUpInside" id="UPI-or-CjQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vmq-DK-JOP" firstAttribute="top" secondItem="7v8-H3-wQA" secondAttribute="bottom" constant="8" id="8a7-Ey-0tJ"/>
+                                                <constraint firstItem="7v8-H3-wQA" firstAttribute="leading" secondItem="0P5-2f-kCV" secondAttribute="leadingMargin" constant="40" id="F4L-xW-bdk"/>
+                                                <constraint firstItem="vmq-DK-JOP" firstAttribute="centerX" secondItem="7v8-H3-wQA" secondAttribute="centerX" id="Mss-8f-2V4"/>
+                                                <constraint firstItem="950-jq-347" firstAttribute="top" secondItem="0P5-2f-kCV" secondAttribute="topMargin" constant="11" id="X5i-a5-VtB"/>
+                                                <constraint firstItem="Jau-Gl-vhg" firstAttribute="centerX" secondItem="950-jq-347" secondAttribute="centerX" id="iH7-BA-gS5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="950-jq-347" secondAttribute="trailing" constant="50" id="o6u-Qo-zzj"/>
+                                                <constraint firstItem="7v8-H3-wQA" firstAttribute="top" secondItem="0P5-2f-kCV" secondAttribute="topMargin" constant="11" id="rG2-H0-jFM"/>
+                                                <constraint firstItem="Jau-Gl-vhg" firstAttribute="top" secondItem="950-jq-347" secondAttribute="bottom" constant="8" id="wpp-vc-5QY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="SNN-vq-a0n">
+                                        <rect key="frame" x="0.0" y="320" width="320" height="25"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SNN-vq-a0n" id="Mlw-OA-XXq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lk-tc-Ocj" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="6lk-tc-Ocj" firstAttribute="top" secondItem="Mlw-OA-XXq" secondAttribute="topMargin" id="Dem-Kv-gJZ"/>
+                                                <constraint firstItem="6lk-tc-Ocj" firstAttribute="leading" secondItem="Mlw-OA-XXq" secondAttribute="leadingMargin" id="Hha-ml-hRf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="130" id="qcy-wO-KiV">
+                                        <rect key="frame" x="0.0" y="345" width="320" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qcy-wO-KiV" id="0RX-ZL-14d">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VaI-bl-A6H">
+                                                    <rect key="frame" x="8" y="37" width="304" height="85"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdr-cC-U0q" customClass="RMThinLabel" customModule="roomate" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VaI-bl-A6H" secondAttribute="trailing" id="Jbu-3o-mzt"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="VaI-bl-A6H" secondAttribute="leading" id="OBq-Ls-F6k"/>
+                                                <constraint firstItem="VaI-bl-A6H" firstAttribute="centerX" secondItem="0RX-ZL-14d" secondAttribute="centerX" id="XWm-eU-Pbo"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Kdr-cC-U0q" secondAttribute="leading" id="a6H-Cg-SgL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VaI-bl-A6H" secondAttribute="bottom" id="o2E-a9-SHA"/>
+                                                <constraint firstItem="VaI-bl-A6H" firstAttribute="top" secondItem="Kdr-cC-U0q" secondAttribute="bottom" constant="8" id="oLf-gj-a7N"/>
+                                                <constraint firstAttribute="topMargin" secondItem="Kdr-cC-U0q" secondAttribute="top" id="rBb-Mz-J2i"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nSP-Au-OhZ" id="izo-86-f1Y"/>
+                            <outlet property="delegate" destination="nSP-Au-OhZ" id="gYk-kX-ttu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Complete Chore" id="NEo-3c-A2l">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="e1f-0N-b8D">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeButtonPressed:" destination="nSP-Au-OhZ" id="te0-Hp-mcG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="check" id="u2K-6P-9aX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="completeButtonPressed:" destination="nSP-Au-OhZ" id="oNK-16-sE4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="afterPhotoButton" destination="Jau-Gl-vhg" id="Ttw-ne-hyn"/>
+                        <outlet property="beforePhotoButton" destination="vmq-DK-JOP" id="A6Z-yz-F7e"/>
+                        <outlet property="noteTextView" destination="VaI-bl-A6H" id="ith-KB-qjb"/>
+                        <outlet property="titleLabel" destination="aDe-fI-DV0" id="N5F-tE-VxP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNj-gX-q28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349.5999999999999" y="3019.3403298350827"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q0j-1g-oUg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d7X-Gh-Iv5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Tc9-ot-1UF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.89019607840000003" green="0.42352941179999998" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nSP-Au-OhZ" kind="relationship" relationship="rootViewController" id="L7I-iA-iX4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VmQ-5x-eVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="3020.2398800599703"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="check" width="28" height="28"/>
+        <image name="chore" width="28" height="28"/>
+        <image name="close" width="28" height="30"/>
+        <image name="placeholder" width="286" height="176"/>
+    </resources>
+</document>
