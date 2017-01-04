@@ -1,3 +1,5 @@
+This is a group project developed by a team of myself and 3 other students in CS 506, Software Engineering. This is a temporary public repo that we made to hold us over until we regain contact with the owner of our old private repo. We'd like to maintain our commit history so our respective contributions are easier to access. This repo will likely be deleted once the private one is made public.
+
 #Heroku Backend
 
 ##### In order to see the test content on the heroku app, visit the following links:
