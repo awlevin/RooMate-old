@@ -1,0 +1,68 @@
+PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - Braintree/Apple-Pay (4.7.3):
+    - Braintree/Core
+  - Braintree/Card (4.7.3):
+    - Braintree/Core
+  - Braintree/Core (4.7.3)
+  - Braintree/PayPal (4.7.3):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.7.3):
+    - Braintree/Core
+    - Braintree/PayPalUtils
+  - Braintree/PayPalOneTouch (4.7.3):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+    - Braintree/PayPalUtils
+  - Braintree/PayPalUtils (4.7.3)
+  - Braintree/UnionPay (4.7.3):
+    - Braintree/Card
+    - Braintree/Core
+  - Braintree/Venmo (4.7.3):
+    - Braintree/Core
+    - Braintree/PayPalDataCollector
+  - BraintreeDropIn (5.0.1):
+    - BraintreeDropIn/DropIn (= 5.0.1)
+  - BraintreeDropIn/DropIn (5.0.1):
+    - Braintree/Card (~> 4.0)
+    - Braintree/Core (~> 4.0)
+    - Braintree/UnionPay (~> 4.0)
+    - BraintreeDropIn/UIKit
+  - BraintreeDropIn/UIKit (5.0.1)
+  - FBSDKCoreKit (4.18.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.18.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.18.0):
+    - FBSDKCoreKit
+  - OneSignal (2.3.0)
+
+DEPENDENCIES:
+  - Bolts
+  - Braintree/Apple-Pay
+  - Braintree/PayPal
+  - Braintree/Venmo
+  - BraintreeDropIn
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - OneSignal
+
+SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Braintree: 3eee856da5d30357a55439283b4bb3dbaddcaa7c
+  BraintreeDropIn: c271f42485e5a62232fe471f854bbf1003ad95d1
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
+  FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
+  OneSignal: 4c015191ce3ead559394e98eae351f90714e9429
+
+PODFILE CHECKSUM: 1808b711d84f582bc7f5f977a4a2b2ef673976ab
+
+COCOAPODS: 1.1.1

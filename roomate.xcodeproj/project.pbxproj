@@ -1,0 +1,1259 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4214D5051DD14A4B00739747 /* SRMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */; };
+		422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */; };
+		422B65C91DC86092003A911D /* DetailBBPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */; };
+		4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423053491DC1302F003AE80B /* RMBulletin.swift */; };
+		4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534B1DC1338B003AE80B /* RMGroup.swift */; };
+		4230534F1DC134FE003AE80B /* RMGroupSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4230534E1DC134FE003AE80B /* RMGroupSelectionVC.swift */; };
+		424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */; };
+		4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */; };
+		4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */; };
+		4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2961DA0314C002F7FA7 /* Assets.xcassets */; };
+		4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */; };
+		426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */; };
+		426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */; };
+		426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426C7E491DC14BB300A2C749 /* RMChore.swift */; };
+		42A4674D1DE67873003CEAD1 /* roomateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A4674C1DE67873003CEAD1 /* roomateUITests.swift */; };
+		42A467541DE67879003CEAD1 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A467441DE677CB003CEAD1 /* UITests.swift */; };
+		42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */; };
+		42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */; };
+		42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */; };
+		42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */; };
+		42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */; };
+		42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */; };
+		42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EB6B961DD10DE7002780BB /* createBBPostVC.swift */; };
+		800EF1098A22C497F58FD6F6 /* Pods_roomateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */; };
+		858F81CF1DFB50C700F4D551 /* testRMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */; };
+		85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */; };
+		85A98BD41DFE63B700E68A3C /* testGetCurrentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */; };
+		85BBF47E1DFA16F900506988 /* roomateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BBF47D1DFA16F900506988 /* roomateTests.swift */; };
+		85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B716921DF7341600DA00BD /* testRMQueryBackend.swift */; };
+		85BBF4861DFA170700506988 /* testRMChore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B81DF6977400ED84FC /* testRMChore.swift */; };
+		85BBF4871DFA170700506988 /* testRMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */; };
+		85BBF4891DFA170700506988 /* testRMGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B386F1DF7782D0050BDE7 /* testRMGroup.swift */; };
+		85BBF48A1DFA170700506988 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4250E2A61DA0314C002F7FA7 /* Info.plist */; };
+		85BBF48C1DFA174D00506988 /* testRMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B41DF674C200ED84FC /* testRMUser.swift */; };
+		85D6E2B71DF68AD300ED84FC /* RMQueryBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */; };
+		85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F01DC7EE39008CA377 /* RMUser.swift */; };
+		85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F21DC7F374008CA377 /* RMGroceryList.swift */; };
+		85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F41DC7F71F008CA377 /* RMGrocery.swift */; };
+		85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F61DC808CE008CA377 /* RMFinanceBill.swift */; };
+		85F003F91DC80A8F008CA377 /* RMNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */; };
+		900C6D431DB80FF500D27507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D411DB80FF500D27507 /* Main.storyboard */; };
+		900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D481DB81CD800D27507 /* Chore.storyboard */; };
+		900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4B1DB81CF900D27507 /* Billboard.storyboard */; };
+		900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D4D1DB81D1600D27507 /* Shopping.storyboard */; };
+		900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900C6D501DB81D3800D27507 /* Settings.storyboard */; };
+		9021CC431DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CC421DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift */; };
+		9021CC451DF2781900653FA5 /* RMFinanceHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9021CC441DF2781900653FA5 /* RMFinanceHistoryTableViewCell.xib */; };
+		9021CC471DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CC461DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift */; };
+		9021CCB61DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CCB51DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift */; };
+		9021CCB81DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CCB71DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift */; };
+		9021CCBE1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9021CCBD1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift */; };
+		903C21521DEF7E52001D5689 /* RMThinLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903C21511DEF7E52001D5689 /* RMThinLabel.swift */; };
+		903C21561DEFAAC0001D5689 /* RMInvoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903C21551DEFAAC0001D5689 /* RMInvoice.swift */; };
+		905EB7BA1DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */; };
+		905EB7BC1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905EB7BB1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift */; };
+		906916A11DFF36EB00A439A4 /* testRMGrocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906916A01DFF36EB00A439A4 /* testRMGrocery.swift */; };
+		908027661DEE333500918D1D /* RMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908027651DEE333400918D1D /* RMUtility.swift */; };
+		908027691DEE397900918D1D /* Finance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908027671DEE397900918D1D /* Finance.storyboard */; };
+		9080276B1DEE3E1000918D1D /* RMExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276A1DEE3E1000918D1D /* RMExtensions.swift */; };
+		9080276D1DEE401B00918D1D /* RMRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080276C1DEE401B00918D1D /* RMRoundedButton.swift */; };
+		9097F4901DC80DEE0056FA78 /* RMFinanceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F48F1DC80DEE0056FA78 /* RMFinanceMainViewController.swift */; };
+		9097F4921DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4911DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift */; };
+		9097F49C1DC814F20056FA78 /* RMDebtsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F49B1DC814F20056FA78 /* RMDebtsTableViewCell.xib */; };
+		9097F49E1DC8156D0056FA78 /* RMDebtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F49D1DC8156D0056FA78 /* RMDebtsTableViewCell.swift */; };
+		9097F4A01DC8178A0056FA78 /* RMDebtorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F49F1DC8178A0056FA78 /* RMDebtorsTableViewCell.xib */; };
+		9097F4A21DC817CC0056FA78 /* RMDebtorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4A11DC817CC0056FA78 /* RMDebtorsTableViewCell.swift */; };
+		9097F4A41DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4A31DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib */; };
+		9097F4A61DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */; };
+		9097F4AB1DC860050056FA78 /* RMChoreMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4AA1DC860050056FA78 /* RMChoreMainTableViewController.swift */; };
+		9097F4AD1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4AC1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib */; };
+		9097F4BA1DC872760056FA78 /* RMChoreHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4B91DC872760056FA78 /* RMChoreHistoryTableViewController.swift */; };
+		9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4BB1DC872F80056FA78 /* RMChoreMainTableViewCell.swift */; };
+		9097F4C11DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C01DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift */; };
+		9097F4C31DC874130056FA78 /* RMChoreCompletionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4C21DC874130056FA78 /* RMChoreCompletionTableViewCell.xib */; };
+		9097F4C71DC909040056FA78 /* RMShoppingMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4C61DC909040056FA78 /* RMShoppingMainViewController.swift */; };
+		9097F4CB1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4CA1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift */; };
+		9097F4CD1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4CC1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib */; };
+		9097F4CF1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4CE1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift */; };
+		9097F4D31DC91AA90056FA78 /* RMShoppingMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4D21DC91AA90056FA78 /* RMShoppingMainTableViewController.swift */; };
+		9097F4D51DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4D41DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib */; };
+		9097F4D71DC91B420056FA78 /* RMShoppingMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4D61DC91B420056FA78 /* RMShoppingMainTableViewCell.swift */; };
+		9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib */; };
+		9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift */; };
+		90B523AF1DF14A2C00CB7E18 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */; };
+		90B523B01DF14A2C00CB7E18 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */; };
+		90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */; };
+		90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B693351DBF0B480052A6BF /* RMAuth.swift */; };
+		90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90B693381DBF0D110052A6BF /* GoogleService-Info.plist */; };
+		90FF3AC51DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */; };
+		95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4250E2811DA0314C002F7FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4250E2881DA0314C002F7FA7;
+			remoteInfo = roomate;
+		};
+		85BBF4801DFA16F900506988 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4250E2811DA0314C002F7FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4250E2881DA0314C002F7FA7;
+			remoteInfo = roomate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.debug.xcconfig"; sourceTree = "<group>"; };
+		4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRMBulletinPost.swift; path = "RM API Classes/SRMBulletinPost.swift"; sourceTree = "<group>"; };
+		422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBPhotoCell.swift; path = "Bulletin Board/DetailBBPhotoCell.swift"; sourceTree = "<group>"; };
+		422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBPhotoCell.xib; path = "Bulletin Board/DetailBBPhotoCell.xib"; sourceTree = "<group>"; };
+		423053491DC1302F003AE80B /* RMBulletin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletin.swift; path = RMClasses/RMBulletin.swift; sourceTree = "<group>"; };
+		4230534B1DC1338B003AE80B /* RMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMGroup.swift; path = RMClasses/RMGroup.swift; sourceTree = "<group>"; };
+		4230534E1DC134FE003AE80B /* RMGroupSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMGroupSelectionVC.swift; path = Login/RMGroupSelectionVC.swift; sourceTree = "<group>"; };
+		424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBulletinPost.swift; path = RMClasses/RMBulletinPost.swift; sourceTree = "<group>"; };
+		4250E2891DA0314C002F7FA7 /* roomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4250E2941DA0314C002F7FA7 /* roomate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = roomate.xcdatamodel; sourceTree = "<group>"; };
+		4250E2961DA0314C002F7FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4250E2991DA0314C002F7FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4250E29B1DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4250E2A41DA0314C002F7FA7 /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
+		4250E2A61DA0314C002F7FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginStringConst.swift; path = Login/LoginStringConst.swift; sourceTree = "<group>"; };
+		426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = RMImageSet.xcassets; path = RMAssets/RMImageSet.xcassets; sourceTree = "<group>"; };
+		426C7E491DC14BB300A2C749 /* RMChore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMChore.swift; path = RMClasses/RMChore.swift; sourceTree = "<group>"; };
+		42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RMBBPostTests.swift; path = roomateTests/RMBBPostTests.swift; sourceTree = SOURCE_ROOT; };
+		42A467441DE677CB003CEAD1 /* UITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITests.swift; path = roomateTests/UITests.swift; sourceTree = SOURCE_ROOT; };
+		42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A4674C1DE67873003CEAD1 /* roomateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateUITests.swift; sourceTree = "<group>"; };
+		42A4674E1DE67873003CEAD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BulletinBoardVC.swift; path = "Bulletin Board/BulletinBoardVC.swift"; sourceTree = "<group>"; };
+		42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BulletinBoardCellCollectionViewCell.swift; path = "Bulletin Board/BulletinBoardCellCollectionViewCell.swift"; sourceTree = "<group>"; };
+		42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BulletinBoardCellCollectionViewCell.xib; path = "Bulletin Board/BulletinBoardCellCollectionViewCell.xib"; sourceTree = "<group>"; };
+		42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBCommentCell.swift; path = "Bulletin Board/DetailBBCommentCell.swift"; sourceTree = "<group>"; };
+		42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailBBCommentCell.xib; path = "Bulletin Board/DetailBBCommentCell.xib"; sourceTree = "<group>"; };
+		42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailBBViewController.swift; path = "Bulletin Board/DetailBBViewController.swift"; sourceTree = "<group>"; };
+		42EB6B961DD10DE7002780BB /* createBBPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = createBBPostVC.swift; path = "Bulletin Board/createBBPostVC.swift"; sourceTree = "<group>"; };
+		6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomate.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomate/Pods-roomate.release.xcconfig"; sourceTree = "<group>"; };
+		858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGrocery.swift; sourceTree = "<group>"; };
+		85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletion.swift; sourceTree = "<group>"; };
+		859B386F1DF7782D0050BDE7 /* testRMGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroup.swift; sourceTree = "<group>"; };
+		85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testGetCurrentTime.swift; sourceTree = "<group>"; };
+		85B716921DF7341600DA00BD /* testRMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testRMQueryBackend.swift; path = ../roomate/testRMQueryBackend.swift; sourceTree = "<group>"; };
+		85B8EE901DF9BF3C001F7B3B /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
+		85B8EE921DF9BF3C001F7B3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85BBF47B1DFA16F900506988 /* roomateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = roomateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85BBF47D1DFA16F900506988 /* roomateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomateTests.swift; sourceTree = "<group>"; };
+		85BBF47F1DFA16F900506988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGroceryList.swift; sourceTree = "<group>"; };
+		85D6E2B41DF674C200ED84FC /* testRMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMUser.swift; sourceTree = "<group>"; };
+		85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMQueryBackend.swift; sourceTree = "<group>"; };
+		85D6E2B81DF6977400ED84FC /* testRMChore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = testRMChore.swift; path = ../roomate/testRMChore.swift; sourceTree = "<group>"; };
+		85F003F01DC7EE39008CA377 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
+		85F003F21DC7F374008CA377 /* RMGroceryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGroceryList.swift; sourceTree = "<group>"; };
+		85F003F41DC7F71F008CA377 /* RMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMGrocery.swift; sourceTree = "<group>"; };
+		85F003F61DC808CE008CA377 /* RMFinanceBill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceBill.swift; sourceTree = "<group>"; };
+		85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMNotificationManager.swift; sourceTree = "<group>"; };
+		900C6D421DB80FF500D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		900C6D491DB81CD800D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chore.storyboard; sourceTree = "<group>"; };
+		900C6D4B1DB81CF900D27507 /* Billboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Billboard.storyboard; sourceTree = "<group>"; };
+		900C6D4E1DB81D1600D27507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shopping.storyboard; sourceTree = "<group>"; };
+		900C6D501DB81D3800D27507 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9021CC421DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceHistoryTableViewController.swift; sourceTree = "<group>"; };
+		9021CC441DF2781900653FA5 /* RMFinanceHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMFinanceHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		9021CC461DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		9021CCB51DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletionDetailTableViewController.swift; sourceTree = "<group>"; };
+		9021CCB71DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreAddCompletionTableViewController.swift; sourceTree = "<group>"; };
+		9021CCBD1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingAddItemTableViewController.swift; sourceTree = "<group>"; };
+		903C21511DEF7E52001D5689 /* RMThinLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMThinLabel.swift; sourceTree = "<group>"; };
+		903C21551DEFAAC0001D5689 /* RMInvoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMInvoice.swift; sourceTree = "<group>"; };
+		905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutListTableViewController.swift; sourceTree = "<group>"; };
+		905EB7BB1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMSettingsTableViewController.swift; sourceTree = "<group>"; };
+		906916A01DFF36EB00A439A4 /* testRMGrocery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testRMGrocery.swift; sourceTree = "<group>"; };
+		908027651DEE333400918D1D /* RMUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUtility.swift; sourceTree = "<group>"; };
+		908027681DEE397900918D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Finance.storyboard; sourceTree = "<group>"; };
+		9080276A1DEE3E1000918D1D /* RMExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMExtensions.swift; sourceTree = "<group>"; };
+		9080276C1DEE401B00918D1D /* RMRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMRoundedButton.swift; sourceTree = "<group>"; };
+		9097F48D1DC8062E0056FA78 /* roomate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = roomate.entitlements; sourceTree = "<group>"; };
+		9097F48F1DC80DEE0056FA78 /* RMFinanceMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceMainViewController.swift; sourceTree = "<group>"; };
+		9097F4911DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceContainerTableViewController.swift; sourceTree = "<group>"; };
+		9097F49B1DC814F20056FA78 /* RMDebtsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMDebtsTableViewCell.xib; sourceTree = "<group>"; };
+		9097F49D1DC8156D0056FA78 /* RMDebtsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMDebtsTableViewCell.swift; sourceTree = "<group>"; };
+		9097F49F1DC8178A0056FA78 /* RMDebtorsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMDebtorsTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4A11DC817CC0056FA78 /* RMDebtorsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMDebtorsTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4A31DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMFinanceInvoiceTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4AA1DC860050056FA78 /* RMChoreMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreMainTableViewController.swift; sourceTree = "<group>"; };
+		9097F4AC1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMChoreMainTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4B91DC872760056FA78 /* RMChoreHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreHistoryTableViewController.swift; sourceTree = "<group>"; };
+		9097F4BB1DC872F80056FA78 /* RMChoreMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreMainTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4C01DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMChoreCompletionTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4C21DC874130056FA78 /* RMChoreCompletionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMChoreCompletionTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4C61DC909040056FA78 /* RMShoppingMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingMainViewController.swift; sourceTree = "<group>"; };
+		9097F4CA1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingHistoryTableViewController.swift; sourceTree = "<group>"; };
+		9097F4CC1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4CE1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4D21DC91AA90056FA78 /* RMShoppingMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingMainTableViewController.swift; sourceTree = "<group>"; };
+		9097F4D41DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingMainTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4D61DC91B420056FA78 /* RMShoppingMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingMainTableViewCell.swift; sourceTree = "<group>"; };
+		9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RMShoppingCheckoutListTableViewCell.xib; sourceTree = "<group>"; };
+		9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMShoppingCheckoutListTableViewCell.swift; sourceTree = "<group>"; };
+		90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMLoginViewController.swift; sourceTree = "<group>"; };
+		90B693351DBF0B480052A6BF /* RMAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMAuth.swift; sourceTree = "<group>"; };
+		90B693381DBF0D110052A6BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMFinanceInvoiceTableViewController.swift; sourceTree = "<group>"; };
+		A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roomateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests.release.xcconfig"; sourceTree = "<group>"; };
+		AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roomateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4250E2861DA0314C002F7FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E854C94E629BAE9CB1218F /* Pods_roomate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A467471DE67873003CEAD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85BBF4781DFA16F900506988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				800EF1098A22C497F58FD6F6 /* Pods_roomateTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4214D5031DD14A1500739747 /* RM API Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4214D5041DD14A4B00739747 /* SRMBulletinPost.swift */,
+				42A467421DE676E1003CEAD1 /* RMBBPostTests.swift */,
+				42A467441DE677CB003CEAD1 /* UITests.swift */,
+			);
+			name = "RM API Classes";
+			sourceTree = "<group>";
+		};
+		4230534D1DC134B8003AE80B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				90B693331DBF0ADB0052A6BF /* RMLoginViewController.swift */,
+				4230534E1DC134FE003AE80B /* RMGroupSelectionVC.swift */,
+				426C7E441DC13F2B00A2C749 /* LoginStringConst.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		423BEAD51DC7B8FB000C7500 /* Bulletin Board */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D4B1DB81CF900D27507 /* Billboard.storyboard */,
+				42D15D5B1DC7C42B00D0E481 /* BulletinBoardVC.swift */,
+				42D15D5D1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift */,
+				42D15D5E1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib */,
+				42E188CA1DC8248B00A75830 /* DetailBBViewController.swift */,
+				422B65C61DC86092003A911D /* DetailBBPhotoCell.swift */,
+				422B65C71DC86092003A911D /* DetailBBPhotoCell.xib */,
+				42D220091DC8F5A900607667 /* DetailBBCommentCell.swift */,
+				42D2200A1DC8F5A900607667 /* DetailBBCommentCell.xib */,
+				42EB6B961DD10DE7002780BB /* createBBPostVC.swift */,
+			);
+			name = "Bulletin Board";
+			sourceTree = "<group>";
+		};
+		424CF5D91DB8033F00B24160 /* RMClasses */ = {
+			isa = PBXGroup;
+			children = (
+				85D6E2B61DF68AD300ED84FC /* RMQueryBackend.swift */,
+				85F003F81DC80A8F008CA377 /* RMNotificationManager.swift */,
+				90B693351DBF0B480052A6BF /* RMAuth.swift */,
+				424CF5DA1DB803D400B24160 /* RMBulletinPost.swift */,
+				423053491DC1302F003AE80B /* RMBulletin.swift */,
+				85F003F01DC7EE39008CA377 /* RMUser.swift */,
+				4230534B1DC1338B003AE80B /* RMGroup.swift */,
+				85F003F61DC808CE008CA377 /* RMFinanceBill.swift */,
+				85F003F41DC7F71F008CA377 /* RMGrocery.swift */,
+				85F003F21DC7F374008CA377 /* RMGroceryList.swift */,
+				426C7E491DC14BB300A2C749 /* RMChore.swift */,
+				85976B451DEE595B00E41ED3 /* RMChoreCompletion.swift */,
+			);
+			name = RMClasses;
+			sourceTree = "<group>";
+		};
+		4250E2801DA0314C002F7FA7 = {
+			isa = PBXGroup;
+			children = (
+				4250E28B1DA0314C002F7FA7 /* roomate */,
+				4250E2A31DA0314C002F7FA7 /* roomateTests */,
+				42A4674B1DE67873003CEAD1 /* roomateUITests */,
+				85B8EE8F1DF9BF3C001F7B3B /* roomateTests */,
+				85BBF47C1DFA16F900506988 /* roomateTests */,
+				4250E28A1DA0314C002F7FA7 /* Products */,
+				C2B9AB08BB8E9DEE2E0A3CEB /* Pods */,
+				FB8955C69BEA0A5836D29C30 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4250E28A1DA0314C002F7FA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2891DA0314C002F7FA7 /* roomate.app */,
+				42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */,
+				85BBF47B1DFA16F900506988 /* roomateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4250E28B1DA0314C002F7FA7 /* roomate */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D411DB80FF500D27507 /* Main.storyboard */,
+				4250E28C1DA0314C002F7FA7 /* AppDelegate.swift */,
+				4214D5031DD14A1500739747 /* RM API Classes */,
+				424CF5D91DB8033F00B24160 /* RMClasses */,
+				423BEAD51DC7B8FB000C7500 /* Bulletin Board */,
+				426C7E461DC1404C00A2C749 /* Assets */,
+				4230534D1DC134B8003AE80B /* Login */,
+				9097F48E1DC80D810056FA78 /* Finance */,
+				9097F4A71DC82F7A0056FA78 /* Chore */,
+				9097F4A81DC835580056FA78 /* Shopping */,
+				9097F4A91DC835F50056FA78 /* Settings */,
+				90B693371DBF0D070052A6BF /* Supporting Files */,
+				90B6933A1DBF0D2B0052A6BF /* Core Data */,
+			);
+			path = roomate;
+			sourceTree = "<group>";
+		};
+		4250E2A31DA0314C002F7FA7 /* roomateTests */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2A41DA0314C002F7FA7 /* roomateTests.swift */,
+				85B716921DF7341600DA00BD /* testRMQueryBackend.swift */,
+				85D6E2B41DF674C200ED84FC /* testRMUser.swift */,
+				859B386F1DF7782D0050BDE7 /* testRMGroup.swift */,
+				85D6E2B81DF6977400ED84FC /* testRMChore.swift */,
+				906916A01DFF36EB00A439A4 /* testRMGrocery.swift */,
+				858F81CE1DFB50C700F4D551 /* testRMGrocery.swift */,
+				85D6E2B21DF6741A00ED84FC /* testRMGroceryList.swift */,
+				4250E2A61DA0314C002F7FA7 /* Info.plist */,
+				85A98BD31DFE63B700E68A3C /* testGetCurrentTime.swift */,
+			);
+			path = roomateTests;
+			sourceTree = "<group>";
+		};
+		426C7E461DC1404C00A2C749 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				426C7E471DC1407C00A2C749 /* RMImageSet.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		42A4674B1DE67873003CEAD1 /* roomateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42A4674C1DE67873003CEAD1 /* roomateUITests.swift */,
+				42A4674E1DE67873003CEAD1 /* Info.plist */,
+			);
+			path = roomateUITests;
+			sourceTree = "<group>";
+		};
+		85986D5A1DE9232900116EEA /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				9021CCBD1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		85B8EE8F1DF9BF3C001F7B3B /* roomateTests */ = {
+			isa = PBXGroup;
+			children = (
+				85B8EE901DF9BF3C001F7B3B /* roomateTests.swift */,
+				85B8EE921DF9BF3C001F7B3B /* Info.plist */,
+			);
+			path = roomateTests;
+			sourceTree = "<group>";
+		};
+		85BBF47C1DFA16F900506988 /* roomateTests */ = {
+			isa = PBXGroup;
+			children = (
+				85BBF47D1DFA16F900506988 /* roomateTests.swift */,
+				85BBF47F1DFA16F900506988 /* Info.plist */,
+			);
+			path = roomateTests;
+			sourceTree = "<group>";
+		};
+		9021CC411DF2779A00653FA5 /* Payment History */ = {
+			isa = PBXGroup;
+			children = (
+				9021CC421DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift */,
+				9021CC461DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift */,
+				9021CC441DF2781900653FA5 /* RMFinanceHistoryTableViewCell.xib */,
+			);
+			name = "Payment History";
+			sourceTree = "<group>";
+		};
+		9097F48E1DC80D810056FA78 /* Finance */ = {
+			isa = PBXGroup;
+			children = (
+				908027671DEE397900918D1D /* Finance.storyboard */,
+				9097F48F1DC80DEE0056FA78 /* RMFinanceMainViewController.swift */,
+				9097F4911DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift */,
+				9097F49A1DC814A00056FA78 /* Invoice */,
+				9021CC411DF2779A00653FA5 /* Payment History */,
+				9097F4971DC8147C0056FA78 /* Debts */,
+				9097F4991DC814890056FA78 /* Debtors */,
+			);
+			name = Finance;
+			sourceTree = "<group>";
+		};
+		9097F4971DC8147C0056FA78 /* Debts */ = {
+			isa = PBXGroup;
+			children = (
+				9097F49D1DC8156D0056FA78 /* RMDebtsTableViewCell.swift */,
+				9097F49B1DC814F20056FA78 /* RMDebtsTableViewCell.xib */,
+			);
+			name = Debts;
+			sourceTree = "<group>";
+		};
+		9097F4991DC814890056FA78 /* Debtors */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4A11DC817CC0056FA78 /* RMDebtorsTableViewCell.swift */,
+				9097F49F1DC8178A0056FA78 /* RMDebtorsTableViewCell.xib */,
+			);
+			name = Debtors;
+			sourceTree = "<group>";
+		};
+		9097F49A1DC814A00056FA78 /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				903C21551DEFAAC0001D5689 /* RMInvoice.swift */,
+				90FF3AC41DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift */,
+				9097F4A31DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib */,
+				9097F4A51DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift */,
+			);
+			name = Invoice;
+			sourceTree = "<group>";
+		};
+		9097F4A71DC82F7A0056FA78 /* Chore */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D481DB81CD800D27507 /* Chore.storyboard */,
+				9097F4BD1DC8736A0056FA78 /* Main */,
+				9097F4BF1DC873B80056FA78 /* Add */,
+				9097F4BE1DC873750056FA78 /* Completion History/Details */,
+			);
+			name = Chore;
+			sourceTree = "<group>";
+		};
+		9097F4A81DC835580056FA78 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D4D1DB81D1600D27507 /* Shopping.storyboard */,
+				9097F4D11DC91A820056FA78 /* Main */,
+				85986D5A1DE9232900116EEA /* Add */,
+				9097F4DA1DC91EF90056FA78 /* Checkout */,
+				9097F4D01DC911810056FA78 /* History */,
+			);
+			name = Shopping;
+			sourceTree = "<group>";
+		};
+		9097F4A91DC835F50056FA78 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				900C6D501DB81D3800D27507 /* Settings.storyboard */,
+				905EB7BB1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		9097F4BD1DC8736A0056FA78 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4AA1DC860050056FA78 /* RMChoreMainTableViewController.swift */,
+				9097F4BB1DC872F80056FA78 /* RMChoreMainTableViewCell.swift */,
+				9097F4AC1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9097F4BE1DC873750056FA78 /* Completion History/Details */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4B91DC872760056FA78 /* RMChoreHistoryTableViewController.swift */,
+				9097F4C01DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift */,
+				9097F4C21DC874130056FA78 /* RMChoreCompletionTableViewCell.xib */,
+				9021CCB51DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift */,
+			);
+			name = "Completion History/Details";
+			sourceTree = "<group>";
+		};
+		9097F4BF1DC873B80056FA78 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				9021CCB71DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		9097F4D01DC911810056FA78 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4CA1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift */,
+				9097F4CC1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib */,
+				9097F4CE1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		9097F4D11DC91A820056FA78 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9097F4C61DC909040056FA78 /* RMShoppingMainViewController.swift */,
+				9097F4D21DC91AA90056FA78 /* RMShoppingMainTableViewController.swift */,
+				9097F4D41DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib */,
+				9097F4D61DC91B420056FA78 /* RMShoppingMainTableViewCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9097F4DA1DC91EF90056FA78 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				905EB7B91DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift */,
+				9097F4DB1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib */,
+				9097F4DD1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift */,
+			);
+			name = Checkout;
+			sourceTree = "<group>";
+		};
+		90B693371DBF0D070052A6BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				908027651DEE333400918D1D /* RMUtility.swift */,
+				9080276A1DEE3E1000918D1D /* RMExtensions.swift */,
+				9080276C1DEE401B00918D1D /* RMRoundedButton.swift */,
+				903C21511DEF7E52001D5689 /* RMThinLabel.swift */,
+				90B693381DBF0D110052A6BF /* GoogleService-Info.plist */,
+				4250E2961DA0314C002F7FA7 /* Assets.xcassets */,
+				4250E29B1DA0314C002F7FA7 /* Info.plist */,
+				4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */,
+				9097F48D1DC8062E0056FA78 /* roomate.entitlements */,
+				90B523AD1DF14A2C00CB7E18 /* Montserrat-Bold.ttf */,
+				90B523AE1DF14A2C00CB7E18 /* Montserrat-Regular.ttf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90B6933A1DBF0D2B0052A6BF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		C2B9AB08BB8E9DEE2E0A3CEB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */,
+				6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */,
+				0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */,
+				A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB8955C69BEA0A5836D29C30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22C50FE85CC37C2EB1CFADDE /* Pods_roomate.framework */,
+				AFB3AFA95DEBDE2AFCB0C982 /* Pods_roomateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4250E2881DA0314C002F7FA7 /* roomate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4250E2A91DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomate" */;
+			buildPhases = (
+				BB69F7B8261FB5B8F3795F93 /* [CP] Check Pods Manifest.lock */,
+				4250E2851DA0314C002F7FA7 /* Sources */,
+				4250E2861DA0314C002F7FA7 /* Frameworks */,
+				4250E2871DA0314C002F7FA7 /* Resources */,
+				1EDB06282E0231F2D1C97241 /* [CP] Embed Pods Frameworks */,
+				F21355F9C4490020B4BDE4BF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = roomate;
+			productName = roomate;
+			productReference = 4250E2891DA0314C002F7FA7 /* roomate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42A467491DE67873003CEAD1 /* roomateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A467511DE67873003CEAD1 /* Build configuration list for PBXNativeTarget "roomateUITests" */;
+			buildPhases = (
+				42A467461DE67873003CEAD1 /* Sources */,
+				42A467471DE67873003CEAD1 /* Frameworks */,
+				42A467481DE67873003CEAD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A467501DE67873003CEAD1 /* PBXTargetDependency */,
+			);
+			name = roomateUITests;
+			productName = roomateUITests;
+			productReference = 42A4674A1DE67873003CEAD1 /* roomateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		85BBF47A1DFA16F900506988 /* roomateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85BBF4821DFA16F900506988 /* Build configuration list for PBXNativeTarget "roomateTests" */;
+			buildPhases = (
+				D703392180AC6D5C197EEC1F /* [CP] Check Pods Manifest.lock */,
+				85BBF4771DFA16F900506988 /* Sources */,
+				85BBF4781DFA16F900506988 /* Frameworks */,
+				85BBF4791DFA16F900506988 /* Resources */,
+				5085469AD0C2FE6E20508D47 /* [CP] Embed Pods Frameworks */,
+				6F15F4A2337B65F3C53A2FFF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85BBF4811DFA16F900506988 /* PBXTargetDependency */,
+			);
+			name = roomateTests;
+			productName = roomateTests;
+			productReference = 85BBF47B1DFA16F900506988 /* roomateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4250E2811DA0314C002F7FA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = RooMate;
+				TargetAttributes = {
+					4250E2881DA0314C002F7FA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = UDFXY4BG2B;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					42A467491DE67873003CEAD1 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4250E2881DA0314C002F7FA7;
+					};
+					85BBF47A1DFA16F900506988 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = UDFXY4BG2B;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4250E2881DA0314C002F7FA7;
+					};
+				};
+			};
+			buildConfigurationList = 4250E2841DA0314C002F7FA7 /* Build configuration list for PBXProject "roomate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4250E2801DA0314C002F7FA7;
+			productRefGroup = 4250E28A1DA0314C002F7FA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4250E2881DA0314C002F7FA7 /* roomate */,
+				42A467491DE67873003CEAD1 /* roomateUITests */,
+				85BBF47A1DFA16F900506988 /* roomateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4250E2871DA0314C002F7FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B523B01DF14A2C00CB7E18 /* Montserrat-Regular.ttf in Resources */,
+				900C6D4A1DB81CD800D27507 /* Chore.storyboard in Resources */,
+				426C7E481DC1407C00A2C749 /* RMImageSet.xcassets in Resources */,
+				900C6D4F1DB81D1600D27507 /* Shopping.storyboard in Resources */,
+				9021CC451DF2781900653FA5 /* RMFinanceHistoryTableViewCell.xib in Resources */,
+				900C6D4C1DB81CF900D27507 /* Billboard.storyboard in Resources */,
+				9097F4C31DC874130056FA78 /* RMChoreCompletionTableViewCell.xib in Resources */,
+				9097F4A01DC8178A0056FA78 /* RMDebtorsTableViewCell.xib in Resources */,
+				90B523AF1DF14A2C00CB7E18 /* Montserrat-Bold.ttf in Resources */,
+				900C6D431DB80FF500D27507 /* Main.storyboard in Resources */,
+				42D2200C1DC8F5A900607667 /* DetailBBCommentCell.xib in Resources */,
+				42D15D601DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.xib in Resources */,
+				4250E29A1DA0314C002F7FA7 /* LaunchScreen.storyboard in Resources */,
+				900C6D511DB81D3800D27507 /* Settings.storyboard in Resources */,
+				908027691DEE397900918D1D /* Finance.storyboard in Resources */,
+				90B693391DBF0D110052A6BF /* GoogleService-Info.plist in Resources */,
+				9097F49C1DC814F20056FA78 /* RMDebtsTableViewCell.xib in Resources */,
+				9097F4AD1DC8602A0056FA78 /* RMChoreMainTableViewCell.xib in Resources */,
+				9097F4A41DC822250056FA78 /* RMFinanceInvoiceTableViewCell.xib in Resources */,
+				422B65C91DC86092003A911D /* DetailBBPhotoCell.xib in Resources */,
+				9097F4D51DC91B1B0056FA78 /* RMShoppingMainTableViewCell.xib in Resources */,
+				9097F4CD1DC911670056FA78 /* RMShoppingHistoryTableViewCell.xib in Resources */,
+				4250E2971DA0314C002F7FA7 /* Assets.xcassets in Resources */,
+				9097F4DC1DC91F3F0056FA78 /* RMShoppingCheckoutListTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A467481DE67873003CEAD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85BBF4791DFA16F900506988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85BBF48A1DFA170700506988 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EDB06282E0231F2D1C97241 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomate/Pods-roomate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5085469AD0C2FE6E20508D47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F15F4A2337B65F3C53A2FFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomateTests/Pods-roomateTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB69F7B8261FB5B8F3795F93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D703392180AC6D5C197EEC1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F21355F9C4490020B4BDE4BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-roomate/Pods-roomate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4250E2851DA0314C002F7FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9097F4DE1DC91F560056FA78 /* RMShoppingCheckoutListTableViewCell.swift in Sources */,
+				85F003F71DC808CE008CA377 /* RMFinanceBill.swift in Sources */,
+				903C21561DEFAAC0001D5689 /* RMInvoice.swift in Sources */,
+				4230534F1DC134FE003AE80B /* RMGroupSelectionVC.swift in Sources */,
+				426C7E4A1DC14BB300A2C749 /* RMChore.swift in Sources */,
+				42EB6B971DD10DE7002780BB /* createBBPostVC.swift in Sources */,
+				905EB7BA1DF898AC006C4EF7 /* RMShoppingCheckoutListTableViewController.swift in Sources */,
+				90B693361DBF0B480052A6BF /* RMAuth.swift in Sources */,
+				422B65C81DC86092003A911D /* DetailBBPhotoCell.swift in Sources */,
+				85976B461DEE595B00E41ED3 /* RMChoreCompletion.swift in Sources */,
+				42D15D5F1DC7CC1E00D0E481 /* BulletinBoardCellCollectionViewCell.swift in Sources */,
+				905EB7BC1DF9DAB8006C4EF7 /* RMSettingsTableViewController.swift in Sources */,
+				9097F4BC1DC872F80056FA78 /* RMChoreMainTableViewCell.swift in Sources */,
+				90B693341DBF0ADB0052A6BF /* RMLoginViewController.swift in Sources */,
+				4230534A1DC1302F003AE80B /* RMBulletin.swift in Sources */,
+				9021CCBE1DF8662200653FA5 /* RMShoppingAddItemTableViewController.swift in Sources */,
+				85F003F91DC80A8F008CA377 /* RMNotificationManager.swift in Sources */,
+				4230534C1DC1338B003AE80B /* RMGroup.swift in Sources */,
+				9097F4C71DC909040056FA78 /* RMShoppingMainViewController.swift in Sources */,
+				4250E2951DA0314C002F7FA7 /* roomate.xcdatamodeld in Sources */,
+				42D15D5C1DC7C42B00D0E481 /* BulletinBoardVC.swift in Sources */,
+				9097F4CF1DC9117D0056FA78 /* RMShoppingHistoryTableViewCell.swift in Sources */,
+				9097F4921DC80E4B0056FA78 /* RMFinanceContainerTableViewController.swift in Sources */,
+				9021CCB61DF39A8F00653FA5 /* RMChoreCompletionDetailTableViewController.swift in Sources */,
+				9097F4BA1DC872760056FA78 /* RMChoreHistoryTableViewController.swift in Sources */,
+				85F003F51DC7F71F008CA377 /* RMGrocery.swift in Sources */,
+				4250E28D1DA0314C002F7FA7 /* AppDelegate.swift in Sources */,
+				90FF3AC51DF0B61500D4A2ED /* RMFinanceInvoiceTableViewController.swift in Sources */,
+				42E188CB1DC8248B00A75830 /* DetailBBViewController.swift in Sources */,
+				9097F49E1DC8156D0056FA78 /* RMDebtsTableViewCell.swift in Sources */,
+				9097F4AB1DC860050056FA78 /* RMChoreMainTableViewController.swift in Sources */,
+				9080276B1DEE3E1000918D1D /* RMExtensions.swift in Sources */,
+				9097F4A61DC822980056FA78 /* RMFinanceInvoiceTableViewCell.swift in Sources */,
+				9097F4D31DC91AA90056FA78 /* RMShoppingMainTableViewController.swift in Sources */,
+				908027661DEE333500918D1D /* RMUtility.swift in Sources */,
+				9097F4901DC80DEE0056FA78 /* RMFinanceMainViewController.swift in Sources */,
+				9021CC431DF277ED00653FA5 /* RMFinanceHistoryTableViewController.swift in Sources */,
+				9097F4C11DC873FD0056FA78 /* RMChoreCompletionTableViewCell.swift in Sources */,
+				9097F4D71DC91B420056FA78 /* RMShoppingMainTableViewCell.swift in Sources */,
+				9097F4CB1DC910DF0056FA78 /* RMShoppingHistoryTableViewController.swift in Sources */,
+				9097F4A21DC817CC0056FA78 /* RMDebtorsTableViewCell.swift in Sources */,
+				85F003F11DC7EE39008CA377 /* RMUser.swift in Sources */,
+				426C7E451DC13F2B00A2C749 /* LoginStringConst.swift in Sources */,
+				903C21521DEF7E52001D5689 /* RMThinLabel.swift in Sources */,
+				85D6E2B71DF68AD300ED84FC /* RMQueryBackend.swift in Sources */,
+				42D2200B1DC8F5A900607667 /* DetailBBCommentCell.swift in Sources */,
+				9080276D1DEE401B00918D1D /* RMRoundedButton.swift in Sources */,
+				85F003F31DC7F374008CA377 /* RMGroceryList.swift in Sources */,
+				424CF5DB1DB803D400B24160 /* RMBulletinPost.swift in Sources */,
+				9021CC471DF2783C00653FA5 /* RMFinanceHistoryTableViewCell.swift in Sources */,
+				9021CCB81DF3A89A00653FA5 /* RMChoreAddCompletionTableViewController.swift in Sources */,
+				4214D5051DD14A4B00739747 /* SRMBulletinPost.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42A467461DE67873003CEAD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A4674D1DE67873003CEAD1 /* roomateUITests.swift in Sources */,
+				42A467541DE67879003CEAD1 /* UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85BBF4771DFA16F900506988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85BBF4871DFA170700506988 /* testRMGroceryList.swift in Sources */,
+				858F81CF1DFB50C700F4D551 /* testRMGrocery.swift in Sources */,
+				85BBF4851DFA170700506988 /* testRMQueryBackend.swift in Sources */,
+				85BBF4861DFA170700506988 /* testRMChore.swift in Sources */,
+				85BBF48C1DFA174D00506988 /* testRMUser.swift in Sources */,
+				906916A11DFF36EB00A439A4 /* testRMGrocery.swift in Sources */,
+				85A98BD41DFE63B700E68A3C /* testGetCurrentTime.swift in Sources */,
+				85BBF4891DFA170700506988 /* testRMGroup.swift in Sources */,
+				85BBF47E1DFA16F900506988 /* roomateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A467501DE67873003CEAD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4250E2881DA0314C002F7FA7 /* roomate */;
+			targetProxy = 42A4674F1DE67873003CEAD1 /* PBXContainerItemProxy */;
+		};
+		85BBF4811DFA16F900506988 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4250E2881DA0314C002F7FA7 /* roomate */;
+			targetProxy = 85BBF4801DFA16F900506988 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4250E2981DA0314C002F7FA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4250E2991DA0314C002F7FA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		900C6D411DB80FF500D27507 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				900C6D421DB80FF500D27507 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		900C6D481DB81CD800D27507 /* Chore.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				900C6D491DB81CD800D27507 /* Base */,
+			);
+			name = Chore.storyboard;
+			sourceTree = "<group>";
+		};
+		900C6D4D1DB81D1600D27507 /* Shopping.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				900C6D4E1DB81D1600D27507 /* Base */,
+			);
+			name = Shopping.storyboard;
+			sourceTree = "<group>";
+		};
+		908027671DEE397900918D1D /* Finance.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				908027681DEE397900918D1D /* Base */,
+			);
+			name = Finance.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4250E2A71DA0314C002F7FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4250E2A81DA0314C002F7FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4250E2AA1DA0314C002F7FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FB3DC88BC1EE559E8068BB0 /* Pods-roomate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
+				INFOPLIST_FILE = roomate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4250E2AB1DA0314C002F7FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D96A7A6EC9831B1FA84C53E /* Pods-roomate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = roomate/roomate.entitlements;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
+				INFOPLIST_FILE = roomate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42A467521DE67873003CEAD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = roomateUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = roomate;
+			};
+			name = Debug;
+		};
+		42A467531DE67873003CEAD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = roomateUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = roomate;
+			};
+			name = Release;
+		};
+		85BBF4831DFA16F900506988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0815E98F74B681F37A946B51 /* Pods-roomateTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
+				INFOPLIST_FILE = roomateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate.roomateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
+			};
+			name = Debug;
+		};
+		85BBF4841DFA16F900506988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7F3D5BCB296CF04DCEAFAF1 /* Pods-roomateTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = UDFXY4BG2B;
+				INFOPLIST_FILE = roomateTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ru.roomate.roomateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/roomate.app/roomate";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4250E2841DA0314C002F7FA7 /* Build configuration list for PBXProject "roomate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4250E2A71DA0314C002F7FA7 /* Debug */,
+				4250E2A81DA0314C002F7FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4250E2A91DA0314C002F7FA7 /* Build configuration list for PBXNativeTarget "roomate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4250E2AA1DA0314C002F7FA7 /* Debug */,
+				4250E2AB1DA0314C002F7FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A467511DE67873003CEAD1 /* Build configuration list for PBXNativeTarget "roomateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A467521DE67873003CEAD1 /* Debug */,
+				42A467531DE67873003CEAD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85BBF4821DFA16F900506988 /* Build configuration list for PBXNativeTarget "roomateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85BBF4831DFA16F900506988 /* Debug */,
+				85BBF4841DFA16F900506988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4250E2931DA0314C002F7FA7 /* roomate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4250E2941DA0314C002F7FA7 /* roomate.xcdatamodel */,
+			);
+			currentVersion = 4250E2941DA0314C002F7FA7 /* roomate.xcdatamodel */;
+			path = roomate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4250E2811DA0314C002F7FA7 /* Project object */;
+}
